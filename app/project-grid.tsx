@@ -1,0 +1,19 @@
+"use client";
+import Link from "next/link";
+import {projects} from "./projects";
+
+function ProjectArt({slug}:{slug:string}){
+  if(slug==="price-elasticity") return <div className="art elasticity-art"><span className="axis-label demand">DEMAND</span><span className="axis-label price">PRICE</span><svg viewBox="0 0 600 300" aria-hidden="true"><path className="ghost-curve" d="M28 258 C120 242 202 218 278 168 S450 64 572 42"/><path className="main-curve" d="M28 258 C120 242 202 218 278 168 S450 64 572 42"/><circle cx="278" cy="168" r="8"/></svg><b>−1.42</b><small>ELASTICITY INDEX</small></div>;
+  if(slug==="water-quality") return <div className="art water-art"><div className="ripple r1"/><div className="ripple r2"/><div className="ripple r3"/><i className="drop d1"/><i className="drop d2"/><i className="drop d3"/><span>ANOMALY<br/>FIELD</span></div>;
+  if(slug==="healthcare-modeling") return <div className="art network-art"><div className="network-line l1"/><div className="network-line l2"/><div className="network-line l3"/><div className="network-line l4"/>{["INPUT","PCA","SVM","RF","DECISION"].map((n,i)=><span className={`node n${i+1}`} key={n}>{n}</span>)}</div>;
+  if(slug==="sentiment-analyzer") return <div className="art sentiment-art"><div className="quote">“A surprising,<br/><em>beautifully made</em> story.”</div><div className="score"><b>91.2</b><span>% ACCURACY</span></div><div className="signal">{[3,7,5,9,4,8,6,10,5,8,4,7].map((h,i)=><i key={i} style={{height:`${h*7}px`}}/>)}</div></div>;
+  if(slug==="sports-chatbot") return <div className="art sports-art"><div className="court"><i/><i/><i/></div><div className="trajectory"><span/><span/><span/><span/></div><b>?</b><small>RETRIEVE → RANK → ANSWER</small></div>;
+  if(slug==="medical-qa") return <div className="art token-art"><div className="token-stack">{["Q","L","o","R","A"].map((x,i)=><span key={i}>{x}</span>)}</div><div className="threads">{[1,2,3,4,5].map(i=><i key={i}/>)}</div><small>7B PARAMETERS · ADAPTER TUNED</small></div>;
+  return <div className="art heatmap-art"><div className="scan-frame"><i className="heat h1"/><i className="heat h2"/><i className="heat h3"/><span className="focus-box"/></div><div className="confidence"><b>0.94</b><span>CONFIDENCE</span></div><small>GRAD-CAM EXPLANATION</small></div>;
+}
+
+export function ProjectGrid(){
+  const tilt=(e:React.MouseEvent<HTMLElement>)=>{const el=e.currentTarget,r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.setProperty("--rx",`${-y*8}deg`);el.style.setProperty("--ry",`${x*10}deg`)};
+  const reset=(e:React.MouseEvent<HTMLElement>)=>{e.currentTarget.style.setProperty("--rx","0deg");e.currentTarget.style.setProperty("--ry","0deg")};
+  return <div className="project-grid">{projects.map((p,i)=><Link href={`/projects/${p.slug}`} key={p.slug} className={`project-card ${i===0||i===3?"wide":""}`} onMouseMove={tilt} onMouseLeave={reset}><div className={`project-visual ${p.accent}`}><span className="project-number">{p.index}</span>{p.image?<img className="demo-capture" src={p.image} alt={`${p.title} live Hugging Face interface`}/>:<><div className="visual-grid"/><ProjectArt slug={p.slug}/></>}<span className="open-mark">↗</span></div><div className="project-info"><p>{p.category}</p><h3>{p.title}</h3><span>{p.summary}</span></div></Link>)}</div>;
+}
