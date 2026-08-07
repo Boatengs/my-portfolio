@@ -12,3 +12,6 @@
 
 /* Persistent navigation */
 .nav{position:sticky;top:0;z-index:100;background:rgba(243,240,232,.9);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(17,19,16,.04);transition:background .25s ease,box-shadow .25s ease}@supports not ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){.nav{background:#f3f0e8}}@media(prefers-reduced-motion:reduce){.nav{transition:none}}
+
+/* Dataset provenance */
+.dataset-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);grid-template-columns:1fr 1fr 1.35fr;display:grid}.dataset-strip>div{min-width:0;padding:30px 34px}.dataset-strip>div:first-child{padding-left:0}.dataset-strip>div+div{border-left:1px solid var(--line)}.dataset-strip span{color:#d4492f;letter-spacing:.12em;margin-bottom:12px;font:700 9px monospace;display:block}.dataset-strip strong,.dataset-strip a{font-size:13px;line-height:1.5;display:block}.dataset-strip a{text-decoration:underline;text-decoration-color:#11131055;text-underline-offset:5px}.case-grid{padding-top:80px}@media(width<=760px){.dataset-strip{grid-template-columns:1fr}.dataset-strip>div,.dataset-strip>div:first-child{padding:22px 0}.dataset-strip>div+div{border-left:0;border-top:1px solid var(--line)}}
