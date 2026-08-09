@@ -60,3 +60,9 @@
 @keyframes recognitionPulse{0%,100%{transform:scale(.88);opacity:.35}50%{transform:scale(1.08);opacity:.8}}@keyframes recognitionSpin{to{transform:rotate(360deg)}}
 @media(width<=700px){.hackathon-recognition{grid-template-columns:1fr;padding:26px;gap:22px}.hackathon-place{width:104px;height:104px}.research-areas{grid-template-columns:1fr;gap:16px}.research-areas span{font-size:12px;padding:9px 12px}}
 @media(prefers-reduced-motion:reduce){.hackathon-recognition:after,.hackathon-place:after{animation:none}}
+
+
+/* Plain-language project storytelling */
+.application-story{margin-top:0;padding-top:42px;padding-bottom:42px;border-top:1px solid var(--line,#b9b5ac);border-bottom:1px solid var(--line,#b9b5ac);display:grid;grid-template-columns:minmax(150px,.55fr) minmax(0,1.45fr);gap:clamp(28px,6vw,90px);align-items:start}
+.application-story>.eyebrow{margin:7px 0 0;color:#ef5b48}.application-story h2{font-size:clamp(32px,4vw,58px);line-height:.98;letter-spacing:-.05em;margin:0 0 18px;max-width:620px}.application-story div>p{font-size:clamp(17px,1.55vw,22px);line-height:1.6;color:#666b63;max-width:900px;margin:0}.detail-hero>p:last-child{max-width:920px;line-height:1.55}.case-grid article p{line-height:1.7}
+@media(width<=760px){.application-story{grid-template-columns:1fr;gap:20px;padding-top:32px;padding-bottom:32px}}
