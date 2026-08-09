@@ -64,3 +64,9 @@
 @media(width<=800px){.impact-section{padding:85px 0}.impact-head,.work-principles{grid-template-columns:1fr}.impact-story-grid{grid-template-columns:1fr}.impact-story-grid .impact-feature{grid-column:auto}.impact-story-grid article{min-height:390px}}
 @media(width<=560px){.impact-head h2{font-size:52px}.impact-story-grid article{min-height:410px;padding:24px}.work-principles li{grid-template-columns:40px 1fr}}
 @media(prefers-reduced-motion:reduce){.impact-section:before{animation:none}.impact-story-grid article{transition:none}}
+
+
+/* Full-bleed sticky header */
+.nav{background:transparent!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;box-shadow:none!important;isolation:isolate}
+.nav:before{content:"";position:absolute;inset:0 calc(50% - 50vw);z-index:-1;pointer-events:none;background:rgba(243,240,232,.92);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid rgba(17,19,16,.08);box-shadow:0 1px 0 rgba(17,19,16,.03)}
+@supports not ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){.nav:before{background:#f3f0e8}}
