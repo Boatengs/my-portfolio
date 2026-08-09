@@ -25,3 +25,6 @@
 
 /* Portrait layout containment */
 .about-profile{grid-template-columns:minmax(250px,280px) minmax(0,1fr);gap:64px;align-items:start}.about-profile>div:last-child{min-width:0}.profile-photo{justify-self:start;margin-left:22px}@media(width<=960px){.about-profile{grid-template-columns:220px minmax(0,1fr);gap:44px}.profile-photo{width:210px;flex-basis:210px;margin-left:12px}}@media(width<=760px){.about-profile{grid-template-columns:1fr;gap:42px}.profile-photo{justify-self:center;margin:22px auto 0}}
+
+/* Editorial portrait placement */
+.about-profile{display:flex;flex-direction:column;gap:0;align-items:stretch}.about-profile>div:last-child{order:1;min-width:0}.profile-photo{order:2;width:220px;flex:0 0 auto;align-self:flex-start;justify-self:auto;margin:54px 0 18px 22px}@media(width<=960px){.about-profile{display:flex;gap:0}.profile-photo{width:205px;flex-basis:auto;margin:48px 0 16px 18px}}@media(width<=760px){.about-profile{display:flex;gap:0}.profile-photo{width:195px;flex-basis:auto;align-self:center;margin:44px auto 18px}}
