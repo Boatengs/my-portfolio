@@ -46,3 +46,17 @@
 
 /* Editorial portrait placement */
 .about-profile{display:flex;flex-direction:column;gap:0;align-items:stretch}.about-profile>div:last-child{order:1;min-width:0}.profile-photo{order:2;width:220px;flex:0 0 auto;align-self:flex-start;justify-self:auto;margin:54px 0 18px 22px}@media(width<=960px){.about-profile{display:flex;gap:0}.profile-photo{width:205px;flex-basis:auto;margin:48px 0 16px 18px}}@media(width<=760px){.about-profile{display:flex;gap:0}.profile-photo{width:195px;flex-basis:auto;align-self:center;margin:44px auto 18px}}
+
+
+/* Research focus and hackathon recognition */
+.hackathon-recognition{margin-top:22px;display:grid;grid-template-columns:150px minmax(0,1fr);gap:34px;align-items:center;padding:34px;border:1px solid #222;background:#111;color:#f7f4ed;overflow:hidden;position:relative}
+.hackathon-recognition:after{content:"";position:absolute;width:190px;height:190px;border:1px solid rgba(255,255,255,.16);border-radius:50%;right:-78px;top:-96px;animation:recognitionPulse 4s ease-in-out infinite}
+.hackathon-place{width:126px;height:126px;border:1px solid rgba(255,255,255,.55);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;z-index:1}
+.hackathon-place:after{content:"";position:absolute;inset:9px;border:1px solid #ef5b48;border-radius:50%;animation:recognitionSpin 8s linear infinite}
+.hackathon-place strong{font-size:38px;line-height:.9;letter-spacing:-.06em}.hackathon-place span{font-size:10px;letter-spacing:.22em;margin-top:9px}
+.hackathon-recognition>div:last-child{position:relative;z-index:1}.hackathon-recognition .eyebrow{color:#ef5b48;margin-bottom:9px}.hackathon-recognition h3{font-size:clamp(30px,4vw,54px);letter-spacing:-.055em;line-height:1;margin:0 0 13px}.hackathon-recognition p:not(.eyebrow){max-width:790px;color:#c9c6be;line-height:1.65;margin:0}
+.proof-links{display:flex;flex-wrap:wrap;gap:22px;margin-top:20px}.proof-links a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.45);padding-bottom:3px;font-size:13px}.proof-links a:hover{border-color:#ef5b48;color:#ef5b48}
+.research-areas{margin-top:34px;padding:25px 0;border-top:1px solid #bbb7ad;border-bottom:1px solid #bbb7ad;display:grid;grid-template-columns:190px 1fr;gap:30px;align-items:center}.research-areas .eyebrow{margin:0}.research-areas>div{display:flex;flex-wrap:wrap;gap:10px}.research-areas span{border:1px solid #aaa69c;border-radius:999px;padding:10px 15px;font-size:13px;background:rgba(255,255,255,.26)}
+@keyframes recognitionPulse{0%,100%{transform:scale(.88);opacity:.35}50%{transform:scale(1.08);opacity:.8}}@keyframes recognitionSpin{to{transform:rotate(360deg)}}
+@media(width<=700px){.hackathon-recognition{grid-template-columns:1fr;padding:26px;gap:22px}.hackathon-place{width:104px;height:104px}.research-areas{grid-template-columns:1fr;gap:16px}.research-areas span{font-size:12px;padding:9px 12px}}
+@media(prefers-reduced-motion:reduce){.hackathon-recognition:after,.hackathon-place:after{animation:none}}
