@@ -76,3 +76,9 @@
 .nav{border-bottom:0!important}
 .nav:before{z-index:0!important}
 .nav>.wordmark,.nav>.nav-links{position:relative;z-index:1}
+
+
+/* Definitive viewport-wide navigation */
+.nav.shell{width:100%!important;max-width:none!important;margin-inline:0!important;padding-left:max(24px,calc((100vw - 1240px)/2))!important;padding-right:max(24px,calc((100vw - 1240px)/2))!important;box-sizing:border-box;background:rgba(243,240,232,.94)!important;-webkit-backdrop-filter:blur(16px)!important;backdrop-filter:blur(16px)!important;border-bottom:1px solid rgba(17,19,16,.08)!important;box-shadow:0 1px 0 rgba(17,19,16,.03)!important}
+.nav:before{display:none!important}
+@supports not ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){.nav.shell{background:#f3f0e8!important}}
