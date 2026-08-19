@@ -266,3 +266,21 @@ img{max-width:100%;height:auto}
 .project-number,.visual-label,.stage-copy span,.stage-note,.eyebrow{font-size:max(11px,.6875rem)}
 @media(max-width:760px){a,button{touch-action:manipulation}.nav-cta{min-height:44px;display:inline-flex;align-items:center}.footer-row a{display:inline-flex;min-height:44px;align-items:center}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.cursor-glow{display:none!important}.project-visual,.project-card,.art{transform:none!important}}
+
+/* Compact homepage skills preview and dedicated technical page */
+.capability-preview-grid{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line)}
+.capability-preview-grid article{min-height:150px;padding:24px 26px 24px 0;border-bottom:1px solid var(--line)}
+.capability-preview-grid article:nth-child(3n+2),.capability-preview-grid article:nth-child(3n+3){border-left:1px solid var(--line);padding-left:26px}
+.capability-preview-grid article>span{color:#d4492f;font:700 10px monospace}
+.capability-preview-grid h3{margin:28px 0 12px;font-size:23px;letter-spacing:-.035em}
+.capability-preview-grid p{margin:0;color:var(--muted);font-size:12px;line-height:1.55}
+.capability-preview-foot{display:flex;justify-content:space-between;align-items:center;gap:36px;padding-top:28px}
+.capability-preview-foot p{max-width:500px;margin:0;color:var(--muted);font-size:13px;line-height:1.6}
+.capability-preview-foot a{display:inline-flex;gap:34px;border-bottom:1px solid;padding-bottom:7px;font-size:13px;font-weight:800;white-space:nowrap}
+.skills-page-hero{padding:92px 0 72px;border-bottom:1px solid var(--line)}
+.skills-page-hero h1{margin:0;max-width:1000px;font-size:clamp(58px,8vw,110px);line-height:.9;letter-spacing:-.065em}
+.skills-page-hero h1 em{font-family:Georgia,serif;font-weight:400}
+.skills-page-hero>p:last-child{max-width:680px;margin:32px 0 0;color:var(--muted);font-size:18px;line-height:1.65}
+.skills-index{padding-top:70px;padding-bottom:140px}
+.skills-index .capability-card h2{margin:0;font-size:clamp(26px,2.25vw,34px);line-height:1;letter-spacing:-.045em}
+@media(max-width:760px){.capability-preview-grid{grid-template-columns:1fr}.capability-preview-grid article,.capability-preview-grid article:nth-child(3n+2),.capability-preview-grid article:nth-child(3n+3){min-height:auto;padding:24px 0;border-left:0}.capability-preview-grid h3{margin-top:18px}.capability-preview-foot{display:block}.capability-preview-foot a{margin-top:22px;white-space:normal}.skills-page-hero{padding:62px 0 50px}.skills-page-hero h1{font-size:52px}.skills-index{padding-top:45px;padding-bottom:100px}}
