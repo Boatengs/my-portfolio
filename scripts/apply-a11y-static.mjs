@@ -37,6 +37,7 @@ for (const root of roots) {
     html = html.replace(/<main(?![^>]*id=)/, '<main id="main-content" tabindex="-1"');
     html = html.replaceAll("sam-profile.png", "sam-profile.webp");
     html = html.replaceAll("portfolio-20260809-v4.css?v=13", "portfolio-20260809-v4.css?v=14");
+    html = html.replaceAll("portfolio-20260809-v4.css?v=15", "portfolio-20260809-v4.css?v=16");
     html = html.replace(/<img src="([^\"]+)"(?![^>]*decoding=)/g, '<img src="$1" decoding="async"');
     if (file.endsWith(`${path.sep}index.html`) && path.dirname(file) === root) {
       html = html.replace('src="/my-portfolio/sam-profile.webp" decoding="async"', 'src="/my-portfolio/sam-profile.webp" decoding="async" loading="lazy" width="900" height="900"');
