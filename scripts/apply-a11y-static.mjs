@@ -2,6 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const roots = ["site-static", "docs"];
+const criticalSkipStyle = `<style id="a11y-critical">.skip-link{position:fixed;z-index:10000;top:12px;left:12px;padding:12px 16px;background:#111;color:#fff;border:2px solid #fff;border-radius:4px;font:800 14px/1 Arial,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.22);transform:translateY(calc(-100% - 28px));transition:transform .18s ease}.skip-link:focus,.skip-link:focus-visible{transform:translateY(0);outline:3px solid #d4492f;outline-offset:3px}</style>`;
 const cssPatch = `
 /* Performance and accessibility foundation */
 .skip-link{position:fixed;z-index:1000;top:10px;left:10px;padding:12px 16px;background:#111;color:#fff;border:2px solid #fff;transform:translateY(-160%);transition:transform .18s ease;font-size:14px;font-weight:800}.skip-link:focus{transform:translateY(0)}.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}:focus-visible{outline:3px solid #d4492f;outline-offset:4px}#main-content:focus{outline:none}img{max-width:100%;height:auto}.section,.impact-preview,.leadership-preview,.education,.availability,.footer{content-visibility:auto;contain-intrinsic-size:1px 850px}.project-filters button{min-height:44px}.project-number,.visual-label,.stage-copy span,.stage-note,.eyebrow{font-size:max(11px,.6875rem)}@media(max-width:760px){a,button{touch-action:manipulation}.nav-cta{min-height:44px;display:inline-flex;align-items:center}.footer-row a{display:inline-flex;min-height:44px;align-items:center}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.cursor-glow{display:none!important}.project-visual,.project-card,.art{transform:none!important}}
@@ -27,6 +28,9 @@ for (const root of roots) {
   }
   for (const file of (await walk(root)).filter(file => file.endsWith(".html"))) {
     let html = await fs.readFile(file, "utf8");
+    if (!html.includes('id="a11y-critical"')) {
+      html = html.replace("</head>", `${criticalSkipStyle}</head>`);
+    }
     if (!html.includes('class="skip-link"')) {
       html = html.replace(/<body([^>]*)>/, '<body$1><a class="skip-link" href="#main-content">Skip to main content</a>');
     }
