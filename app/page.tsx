@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ProjectGrid } from "./project-grid";
-const skillGroups = [
+export const skillGroups = [
   {
     label: "Data & Analysis",
     proof: "4 project examples",
@@ -626,63 +626,20 @@ export default function Home() {
           <div className="capability-console">
             <div className="capability-console-head">
               <p>TECHNICAL SKILLS AND TOOLS</p>
-              <span>Five disciplines · one connected workflow</span>
+              <span>Six disciplines · one connected workflow</span>
             </div>
-            <div className="capability-grid">
+            <div className="capability-preview-grid">
               {skillGroups.map((s, i) => (
-                <article className="capability-card" key={s.label}>
-                  <div className="capability-title">
-                    <span>0{i + 1}</span>
-                    <div className="capability-title-main">
-                      <h3>{s.label}</h3>
-                      <Link className="capability-evidence" href={s.href}>
-                        {s.proof} <b>↗</b>
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="capability-tags">
-                    {s.skills.map((item) =>
-                      item.href ? (
-                        <Link
-                          href={item.href}
-                          key={item.name}
-                          title={`View project using ${item.name}`}
-                        >
-                          <img
-                            className="skill-mark"
-                            src={item.icon}
-                            alt=""
-                            aria-hidden="true"
-                            loading="lazy"
-                          />
-                          {item.name}
-                          <b>↗</b>
-                        </Link>
-                      ) : (
-                        <span key={item.name}>
-                          <img
-                            className="skill-mark"
-                            src={item.icon}
-                            alt=""
-                            aria-hidden="true"
-                            loading="lazy"
-                          />
-                          {item.name}
-                        </span>
-                      ),
-                    )}
-                  </div>
+                <article key={s.label}>
+                  <span>0{i + 1}</span>
+                  <h3>{s.label}</h3>
+                  <p>{s.skills.slice(0, 4).map((item) => item.name).join(" · ")}</p>
                 </article>
               ))}
             </div>
-            <div className="workflow-strip" aria-label="Working process">
-              <span>Frame</span>
-              <i>→</i>
-              <span>Analyze</span>
-              <i>→</i>
-              <span>Model</span>
-              <i>→</i>
-              <span>Communicate</span>
+            <div className="capability-preview-foot">
+              <p>Explore the complete matrix, project evidence, and tools used across my work.</p>
+              <Link href="/skills">View technical skills &amp; tools <span>↗</span></Link>
             </div>
           </div>
         </div>

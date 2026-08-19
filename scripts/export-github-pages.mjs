@@ -5,7 +5,7 @@ import worker from "../dist/server/index.js";
 const out = path.resolve("site-static");
 const base = "/my-portfolio";
 const routes = [
-  "/", "/resume", "/work", "/impact", "/leadership", "/person",
+  "/", "/resume", "/work", "/impact", "/leadership", "/person", "/skills",
   "/projects/price-elasticity", "/projects/water-quality",
   "/projects/healthcare-modeling", "/projects/sentiment-analyzer",
   "/projects/sports-chatbot", "/projects/medical-qa",
