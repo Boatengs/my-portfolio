@@ -610,7 +610,7 @@ export default function Home() {
             </div>
             <div className="about-narrative">
               <p>
-                I work across Finance and Development, bringing data and
+                I currently work across Finance and Development, bringing data and
                 technical insight to financial and donor analysis,
                 reconciliation, reporting, data quality, systems improvement,
                 and AI-enabled healthcare grant projects.

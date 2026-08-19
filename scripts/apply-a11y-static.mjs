@@ -36,14 +36,15 @@ for (const root of roots) {
     }
     html = html.replace(/<main(?![^>]*id=)/, '<main id="main-content" tabindex="-1"');
     html = html.replaceAll("sam-profile.png", "sam-profile.webp");
+    html = html.replaceAll("I work across Finance and Development, bringing data and", "I currently work across Finance and Development, bringing data and");
     html = html.replaceAll("portfolio-20260809-v4.css?v=13", "portfolio-20260809-v4.css?v=14");
     html = html.replaceAll("portfolio-20260809-v4.css?v=15", "portfolio-20260809-v4.css?v=16");
     html = html.replace(/<img src="([^\"]+)"(?![^>]*decoding=)/g, '<img src="$1" decoding="async"');
+    const profilePattern = /src="\/my-portfolio\/sam-profile\.webp" decoding="async"[^>]*?(?= alt=)/g;
     if (file.endsWith(`${path.sep}index.html`) && path.dirname(file) === root) {
-      html = html.replace('src="/my-portfolio/sam-profile.webp" decoding="async"', 'src="/my-portfolio/sam-profile.webp" decoding="async" loading="lazy" width="900" height="900"');
-    }
-    if (file.includes(`${path.sep}person${path.sep}`)) {
-      html = html.replace('src="/my-portfolio/sam-profile.webp" decoding="async"', 'src="/my-portfolio/sam-profile.webp" decoding="async" width="900" height="900"');
+      html = html.replace(profilePattern, 'src="/my-portfolio/sam-profile.webp" decoding="async" loading="lazy" width="900" height="900"');
+    } else if (file.includes(`${path.sep}person${path.sep}`)) {
+      html = html.replace(profilePattern, 'src="/my-portfolio/sam-profile.webp" decoding="async" width="900" height="900"');
     }
     html = html.replace("const fine=matchMedia('(pointer:fine)').matches", "const fine=matchMedia('(pointer:fine) and (prefers-reduced-motion:no-preference)').matches");
     await fs.writeFile(file, html);
