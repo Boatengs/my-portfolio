@@ -1,17 +1,846 @@
 import Link from "next/link";
 import { ProjectGrid } from "./project-grid";
-const skillGroups=[{"label":"Data & Analysis","proof":"4 project examples","href":"/projects/price-elasticity","skills":[{"name":"SQL","icon":"https://api.iconify.design/tabler/database.svg","href":""},{"name":"Excel","icon":"https://api.iconify.design/logos/microsoft-excel.svg","href":""},{"name":"Python","icon":"https://api.iconify.design/logos/python.svg","href":"/projects/price-elasticity"},{"name":"Pandas","icon":"https://api.iconify.design/logos/pandas-icon.svg","href":"/projects/water-quality"},{"name":"NumPy","icon":"https://api.iconify.design/logos/numpy.svg","href":""},{"name":"SciPy","icon":"https://api.iconify.design/logos/scipy.svg","href":"/projects/water-quality"},{"name":"Spark","icon":"https://api.iconify.design/logos/apache-spark.svg","href":""},{"name":"Hadoop","icon":"https://api.iconify.design/logos/hadoop.svg","href":""},{"name":"Hive","icon":"https://api.iconify.design/simple-icons/apachehive.svg?color=%23FDEE21","href":""}]},{"label":"Statistical & Modeling","proof":"3 project examples","href":"/projects/price-elasticity","skills":[{"name":"Regression","icon":"https://api.iconify.design/tabler/chart-line.svg","href":"/projects/price-elasticity"},{"name":"Ridge","icon":"https://api.iconify.design/tabler/wave-sine.svg","href":"/projects/price-elasticity"},{"name":"Logistic Regression","icon":"https://api.iconify.design/tabler/binary-tree.svg","href":"/projects/healthcare-modeling"},{"name":"Random Forest","icon":"https://api.iconify.design/tabler/trees.svg","href":"/projects/price-elasticity"},{"name":"XGBoost","icon":"https://api.iconify.design/tabler/bolt.svg","href":"/projects/price-elasticity"},{"name":"SVM","icon":"https://api.iconify.design/tabler/separator.svg","href":"/projects/healthcare-modeling"},{"name":"PCA","icon":"https://api.iconify.design/tabler/dimensions.svg","href":"/projects/healthcare-modeling"},{"name":"K-Means","icon":"https://api.iconify.design/tabler/affiliate.svg","href":"/projects/water-quality"},{"name":"Isolation Forest","icon":"https://api.iconify.design/tabler/alert-triangle.svg","href":"/projects/water-quality"},{"name":"Forecasting","icon":"https://api.iconify.design/tabler/trending-up.svg","href":"/projects/price-elasticity"},{"name":"Hypothesis Testing","icon":"https://api.iconify.design/tabler/test-pipe.svg","href":""}]},{"label":"Visualization & Apps","proof":"6 project examples","href":"/projects/sentiment-analyzer","skills":[{"name":"Tableau","icon":"https://api.iconify.design/logos/tableau-icon.svg","href":""},{"name":"Power BI","icon":"https://api.iconify.design/logos/microsoft-power-bi.svg","href":""},{"name":"Matplotlib","icon":"https://api.iconify.design/logos/matplotlib-icon.svg","href":""},{"name":"Seaborn","icon":"https://api.iconify.design/tabler/chart-dots-3.svg","href":""},{"name":"Plotly","icon":"https://api.iconify.design/logos/plotly-icon.svg","href":"/projects/price-elasticity"},{"name":"Streamlit","icon":"https://api.iconify.design/logos/streamlit.svg","href":"/projects/price-elasticity"},{"name":"Gradio","icon":"https://api.iconify.design/tabler/apps.svg","href":"/projects/sentiment-analyzer"},{"name":"FastAPI","icon":"https://api.iconify.design/logos/fastapi-icon.svg","href":"/projects/sports-chatbot"}]},{"label":"ML, NLP & Generative AI","proof":"6 project examples","href":"/projects/medical-qa","skills":[{"name":"Scikit-learn","icon":"https://api.iconify.design/logos/scikit-learn.svg","href":"/projects/healthcare-modeling"},{"name":"Transformers","icon":"https://api.iconify.design/tabler/transform.svg","href":"/projects/sentiment-analyzer"},{"name":"DistilBERT","icon":"https://api.iconify.design/tabler/language.svg","href":"/projects/sentiment-analyzer"},{"name":"LangChain","icon":"https://api.iconify.design/tabler/link.svg","href":"/projects/sports-chatbot"},{"name":"ChromaDB","icon":"https://api.iconify.design/tabler/database-search.svg","href":"/projects/sports-chatbot"},{"name":"RAG","icon":"https://api.iconify.design/tabler/book-2.svg","href":"/projects/sports-chatbot"},{"name":"Llama 3.2","icon":"https://api.iconify.design/tabler/brain.svg","href":"/projects/sports-chatbot"},{"name":"Mistral 7B","icon":"https://api.iconify.design/tabler/wind.svg","href":"/projects/medical-qa"},{"name":"LoRA / QLoRA","icon":"https://api.iconify.design/tabler/adjustments-cog.svg","href":"/projects/medical-qa"},{"name":"PEFT","icon":"https://api.iconify.design/tabler/feather.svg","href":"/projects/medical-qa"},{"name":"TRL","icon":"https://api.iconify.design/tabler/route.svg","href":"/projects/medical-qa"},{"name":"ROUGE Evaluation","icon":"https://api.iconify.design/tabler/clipboard-check.svg","href":"/projects/llm-evaluation"}]},{"label":"Computer Vision","proof":"3 project examples","href":"/projects/skin-classifier","skills":[{"name":"TensorFlow","icon":"https://api.iconify.design/logos/tensorflow.svg","href":"/projects/skin-classifier"},{"name":"PyTorch","icon":"https://api.iconify.design/logos/pytorch-icon.svg","href":"/projects/skin-lesion-segmentation"},{"name":"EfficientNetB0","icon":"https://api.iconify.design/tabler/stack-2.svg","href":"/projects/skin-classifier"},{"name":"Transfer Learning","icon":"https://api.iconify.design/tabler/arrows-transfer-up.svg","href":"/projects/skin-classifier"},{"name":"Grad-CAM","icon":"https://api.iconify.design/tabler/heatmap.svg","href":"/projects/skin-classifier"},{"name":"Grounding DINO","icon":"https://api.iconify.design/tabler/scan.svg","href":"/projects/object-detector"},{"name":"Zero-Shot Learning","icon":"https://api.iconify.design/tabler/sparkles.svg","href":"/projects/object-detector"},{"name":"U-Net","icon":"https://api.iconify.design/tabler/hierarchy-3.svg","href":"/projects/skin-lesion-segmentation"},{"name":"Image Segmentation","icon":"https://api.iconify.design/tabler/crop.svg","href":"/projects/skin-lesion-segmentation"}]},{"label":"Tools & Platforms","proof":"Professional toolkit","href":"/work","skills":[{"name":"Git","icon":"https://api.iconify.design/logos/git-icon.svg","href":""},{"name":"Jira","icon":"https://api.iconify.design/logos/jira.svg","href":""},{"name":"Dataiku","icon":"https://api.iconify.design/tabler/chart-treemap.svg","href":""},{"name":"Bloomerang CRM","icon":"https://api.iconify.design/tabler/flower.svg","href":""},{"name":"Adobe Analytics","icon":"https://api.iconify.design/logos/adobe-icon.svg","href":""},{"name":"Zapier","icon":"https://api.iconify.design/logos/zapier-icon.svg","href":""},{"name":"Google Workspace Admin","icon":"https://api.iconify.design/logos/google-icon.svg","href":""},{"name":"Microsoft 365 Admin","icon":"https://api.iconify.design/logos/microsoft-icon.svg","href":""},{"name":"Microsoft Office","icon":"https://api.iconify.design/simple-icons/microsoftoffice.svg","href":""}]}];
-const skillMark=(name:string)=>name.split(/[\\s/.-]+/).filter(Boolean).map(part=>part[0]).join("").slice(0,2).toUpperCase();
-export default function Home(){return <main>
-<nav className="nav shell" aria-label="Primary navigation"><Link className="wordmark" href="#top">SB<span>.</span></Link><div className="nav-links"><Link href="#work">Work</Link><Link href="#experience">Experience</Link><Link href="#leadership">Leadership</Link><Link href="#about">About</Link><Link href="/person">Beyond Work</Link><Link className="nav-cta" href="/resume">Résumé <span>↗</span></Link></div></nav>
-<section className="hero shell" id="top"><div className="hero-kicker"><i/> Open to opportunities</div><div className="hero-grid"><div><p className="eyebrow">DATA ANALYST · ML PRACTITIONER · DATA GOVERNANCE · INTELLIGENT SYSTEMS</p><h1>Turning complex data into <em>clear direction.</em></h1></div><div className="hero-aside"><p>I build reliable analysis, decision-ready dashboards, and practical machine learning systems—working across Finance and Development to bring rigorous data and technical insight to mission-driven work.</p><a className="text-link" href="#work">Explore selected work <span>↓</span></a></div></div><div className="data-stage" aria-label="Abstract data visualization"><div className="orb orb-one"/><div className="orb orb-two"/><div className="stage-copy"><span>01 / PROFILE</span><strong>SAMPSON<br/>BOATENG</strong></div><div className="axis axis-x"/><div className="axis axis-y"/>{[18,32,47,61,74,86].map((left,i)=><span key={left} className="data-point" style={{left:`${left}%`,top:`${70-(i%3)*18}%`}}/>)}<div className="stage-note">M.S. Applied Machine Intelligence<br/>B.S. Computer Science</div></div></section>
-<section className="section shell" id="work"><div className="section-head"><div><p className="eyebrow">02 / SELECTED WORK</p><h2>Projects that solve<br/><em>human problems.</em></h2></div><p>Each case study explains why the problem mattered, what I built, what the result means, and where the idea can be used.</p></div><ProjectGrid featured/><div className="section-cta"><Link href="/work">Explore all projects <span>↗</span></Link><p>Ten case studies across analytics, machine learning, generative AI, computer vision, and healthcare.</p></div></section>
-<section className="section shell experience" id="experience"><div className="section-head compact"><div><p className="eyebrow">03 / EXPERIENCE</p><h2>Analysis grounded<br/>in <em>real operations.</em></h2></div></div><div className="timeline"><article><div className="timeline-meta"><b>2025 — PRESENT</b></div><div><h3>Finance, Development & IT Administration Support Analyst</h3><h4>Village Health Works</h4><p>Analyze financial and donor data, investigate discrepancies, prepare forecasts and management reporting, and establish data-quality standards that improve trust in organizational records.</p></div></article><article><div className="timeline-meta"><b>2024 — 2025</b></div><div><h3>Student Ambassador</h3><h4>Northeastern University · The Roux Institute</h4><p>Represented the student experience through campus programs and community events, welcomed prospective and incoming students, provided peer guidance, and helped strengthen engagement and connections across the Roux community.</p></div></article><article><div className="timeline-meta"><b>2021 — 2023</b></div><div><h3>Programmer Intern</h3><h4>Bosch Techno-Engineering Ltd</h4><p>Supported development and QA cycles, diagnosed defects, helped improve system stability by 20%, and built an internal encryption and decryption testing utility.</p></div></article></div></section>
-<section className="impact-preview" id="impact"><div className="shell impact-preview-grid"><div><p className="eyebrow">IMPACT / HOW I WORK</p><h2>Service that becomes<br/><em>stronger systems.</em></h2></div><div className="impact-preview-copy"><p>My work is grounded in service and community building—from creating inclusive spaces to improving how information moves through an organization.</p><div className="impact-preview-points"><span>Community</span><span>Engagement</span><span>Clearer systems</span></div><Link className="impact-link" href="/impact">Read the full story <span>↗</span></Link></div></div></section>
-<section className="leadership-preview shell" id="leadership"><div className="leadership-preview-head"><div><p className="eyebrow">04 / LEADERSHIP & RECOGNITION</p><h2>Leadership built<br/>around <em>belonging.</em></h2></div><p>My leadership experience is rooted in service: creating welcoming communities, strengthening participation, and using initiative to help people connect.</p></div><div className="leadership-highlights"><article><span>100</span><div><p>LAUREL & SCROLL</p><h3>Recognized for achievement, leadership, and student engagement.</h3></div></article><article><span>YALI</span><div><p>LEADERSHIP FELLOW</p><h3>Part of a network of emerging African leaders creating community impact.</h3></div></article><article><span>1ST</span><div><p>CLIMATE HACKATHON</p><h3>First-place team behind the SeeLevelRise app concept.</h3></div></article></div><div className="leadership-preview-foot"><Link className="impact-link dark" href="/leadership">Explore leadership and recognition <span>↗</span></Link><p>Community roles, awards, fellowships, professional badges, and the stories behind them.</p></div></section>
-<section className="section about-system shell" id="about"><div className="about-system-head"><div><p className="eyebrow">05 / ABOUT &amp; CAPABILITIES</p><h2>Where analytical rigor meets <em>practical execution.</em></h2></div><p>I connect the full path from a complicated question to a decision people can trust—combining analysis, modeling, visualization, and dependable systems.</p></div><div className="about-system-grid"><div className="about-identity"><div className="portrait-stage"><div className="profile-photo"><span className="photo-orbit" aria-hidden="true"/><img src="/sam-profile.png" alt="Professional portrait of Sampson Boateng"/><span className="photo-sheen" aria-hidden="true"/></div></div><div className="about-narrative"><p>I work across Finance and Development, bringing data and technical insight to financial and donor analysis, reconciliation, reporting, data quality, systems improvement, and AI-enabled healthcare grant projects.</p><p>I recently completed my master&apos;s in Analytics and Applied Machine Intelligence at Northeastern University. I care about accuracy at every step—from cleaning and validation to modeling, visualization, and an executive-ready narrative.</p></div></div><div className="capability-console"><div className="capability-console-head"><p>TECHNICAL SKILLS AND TOOLS</p><span>Five disciplines · one connected workflow</span></div><div className="capability-grid">{skillGroups.map((s,i)=><article className="capability-card" key={s.label}><div className="capability-title"><span>0{i+1}</span><div className="capability-title-main"><h3>{s.label}</h3><Link className="capability-evidence" href={s.href}>{s.proof} <b>↗</b></Link></div></div><div className="capability-tags">{s.skills.map(item=>item.href?<Link href={item.href} key={item.name} title={`View project using ${item.name}`}><img className="skill-mark" src={item.icon} alt="" aria-hidden="true" loading="lazy"/>{item.name}<b>↗</b></Link>:<span key={item.name}><img className="skill-mark" src={item.icon} alt="" aria-hidden="true" loading="lazy"/>{item.name}</span>)}</div></article>)}</div><div className="workflow-strip" aria-label="Working process"><span>Frame</span><i>→</i><span>Analyze</span><i>→</i><span>Model</span><i>→</i><span>Communicate</span></div></div></div></section>
-<section className="section shell exploration" id="exploring"><div className="section-head"><div><p className="eyebrow">06 / CURRENTLY EXPLORING</p><h2>Questions I&apos;m<br/><em>building toward.</em></h2></div><p>Applied research directions where better data systems can improve trust, detection, and access.</p></div><div className="exploration-grid"><article><span>01</span><h3>LLM Evaluation &amp; NLP</h3><p>Designing stronger evaluation systems for factuality, safety, reasoning quality, and real-world usefulness beyond a single benchmark score.</p></article><article><span>02</span><h3>Fraud Detection</h3><p>Exploring anomaly detection, behavioral signals, and interpretable machine learning for identifying suspicious financial activity responsibly.</p></article><article><span>03</span><h3>AI-Enabled Patient Navigation</h3><p>Investigating secure, human-centered platforms that help authorized healthcare teams find and navigate relevant patient-record information more efficiently.</p></article></div><div className="research-areas"><p className="eyebrow">RESEARCH AREAS</p><div><span>Healthcare</span><span>Artificial Intelligence</span><span>Applied Machine Learning</span><span>Environment</span><span>Water</span><span>Climate Resiliency</span><span>Agriculture</span></div></div></section>
-<section className="availability"><div className="shell availability-grid"><div><p className="eyebrow">OPEN TO OPPORTUNITIES</p><h2>Ready to contribute<br/>where <em>data matters.</em></h2></div><div><p>I&apos;m interested in roles that combine rigorous analysis, thoughtful modeling, and clear communication.</p><div className="role-pills"><span>Data Analysis</span><span>Machine Learning</span><span>Healthcare Analysis</span><span>Fraud Detection Analysis</span><span>Environment and Water Analysis</span></div><a href="mailto:samboateng190@gmail.com">Start a conversation ↗</a></div></div></section>
-<section className="education shell"><p className="eyebrow">07 / EDUCATION</p><div className="education-grid"><article><span>2025</span><h3>Master of Science</h3><p>Applied Machine Intelligence</p><b>Northeastern University<br/>The Roux Institute</b></article><article><span>2023</span><h3>Bachelor of Science</h3><p>Computer Science</p><b>Saratov State University</b></article><article><span>2023</span><h3>Diploma</h3><p>Data Analysis and Machine Learning</p><b>Innopolis University<br/>Russia</b></article></div></section>
-<footer className="footer"><div className="shell"><p className="eyebrow">LET&apos;S WORK TOGETHER</p><h2>Have a data problem<br/>worth <em>solving?</em></h2><a className="email" href="mailto:samboateng190@gmail.com">samboateng190@gmail.com ↗</a><div className="footer-row"><p>© 2026 Sampson Boateng</p><div><a href="https://github.com/Boatengs" target="_blank" rel="noreferrer">GitHub</a><a href="https://linkedin.com/in/sam-boateng" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://huggingface.co/samurvivor-07" target="_blank" rel="noreferrer">Hugging Face</a><a href="tel:+12073325395">(207) 332-5395</a></div></div></div></footer>
-</main>}
+const skillGroups = [
+  {
+    label: "Data & Analysis",
+    proof: "4 project examples",
+    href: "/projects/price-elasticity",
+    skills: [
+      {
+        name: "SQL",
+        icon: "https://api.iconify.design/tabler/database.svg",
+        href: "",
+      },
+      {
+        name: "Excel",
+        icon: "https://api.iconify.design/logos/microsoft-excel.svg",
+        href: "",
+      },
+      {
+        name: "Python",
+        icon: "https://api.iconify.design/logos/python.svg",
+        href: "/projects/price-elasticity",
+      },
+      {
+        name: "Pandas",
+        icon: "https://api.iconify.design/logos/pandas-icon.svg",
+        href: "/projects/water-quality",
+      },
+      {
+        name: "NumPy",
+        icon: "https://api.iconify.design/logos/numpy.svg",
+        href: "",
+      },
+      {
+        name: "SciPy",
+        icon: "https://api.iconify.design/logos/scipy.svg",
+        href: "/projects/water-quality",
+      },
+      {
+        name: "Spark",
+        icon: "https://api.iconify.design/logos/apache-spark.svg",
+        href: "",
+      },
+      {
+        name: "Hadoop",
+        icon: "https://api.iconify.design/logos/hadoop.svg",
+        href: "",
+      },
+      {
+        name: "Hive",
+        icon: "https://api.iconify.design/simple-icons/apachehive.svg?color=%23FDEE21",
+        href: "",
+      },
+    ],
+  },
+  {
+    label: "Statistical & Modeling",
+    proof: "3 project examples",
+    href: "/projects/price-elasticity",
+    skills: [
+      {
+        name: "Regression",
+        icon: "https://api.iconify.design/tabler/chart-line.svg",
+        href: "/projects/price-elasticity",
+      },
+      {
+        name: "Ridge",
+        icon: "https://api.iconify.design/tabler/wave-sine.svg",
+        href: "/projects/price-elasticity",
+      },
+      {
+        name: "Logistic Regression",
+        icon: "https://api.iconify.design/tabler/binary-tree.svg",
+        href: "/projects/healthcare-modeling",
+      },
+      {
+        name: "Random Forest",
+        icon: "https://api.iconify.design/tabler/trees.svg",
+        href: "/projects/price-elasticity",
+      },
+      {
+        name: "XGBoost",
+        icon: "https://api.iconify.design/tabler/bolt.svg",
+        href: "/projects/price-elasticity",
+      },
+      {
+        name: "SVM",
+        icon: "https://api.iconify.design/tabler/separator.svg",
+        href: "/projects/healthcare-modeling",
+      },
+      {
+        name: "PCA",
+        icon: "https://api.iconify.design/tabler/dimensions.svg",
+        href: "/projects/healthcare-modeling",
+      },
+      {
+        name: "K-Means",
+        icon: "https://api.iconify.design/tabler/affiliate.svg",
+        href: "/projects/water-quality",
+      },
+      {
+        name: "Isolation Forest",
+        icon: "https://api.iconify.design/tabler/alert-triangle.svg",
+        href: "/projects/water-quality",
+      },
+      {
+        name: "Forecasting",
+        icon: "https://api.iconify.design/tabler/trending-up.svg",
+        href: "/projects/price-elasticity",
+      },
+      {
+        name: "Hypothesis Testing",
+        icon: "https://api.iconify.design/tabler/test-pipe.svg",
+        href: "",
+      },
+    ],
+  },
+  {
+    label: "Visualization & Apps",
+    proof: "6 project examples",
+    href: "/projects/sentiment-analyzer",
+    skills: [
+      {
+        name: "Tableau",
+        icon: "https://api.iconify.design/logos/tableau-icon.svg",
+        href: "",
+      },
+      {
+        name: "Power BI",
+        icon: "https://api.iconify.design/logos/microsoft-power-bi.svg",
+        href: "",
+      },
+      {
+        name: "Matplotlib",
+        icon: "https://api.iconify.design/logos/matplotlib-icon.svg",
+        href: "",
+      },
+      {
+        name: "Seaborn",
+        icon: "https://api.iconify.design/tabler/chart-dots-3.svg",
+        href: "",
+      },
+      {
+        name: "Plotly",
+        icon: "https://api.iconify.design/logos/plotly-icon.svg",
+        href: "/projects/price-elasticity",
+      },
+      {
+        name: "Streamlit",
+        icon: "https://api.iconify.design/logos/streamlit.svg",
+        href: "/projects/price-elasticity",
+      },
+      {
+        name: "Gradio",
+        icon: "https://api.iconify.design/tabler/apps.svg",
+        href: "/projects/sentiment-analyzer",
+      },
+      {
+        name: "FastAPI",
+        icon: "https://api.iconify.design/logos/fastapi-icon.svg",
+        href: "/projects/sports-chatbot",
+      },
+    ],
+  },
+  {
+    label: "ML, NLP & Generative AI",
+    proof: "6 project examples",
+    href: "/projects/medical-qa",
+    skills: [
+      {
+        name: "Scikit-learn",
+        icon: "https://api.iconify.design/logos/scikit-learn.svg",
+        href: "/projects/healthcare-modeling",
+      },
+      {
+        name: "Transformers",
+        icon: "https://api.iconify.design/tabler/transform.svg",
+        href: "/projects/sentiment-analyzer",
+      },
+      {
+        name: "DistilBERT",
+        icon: "https://api.iconify.design/tabler/language.svg",
+        href: "/projects/sentiment-analyzer",
+      },
+      {
+        name: "LangChain",
+        icon: "https://api.iconify.design/tabler/link.svg",
+        href: "/projects/sports-chatbot",
+      },
+      {
+        name: "ChromaDB",
+        icon: "https://api.iconify.design/tabler/database-search.svg",
+        href: "/projects/sports-chatbot",
+      },
+      {
+        name: "RAG",
+        icon: "https://api.iconify.design/tabler/book-2.svg",
+        href: "/projects/sports-chatbot",
+      },
+      {
+        name: "Llama 3.2",
+        icon: "https://api.iconify.design/tabler/brain.svg",
+        href: "/projects/sports-chatbot",
+      },
+      {
+        name: "Mistral 7B",
+        icon: "https://api.iconify.design/tabler/wind.svg",
+        href: "/projects/medical-qa",
+      },
+      {
+        name: "LoRA / QLoRA",
+        icon: "https://api.iconify.design/tabler/adjustments-cog.svg",
+        href: "/projects/medical-qa",
+      },
+      {
+        name: "PEFT",
+        icon: "https://api.iconify.design/tabler/feather.svg",
+        href: "/projects/medical-qa",
+      },
+      {
+        name: "TRL",
+        icon: "https://api.iconify.design/tabler/route.svg",
+        href: "/projects/medical-qa",
+      },
+      {
+        name: "ROUGE Evaluation",
+        icon: "https://api.iconify.design/tabler/clipboard-check.svg",
+        href: "/projects/llm-evaluation",
+      },
+    ],
+  },
+  {
+    label: "Computer Vision",
+    proof: "3 project examples",
+    href: "/projects/skin-classifier",
+    skills: [
+      {
+        name: "TensorFlow",
+        icon: "https://api.iconify.design/logos/tensorflow.svg",
+        href: "/projects/skin-classifier",
+      },
+      {
+        name: "PyTorch",
+        icon: "https://api.iconify.design/logos/pytorch-icon.svg",
+        href: "/projects/skin-lesion-segmentation",
+      },
+      {
+        name: "EfficientNetB0",
+        icon: "https://api.iconify.design/tabler/stack-2.svg",
+        href: "/projects/skin-classifier",
+      },
+      {
+        name: "Transfer Learning",
+        icon: "https://api.iconify.design/tabler/arrows-transfer-up.svg",
+        href: "/projects/skin-classifier",
+      },
+      {
+        name: "Grad-CAM",
+        icon: "https://api.iconify.design/tabler/heatmap.svg",
+        href: "/projects/skin-classifier",
+      },
+      {
+        name: "Grounding DINO",
+        icon: "https://api.iconify.design/tabler/scan.svg",
+        href: "/projects/object-detector",
+      },
+      {
+        name: "Zero-Shot Learning",
+        icon: "https://api.iconify.design/tabler/sparkles.svg",
+        href: "/projects/object-detector",
+      },
+      {
+        name: "U-Net",
+        icon: "https://api.iconify.design/tabler/hierarchy-3.svg",
+        href: "/projects/skin-lesion-segmentation",
+      },
+      {
+        name: "Image Segmentation",
+        icon: "https://api.iconify.design/tabler/crop.svg",
+        href: "/projects/skin-lesion-segmentation",
+      },
+    ],
+  },
+  {
+    label: "Tools & Platforms",
+    proof: "Professional toolkit",
+    href: "/work",
+    skills: [
+      {
+        name: "Git",
+        icon: "https://api.iconify.design/logos/git-icon.svg",
+        href: "",
+      },
+      {
+        name: "Jira",
+        icon: "https://api.iconify.design/logos/jira.svg",
+        href: "",
+      },
+      {
+        name: "Dataiku",
+        icon: "https://api.iconify.design/tabler/chart-treemap.svg",
+        href: "",
+      },
+      {
+        name: "Bloomerang CRM",
+        icon: "https://api.iconify.design/tabler/flower.svg",
+        href: "",
+      },
+      {
+        name: "Adobe Analytics",
+        icon: "https://api.iconify.design/logos/adobe-icon.svg",
+        href: "",
+      },
+      {
+        name: "Zapier",
+        icon: "https://api.iconify.design/logos/zapier-icon.svg",
+        href: "",
+      },
+      {
+        name: "Google Workspace Admin",
+        icon: "https://api.iconify.design/logos/google-icon.svg",
+        href: "",
+      },
+      {
+        name: "Microsoft 365 Admin",
+        icon: "https://api.iconify.design/logos/microsoft-icon.svg",
+        href: "",
+      },
+      {
+        name: "Microsoft Office",
+        icon: "https://api.iconify.design/simple-icons/microsoftoffice.svg",
+        href: "",
+      },
+    ],
+  },
+];
+const skillMark = (name: string) =>
+  name
+    .split(/[\\s/.-]+/)
+    .filter(Boolean)
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+export default function Home() {
+  return (
+    <main>
+      <nav className="nav shell" aria-label="Primary navigation">
+        <Link className="wordmark" href="#top">
+          SB<span>.</span>
+        </Link>
+        <div className="nav-links">
+          <Link href="#work">Work</Link>
+          <Link href="#experience">Experience</Link>
+          <Link href="#leadership">Leadership</Link>
+          <Link href="#about">About</Link>
+          <Link href="/person">Beyond Work</Link>
+          <Link className="nav-cta" href="/resume">
+            Résumé <span>↗</span>
+          </Link>
+        </div>
+      </nav>
+      <section className="hero shell" id="top">
+        <div className="hero-kicker">
+          <i /> Open to opportunities
+        </div>
+        <div className="hero-grid">
+          <div>
+            <p className="eyebrow">
+              DATA ANALYST · ML PRACTITIONER · DATA GOVERNANCE · INTELLIGENT
+              SYSTEMS
+            </p>
+            <h1>
+              Turning complex data into <em>clear direction.</em>
+            </h1>
+          </div>
+          <div className="hero-aside">
+            <p>
+              I build reliable analysis, decision-ready dashboards, and
+              practical machine learning systems—working across Finance and
+              Development to bring rigorous data and technical insight to
+              mission-driven work.
+            </p>
+            <a className="text-link" href="#work">
+              Explore selected work <span>↓</span>
+            </a>
+          </div>
+        </div>
+        <div className="data-stage" aria-label="Abstract data visualization">
+          <div className="orb orb-one" />
+          <div className="orb orb-two" />
+          <div className="stage-copy">
+            <span>01 / PROFILE</span>
+            <strong>
+              SAMPSON
+              <br />
+              BOATENG
+            </strong>
+          </div>
+          <div className="axis axis-x" />
+          <div className="axis axis-y" />
+          {[18, 32, 47, 61, 74, 86].map((left, i) => (
+            <span
+              key={left}
+              className="data-point"
+              style={{ left: `${left}%`, top: `${70 - (i % 3) * 18}%` }}
+            />
+          ))}
+          <div className="stage-note">
+            M.S. Applied Machine Intelligence
+            <br />
+            B.S. Computer Science
+          </div>
+        </div>
+      </section>
+      <section className="section shell" id="work">
+        <div className="section-head">
+          <div>
+            <p className="eyebrow">02 / SELECTED WORK</p>
+            <h2>
+              Projects that solve
+              <br />
+              <em>human problems.</em>
+            </h2>
+          </div>
+          <p>
+            Each case study explains why the problem mattered, what I built,
+            what the result means, and where the idea can be used.
+          </p>
+        </div>
+        <ProjectGrid featured />
+        <div className="section-cta">
+          <Link href="/work">
+            Explore all projects <span>↗</span>
+          </Link>
+          <p>
+            Ten case studies across analytics, machine learning, generative AI,
+            computer vision, and healthcare.
+          </p>
+        </div>
+      </section>
+      <section className="section shell experience" id="experience">
+        <div className="section-head compact">
+          <div>
+            <p className="eyebrow">03 / EXPERIENCE</p>
+            <h2>
+              Analysis grounded
+              <br />
+              in <em>real operations.</em>
+            </h2>
+          </div>
+        </div>
+        <div className="timeline">
+          <article>
+            <div className="timeline-meta">
+              <b>2025 — PRESENT</b>
+            </div>
+            <div>
+              <h3>Finance, Development & IT Administration Support Analyst</h3>
+              <h4>Village Health Works</h4>
+              <p>
+                Analyze financial and donor data, investigate discrepancies,
+                prepare forecasts and management reporting, and establish
+                data-quality standards that improve trust in organizational
+                records.
+              </p>
+            </div>
+          </article>
+          <article>
+            <div className="timeline-meta">
+              <b>2024 — 2025</b>
+            </div>
+            <div>
+              <h3>Student Ambassador</h3>
+              <h4>Northeastern University · The Roux Institute</h4>
+              <p>
+                Represented the student experience through campus programs and
+                community events, welcomed prospective and incoming students,
+                provided peer guidance, and helped strengthen engagement and
+                connections across the Roux community.
+              </p>
+            </div>
+          </article>
+          <article>
+            <div className="timeline-meta">
+              <b>2021 — 2023</b>
+            </div>
+            <div>
+              <h3>Programmer Intern</h3>
+              <h4>Bosch Techno-Engineering Ltd</h4>
+              <p>
+                Supported development and QA cycles, diagnosed defects, helped
+                improve system stability by 20%, and built an internal
+                encryption and decryption testing utility.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section className="impact-preview" id="impact">
+        <div className="shell impact-preview-grid">
+          <div>
+            <p className="eyebrow">IMPACT / HOW I WORK</p>
+            <h2>
+              Service that becomes
+              <br />
+              <em>stronger systems.</em>
+            </h2>
+          </div>
+          <div className="impact-preview-copy">
+            <p>
+              My work is grounded in service and community building—from
+              creating inclusive spaces to improving how information moves
+              through an organization.
+            </p>
+            <div className="impact-preview-points">
+              <span>Community</span>
+              <span>Engagement</span>
+              <span>Clearer systems</span>
+            </div>
+            <Link className="impact-link" href="/impact">
+              Read the full story <span>↗</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+      <section className="leadership-preview shell" id="leadership">
+        <div className="leadership-preview-head">
+          <div>
+            <p className="eyebrow">04 / LEADERSHIP & RECOGNITION</p>
+            <h2>
+              Leadership built
+              <br />
+              around <em>belonging.</em>
+            </h2>
+          </div>
+          <p>
+            My leadership experience is rooted in service: creating welcoming
+            communities, strengthening participation, and using initiative to
+            help people connect.
+          </p>
+        </div>
+        <div className="leadership-highlights">
+          <article>
+            <span>100</span>
+            <div>
+              <p>LAUREL & SCROLL</p>
+              <h3>
+                Recognized for achievement, leadership, and student engagement.
+              </h3>
+            </div>
+          </article>
+          <article>
+            <span>YALI</span>
+            <div>
+              <p>LEADERSHIP FELLOW</p>
+              <h3>
+                Part of a network of emerging African leaders creating community
+                impact.
+              </h3>
+            </div>
+          </article>
+          <article>
+            <span>1ST</span>
+            <div>
+              <p>CLIMATE HACKATHON</p>
+              <h3>First-place team behind the SeeLevelRise app concept.</h3>
+            </div>
+          </article>
+        </div>
+        <div className="leadership-preview-foot">
+          <Link className="impact-link dark" href="/leadership">
+            Explore leadership and recognition <span>↗</span>
+          </Link>
+          <p>
+            Community roles, awards, fellowships, professional badges, and the
+            stories behind them.
+          </p>
+        </div>
+      </section>
+      <section className="section about-system shell" id="about">
+        <div className="about-system-head">
+          <div>
+            <p className="eyebrow">05 / ABOUT &amp; CAPABILITIES</p>
+            <h2>
+              Where analytical rigor meets <em>practical execution.</em>
+            </h2>
+          </div>
+          <p>
+            I connect the full path from a complicated question to a decision
+            people can trust—combining analysis, modeling, visualization, and
+            dependable systems.
+          </p>
+        </div>
+        <div className="about-system-grid">
+          <div className="about-identity">
+            <div className="portrait-stage">
+              <div className="profile-photo">
+                <span className="photo-orbit" aria-hidden="true" />
+              <img
+                src="/sam-profile.webp"
+                width="900"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                alt="Professional portrait of Sampson Boateng"
+              />
+                <span className="photo-sheen" aria-hidden="true" />
+              </div>
+            </div>
+            <div className="about-narrative">
+              <p>
+                I work across Finance and Development, bringing data and
+                technical insight to financial and donor analysis,
+                reconciliation, reporting, data quality, systems improvement,
+                and AI-enabled healthcare grant projects.
+              </p>
+              <p>
+                I recently completed my master&apos;s in Analytics and Applied
+                Machine Intelligence at Northeastern University. I care about
+                accuracy at every step—from cleaning and validation to modeling,
+                visualization, and an executive-ready narrative.
+              </p>
+            </div>
+          </div>
+          <div className="capability-console">
+            <div className="capability-console-head">
+              <p>TECHNICAL SKILLS AND TOOLS</p>
+              <span>Five disciplines · one connected workflow</span>
+            </div>
+            <div className="capability-grid">
+              {skillGroups.map((s, i) => (
+                <article className="capability-card" key={s.label}>
+                  <div className="capability-title">
+                    <span>0{i + 1}</span>
+                    <div className="capability-title-main">
+                      <h3>{s.label}</h3>
+                      <Link className="capability-evidence" href={s.href}>
+                        {s.proof} <b>↗</b>
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="capability-tags">
+                    {s.skills.map((item) =>
+                      item.href ? (
+                        <Link
+                          href={item.href}
+                          key={item.name}
+                          title={`View project using ${item.name}`}
+                        >
+                          <img
+                            className="skill-mark"
+                            src={item.icon}
+                            alt=""
+                            aria-hidden="true"
+                            loading="lazy"
+                          />
+                          {item.name}
+                          <b>↗</b>
+                        </Link>
+                      ) : (
+                        <span key={item.name}>
+                          <img
+                            className="skill-mark"
+                            src={item.icon}
+                            alt=""
+                            aria-hidden="true"
+                            loading="lazy"
+                          />
+                          {item.name}
+                        </span>
+                      ),
+                    )}
+                  </div>
+                </article>
+              ))}
+            </div>
+            <div className="workflow-strip" aria-label="Working process">
+              <span>Frame</span>
+              <i>→</i>
+              <span>Analyze</span>
+              <i>→</i>
+              <span>Model</span>
+              <i>→</i>
+              <span>Communicate</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="section shell exploration" id="exploring">
+        <div className="section-head">
+          <div>
+            <p className="eyebrow">06 / CURRENTLY EXPLORING</p>
+            <h2>
+              Questions I&apos;m
+              <br />
+              <em>building toward.</em>
+            </h2>
+          </div>
+          <p>
+            Applied research directions where better data systems can improve
+            trust, detection, and access.
+          </p>
+        </div>
+        <div className="exploration-grid">
+          <article>
+            <span>01</span>
+            <h3>LLM Evaluation &amp; NLP</h3>
+            <p>
+              Designing stronger evaluation systems for factuality, safety,
+              reasoning quality, and real-world usefulness beyond a single
+              benchmark score.
+            </p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Fraud Detection</h3>
+            <p>
+              Exploring anomaly detection, behavioral signals, and interpretable
+              machine learning for identifying suspicious financial activity
+              responsibly.
+            </p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>AI-Enabled Patient Navigation</h3>
+            <p>
+              Investigating secure, human-centered platforms that help
+              authorized healthcare teams find and navigate relevant
+              patient-record information more efficiently.
+            </p>
+          </article>
+        </div>
+        <div className="research-areas">
+          <p className="eyebrow">RESEARCH AREAS</p>
+          <div>
+            <span>Healthcare</span>
+            <span>Artificial Intelligence</span>
+            <span>Applied Machine Learning</span>
+            <span>Environment</span>
+            <span>Water</span>
+            <span>Climate Resiliency</span>
+            <span>Agriculture</span>
+          </div>
+        </div>
+      </section>
+      <section className="availability">
+        <div className="shell availability-grid">
+          <div>
+            <p className="eyebrow">OPEN TO OPPORTUNITIES</p>
+            <h2>
+              Ready to contribute
+              <br />
+              where <em>data matters.</em>
+            </h2>
+          </div>
+          <div>
+            <p>
+              I&apos;m interested in roles that combine rigorous analysis,
+              thoughtful modeling, and clear communication.
+            </p>
+            <div className="role-pills">
+              <span>Data Analysis</span>
+              <span>Machine Learning</span>
+              <span>Healthcare Analysis</span>
+              <span>Fraud Detection Analysis</span>
+              <span>Environment and Water Analysis</span>
+            </div>
+            <a href="mailto:samboateng190@gmail.com">Start a conversation ↗</a>
+          </div>
+        </div>
+      </section>
+      <section className="education shell">
+        <p className="eyebrow">07 / EDUCATION</p>
+        <div className="education-grid">
+          <article>
+            <span>2025</span>
+            <h3>Master of Science</h3>
+            <p>Applied Machine Intelligence</p>
+            <b>
+              Northeastern University
+              <br />
+              The Roux Institute
+            </b>
+          </article>
+          <article>
+            <span>2023</span>
+            <h3>Bachelor of Science</h3>
+            <p>Computer Science</p>
+            <b>Saratov State University</b>
+          </article>
+          <article>
+            <span>2023</span>
+            <h3>Diploma</h3>
+            <p>Data Analysis and Machine Learning</p>
+            <b>
+              Innopolis University
+              <br />
+              Russia
+            </b>
+          </article>
+        </div>
+      </section>
+      <footer className="footer">
+        <div className="shell">
+          <p className="eyebrow">LET&apos;S WORK TOGETHER</p>
+          <h2>
+            Have a data problem
+            <br />
+            worth <em>solving?</em>
+          </h2>
+          <a className="email" href="mailto:samboateng190@gmail.com">
+            samboateng190@gmail.com ↗
+          </a>
+          <div className="footer-row">
+            <p>© 2026 Sampson Boateng</p>
+            <div>
+              <a
+                href="https://github.com/Boatengs"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://linkedin.com/in/sam-boateng"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://huggingface.co/samurvivor-07"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Hugging Face
+              </a>
+              <a href="tel:+12073325395">(207) 332-5395</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  );
+}
