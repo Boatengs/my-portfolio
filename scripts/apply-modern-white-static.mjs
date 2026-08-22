@@ -297,6 +297,20 @@ for (const root of roots) {
       }
 
       html = reorderHomepage(html);
+
+      html = html.replace(
+        /(<section class="section shell" id="work">)([\s\S]*?)(<\/section>)/,
+        (match, opening, contents, closing) => {
+          const featured = new Set(["price-elasticity", "sentiment-analyzer"]);
+          const updated = contents.replace(
+            /<a href="\/my-portfolio\/projects\/([^"]+)" class="project-card ([^"]+)"[^>]*>[\s\S]*?<\/a>/g,
+            (card, slug) => featured.has(slug)
+              ? card.replace(/(class="project-card [^"]*)\s+wide(?=")/, "$1")
+              : "",
+          );
+          return `${opening}${updated}${closing}`;
+        },
+      );
     }
 
     html = html.replace(/<div class="project-info">([\s\S]*?)<\/div>/g, (match, contents) => {

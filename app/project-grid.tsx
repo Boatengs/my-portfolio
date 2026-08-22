@@ -134,7 +134,11 @@ export function ProjectGrid({ featured = false }: { featured?: boolean }) {
     "Healthcare",
     "Deployed Apps",
   ];
-  const source = featured ? projects.slice(0, 4) : projects;
+  const source = featured
+    ? ["price-elasticity", "sentiment-analyzer"]
+        .map((slug) => projects.find((project) => project.slug === slug))
+        .filter((project): project is (typeof projects)[number] => Boolean(project))
+    : projects;
   const [active, setActive] = useState("All");
   const visible =
     active === "All"
@@ -206,7 +210,7 @@ export function ProjectGrid({ featured = false }: { featured?: boolean }) {
             href={`/projects/${p.slug}`}
             key={p.slug}
             aria-label={`View case study: ${p.title}`}
-            className={`project-card card-${projects.indexOf(p) + 1} ${i === 0 ? "wide" : ""}`}
+            className={`project-card card-${projects.indexOf(p) + 1} ${!featured && i === 0 ? "wide" : ""}`}
             onMouseMove={tilt}
             onMouseLeave={reset}
           >
