@@ -3,7 +3,7 @@ import path from "node:path";
 
 const roots = ["docs", "site-static"];
 const assetName = "modern-white-20260822.css";
-const assetVersion = "6";
+const assetVersion = "7";
 const assetHref = `/my-portfolio/assets/${assetName}?v=${assetVersion}`;
 const stylesheet = await fs.readFile("app/modern-white.css", "utf8");
 const evidenceByTitle = new Map([
@@ -134,6 +134,88 @@ function plainVisibleText(html) {
     .join("");
 }
 
+function takeDiv(markup, marker) {
+  const start = markup.indexOf(marker);
+  if (start < 0) throw new Error(`Missing homepage element: ${marker}`);
+
+  const tokens = /<\/?div\b[^>]*>/g;
+  tokens.lastIndex = start;
+  let depth = 0;
+
+  for (let match; (match = tokens.exec(markup));) {
+    depth += match[0].startsWith("</") ? -1 : 1;
+    if (depth === 0) {
+      const end = tokens.lastIndex;
+      return {
+        element: markup.slice(start, end),
+        remaining: markup.slice(0, start) + markup.slice(end),
+      };
+    }
+  }
+
+  throw new Error(`Unclosed homepage element: ${marker}`);
+}
+
+function reorderHomepage(html) {
+  if (html.includes('id="skills"') && html.includes('id="beyond-work"')) return html;
+
+  const start = html.indexOf('<section class="hero shell" id="top">');
+  const end = html.indexOf('<footer class="footer">', start);
+  if (start < 0 || end < 0) throw new Error("Unable to locate homepage sections");
+
+  const body = html.slice(start, end);
+  const tokens = /<\/?section\b[^>]*>/g;
+  const sections = new Map();
+  let depth = 0;
+  let sectionStart = 0;
+  let opening = "";
+
+  for (let match; (match = tokens.exec(body));) {
+    if (match[0].startsWith("</")) {
+      depth -= 1;
+      if (depth === 0) {
+        const id = opening.match(/\bid="([^"]+)"/)?.[1];
+        const name = id || (opening.includes('class="availability"') ? "availability" : "education");
+        sections.set(name, body.slice(sectionStart, tokens.lastIndex));
+      }
+    } else {
+      if (depth === 0) {
+        sectionStart = match.index;
+        opening = match[0];
+      }
+      depth += 1;
+    }
+  }
+
+  for (const name of ["top", "about", "experience", "work", "leadership", "impact", "exploring", "availability", "education"]) {
+    if (!sections.has(name)) throw new Error(`Missing homepage section: ${name}`);
+  }
+
+  const extracted = takeDiv(sections.get("about"), '<div class="capability-console">');
+  const about = extracted.remaining.replace("05 / ABOUT &amp; CAPABILITIES", "02 / ABOUT");
+  const work = sections.get("work").replace("02 / SELECTED WORK", "04 / PROJECTS");
+  const leadership = sections.get("leadership").replace("04 / LEADERSHIP &amp; RECOGNITION", "06 / LEADERSHIP &amp; RECOGNITION");
+  const exploring = sections.get("exploring").replace("06 / CURRENTLY EXPLORING", "08 / CURRENTLY EXPLORING");
+  const education = sections.get("education").replace("07 / EDUCATION", "09 / EDUCATION");
+  const skills = `<section class="section shell skills-preview" id="skills"><div class="section-head"><div><p class="eyebrow">05 / SKILLS</p><h2>Technical capabilities<br/><em>with practical impact.</em></h2></div><p>Analytical methods, intelligent systems, visualization tools, and platforms connected to documented project outcomes.</p></div>${extracted.element}</section>`;
+  const beyond = '<section class="section shell beyond-preview" id="beyond-work"><div class="section-head"><div><p class="eyebrow">07 / BEYOND WORK</p><h2>The person behind<br/><em>the work.</em></h2></div><p>Volunteering, cooking, travel, fitness, music, reading, and sports reflect the curiosity, discipline, and community spirit Sam brings to every part of life.</p></div><div class="beyond-preview-inner"><div class="beyond-preview-interests"><span>Volunteering</span><span>Cooking</span><span>Travel</span><span>Fitness</span><span>Music</span><span>Reading</span><span>Sports</span></div><a class="impact-link dark" href="/my-portfolio/person">Meet the person behind the work <span>↗</span></a></div></section>';
+  const reordered = [
+    sections.get("top"),
+    about,
+    sections.get("experience"),
+    work,
+    skills,
+    leadership,
+    beyond,
+    sections.get("impact"),
+    exploring,
+    sections.get("availability"),
+    education,
+  ].join("");
+
+  return html.slice(0, start) + reordered + html.slice(end);
+}
+
 async function walk(directory) {
   const entries = await fs.readdir(directory, { withFileTypes: true });
   const files = [];
@@ -163,7 +245,7 @@ for (const root of roots) {
     const newLink = `<link rel="stylesheet" href="${assetHref}"/>`;
 
     const isHome = path.dirname(file) === root;
-    const nav = `<nav class="nav shell" aria-label="Primary navigation"><a class="wordmark" href="${isHome ? "#top" : "/my-portfolio/"}">SB<span>.</span></a><div class="nav-links"><a href="${isHome ? "#about" : "/my-portfolio/#about"}">About</a><a href="${isHome ? "#experience" : "/my-portfolio/#experience"}">Experience</a><a href="${isHome ? "#work" : "/my-portfolio/work"}">Projects</a><a href="/my-portfolio/skills">Skills</a><a href="${isHome ? "#leadership" : "/my-portfolio/leadership"}">Leadership</a><a href="/my-portfolio/person">Beyond Work</a><a class="nav-cta" href="/my-portfolio/resume">Résumé <span>↗</span></a></div></nav>`;
+    const nav = `<nav class="nav shell" aria-label="Primary navigation"><a class="wordmark" href="${isHome ? "#top" : "/my-portfolio/"}">SB<span>.</span></a><div class="nav-links"><a href="${isHome ? "#about" : "/my-portfolio/#about"}">About</a><a href="${isHome ? "#experience" : "/my-portfolio/#experience"}">Experience</a><a href="${isHome ? "#work" : "/my-portfolio/work"}">Projects</a><a href="${isHome ? "#skills" : "/my-portfolio/skills"}">Skills</a><a href="${isHome ? "#leadership" : "/my-portfolio/leadership"}">Leadership</a><a href="/my-portfolio/person">Beyond Work</a><a class="nav-cta" href="/my-portfolio/resume">Résumé <span>↗</span></a></div></nav>`;
     html = html.replace(/<nav\b[^>]*>[\s\S]*?<\/nav>/, nav);
     html = html.replace(new RegExp(`${assetName.replaceAll(".", "\\.")}\\?v=\\d+`, "g"), `${assetName}?v=${assetVersion}`);
 
@@ -213,6 +295,8 @@ for (const root of roots) {
           `${tutor}</div></section><section class="impact-preview" id="impact">`,
         );
       }
+
+      html = reorderHomepage(html);
     }
 
     html = html.replace(/<div class="project-info">([\s\S]*?)<\/div>/g, (match, contents) => {

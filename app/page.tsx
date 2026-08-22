@@ -410,30 +410,53 @@ export default function Home() {
           </div>
         </section>
       </section>
-      <section className="section shell" id="work">
-        <div className="section-head">
+      <section className="section about-system shell" id="about">
+        <div className="about-system-head">
           <div>
-            <p className="eyebrow">02 / SELECTED WORK</p>
+            <p className="eyebrow">02 / ABOUT</p>
             <h2>
-              Applied solutions to
-              <br />
-              <em>real-world challenges.</em>
+              Where analytical rigor meets <em>practical execution.</em>
             </h2>
           </div>
           <p>
-            Each case study outlines why the challenge matters, the analytical
-            approach, measurable outcomes, and broader real-world applications.
+            Sam connects complex organizational challenges with informed,
+            defensible decisions through analytical rigor, statistical
+            modeling, effective visualization, and reliable systems.
           </p>
         </div>
-        <ProjectGrid featured />
-        <div className="section-cta">
-          <Link href="/work">
-            Explore all projects <span>↗</span>
-          </Link>
-          <p>
-            Ten case studies across analytics, machine learning, generative AI,
-            computer vision, and healthcare.
-          </p>
+        <div className="about-system-grid">
+          <div className="about-identity">
+            <div className="portrait-stage">
+              <div className="profile-photo">
+                <span className="photo-orbit" aria-hidden="true" />
+                <img
+                  src="/sam-profile.webp"
+                  width="900"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Professional portrait of Sampson Boateng"
+                />
+                <span className="photo-sheen" aria-hidden="true" />
+              </div>
+            </div>
+            <div className="about-narrative">
+              <p>
+                Sam currently works across finance and development, applying
+                analytical and technical expertise to financial and donor data,
+                reconciliation, management reporting, data quality,
+                organizational systems, and AI enabled healthcare grant
+                initiatives.
+              </p>
+              <p>
+                Sam recently completed his master&apos;s in Analytics and Applied
+                Machine Intelligence at Northeastern University. His approach
+                emphasizes accuracy and accountability across the full
+                analytical lifecycle, from data validation and modeling to
+                visualization and executive ready communication.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
       <section className="section shell experience" id="experience">
@@ -443,7 +466,7 @@ export default function Home() {
             <h2>
               Expertise shaped by
               <br />
-              <em>real-world practice.</em>
+              <em>real world practice.</em>
             </h2>
           </div>
         </div>
@@ -516,37 +539,71 @@ export default function Home() {
           </article>
         </div>
       </section>
-      <section className="impact-preview" id="impact">
-        <div className="shell impact-preview-grid">
+      <section className="section shell" id="work">
+        <div className="section-head">
           <div>
-            <p className="eyebrow">IMPACT / SAM’S APPROACH</p>
+            <p className="eyebrow">04 / PROJECTS</p>
             <h2>
-              Service that drives
+              Applied solutions to
               <br />
-              <em>stronger systems.</em>
+              <em>real world challenges.</em>
             </h2>
           </div>
-          <div className="impact-preview-copy">
-            <p>
-              Sam’s work integrates service, community engagement, and operational
-              improvement—strengthening inclusion, communication, and the
-              systems organizations rely on to deliver their missions.
-            </p>
-            <div className="impact-preview-points">
-              <span>Community</span>
-              <span>Engagement</span>
-              <span>Clearer systems</span>
-            </div>
-            <Link className="impact-link" href="/impact">
-              Read the full story <span>↗</span>
-            </Link>
+          <p>
+            Each case study outlines why the challenge matters, the analytical
+            approach, measurable outcomes, and broader real world applications.
+          </p>
+        </div>
+        <ProjectGrid featured />
+        <div className="section-cta">
+          <Link href="/work">
+            Explore all projects <span>↗</span>
+          </Link>
+          <p>
+            Ten case studies across analytics, machine learning, generative AI,
+            computer vision, and healthcare.
+          </p>
+        </div>
+      </section>
+      <section className="section shell skills-preview" id="skills">
+        <div className="section-head">
+          <div>
+            <p className="eyebrow">05 / SKILLS</p>
+            <h2>
+              Technical capabilities
+              <br />
+              with <em>practical impact.</em>
+            </h2>
+          </div>
+          <p>
+            Analytical methods, intelligent systems, visualization tools, and
+            platforms connected to documented project outcomes.
+          </p>
+        </div>
+        <div className="capability-console">
+          <div className="capability-console-head">
+            <p>TECHNICAL SKILLS AND TOOLS</p>
+            <span>Six disciplines · one connected workflow</span>
+          </div>
+          <div className="capability-preview-grid">
+            {skillGroups.map((s, i) => (
+              <article key={s.label}>
+                <span>0{i + 1}</span>
+                <h3>{s.label}</h3>
+                <p>{s.skills.slice(0, 4).map((item) => item.name).join(" · ")}</p>
+              </article>
+            ))}
+          </div>
+          <div className="capability-preview-foot">
+            <p>Explore the complete matrix, project evidence, and tools used across Sam’s work.</p>
+            <Link href="/skills">View technical skills &amp; tools <span>↗</span></Link>
           </div>
         </div>
       </section>
       <section className="leadership-preview shell" id="leadership">
         <div className="leadership-preview-head">
           <div>
-            <p className="eyebrow">04 / LEADERSHIP & RECOGNITION</p>
+            <p className="eyebrow">06 / LEADERSHIP & RECOGNITION</p>
             <h2>
               Leadership grounded
               <br />
@@ -597,78 +654,68 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section className="section about-system shell" id="about">
-        <div className="about-system-head">
+      <section className="section shell beyond-preview" id="beyond-work">
+        <div className="section-head">
           <div>
-            <p className="eyebrow">05 / ABOUT &amp; CAPABILITIES</p>
+            <p className="eyebrow">07 / BEYOND WORK</p>
             <h2>
-              Where analytical rigor meets <em>practical execution.</em>
+              The person behind
+              <br />
+              <em>the work.</em>
             </h2>
           </div>
           <p>
-            Sam connects complex organizational challenges with informed,
-            defensible decisions through analytical rigor, statistical
-            modeling, effective visualization, and reliable systems.
+            Volunteering, cooking, travel, fitness, music, reading, and sports
+            reflect the curiosity, discipline, and community spirit Sam brings
+            to every part of life.
           </p>
         </div>
-        <div className="about-system-grid">
-          <div className="about-identity">
-            <div className="portrait-stage">
-              <div className="profile-photo">
-                <span className="photo-orbit" aria-hidden="true" />
-              <img
-                src="/sam-profile.webp"
-                width="900"
-                height="900"
-                loading="lazy"
-                decoding="async"
-                alt="Professional portrait of Sampson Boateng"
-              />
-                <span className="photo-sheen" aria-hidden="true" />
-              </div>
-            </div>
-            <div className="about-narrative">
-              <p>
-                Sam currently works across finance and development, applying
-                analytical and technical expertise to financial and donor data,
-                reconciliation, management reporting, data quality,
-                organizational systems, and AI-enabled healthcare grant
-                initiatives.
-              </p>
-              <p>
-                Sam recently completed his master&apos;s in Analytics and Applied
-                Machine Intelligence at Northeastern University. His approach
-                emphasizes accuracy and accountability across the full
-                analytical lifecycle—from data validation and modeling to
-                visualization and executive-ready communication.
-              </p>
-            </div>
+        <div className="beyond-preview-inner">
+          <div className="beyond-preview-interests">
+            <span>Volunteering</span>
+            <span>Cooking</span>
+            <span>Travel</span>
+            <span>Fitness</span>
+            <span>Music</span>
+            <span>Reading</span>
+            <span>Sports</span>
           </div>
-          <div className="capability-console">
-            <div className="capability-console-head">
-              <p>TECHNICAL SKILLS AND TOOLS</p>
-              <span>Six disciplines · one connected workflow</span>
+          <Link className="impact-link dark" href="/person">
+            Meet the person behind the work <span>↗</span>
+          </Link>
+        </div>
+      </section>
+      <section className="impact-preview" id="impact">
+        <div className="shell impact-preview-grid">
+          <div>
+            <p className="eyebrow">IMPACT / SAM’S APPROACH</p>
+            <h2>
+              Service that drives
+              <br />
+              <em>stronger systems.</em>
+            </h2>
+          </div>
+          <div className="impact-preview-copy">
+            <p>
+              Sam’s work integrates service, community engagement, and
+              operational improvement, strengthening inclusion, communication,
+              and the systems organizations rely on to deliver their missions.
+            </p>
+            <div className="impact-preview-points">
+              <span>Community</span>
+              <span>Engagement</span>
+              <span>Clearer systems</span>
             </div>
-            <div className="capability-preview-grid">
-              {skillGroups.map((s, i) => (
-                <article key={s.label}>
-                  <span>0{i + 1}</span>
-                  <h3>{s.label}</h3>
-                  <p>{s.skills.slice(0, 4).map((item) => item.name).join(" · ")}</p>
-                </article>
-              ))}
-            </div>
-            <div className="capability-preview-foot">
-              <p>Explore the complete matrix, project evidence, and tools used across Sam’s work.</p>
-              <Link href="/skills">View technical skills &amp; tools <span>↗</span></Link>
-            </div>
+            <Link className="impact-link" href="/impact">
+              Read the full story <span>↗</span>
+            </Link>
           </div>
         </div>
       </section>
       <section className="section shell exploration" id="exploring">
         <div className="section-head">
           <div>
-            <p className="eyebrow">06 / CURRENTLY EXPLORING</p>
+            <p className="eyebrow">08 / CURRENTLY EXPLORING</p>
             <h2>
               Research advancing
               <br />
@@ -750,7 +797,7 @@ export default function Home() {
         </div>
       </section>
       <section className="education shell">
-        <p className="eyebrow">07 / EDUCATION</p>
+        <p className="eyebrow">09 / EDUCATION</p>
         <div className="education-grid">
           <article>
             <span>2025</span>
