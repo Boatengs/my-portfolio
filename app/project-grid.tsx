@@ -245,6 +245,12 @@ export function ProjectGrid({ featured = false }: { featured?: boolean }) {
                 </i>
               </h3>
               <span>{p.summary}</span>
+              {p.evidence?.[0] && (
+                <div className="project-proof">
+                  <strong>{p.evidence[0].value}</strong>
+                  <span>{p.evidence[0].label}</span>
+                </div>
+              )}
             </div>
           </Link>
         ))}

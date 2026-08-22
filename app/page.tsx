@@ -368,10 +368,29 @@ export default function Home() {
               Development to bring rigorous data and technical insight to
               mission-driven work.
             </p>
-            <a className="text-link" href="#work">
-              Explore selected work <span>↓</span>
-            </a>
+            <div className="hero-actions">
+              <a className="text-link" href="#work">
+                Explore selected work <span>↓</span>
+              </a>
+              <Link className="hero-resume-link" href="/resume">
+                View résumé <span>↗</span>
+              </Link>
+            </div>
           </div>
+        </div>
+        <div className="hero-proof-strip" aria-label="Professional highlights">
+          <article>
+            <strong>10</strong>
+            <span>Evidence-backed case studies</span>
+          </article>
+          <article>
+            <strong>M.S.</strong>
+            <span>Applied Machine Intelligence</span>
+          </article>
+          <article>
+            <strong>1ST</strong>
+            <span>Climate resiliency hackathon</span>
+          </article>
         </div>
         <div className="data-stage" aria-label="Abstract data visualization">
           <div className="orb orb-one" />
