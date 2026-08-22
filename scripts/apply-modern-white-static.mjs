@@ -79,6 +79,27 @@ for (const root of roots) {
           '<div class="practice-interlude shell" aria-label="Areas of practice"><span>DATA, BUILT FOR</span><strong>PEOPLE</strong><i aria-hidden="true">✳</i><strong>DECISIONS</strong><i aria-hidden="true">✳</i><strong>IMPACT</strong></div><section class="section shell" id="work">',
         );
       }
+
+      html = html.replace(
+        '<div class="timeline-meta"><b>2025 — PRESENT</b></div>',
+        '<div class="timeline-meta"><b>2025 — PRESENT</b><span>New York</span></div>',
+      );
+      html = html.replace(
+        '<div class="timeline-meta"><b>2024 — 2025</b></div>',
+        '<div class="timeline-meta"><b>2024 — 2025</b><span>Portland, Maine</span></div>',
+      );
+      html = html.replace(
+        '<div class="timeline-meta"><b>2021 — 2023</b></div>',
+        '<div class="timeline-meta"><b>2022 — 2022</b><span>Saratov, Russia</span></div>',
+      );
+
+      if (!html.includes('Peer Tutor — English Language')) {
+        const tutor = '<article><div class="timeline-meta"><b>2019 — 2023</b><span>Saratov, Russia</span></div><div><h3>Peer Tutor — English Language</h3><h4>Independent Academic &amp; Language Support</h4><p>Provided personalized English-language instruction to Russian learners, strengthening conversational fluency, reading comprehension, and practical communication for academic study, international travel, tourism, and everyday situations. Adapted lessons to individual goals and confidence levels, helping students use English effectively in real-world settings.</p></div></article>';
+        html = html.replace(
+          '</div></section><section class="impact-preview" id="impact">',
+          `${tutor}</div></section><section class="impact-preview" id="impact">`,
+        );
+      }
     }
 
     html = html.replace(/<div class="project-info">([\s\S]*?)<\/div>/g, (match, contents) => {
