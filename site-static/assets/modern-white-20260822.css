@@ -1625,7 +1625,10 @@ body {
 
 .stage-copy {
   z-index: 2;
+  top: 50%;
   left: 7%;
+  width: 42%;
+  transform: translateY(-50%);
 }
 
 .stage-copy > span {
@@ -1635,7 +1638,7 @@ body {
 
 .stage-copy strong {
   margin-top: 19px;
-  font-size: clamp(68px, 9.8vw, 130px);
+  font-size: clamp(62px, 7.4vw, 98px);
   line-height: 0.78;
   letter-spacing: -0.09em;
 }
@@ -1649,16 +1652,18 @@ body {
 }
 
 .orb-one {
+  left: 63%;
   opacity: 0.86;
 }
 
 .orb-two {
+  left: 72%;
   border-color: rgba(255, 255, 255, 0.35);
 }
 
 .stage-constellation {
   position: absolute;
-  inset: 20% 15% 17% 43%;
+  inset: 18% 5% 16% 53%;
   z-index: 1;
   border: 1px solid rgba(255, 255, 255, 0.13);
   border-radius: 50%;
@@ -1695,31 +1700,6 @@ body {
 
 @keyframes constellation-turn {
   to { transform: rotate(360deg); }
-}
-
-.practice-interlude {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 156px;
-  border-bottom: 1px solid var(--atelier-hairline);
-}
-
-.practice-interlude > span {
-  color: #656a73;
-  font-size: 10px;
-  letter-spacing: 0.13em;
-}
-
-.practice-interlude strong {
-  font-size: clamp(18px, 3vw, 39px);
-  letter-spacing: -0.075em;
-}
-
-.practice-interlude i {
-  color: var(--atelier-red);
-  font-size: 23px;
-  font-style: normal;
 }
 
 .section {
@@ -2036,38 +2016,20 @@ body {
 
   .stage-copy {
     left: 23px;
+    width: 68%;
   }
 
   .stage-copy strong {
-    font-size: clamp(65px, 15vw, 90px);
+    font-size: clamp(52px, 12vw, 74px);
   }
 
   .stage-constellation {
-    inset: 24% -11% 21% 29%;
+    inset: 24% -35% 21% 59%;
   }
 
   .stage-note {
     right: 20px;
     bottom: 24px;
-  }
-
-  .practice-interlude {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 12px;
-    min-height: 120px;
-  }
-
-  .practice-interlude > span {
-    flex-basis: 100%;
-  }
-
-  .practice-interlude strong {
-    font-size: 20px;
-  }
-
-  .practice-interlude i {
-    font-size: 15px;
   }
 
   .section {

@@ -429,14 +429,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="practice-interlude shell" aria-label="Areas of practice">
-        <span>DATA, BUILT FOR</span>
-        <strong>PEOPLE</strong>
-        <i aria-hidden="true">✳</i>
-        <strong>DECISIONS</strong>
-        <i aria-hidden="true">✳</i>
-        <strong>IMPACT</strong>
-      </div>
       <section className="section shell" id="work">
         <div className="section-head">
           <div>
