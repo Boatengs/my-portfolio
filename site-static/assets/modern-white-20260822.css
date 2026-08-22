@@ -1,0 +1,604 @@
+/*
+ * Portfolio design system · August 2026
+ * A shared final layer for the application and its static GitHub Pages export.
+ */
+
+:root {
+  --ink: #121417;
+  --paper: #ffffff;
+  --acid: #ffffff;
+  --muted: #616771;
+  --line: rgba(18, 20, 23, 0.11);
+  --surface: #f6f7f9;
+  --surface-strong: #eef0f3;
+  --accent: #df513f;
+  --shadow-soft: 0 18px 48px rgba(18, 20, 23, 0.07);
+  --shadow-deep: 0 28px 76px rgba(18, 20, 23, 0.12);
+  color-scheme: light;
+}
+
+html,
+body,
+.person-page,
+.detail-page,
+.resume-page,
+.work-page,
+.impact-page,
+.leadership-page,
+.skills-page {
+  background: #ffffff;
+  color: var(--ink);
+}
+
+body {
+  font-family: Inter, "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(223, 81, 63, 0.18);
+  color: var(--ink);
+}
+
+.shell {
+  width: min(1320px, calc(100% - 72px));
+}
+
+.nav.shell {
+  min-height: 84px;
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-bottom: 1px solid rgba(18, 20, 23, 0.08) !important;
+  box-shadow: 0 10px 34px rgba(18, 20, 23, 0.035) !important;
+  backdrop-filter: blur(18px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(160%) !important;
+}
+
+.wordmark {
+  font-size: 28px;
+  letter-spacing: -2.1px;
+}
+
+.wordmark span,
+.timeline h4,
+.capability-title > span,
+.capability-preview-grid article > span,
+.leadership-highlights article > span,
+.evidence-grid article > span,
+.dataset-strip span,
+.filter-heading span,
+.research-areas .eyebrow {
+  color: var(--accent);
+}
+
+.nav-links {
+  gap: 34px;
+  font-size: 13px;
+}
+
+.nav-links a:not(.nav-cta) {
+  transition: color 0.18s ease, opacity 0.18s ease;
+}
+
+.nav-links a:not(.nav-cta):hover {
+  color: var(--accent);
+  opacity: 1;
+}
+
+.nav-cta {
+  padding: 13px 20px;
+  background: var(--ink);
+  border-radius: 999px;
+  box-shadow: 0 8px 22px rgba(18, 20, 23, 0.13);
+}
+
+.eyebrow {
+  color: #515761;
+  font-size: 11px;
+  letter-spacing: 0.19em;
+}
+
+.hero {
+  padding-top: 48px;
+}
+
+.hero-kicker {
+  margin-bottom: 74px;
+  color: #555b65;
+}
+
+.hero-kicker i {
+  background: var(--accent);
+  box-shadow: 0 0 0 6px rgba(223, 81, 63, 0.1);
+}
+
+.hero-grid {
+  gap: 96px;
+}
+
+.hero h1,
+.section h2,
+.detail-hero h1,
+.skills-page-hero h1,
+.work-page-hero h1,
+.impact-page-hero h1,
+.leadership-page-hero h1,
+.resume-head h1,
+.person-intro h1 {
+  letter-spacing: -0.073em;
+}
+
+.hero-aside {
+  color: #48505a;
+  font-size: 17px;
+  line-height: 1.72;
+}
+
+.text-link,
+.section-cta a,
+.impact-link,
+.capability-preview-foot a,
+.project-links a {
+  text-underline-offset: 5px;
+}
+
+.data-stage {
+  height: 450px;
+  margin-top: 78px;
+  background: #111316;
+  border: 1px solid rgba(18, 20, 23, 0.06);
+  border-radius: 20px;
+  box-shadow: var(--shadow-deep);
+}
+
+.orb-two,
+.axis {
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.46);
+}
+
+.orb-two {
+  background: transparent;
+}
+
+.data-point {
+  background: #ffffff;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.6);
+}
+
+.section {
+  padding-top: 152px;
+}
+
+.section-head {
+  margin-bottom: 72px;
+}
+
+.section-head > p,
+.about-system-head > p,
+.leadership-preview-head > p,
+.work-page-hero > p:last-child,
+.skills-page-hero > p:last-child,
+.impact-page-hero > p:last-child,
+.leadership-page-hero > p:last-child {
+  color: #606670;
+  line-height: 1.75;
+}
+
+.project-grid {
+  gap: 72px 32px;
+}
+
+.project-visual {
+  border: 1px solid rgba(18, 20, 23, 0.055);
+  border-radius: 17px;
+  box-shadow: 0 12px 32px rgba(18, 20, 23, 0.06);
+}
+
+.wide .project-visual {
+  height: 510px;
+}
+
+.open-mark {
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 8px 22px rgba(18, 20, 23, 0.14);
+}
+
+.project-card:hover .open-mark {
+  background: #ffffff;
+}
+
+.project-info {
+  padding: 23px 3px 0;
+}
+
+.project-info p {
+  color: #68707a;
+  font-size: 11px;
+}
+
+.project-info h3 {
+  margin: 11px 0;
+  font-size: 29px;
+}
+
+.project-info span {
+  color: #626872;
+  line-height: 1.65;
+}
+
+.timeline,
+.timeline article,
+.leadership-highlights,
+.leadership-highlights article + article,
+.education-grid,
+.education-grid article + article,
+.capability-console-head,
+.capability-preview-grid,
+.capability-preview-grid article,
+.capability-card,
+.dataset-strip,
+.evidence-heading,
+.evidence-grid,
+.reflection {
+  border-color: rgba(18, 20, 23, 0.11);
+}
+
+.timeline article {
+  padding: 48px 0;
+}
+
+.timeline article > div:last-child p,
+.about-narrative p + p,
+.exploration-grid p,
+.education-grid p {
+  color: #606670;
+}
+
+.impact-preview,
+.availability,
+.footer,
+.next-project,
+.play-section,
+.person-marquee {
+  background: #111316;
+  color: #ffffff;
+}
+
+.impact-preview {
+  margin-top: 134px;
+  padding: 108px 0;
+}
+
+.impact-preview .eyebrow,
+.availability .eyebrow,
+.footer .eyebrow,
+.play-section .eyebrow {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.impact-preview-copy > p,
+.availability-grid > div:last-child > p,
+.footer-row,
+.footer-row a {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.impact-link,
+.availability a,
+.footer .email,
+.next-project i {
+  color: #ffffff;
+}
+
+.impact-preview-points span,
+.role-pills span {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.leadership-preview {
+  padding-top: 144px;
+  padding-bottom: 122px;
+}
+
+.leadership-highlights article {
+  min-height: 214px;
+}
+
+.about-system {
+  padding-bottom: 138px;
+}
+
+.about-system-head {
+  margin-bottom: 68px;
+}
+
+.about-identity {
+  padding-bottom: 76px;
+}
+
+.about-system .portrait-stage {
+  min-height: 410px;
+  background: #f3f5f7;
+  border: 1px solid #e7eaf0;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(18, 20, 23, 0.045);
+}
+
+.about-system .portrait-stage .profile-photo {
+  width: min(70%, 270px);
+}
+
+.about-narrative:before {
+  color: var(--accent);
+}
+
+.capability-console {
+  margin-top: 74px;
+}
+
+.capability-console-head {
+  padding-bottom: 20px;
+  border-bottom-width: 1px;
+}
+
+.capability-preview-grid article {
+  min-height: 144px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+
+.capability-preview-grid h3 {
+  font-size: 22px;
+}
+
+.capability-preview-grid p,
+.capability-preview-foot p {
+  color: #606670;
+}
+
+.capability-tags a,
+.capability-tags span {
+  background: #ffffff;
+  border-color: #e4e7ec;
+  border-radius: 11px;
+  box-shadow: 0 2px 10px rgba(18, 20, 23, 0.025);
+}
+
+.capability-tags a:hover,
+.capability-tags span:hover {
+  border-color: #b8bec8;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(18, 20, 23, 0.075);
+}
+
+.project-filters {
+  background: #f4f5f7 !important;
+  border: 1px solid #e8eaee !important;
+  border-radius: 18px !important;
+}
+
+.project-filters button {
+  background: #ffffff !important;
+  border-color: #e1e4e9 !important;
+  color: #252a31 !important;
+}
+
+.project-filters button span {
+  background: #f0f2f5 !important;
+  color: #515761 !important;
+}
+
+.project-filters button.active {
+  background: #111316 !important;
+  color: #ffffff !important;
+  border-color: #111316 !important;
+}
+
+.project-filters button.active span {
+  background: #ffffff !important;
+  color: #111316 !important;
+}
+
+.exploration-grid article {
+  padding-top: 39px;
+}
+
+.research-areas div span,
+.toolkit > div span {
+  background: #ffffff;
+  border-color: #e0e3e8;
+}
+
+.education-grid article {
+  padding-top: 39px;
+}
+
+.skills-page-hero,
+.work-page-hero,
+.impact-page-hero,
+.leadership-page-hero {
+  padding-top: 101px;
+  border-color: rgba(18, 20, 23, 0.1);
+}
+
+.detail-stage,
+.detail-capture {
+  border-radius: 18px;
+}
+
+.detail-capture {
+  background: #f4f6f8;
+}
+
+.dataset-strip > div,
+.evidence-grid article {
+  padding-top: 29px;
+  padding-bottom: 29px;
+}
+
+.evidence-grid article strong {
+  color: var(--ink);
+}
+
+.metric-context,
+.validation-note,
+.repo-note {
+  background: #f6f7f9;
+  border-color: #e8eaee;
+}
+
+.award-card,
+.hackathon-recognition,
+.credential-badge,
+.impact-story-grid article,
+.interest-card,
+.journal-tile,
+.sport-stage,
+.person-portrait img {
+  border-radius: 16px;
+}
+
+.fellowship-card {
+  background: #f4f5f7;
+  border: 1px solid #e5e8ed;
+  border-radius: 16px;
+}
+
+.award-mark,
+.award-card:after {
+  border-color: rgba(255, 255, 255, 0.32);
+}
+
+.award-mark b,
+.award-card h4 {
+  color: #ffffff;
+}
+
+.credential-badge {
+  background: #ffffff;
+  border-color: #e5e8ed;
+  box-shadow: 0 8px 26px rgba(18, 20, 23, 0.045);
+}
+
+.resume-document {
+  padding: 22px;
+  background: #f4f5f7;
+  border: 1px solid #e5e8ed;
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.person-portrait img {
+  box-shadow: var(--shadow-deep);
+}
+
+.person-values blockquote {
+  border-color: var(--accent);
+}
+
+.interest-card,
+.journal-tile {
+  border-color: #e2e5ea;
+}
+
+.interest-card:not(.dark) {
+  background: #ffffff;
+}
+
+.interest-card:not(.dark):hover {
+  background: #f4f5f7;
+  border-color: #d9dde4;
+}
+
+.tile-three {
+  background: #f1f3f6;
+}
+
+.portrait-note,
+.person-closing > a {
+  border-radius: 12px;
+}
+
+@media (max-width: 760px) {
+  .shell {
+    width: min(100% - 36px, 1320px);
+  }
+
+  .nav.shell {
+    min-height: 72px;
+  }
+
+  .hero {
+    padding-top: 34px;
+  }
+
+  .hero-kicker {
+    margin-bottom: 49px;
+  }
+
+  .hero-grid {
+    gap: 36px;
+  }
+
+  .data-stage {
+    height: 375px;
+    margin-top: 50px;
+    border-radius: 15px;
+  }
+
+  .section {
+    padding-top: 108px;
+  }
+
+  .section-head {
+    margin-bottom: 43px;
+  }
+
+  .project-grid {
+    gap: 54px;
+  }
+
+  .project-visual,
+  .wide .project-visual {
+    height: 345px;
+    border-radius: 14px;
+  }
+
+  .impact-preview {
+    margin-top: 95px;
+    padding: 78px 0;
+  }
+
+  .leadership-preview {
+    padding-top: 104px;
+    padding-bottom: 88px;
+  }
+
+  .about-system {
+    padding-bottom: 104px;
+  }
+
+  .about-system .portrait-stage {
+    min-height: 360px;
+  }
+
+  .skills-page-hero,
+  .work-page-hero,
+  .impact-page-hero,
+  .leadership-page-hero {
+    padding-top: 69px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-links a,
+  .capability-tags a,
+  .capability-tags span,
+  .project-card,
+  .interest-card {
+    transition: none !important;
+  }
+}
