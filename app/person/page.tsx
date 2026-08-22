@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SiteNav } from "../site-nav";
 
 const interests = [
   {
@@ -42,18 +43,7 @@ const interests = [
 export default function PersonPage() {
   return (
     <main className="person-page">
-      <nav className="nav shell" aria-label="Personal page navigation">
-        <Link className="wordmark" href="/">
-          SB<span>.</span>
-        </Link>
-        <div className="nav-links">
-          <Link href="/#work">Work</Link>
-          <Link href="/#about">About</Link>
-          <Link className="nav-cta" href="/">
-            Portfolio <span>↗</span>
-          </Link>
-        </div>
-      </nav>
+      <SiteNav label="Personal page navigation" />
       <section className="person-hero shell">
         <div className="person-intro">
           <p className="eyebrow">THE PERSON BEHIND THE WORK</p>

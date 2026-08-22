@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ProjectGrid } from "./project-grid";
+import { SiteNav } from "./site-nav";
 export const skillGroups = [
   {
     label: "Data & Analysis",
@@ -345,21 +346,7 @@ const skillMark = (name: string) =>
 export default function Home() {
   return (
     <main>
-      <nav className="nav shell" aria-label="Primary navigation">
-        <Link className="wordmark" href="#top">
-          SB<span>.</span>
-        </Link>
-        <div className="nav-links">
-          <Link href="#work">Work</Link>
-          <Link href="#experience">Experience</Link>
-          <Link href="#leadership">Leadership</Link>
-          <Link href="#about">About</Link>
-          <Link href="/person">Beyond Work</Link>
-          <Link className="nav-cta" href="/resume">
-            Résumé <span>↗</span>
-          </Link>
-        </div>
-      </nav>
+      <SiteNav home />
       <section className="hero shell" id="top">
         <div className="hero-kicker">
           <i /> Open to opportunities

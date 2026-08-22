@@ -1,23 +1,10 @@
 import Link from "next/link";
+import { SiteNav } from "../site-nav";
 
 export default function Resume() {
   return (
     <main className="resume-page">
-      <nav className="nav shell">
-        <Link className="wordmark" href="/">
-          SB<span>.</span>
-        </Link>
-        <div className="nav-links">
-          <Link href="/">Portfolio</Link>
-          <a
-            className="nav-cta"
-            href="/sampson-boateng-resume.pdf?v=20260818-2"
-            download
-          >
-            Download PDF ↓
-          </a>
-        </div>
-      </nav>
+      <SiteNav label="Résumé page navigation" />
       <section className="resume-head shell">
         <p className="eyebrow">CURRICULUM VITAE</p>
         <h1>Résumé</h1>

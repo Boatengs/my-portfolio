@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SiteNav } from "../../site-nav";
 import { notFound } from "next/navigation";
 import { projects } from "../../projects";
 export function generateStaticParams() {
@@ -34,17 +35,7 @@ export default async function ProjectPage({
   const next = projects[(projects.indexOf(project) + 1) % projects.length];
   return (
     <main className="detail-page">
-      <nav className="nav shell">
-        <Link className="wordmark" href="/">
-          SB<span>.</span>
-        </Link>
-        <div className="nav-links">
-          <Link href="/work">All projects</Link>
-          <Link className="nav-cta" href="/resume">
-            Résumé ↗
-          </Link>
-        </div>
-      </nav>
+      <SiteNav label="Project page navigation" />
       <section className="detail-hero shell">
         <Link className="back-link" href="/work">
           ← Back to all projects

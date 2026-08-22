@@ -1,23 +1,11 @@
 import Link from "next/link";
 import { ProjectGrid } from "../project-grid";
+import { SiteNav } from "../site-nav";
 
 export default function Work() {
   return (
     <main className="work-page">
-      <nav className="nav shell subpage-nav" aria-label="Work page navigation">
-        <Link className="wordmark" href="/">
-          SB<span>.</span>
-        </Link>
-        <div className="nav-links">
-          <Link href="/#experience">Experience</Link>
-          <Link href="/impact">Impact</Link>
-          <Link href="/leadership">Leadership</Link>
-          <Link href="/person">Beyond Work</Link>
-          <Link className="nav-cta" href="/resume">
-            Résumé <span>↗</span>
-          </Link>
-        </div>
-      </nav>
+      <SiteNav label="Work page navigation" />
       <header className="work-page-hero shell">
         <p className="eyebrow">SELECTED WORK / COMPLETE INDEX</p>
         <h1>
