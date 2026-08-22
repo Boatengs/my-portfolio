@@ -3,7 +3,7 @@ import path from "node:path";
 
 const roots = ["docs", "site-static"];
 const assetName = "modern-white-20260822.css";
-const assetVersion = "4";
+const assetVersion = "5";
 const assetHref = `/my-portfolio/assets/${assetName}?v=${assetVersion}`;
 const stylesheet = await fs.readFile("app/modern-white.css", "utf8");
 const evidenceByTitle = new Map([
@@ -101,12 +101,10 @@ for (const root of roots) {
         );
       }
 
-      if (!html.includes('class="practice-interlude"')) {
-        html = html.replace(
-          '<section class="section shell" id="work">',
-          '<div class="practice-interlude shell" aria-label="Areas of practice"><span>DATA, BUILT FOR</span><strong>PEOPLE</strong><i aria-hidden="true">✳</i><strong>DECISIONS</strong><i aria-hidden="true">✳</i><strong>IMPACT</strong></div><section class="section shell" id="work">',
-        );
-      }
+      html = html.replaceAll(
+        '<div class="practice-interlude shell" aria-label="Areas of practice"><span>DATA, BUILT FOR</span><strong>PEOPLE</strong><i aria-hidden="true">✳</i><strong>DECISIONS</strong><i aria-hidden="true">✳</i><strong>IMPACT</strong></div>',
+        "",
+      );
 
       html = html.replace(
         '<div class="timeline-meta"><b>2025 — PRESENT</b></div>',
