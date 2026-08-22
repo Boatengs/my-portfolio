@@ -363,7 +363,7 @@ export default function Home() {
           </div>
           <div className="hero-aside">
             <p>
-              I translate complex information into actionable intelligence,
+              Sam translates complex information into actionable intelligence,
               decision-ready reporting, and practical machine learning
               solutions—supporting finance, development, and mission-driven
               organizations with rigorous analytical and technical expertise.
@@ -538,7 +538,7 @@ export default function Home() {
       <section className="impact-preview" id="impact">
         <div className="shell impact-preview-grid">
           <div>
-            <p className="eyebrow">IMPACT / HOW I WORK</p>
+            <p className="eyebrow">IMPACT / SAM’S APPROACH</p>
             <h2>
               Service that drives
               <br />
@@ -547,7 +547,7 @@ export default function Home() {
           </div>
           <div className="impact-preview-copy">
             <p>
-              My work integrates service, community engagement, and operational
+              Sam’s work integrates service, community engagement, and operational
               improvement—strengthening inclusion, communication, and the
               systems organizations rely on to deliver their missions.
             </p>
@@ -573,7 +573,7 @@ export default function Home() {
             </h2>
           </div>
           <p>
-            My leadership reflects a sustained commitment to inclusive
+            Sam’s leadership reflects a sustained commitment to inclusive
             communities, meaningful engagement, and initiatives that create
             lasting institutional and social impact.
           </p>
@@ -625,7 +625,7 @@ export default function Home() {
             </h2>
           </div>
           <p>
-            I connect complex organizational challenges with informed,
+            Sam connects complex organizational challenges with informed,
             defensible decisions through analytical rigor, statistical
             modeling, effective visualization, and reliable systems.
           </p>
@@ -648,15 +648,15 @@ export default function Home() {
             </div>
             <div className="about-narrative">
               <p>
-                I currently work across finance and development, applying
+                Sam currently works across finance and development, applying
                 analytical and technical expertise to financial and donor data,
                 reconciliation, management reporting, data quality,
                 organizational systems, and AI-enabled healthcare grant
                 initiatives.
               </p>
               <p>
-                I recently completed my master&apos;s in Analytics and Applied
-                Machine Intelligence at Northeastern University. My approach
+                Sam recently completed his master&apos;s in Analytics and Applied
+                Machine Intelligence at Northeastern University. His approach
                 emphasizes accuracy and accountability across the full
                 analytical lifecycle—from data validation and modeling to
                 visualization and executive-ready communication.
@@ -678,7 +678,7 @@ export default function Home() {
               ))}
             </div>
             <div className="capability-preview-foot">
-              <p>Explore the complete matrix, project evidence, and tools used across my work.</p>
+              <p>Explore the complete matrix, project evidence, and tools used across Sam’s work.</p>
               <Link href="/skills">View technical skills &amp; tools <span>↗</span></Link>
             </div>
           </div>
@@ -753,7 +753,7 @@ export default function Home() {
           </div>
           <div>
             <p>
-              I welcome opportunities that integrate rigorous analytics,
+              Sam welcomes opportunities that integrate rigorous analytics,
               applied machine learning, strategic communication, and
               measurable organizational impact.
             </p>

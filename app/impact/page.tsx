@@ -6,7 +6,7 @@ export default function Impact() {
     <main className="impact-page">
       <SiteNav label="Impact page navigation" />
       <header className="impact-page-hero shell">
-        <p className="eyebrow">IMPACT / HOW I WORK</p>
+        <p className="eyebrow">IMPACT / SAM’S APPROACH</p>
         <h1>
           Service that becomes
           <br />
@@ -23,12 +23,12 @@ export default function Impact() {
         <div className="impact-origin">
           <h2>Impact starts with paying attention.</h2>
           <p>
-            I have learned that meaningful improvement often begins with
-            ordinary questions: Who is being left out? Where is information
-            getting lost? What makes participation harder than it should be? My
-            approach is to listen, understand the people and process involved,
-            and then help create something clearer, more inclusive, and easier
-            to sustain.
+            Sam recognizes that meaningful improvement often begins with
+            practical questions: Who is being left out? Where is information
+            getting lost? What makes participation harder than necessary? His
+            approach centers on listening, understanding the people and processes
+            involved, and developing solutions that are clearer, more inclusive,
+            and easier to sustain.
           </p>
         </div>
         <div className="impact-story-grid">
@@ -38,7 +38,7 @@ export default function Impact() {
             <h3>Creating room for people to belong.</h3>
             <p>
               Through student leadership, ambassador work, community events, and
-              recreational sports, I have helped create inclusive spaces where
+              recreational sports, Sam has helped create inclusive spaces where
               people across programs, backgrounds, and experience levels can
               meet, participate, and feel connected.
             </p>
@@ -48,10 +48,10 @@ export default function Impact() {
             <p className="eyebrow">ENGAGEMENT</p>
             <h3>Turning an invitation into participation.</h3>
             <p>
-              Community is not built by simply announcing an event. I focus on
-              welcoming people, listening to what they need, communicating
-              clearly, and creating experiences that make continued involvement
-              feel natural.
+              Community requires more than simply announcing an event. Sam
+              focuses on welcoming participants, listening to their needs,
+              communicating clearly, and creating experiences that encourage
+              sustained involvement.
             </p>
           </article>
           <article className="impact-feature">
@@ -59,17 +59,17 @@ export default function Impact() {
             <p className="eyebrow">BETTER INFORMATION FLOW</p>
             <h3>Making internal communication easier to follow.</h3>
             <p>
-              At my current organization, I took on a long-standing challenge in
-              how internal information moved across the workplace. By helping
-              centralize the communication flow, updates are now easier to
+              At his current organization, Sam addressed a long-standing
+              challenge in how internal information moved across the workplace.
+              By helping centralize communication, he made updates easier to
               share, locate, and follow—reducing fragmentation and giving teams
-              a clearer place to stay informed.
+              a clearer way to stay informed.
             </p>
           </article>
         </div>
         <div className="work-principles">
           <div>
-            <p className="eyebrow">HOW I TRY TO SHOW UP</p>
+            <p className="eyebrow">SAM’S WORKING PRINCIPLES</p>
             <h3>Practical principles, not corporate language.</h3>
           </div>
           <ol>
@@ -87,7 +87,7 @@ export default function Impact() {
             </li>
             <li>
               <span>04</span>
-              <b>Leave the process better than I found it.</b>
+              <b>Leave every process stronger than before.</b>
             </li>
           </ol>
         </div>

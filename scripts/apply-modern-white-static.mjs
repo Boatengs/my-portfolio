@@ -43,6 +43,60 @@ const professionalCopy = [
   ["I&#x27;m interested in roles that combine rigorous analysis, thoughtful modeling, and clear communication.", "I welcome opportunities that integrate rigorous analytics, applied machine learning, strategic communication, and measurable organizational impact."],
   ["Have a data problem<br/>worth <em>solving?</em>", "Have a strategic challenge<br/>worth <em>solving together?</em>"],
 ];
+const thirdPersonCopy = [
+  ["I translate complex information", "Sam translates complex information"],
+  ["IMPACT / HOW I WORK", "IMPACT / SAM’S APPROACH"],
+  ["Impact &amp; How I Work — Sampson Boateng", "Impact &amp; Sam’s Approach — Sampson Boateng"],
+  ["My work integrates service", "Sam’s work integrates service"],
+  ["My leadership reflects", "Sam’s leadership reflects"],
+  ["I connect complex organizational challenges", "Sam connects complex organizational challenges"],
+  ["I currently work across finance", "Sam currently works across finance"],
+  ["I recently completed my master&#x27;s", "Sam recently completed his master&#x27;s"],
+  ["I recently completed my master's", "Sam recently completed his master's"],
+  ["My approach emphasizes", "His approach emphasizes"],
+  ["tools used across my work", "tools used across Sam’s work"],
+  ["I welcome opportunities", "Sam welcomes opportunities"],
+  ["Leadership, to me, is practical service: helping people feel welcome, creating ways to participate, and building structures that allow a community to keep growing.", "Sam approaches leadership as practical service: fostering belonging, creating meaningful opportunities to participate, and building structures that allow communities to grow."],
+  ["Across universities, student organizations, professional programs, and community initiatives, I have taken on roles that required listening, organizing, communicating, and following through. The titles are different, but the purpose has stayed consistent: make it easier for people to belong and contribute.", "Across universities, student organizations, professional programs, and community initiatives, Sam has taken on roles requiring active listening, thoughtful coordination, clear communication, and dependable follow-through. Across each position, his purpose remains consistent: make it easier for people to belong and contribute."],
+  ["Read how I work ↗", "Explore Sam’s approach ↗"],
+  ["I have learned that meaningful improvement often begins with ordinary questions: Who is being left out? Where is information getting lost? What makes participation harder than it should be? My approach is to listen, understand the people and process involved, and then help create something clearer, more inclusive, and easier to sustain.", "Sam recognizes that meaningful improvement often begins with practical questions: Who is being left out? Where is information getting lost? What makes participation harder than necessary? His approach centers on listening, understanding the people and processes involved, and developing solutions that are clearer, more inclusive, and easier to sustain."],
+  ["Through student leadership, ambassador work, community events, and recreational sports, I have helped create inclusive spaces", "Through student leadership, ambassador work, community events, and recreational sports, Sam has helped create inclusive spaces"],
+  ["Community is not built by simply announcing an event. I focus on welcoming people, listening to what they need, communicating clearly, and creating experiences that make continued involvement feel natural.", "Community requires more than simply announcing an event. Sam focuses on welcoming participants, listening to their needs, communicating clearly, and creating experiences that encourage sustained involvement."],
+  ["At my current organization, I took on a long-standing challenge in how internal information moved across the workplace. By helping centralize the communication flow, updates are now easier to share, locate, and follow—reducing fragmentation and giving teams a clearer place to stay informed.", "At his current organization, Sam addressed a long-standing challenge in how internal information moved across the workplace. By helping centralize communication, he made updates easier to share, locate, and follow—reducing fragmentation and giving teams a clearer way to stay informed."],
+  ["HOW I TRY TO SHOW UP", "SAM’S WORKING PRINCIPLES"],
+  ["Leave the process better than I found it.", "Leave every process stronger than before."],
+  ["problem matters, what I built, what the result means, and where the approach can be applied.", "problem matters, what Sam developed, what the results demonstrate, and where the approach can be applied."],
+  ["How I Work", "Sam’s Approach"],
+  ["platforms I use—with project links", "platforms Sam uses—with project links"],
+  [">What I built<", ">What Sam developed<"],
+  [">How I would move it forward.<", ">How Sam would advance the work.<"],
+  ["Working as part of Capstone Team C, I helped", "Working as part of Capstone Team C, Sam helped"],
+  [". We built nine executive insight views", ". The team built nine executive insight views"],
+  [">I cleaned and explored", ">Sam cleaned and explored"],
+  [">I compared Logistic Regression", ">Sam compared Logistic Regression"],
+  [">I fine-tuned DistilBERT", ">Sam fine-tuned DistilBERT"],
+  [">I divided project-authored", ">Sam divided project-authored"],
+  [">I used LoRA and QLoRA", ">Sam used LoRA and QLoRA"],
+  [">I adapted EfficientNetB0", ">Sam adapted EfficientNetB0"],
+  [">I built a Gradio application", ">Sam built a Gradio application"],
+  [">I trained a 31-million-parameter", ">Sam trained a 31-million-parameter"],
+  [">I created a 20-question benchmark", ">Sam created a 20-question benchmark"],
+  ["Giving time to people and causes that matter keeps me connected to purpose. Volunteering is where empathy becomes action—and where small contributions can strengthen a community.", "Giving time to people and meaningful causes keeps Sam connected to purpose. For him, volunteering turns empathy into action and demonstrates how thoughtful contributions can strengthen a community."],
+  ["Cooking is one of my favorite ways to slow down, experiment, and bring people together. It rewards patience, attention to detail, and the courage to try a different combination.", "Cooking gives Sam an opportunity to slow down, experiment, and bring people together. It rewards patience, attention to detail, and the confidence to explore new combinations."],
+  ["Travel introduces me to new places, cultures, and ways of thinking. Every journey is a reminder that the same problem can look completely different depending on where you stand.", "Travel introduces Sam to new places, cultures, and perspectives. Every journey reinforces the value of approaching familiar challenges from an entirely different point of view."],
+  ["Fitness gives structure to my energy. Showing up consistently—especially when motivation is low—reinforces the discipline, resilience, and steady progress I value in every part of life.", "Fitness brings structure to Sam’s energy and routine. Consistent training reinforces the discipline, resilience, and steady progress he values across every area of life."],
+  ["Music helps me reset, focus, and stay connected to emotion. I also enjoy listening to audio because ideas, stories, and conversations can turn ordinary moments into opportunities to reflect and learn.", "Music helps Sam reset, focus, and stay connected to emotion. Audiobooks, ideas, stories, and thoughtful conversations turn ordinary moments into opportunities for reflection and learning."],
+  ["Reading lets me step into unfamiliar subjects and perspectives. It is part exploration and part reflection—a quiet habit that keeps my thinking open, curious, and continually growing.", "Reading introduces Sam to unfamiliar subjects and perspectives. Part exploration and part reflection, it keeps his thinking open, curious, and continually evolving."],
+  ["There is more to me than", "There is more to Sam than"],
+  ["My professional work shows what I can build. The life around it shapes how I show up—with curiosity, discipline, empathy, creativity, and an instinct for bringing people together.", "Sam’s professional work demonstrates what he can build. His life beyond it shapes how he contributes—with curiosity, discipline, empathy, creativity, and an instinct for bringing people together."],
+  ["01 / WHAT KEEPS ME GROUNDED", "01 / WHAT KEEPS SAM GROUNDED"],
+  ["“It is where I practice the same qualities that define my work: showing up, staying curious, learning from others, and making room for joy.”", "“Beyond professional work, Sam practices the same qualities that define his approach: showing up, staying curious, learning from others, and making room for joy.”"],
+  ["02 / HOW I PLAY", "02 / HOW SAM PLAYS"],
+  ["Basketball and soccer keep me active, sharpen teamwork, and create an easy way to connect with people beyond job titles and classrooms. Sports are also part of how I build community—one game, one team, and one shared experience at a time.", "Basketball and soccer keep Sam active, strengthen teamwork, and create opportunities to connect beyond job titles and classrooms. Sports also reflect his commitment to community building—one game, one team, and one shared experience at a time."],
+  ["I bring both sides of myself to what I do: the analyst who looks closely at evidence and the person who values people, movement, culture, creativity, and community.", "Sam brings both dimensions to his work: an analyst committed to evidence and a person who values people, movement, culture, creativity, and community."],
+  ["I build reliable analysis, decision-ready dashboards, and practical machine learning systems across finance, healthcare, and operations.", "Sam develops reliable analysis, decision-ready dashboards, and practical machine learning systems across finance, healthcare, and operations."],
+  ["From raw records to an executive-ready narrative, I care about accuracy at every step: cleaning, validation, exploration, modeling, visualization, and documentation.", "From raw records to executive-ready narratives, Sam emphasizes accuracy at every step: cleaning, validation, exploration, modeling, visualization, and documentation."],
+];
 
 async function walk(directory) {
   const entries = await fs.readdir(directory, { withFileTypes: true });
@@ -63,6 +117,9 @@ for (const root of roots) {
   for (const file of await walk(root)) {
     let html = await fs.readFile(file, "utf8");
     for (const [before, after] of professionalCopy) {
+      html = html.replaceAll(before, after);
+    }
+    for (const [before, after] of thirdPersonCopy) {
       html = html.replaceAll(before, after);
     }
     const newLink = `<link rel="stylesheet" href="${assetHref}"/>`;
