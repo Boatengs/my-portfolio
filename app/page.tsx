@@ -392,42 +392,37 @@ export default function Home() {
             <span>Climate resiliency hackathon</span>
           </article>
         </div>
-        <div className="data-stage" aria-label="Abstract data visualization">
-          <div className="stage-topline" aria-hidden="true">
-            <span>INTELLIGENCE, APPLIED.</span>
-            <span>OPEN TO WORK · BUILDING WHAT MATTERS</span>
-          </div>
-          <div className="orb orb-one" />
-          <div className="orb orb-two" />
-          <div className="stage-constellation" aria-hidden="true">
-            <span />
-            <span />
-            <span />
-            <span />
-          </div>
-          <div className="stage-copy">
+        <section className="profile-overview" aria-label="Professional profile">
+          <div className="profile-overview-heading">
             <span>01 / PROFILE</span>
-            <strong>
+            <h2>
               SAMPSON
               <br />
               BOATENG
-            </strong>
+            </h2>
+            <p>DATA ANALYTICS · APPLIED MACHINE LEARNING</p>
           </div>
-          <div className="axis axis-x" />
-          <div className="axis axis-y" />
-          {[18, 32, 47, 61, 74, 86].map((left, i) => (
-            <span
-              key={left}
-              className="data-point"
-              style={{ left: `${left}%`, top: `${70 - (i % 3) * 18}%` }}
-            />
-          ))}
-          <div className="stage-note">
-            M.S. Applied Machine Intelligence
-            <br />
-            B.S. Computer Science
+          <div className="profile-overview-copy">
+            <p>
+              Sam is a data analytics and applied machine learning professional
+              with graduate training in Applied Machine Intelligence and
+              practical experience across financial operations, donor-data
+              analysis, reporting, data governance, systems improvement, and
+              mission-driven healthcare initiatives.
+            </p>
+            <p>
+              He combines Python, SQL, Excel, Power BI, Tableau, statistical
+              modeling, natural language processing, computer vision, and
+              generative AI with clear stakeholder communication—transforming
+              complex information into reliable insights, informed decisions,
+              and measurable organizational impact.
+            </p>
+            <div className="profile-overview-credentials">
+              <span>M.S. Applied Machine Intelligence</span>
+              <span>B.S. Computer Science</span>
+            </div>
           </div>
-        </div>
+        </section>
       </section>
       <section className="section shell" id="work">
         <div className="section-head">

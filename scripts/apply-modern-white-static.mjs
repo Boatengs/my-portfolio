@@ -3,7 +3,7 @@ import path from "node:path";
 
 const roots = ["docs", "site-static"];
 const assetName = "modern-white-20260822.css";
-const assetVersion = "5";
+const assetVersion = "6";
 const assetHref = `/my-portfolio/assets/${assetName}?v=${assetVersion}`;
 const stylesheet = await fs.readFile("app/modern-white.css", "utf8");
 const evidenceByTitle = new Map([
@@ -144,17 +144,11 @@ for (const root of roots) {
         );
       }
 
-      if (!html.includes('class="stage-topline"')) {
+      if (!html.includes('class="profile-overview"')) {
+        const profile = '<section class="profile-overview" aria-label="Professional profile"><div class="profile-overview-heading"><span>01 / PROFILE</span><h2>SAMPSON<br/>BOATENG</h2><p>DATA ANALYTICS · APPLIED MACHINE LEARNING</p></div><div class="profile-overview-copy"><p>Sam is a data analytics and applied machine learning professional with graduate training in Applied Machine Intelligence and practical experience across financial operations, donor-data analysis, reporting, data governance, systems improvement, and mission-driven healthcare initiatives.</p><p>He combines Python, SQL, Excel, Power BI, Tableau, statistical modeling, natural language processing, computer vision, and generative AI with clear stakeholder communication—transforming complex information into reliable insights, informed decisions, and measurable organizational impact.</p><div class="profile-overview-credentials"><span>M.S. Applied Machine Intelligence</span><span>B.S. Computer Science</span></div></div></section>';
         html = html.replace(
-          '<div class="data-stage" aria-label="Abstract data visualization">',
-          '<div class="data-stage" aria-label="Abstract data visualization"><div class="stage-topline" aria-hidden="true"><span>INTELLIGENCE, APPLIED.</span><span>OPEN TO WORK · BUILDING WHAT MATTERS</span></div>',
-        );
-      }
-
-      if (!html.includes('class="stage-constellation"')) {
-        html = html.replace(
-          '<div class="orb orb-two"></div>',
-          '<div class="orb orb-two"></div><div class="stage-constellation" aria-hidden="true"><span></span><span></span><span></span><span></span></div>',
+          /<div class="data-stage" aria-label="Abstract data visualization">[\s\S]*?<\/div><\/section>(?=<section class="section shell" id="work">)/,
+          `${profile}</section>`,
         );
       }
 
