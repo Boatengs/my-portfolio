@@ -1,25 +1,10 @@
 import Link from "next/link";
+import { SiteNav } from "../site-nav";
 
 export default function Leadership() {
   return (
     <main className="leadership-page">
-      <nav
-        className="nav shell subpage-nav"
-        aria-label="Leadership page navigation"
-      >
-        <Link className="wordmark" href="/">
-          SB<span>.</span>
-        </Link>
-        <div className="nav-links">
-          <Link href="/work">Work</Link>
-          <Link href="/#experience">Experience</Link>
-          <Link href="/impact">Impact</Link>
-          <Link href="/person">Beyond Work</Link>
-          <Link className="nav-cta" href="/resume">
-            Résumé <span>↗</span>
-          </Link>
-        </div>
-      </nav>
+      <SiteNav label="Leadership page navigation" />
       <header className="leadership-page-hero shell">
         <p className="eyebrow">LEADERSHIP / SERVICE / RECOGNITION</p>
         <h1>

@@ -1,25 +1,10 @@
 import Link from "next/link";
+import { SiteNav } from "../site-nav";
 
 export default function Impact() {
   return (
     <main className="impact-page">
-      <nav
-        className="nav shell subpage-nav"
-        aria-label="Impact page navigation"
-      >
-        <Link className="wordmark" href="/">
-          SB<span>.</span>
-        </Link>
-        <div className="nav-links">
-          <Link href="/work">Work</Link>
-          <Link href="/#experience">Experience</Link>
-          <Link href="/leadership">Leadership</Link>
-          <Link href="/person">Beyond Work</Link>
-          <Link className="nav-cta" href="/resume">
-            Résumé <span>↗</span>
-          </Link>
-        </div>
-      </nav>
+      <SiteNav label="Impact page navigation" />
       <header className="impact-page-hero shell">
         <p className="eyebrow">IMPACT / HOW I WORK</p>
         <h1>

@@ -6,7 +6,7 @@
 :root {
   --ink: #121417;
   --paper: #ffffff;
-  --acid: #ffffff;
+  --acid: #d8ff5f;
   --muted: #616771;
   --line: rgba(18, 20, 23, 0.11);
   --surface: #f6f7f9;
@@ -462,19 +462,19 @@ body {
 }
 
 .fellowship-card {
-  background: #f4f5f7;
-  border: 1px solid #e5e8ed;
+  background: var(--acid);
+  border: 1px solid rgba(18, 20, 23, 0.12);
   border-radius: 16px;
 }
 
 .award-mark,
 .award-card:after {
-  border-color: rgba(255, 255, 255, 0.32);
+  border-color: rgba(216, 255, 95, 0.48);
 }
 
 .award-mark b,
 .award-card h4 {
-  color: #ffffff;
+  color: var(--acid);
 }
 
 .credential-badge {

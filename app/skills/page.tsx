@@ -1,12 +1,10 @@
 import Link from "next/link";
 import { skillGroups } from "../page";
+import { SiteNav } from "../site-nav";
 
 export default function SkillsPage() {
   return <main className="skills-page">
-    <nav className="nav shell subpage-nav" aria-label="Technical skills page navigation">
-      <Link className="wordmark" href="/">SB<span>.</span></Link>
-      <div className="nav-links"><Link href="/work">Work</Link><Link href="/#experience">Experience</Link><Link href="/leadership">Leadership</Link><Link href="/person">Beyond Work</Link><Link className="nav-cta" href="/resume">Résumé <span>↗</span></Link></div>
-    </nav>
+    <SiteNav label="Technical skills page navigation" />
     <header className="skills-page-hero shell"><p className="eyebrow">TECHNICAL SKILLS &amp; TOOLS</p><h1>Technical depth,<br/><em>connected to evidence.</em></h1><p>A complete view of the analytical methods, machine-learning systems, visualization tools, and platforms I use—with project links showing where they appear in practice.</p></header>
     <section className="skills-index shell"><div className="capability-grid">
       {skillGroups.map((s,i)=><article className="capability-card" key={s.label}><div className="capability-title"><span>0{i+1}</span><div className="capability-title-main"><h2>{s.label}</h2><Link className="capability-evidence" href={s.href}>{s.proof} <b>↗</b></Link></div></div><div className="capability-tags">{s.skills.map(item=>item.href?<Link href={item.href} key={item.name} title={`View project using ${item.name}`}><img className="skill-mark" src={item.icon} alt="" aria-hidden="true" loading="lazy"/>{item.name}<b>↗</b></Link>:<span key={item.name}><img className="skill-mark" src={item.icon} alt="" aria-hidden="true" loading="lazy"/>{item.name}</span>)}</div></article>)}
