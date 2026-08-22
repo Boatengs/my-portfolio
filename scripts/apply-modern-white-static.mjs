@@ -97,6 +97,42 @@ const thirdPersonCopy = [
   ["I build reliable analysis, decision-ready dashboards, and practical machine learning systems across finance, healthcare, and operations.", "Sam develops reliable analysis, decision-ready dashboards, and practical machine learning systems across finance, healthcare, and operations."],
   ["From raw records to an executive-ready narrative, I care about accuracy at every step: cleaning, validation, exploration, modeling, visualization, and documentation.", "From raw records to executive-ready narratives, Sam emphasizes accuracy at every step: cleaning, validation, exploration, modeling, visualization, and documentation."],
 ];
+const protectedNames = [
+  "Bosch Techno-Engineering",
+  "Scikit-learn",
+  "scikit-learn",
+  "Grad-CAM",
+  "K-Means",
+  "TF-IDF",
+  "U-Net",
+];
+
+function plainVisibleText(html) {
+  return html
+    .split(/(<script\b[^>]*>[\s\S]*?<\/script>|<style\b[^>]*>[\s\S]*?<\/style>|<[^>]+>)/gi)
+    .map((part) => {
+      if (part.startsWith("<")) return part;
+
+      let text = part;
+      for (const [index, name] of protectedNames.entries()) {
+        text = text.replaceAll(name, `\uE000${index}\uE001`);
+      }
+
+      text = text
+        .replace(/\b(\d{4})\s*[—–-]\s*(PRESENT|\d{4})\b/g, "$1 to $2")
+        .replace(/\b(\d{4})\s+to\s+\1\b/g, "$1")
+        .replace(/(\d)\s*[—–]\s*(\d)/g, "$1 to $2")
+        .replace(/\s*[—–]\s*/g, ", ")
+        .replace(/(?<=[\p{L}\p{N}])-(?=[\p{L}\p{N}])/gu, " ");
+
+      for (const [index, name] of protectedNames.entries()) {
+        text = text.replaceAll(`\uE000${index}\uE001`, name);
+      }
+
+      return text;
+    })
+    .join("");
+}
 
 async function walk(directory) {
   const entries = await fs.readdir(directory, { withFileTypes: true });
@@ -122,6 +158,8 @@ for (const root of roots) {
     for (const [before, after] of thirdPersonCopy) {
       html = html.replaceAll(before, after);
     }
+    html = html.replaceAll(">What Sam developed<", ">What was developed<");
+    html = html.replaceAll(">How Sam would advance the work.<", ">Future advancement<");
     const newLink = `<link rel="stylesheet" href="${assetHref}"/>`;
 
     const isHome = path.dirname(file) === root;
@@ -170,7 +208,7 @@ for (const root of roots) {
         '<div class="timeline-meta"><b>2022 — 2022</b><span>Saratov, Russia</span></div>',
       );
 
-      if (!html.includes('Peer Tutor — English Language')) {
+      if (!html.includes('Peer Tutor')) {
         const tutor = '<article><div class="timeline-meta"><b>2019 — 2023</b><span>Saratov, Russia</span></div><div><h3>Peer Tutor — English Language</h3><h4>Independent Academic &amp; Language Support</h4><p>Provided personalized English-language instruction to Russian learners, strengthening conversational fluency, reading comprehension, and practical communication for academic study, international travel, tourism, and everyday situations. Adapted lessons to individual goals and confidence levels, helping students use English effectively in real-world settings.</p></div></article>';
         html = html.replace(
           '</div></section><section class="impact-preview" id="impact">',
@@ -196,7 +234,7 @@ for (const root of roots) {
       html = html.replace("</head>", `${newLink}</head>`);
     }
 
-    await fs.writeFile(file, html);
+    await fs.writeFile(file, plainVisibleText(html));
   }
 }
 

@@ -132,7 +132,7 @@ export default async function ProjectPage({
         </article>
         <article>
           <span>02</span>
-          <h2>What Sam developed</h2>
+          <h2>What was developed</h2>
           <p>{project.approach}</p>
         </article>
         <article>
@@ -151,12 +151,12 @@ export default async function ProjectPage({
       <section className="reflection shell">
         <div>
           <span>05 / LIMITATION</span>
-          <h2>What the project does not solve—yet.</h2>
+          <h2>What the project does not solve yet.</h2>
           <p>{project.limitations}</p>
         </div>
         <div>
           <span>06 / NEXT ITERATION</span>
-          <h2>How Sam would advance the work.</h2>
+          <h2>Future advancement</h2>
           <p>{project.future}</p>
         </div>
       </section>
