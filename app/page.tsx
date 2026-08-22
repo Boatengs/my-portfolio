@@ -364,8 +364,8 @@ export default function Home() {
           <div className="hero-aside">
             <p>
               Sam translates complex information into actionable intelligence,
-              decision-ready reporting, and practical machine learning
-              solutions—supporting finance, development, and mission-driven
+              decision ready reporting, and practical machine learning
+              solutions that support finance, development, and mission driven
               organizations with rigorous analytical and technical expertise.
             </p>
             <div className="hero-actions">
@@ -381,7 +381,7 @@ export default function Home() {
         <div className="hero-proof-strip" aria-label="Professional highlights">
           <article>
             <strong>10</strong>
-            <span>Evidence-backed case studies</span>
+            <span>Evidence backed case studies</span>
           </article>
           <article>
             <strong>M.S.</strong>
@@ -406,14 +406,14 @@ export default function Home() {
             <p>
               Sam is a data analytics and applied machine learning professional
               with graduate training in Applied Machine Intelligence and
-              practical experience across financial operations, donor-data
+              practical experience across financial operations, donor data
               analysis, reporting, data governance, systems improvement, and
-              mission-driven healthcare initiatives.
+              mission driven healthcare initiatives.
             </p>
             <p>
               He combines Python, SQL, Excel, Power BI, Tableau, statistical
               modeling, natural language processing, computer vision, and
-              generative AI with clear stakeholder communication—transforming
+              generative AI with clear stakeholder communication, transforming
               complex information into reliable insights, informed decisions,
               and measurable organizational impact.
             </p>
@@ -464,7 +464,7 @@ export default function Home() {
         <div className="timeline">
           <article>
             <div className="timeline-meta">
-              <b>2025 — PRESENT</b>
+              <b>2025 to PRESENT</b>
               <span>New York</span>
             </div>
             <div>
@@ -480,7 +480,7 @@ export default function Home() {
           </article>
           <article>
             <div className="timeline-meta">
-              <b>2024 — 2025</b>
+              <b>2024 to 2025</b>
               <span>Portland, Maine</span>
             </div>
             <div>
@@ -496,7 +496,7 @@ export default function Home() {
           </article>
           <article>
             <div className="timeline-meta">
-              <b>2022 — 2022</b>
+              <b>2022</b>
               <span>Saratov, Russia</span>
             </div>
             <div>
@@ -511,11 +511,11 @@ export default function Home() {
           </article>
           <article>
             <div className="timeline-meta">
-              <b>2019 — 2023</b>
+              <b>2019 to 2023</b>
               <span>Saratov, Russia</span>
             </div>
             <div>
-              <h3>Peer Tutor — English Language</h3>
+              <h3>Peer Tutor, English Language</h3>
               <h4>Independent Academic &amp; Language Support</h4>
               <p>
                 Provided personalized English-language instruction to Russian
