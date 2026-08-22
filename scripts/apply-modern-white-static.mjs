@@ -3,7 +3,7 @@ import path from "node:path";
 
 const roots = ["docs", "site-static"];
 const assetName = "modern-white-20260822.css";
-const assetVersion = "3";
+const assetVersion = "4";
 const assetHref = `/my-portfolio/assets/${assetName}?v=${assetVersion}`;
 const stylesheet = await fs.readFile("app/modern-white.css", "utf8");
 const evidenceByTitle = new Map([
@@ -56,6 +56,27 @@ for (const root of roots) {
         html = html.replace(
           '<div class="data-stage" aria-label="Abstract data visualization">',
           '<div class="hero-proof-strip" aria-label="Professional highlights"><article><strong>10</strong><span>Evidence-backed case studies</span></article><article><strong>M.S.</strong><span>Applied Machine Intelligence</span></article><article><strong>1ST</strong><span>Climate resiliency hackathon</span></article></div><div class="data-stage" aria-label="Abstract data visualization">',
+        );
+      }
+
+      if (!html.includes('class="stage-topline"')) {
+        html = html.replace(
+          '<div class="data-stage" aria-label="Abstract data visualization">',
+          '<div class="data-stage" aria-label="Abstract data visualization"><div class="stage-topline" aria-hidden="true"><span>INTELLIGENCE, APPLIED.</span><span>OPEN TO WORK · BUILDING WHAT MATTERS</span></div>',
+        );
+      }
+
+      if (!html.includes('class="stage-constellation"')) {
+        html = html.replace(
+          '<div class="orb orb-two"></div>',
+          '<div class="orb orb-two"></div><div class="stage-constellation" aria-hidden="true"><span></span><span></span><span></span><span></span></div>',
+        );
+      }
+
+      if (!html.includes('class="practice-interlude"')) {
+        html = html.replace(
+          '<section class="section shell" id="work">',
+          '<div class="practice-interlude shell" aria-label="Areas of practice"><span>DATA, BUILT FOR</span><strong>PEOPLE</strong><i aria-hidden="true">✳</i><strong>DECISIONS</strong><i aria-hidden="true">✳</i><strong>IMPACT</strong></div><section class="section shell" id="work">',
         );
       }
     }

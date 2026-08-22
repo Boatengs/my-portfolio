@@ -1474,3 +1474,663 @@ body {
     transition: none !important;
   }
 }
+
+/* Creative direction: The Intelligence Atelier. */
+:root {
+  --atelier-red: #e44c39;
+  --atelier-blue: #4478ff;
+  --atelier-hairline: rgba(18, 20, 23, 0.12);
+}
+
+body {
+  background-image: none;
+}
+
+.nav.shell {
+  height: 82px;
+  border-bottom: 1px solid rgba(18, 20, 23, 0.07) !important;
+}
+
+.nav-links {
+  gap: 2px;
+  padding: 4px;
+  background: rgba(245, 246, 248, 0.72);
+}
+
+.wordmark {
+  font-size: 33px;
+  letter-spacing: -2.6px;
+}
+
+.hero {
+  padding-top: 96px;
+}
+
+.hero::before {
+  position: absolute;
+  top: 131px;
+  left: 0;
+  color: rgba(18, 20, 23, 0.42);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  content: "INDEPENDENT THINKING / REAL-WORLD SYSTEMS";
+}
+
+.hero-kicker {
+  margin-bottom: 105px;
+  border-color: #dfe2e6;
+}
+
+.hero-grid {
+  grid-template-columns: minmax(0, 1.8fr) minmax(245px, 0.45fr);
+  gap: 78px;
+}
+
+.hero-grid > div:first-child > .eyebrow {
+  max-width: 620px;
+  padding-bottom: 19px;
+  color: #656a73;
+  letter-spacing: 0.13em;
+}
+
+.hero h1 {
+  max-width: 1140px;
+  font-size: clamp(92px, 10.8vw, 153px);
+  line-height: 0.815;
+  letter-spacing: -0.095em;
+}
+
+.hero h1 em,
+.section-head h2 em,
+.leadership-preview h2 em,
+.about-system-head h2 em,
+.availability h2 em {
+  color: var(--atelier-red);
+}
+
+.hero-aside {
+  padding-bottom: 7px;
+  border-top: 1px solid var(--atelier-hairline);
+}
+
+.hero-aside > p {
+  padding-top: 18px;
+  color: #4d525b;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.hero-proof-strip {
+  position: relative;
+  gap: 0;
+  margin-top: 76px;
+  padding: 19px 0;
+  border-bottom: 1px solid var(--atelier-hairline);
+}
+
+.hero-proof-strip article {
+  min-height: 53px;
+  padding-left: 23px;
+  border-left: 1px solid var(--atelier-hairline);
+}
+
+.hero-proof-strip article:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.hero-proof-strip strong {
+  font-size: 29px;
+}
+
+.data-stage {
+  position: relative;
+  height: 570px;
+  margin-top: 34px;
+  overflow: hidden;
+  border-radius: 3px;
+  background:
+    radial-gradient(ellipse at 75% 50%, rgba(228, 76, 57, 0.24), transparent 29%),
+    radial-gradient(ellipse at 51% 70%, rgba(68, 120, 255, 0.11), transparent 35%),
+    #0c0d10;
+  box-shadow: 0 45px 100px rgba(18, 20, 23, 0.13);
+}
+
+.data-stage::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 73px 73px;
+  content: "";
+  mask-image: linear-gradient(115deg, transparent 3%, black 55%, transparent 97%);
+}
+
+.stage-topline {
+  position: absolute;
+  z-index: 3;
+  top: 27px;
+  right: 33px;
+  left: 33px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 9px;
+  letter-spacing: 0.13em;
+}
+
+.stage-copy {
+  z-index: 2;
+  left: 7%;
+}
+
+.stage-copy > span {
+  color: rgba(255, 255, 255, 0.62);
+  letter-spacing: 0.2em;
+}
+
+.stage-copy strong {
+  margin-top: 19px;
+  font-size: clamp(68px, 9.8vw, 130px);
+  line-height: 0.78;
+  letter-spacing: -0.09em;
+}
+
+.stage-note {
+  right: 33px;
+  bottom: 32px;
+  padding-top: 13px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.orb-one {
+  opacity: 0.86;
+}
+
+.orb-two {
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.stage-constellation {
+  position: absolute;
+  inset: 20% 15% 17% 43%;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 50%;
+  animation: constellation-turn 32s linear infinite;
+}
+
+.stage-constellation::before,
+.stage-constellation::after {
+  position: absolute;
+  inset: 12%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  content: "";
+}
+
+.stage-constellation::after {
+  inset: 27%;
+  border-color: rgba(228, 76, 57, 0.38);
+}
+
+.stage-constellation span {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.72);
+}
+
+.stage-constellation span:nth-child(1) { top: 4%; left: 31%; }
+.stage-constellation span:nth-child(2) { top: 51%; right: -3px; }
+.stage-constellation span:nth-child(3) { bottom: 7%; left: 31%; }
+.stage-constellation span:nth-child(4) { top: 48%; left: -3px; }
+
+@keyframes constellation-turn {
+  to { transform: rotate(360deg); }
+}
+
+.practice-interlude {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 156px;
+  border-bottom: 1px solid var(--atelier-hairline);
+}
+
+.practice-interlude > span {
+  color: #656a73;
+  font-size: 10px;
+  letter-spacing: 0.13em;
+}
+
+.practice-interlude strong {
+  font-size: clamp(18px, 3vw, 39px);
+  letter-spacing: -0.075em;
+}
+
+.practice-interlude i {
+  color: var(--atelier-red);
+  font-size: 23px;
+  font-style: normal;
+}
+
+.section {
+  padding-top: 172px;
+}
+
+.section-head,
+.leadership-preview-head,
+.about-system-head {
+  position: relative;
+  padding-top: 18px;
+  border-top: 1px solid var(--atelier-hairline);
+}
+
+.section-head h2,
+.leadership-preview h2,
+.about-system-head h2,
+.availability h2 {
+  font-size: clamp(70px, 8.3vw, 112px);
+  line-height: 0.85;
+  letter-spacing: -0.088em;
+}
+
+.project-grid {
+  gap: 86px 30px;
+}
+
+.project-card {
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border: 0;
+  box-shadow: none;
+}
+
+.project-visual {
+  height: 390px;
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+.wide .project-visual {
+  height: 570px;
+}
+
+.project-info {
+  position: relative;
+  min-height: 152px;
+  padding: 23px 0 11px;
+  border-top: 1px solid transparent;
+}
+
+.project-info h3 {
+  max-width: 82%;
+  font-size: clamp(26px, 3vw, 39px);
+  letter-spacing: -0.063em;
+}
+
+.project-proof {
+  width: fit-content;
+  padding: 7px 0 0;
+  border-top: 1px solid var(--atelier-hairline);
+  border-radius: 0;
+  background: transparent;
+}
+
+.project-proof strong {
+  color: var(--atelier-red);
+  font-size: 17px;
+}
+
+.open-mark {
+  border-radius: 0;
+}
+
+.timeline {
+  display: grid;
+  gap: 0;
+}
+
+.timeline article {
+  position: relative;
+  padding: 46px 2px;
+  border: 0;
+  border-bottom: 1px solid var(--atelier-hairline);
+  border-radius: 0;
+  background: transparent;
+}
+
+.timeline article:first-child {
+  border-top: 1px solid var(--atelier-hairline);
+}
+
+.timeline article h3 {
+  max-width: 750px;
+  font-size: clamp(27px, 3vw, 40px);
+  letter-spacing: -0.055em;
+}
+
+.impact-preview {
+  min-height: 590px;
+  padding: 148px 0;
+  background:
+    radial-gradient(ellipse at 80% 45%, rgba(228, 76, 57, 0.24), transparent 28%),
+    #101114;
+}
+
+.impact-preview h2 {
+  font-size: clamp(72px, 9vw, 125px);
+  line-height: 0.82;
+}
+
+.impact-preview h2 em {
+  color: #ffffff;
+}
+
+.leadership-highlights {
+  gap: 14px;
+}
+
+.leadership-highlights article,
+.leadership-highlights article + article {
+  min-height: 320px;
+  padding: 31px;
+  border: 1px solid var(--atelier-hairline);
+  border-radius: 2px;
+}
+
+.leadership-highlights article > span {
+  font-size: clamp(51px, 6.7vw, 89px);
+  letter-spacing: -0.085em;
+}
+
+.about-system .portrait-stage {
+  min-height: 490px;
+  border-radius: 2px;
+  background: #f3f4f5;
+}
+
+.about-narrative p:first-child {
+  font-size: clamp(20px, 2.4vw, 31px);
+  line-height: 1.45;
+  letter-spacing: -0.04em;
+}
+
+.capability-preview-grid {
+  gap: 0;
+  border-top: 1px solid var(--atelier-hairline);
+  border-left: 1px solid var(--atelier-hairline);
+}
+
+.capability-preview-grid article,
+.capability-preview-grid article:nth-child(3n + 2),
+.capability-preview-grid article:nth-child(3n + 3) {
+  min-height: 164px;
+  border: 0;
+  border-right: 1px solid var(--atelier-hairline);
+  border-bottom: 1px solid var(--atelier-hairline);
+  border-radius: 0;
+  background: transparent;
+}
+
+.exploration-grid {
+  gap: 0;
+  border-top: 1px solid var(--atelier-hairline);
+  border-left: 1px solid var(--atelier-hairline);
+}
+
+.exploration-grid article,
+.exploration-grid article:first-child {
+  min-height: 290px;
+  border: 0;
+  border-right: 1px solid var(--atelier-hairline);
+  border-bottom: 1px solid var(--atelier-hairline);
+  border-radius: 0;
+  background: transparent;
+}
+
+.research-areas {
+  border-radius: 0;
+}
+
+.education-grid article,
+.education-grid article + article {
+  border-radius: 0;
+}
+
+.footer {
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  position: absolute;
+  right: -20px;
+  bottom: -110px;
+  color: rgba(255, 255, 255, 0.045);
+  font-size: clamp(210px, 31vw, 460px);
+  font-weight: 800;
+  letter-spacing: -0.12em;
+  content: "SB.";
+  pointer-events: none;
+}
+
+.skills-page-hero,
+.work-page-hero,
+.impact-page-hero,
+.leadership-page-hero {
+  padding-top: 112px;
+  border-bottom: 1px solid var(--atelier-hairline);
+}
+
+.skills-page-hero h1,
+.work-page-hero h1,
+.impact-page-hero h1,
+.leadership-page-hero h1 {
+  font-size: clamp(82px, 11vw, 145px);
+  line-height: 0.84;
+  letter-spacing: -0.09em;
+}
+
+.detail-hero h1 {
+  font-size: clamp(74px, 10vw, 130px);
+  line-height: 0.85;
+}
+
+.evidence-grid article,
+.impact-story-grid article,
+.leadership-grid .role-card,
+.leadership-grid .role-card:nth-child(3),
+.leadership-grid .role-card:nth-child(4) {
+  border-radius: 2px;
+}
+
+@media (max-width: 1000px) {
+  .hero h1 {
+    font-size: clamp(75px, 11vw, 111px);
+  }
+
+  .hero-grid {
+    gap: 36px;
+  }
+
+  .data-stage {
+    height: 475px;
+  }
+
+  .stage-copy strong {
+    font-size: 88px;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    padding-top: 67px;
+  }
+
+  .hero::before {
+    top: 79px;
+    max-width: 190px;
+    font-size: 8px;
+    line-height: 1.6;
+  }
+
+  .hero-kicker {
+    margin-bottom: 91px;
+    font-size: 9px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .hero h1 {
+    font-size: clamp(69px, 15.6vw, 96px);
+    line-height: 0.84;
+  }
+
+  .hero-proof-strip {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 40px;
+  }
+
+  .hero-proof-strip article,
+  .hero-proof-strip article:first-child {
+    min-height: 47px;
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .data-stage {
+    height: 420px;
+  }
+
+  .stage-topline {
+    right: 18px;
+    left: 18px;
+    font-size: 7px;
+  }
+
+  .stage-topline span:last-child {
+    max-width: 125px;
+    text-align: right;
+  }
+
+  .stage-copy {
+    left: 23px;
+  }
+
+  .stage-copy strong {
+    font-size: clamp(65px, 15vw, 90px);
+  }
+
+  .stage-constellation {
+    inset: 24% -11% 21% 29%;
+  }
+
+  .stage-note {
+    right: 20px;
+    bottom: 24px;
+  }
+
+  .practice-interlude {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 12px;
+    min-height: 120px;
+  }
+
+  .practice-interlude > span {
+    flex-basis: 100%;
+  }
+
+  .practice-interlude strong {
+    font-size: 20px;
+  }
+
+  .practice-interlude i {
+    font-size: 15px;
+  }
+
+  .section {
+    padding-top: 116px;
+  }
+
+  .section-head h2,
+  .leadership-preview h2,
+  .about-system-head h2,
+  .availability h2 {
+    font-size: clamp(58px, 13.5vw, 78px);
+  }
+
+  .project-grid {
+    gap: 58px;
+  }
+
+  .project-visual,
+  .wide .project-visual {
+    height: 330px;
+  }
+
+  .impact-preview {
+    min-height: 0;
+    padding: 100px 0;
+  }
+
+  .impact-preview h2 {
+    font-size: 65px;
+  }
+
+  .leadership-highlights article,
+  .leadership-highlights article + article {
+    min-height: 230px;
+  }
+
+  .about-system .portrait-stage {
+    min-height: 360px;
+  }
+
+  .exploration-grid article,
+  .exploration-grid article:first-child {
+    min-height: 225px;
+  }
+
+  .skills-page-hero,
+  .work-page-hero,
+  .impact-page-hero,
+  .leadership-page-hero {
+    padding-top: 78px;
+  }
+
+  .skills-page-hero h1,
+  .work-page-hero h1,
+  .impact-page-hero h1,
+  .leadership-page-hero h1,
+  .detail-hero h1 {
+    font-size: clamp(64px, 14vw, 88px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stage-constellation {
+    animation: none;
+  }
+}

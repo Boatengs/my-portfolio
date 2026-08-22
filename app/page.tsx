@@ -393,8 +393,18 @@ export default function Home() {
           </article>
         </div>
         <div className="data-stage" aria-label="Abstract data visualization">
+          <div className="stage-topline" aria-hidden="true">
+            <span>INTELLIGENCE, APPLIED.</span>
+            <span>OPEN TO WORK · BUILDING WHAT MATTERS</span>
+          </div>
           <div className="orb orb-one" />
           <div className="orb orb-two" />
+          <div className="stage-constellation" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+            <span />
+          </div>
           <div className="stage-copy">
             <span>01 / PROFILE</span>
             <strong>
@@ -419,6 +429,14 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <div className="practice-interlude shell" aria-label="Areas of practice">
+        <span>DATA, BUILT FOR</span>
+        <strong>PEOPLE</strong>
+        <i aria-hidden="true">✳</i>
+        <strong>DECISIONS</strong>
+        <i aria-hidden="true">✳</i>
+        <strong>IMPACT</strong>
+      </div>
       <section className="section shell" id="work">
         <div className="section-head">
           <div>
