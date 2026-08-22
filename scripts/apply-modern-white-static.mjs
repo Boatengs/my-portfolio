@@ -175,12 +175,10 @@ for (const root of roots) {
         );
       }
 
-      if (!html.includes('class="hero-proof-strip"')) {
-        html = html.replace(
-          '<div class="data-stage" aria-label="Abstract data visualization">',
-          '<div class="hero-proof-strip" aria-label="Professional highlights"><article><strong>10</strong><span>Evidence-backed case studies</span></article><article><strong>M.S.</strong><span>Applied Machine Intelligence</span></article><article><strong>1ST</strong><span>Climate resiliency hackathon</span></article></div><div class="data-stage" aria-label="Abstract data visualization">',
-        );
-      }
+      html = html.replace(
+        /<div class="hero-proof-strip" aria-label="Professional highlights">[\s\S]*?<\/article><\/div>/g,
+        "",
+      );
 
       if (!html.includes('class="profile-overview"')) {
         const profile = '<section class="profile-overview" aria-label="Professional profile"><div class="profile-overview-heading"><span>01 / PROFILE</span><h2>SAMPSON<br/>BOATENG</h2><p>DATA ANALYTICS · APPLIED MACHINE LEARNING</p></div><div class="profile-overview-copy"><p>Sam is a data analytics and applied machine learning professional with graduate training in Applied Machine Intelligence and practical experience across financial operations, donor-data analysis, reporting, data governance, systems improvement, and mission-driven healthcare initiatives.</p><p>He combines Python, SQL, Excel, Power BI, Tableau, statistical modeling, natural language processing, computer vision, and generative AI with clear stakeholder communication—transforming complex information into reliable insights, informed decisions, and measurable organizational impact.</p><div class="profile-overview-credentials"><span>M.S. Applied Machine Intelligence</span><span>B.S. Computer Science</span></div></div></section>';
