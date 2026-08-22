@@ -378,20 +378,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="hero-proof-strip" aria-label="Professional highlights">
-          <article>
-            <strong>10</strong>
-            <span>Evidence backed case studies</span>
-          </article>
-          <article>
-            <strong>M.S.</strong>
-            <span>Applied Machine Intelligence</span>
-          </article>
-          <article>
-            <strong>1ST</strong>
-            <span>Climate resiliency hackathon</span>
-          </article>
-        </div>
         <section className="profile-overview" aria-label="Professional profile">
           <div className="profile-overview-heading">
             <span>01 / PROFILE</span>
