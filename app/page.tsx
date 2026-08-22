@@ -478,6 +478,7 @@ export default function Home() {
           <article>
             <div className="timeline-meta">
               <b>2025 — PRESENT</b>
+              <span>New York</span>
             </div>
             <div>
               <h3>Finance, Development & IT Administration Support Analyst</h3>
@@ -493,6 +494,7 @@ export default function Home() {
           <article>
             <div className="timeline-meta">
               <b>2024 — 2025</b>
+              <span>Portland, Maine</span>
             </div>
             <div>
               <h3>Student Ambassador</h3>
@@ -507,7 +509,8 @@ export default function Home() {
           </article>
           <article>
             <div className="timeline-meta">
-              <b>2021 — 2023</b>
+              <b>2022 — 2022</b>
+              <span>Saratov, Russia</span>
             </div>
             <div>
               <h3>Programmer Intern</h3>
@@ -516,6 +519,25 @@ export default function Home() {
                 Supported development and QA cycles, diagnosed defects, helped
                 improve system stability by 20%, and built an internal
                 encryption and decryption testing utility.
+              </p>
+            </div>
+          </article>
+          <article>
+            <div className="timeline-meta">
+              <b>2019 — 2023</b>
+              <span>Saratov, Russia</span>
+            </div>
+            <div>
+              <h3>Peer Tutor — English Language</h3>
+              <h4>Independent Academic &amp; Language Support</h4>
+              <p>
+                Provided personalized English-language instruction to Russian
+                learners, strengthening conversational fluency, reading
+                comprehension, and practical communication for academic study,
+                international travel, tourism, and everyday situations.
+                Adapted lessons to individual goals and confidence levels,
+                helping students use English effectively in real-world
+                settings.
               </p>
             </div>
           </article>
