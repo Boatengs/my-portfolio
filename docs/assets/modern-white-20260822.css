@@ -2096,3 +2096,97 @@ body {
     animation: none;
   }
 }
+
+/* Professional profile: an editorial introduction in place of abstract art. */
+.profile-overview {
+  display: grid;
+  grid-template-columns: minmax(255px, 0.78fr) minmax(0, 1.22fr);
+  align-items: center;
+  gap: clamp(52px, 8vw, 112px);
+  min-height: 390px;
+  margin-top: 34px;
+  padding: clamp(42px, 6vw, 78px);
+  background: #101114;
+  color: #ffffff;
+}
+
+.profile-overview-heading > span {
+  display: block;
+  margin-bottom: 36px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+}
+
+.profile-overview-heading h2 {
+  margin: 0;
+  font-size: clamp(55px, 6.6vw, 91px);
+  line-height: 0.83;
+  letter-spacing: -0.085em;
+}
+
+.profile-overview-heading > p {
+  max-width: 260px;
+  margin-top: 23px;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 10px;
+  line-height: 1.7;
+  letter-spacing: 0.12em;
+}
+
+.profile-overview-copy {
+  padding-left: clamp(28px, 4vw, 52px);
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.profile-overview-copy > p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: clamp(15px, 1.55vw, 19px);
+  line-height: 1.75;
+}
+
+.profile-overview-copy > p + p {
+  margin-top: 19px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: clamp(14px, 1.3vw, 16px);
+}
+
+.profile-overview-credentials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 21px;
+  margin-top: 29px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.profile-overview-credentials span {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 10px;
+  letter-spacing: 0.035em;
+}
+
+@media (max-width: 760px) {
+  .profile-overview {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    min-height: 0;
+    padding: 37px 27px;
+  }
+
+  .profile-overview-heading > span {
+    margin-bottom: 23px;
+  }
+
+  .profile-overview-heading h2 {
+    font-size: clamp(57px, 13vw, 74px);
+  }
+
+  .profile-overview-copy {
+    padding-top: 25px;
+    padding-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    border-left: 0;
+  }
+}
