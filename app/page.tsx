@@ -354,19 +354,19 @@ export default function Home() {
         <div className="hero-grid">
           <div>
             <p className="eyebrow">
-              DATA ANALYST · ML PRACTITIONER · DATA GOVERNANCE · INTELLIGENT
-              SYSTEMS
+              DATA ANALYTICS · APPLIED MACHINE LEARNING · DATA GOVERNANCE ·
+              INTELLIGENT SYSTEMS
             </p>
             <h1>
-              Turning complex data into <em>clear direction.</em>
+              Transforming data into <em>insight, strategy, and impact.</em>
             </h1>
           </div>
           <div className="hero-aside">
             <p>
-              I build reliable analysis, decision-ready dashboards, and
-              practical machine learning systems—working across Finance and
-              Development to bring rigorous data and technical insight to
-              mission-driven work.
+              I translate complex information into actionable intelligence,
+              decision-ready reporting, and practical machine learning
+              solutions—supporting finance, development, and mission-driven
+              organizations with rigorous analytical and technical expertise.
             </p>
             <div className="hero-actions">
               <a className="text-link" href="#work">
@@ -442,14 +442,14 @@ export default function Home() {
           <div>
             <p className="eyebrow">02 / SELECTED WORK</p>
             <h2>
-              Projects that solve
+              Applied solutions to
               <br />
-              <em>human problems.</em>
+              <em>real-world challenges.</em>
             </h2>
           </div>
           <p>
-            Each case study explains why the problem mattered, what I built,
-            what the result means, and where the idea can be used.
+            Each case study outlines why the challenge matters, the analytical
+            approach, measurable outcomes, and broader real-world applications.
           </p>
         </div>
         <ProjectGrid featured />
@@ -468,9 +468,9 @@ export default function Home() {
           <div>
             <p className="eyebrow">03 / EXPERIENCE</p>
             <h2>
-              Analysis grounded
+              Expertise shaped by
               <br />
-              in <em>real operations.</em>
+              <em>real-world practice.</em>
             </h2>
           </div>
         </div>
@@ -548,16 +548,16 @@ export default function Home() {
           <div>
             <p className="eyebrow">IMPACT / HOW I WORK</p>
             <h2>
-              Service that becomes
+              Service that drives
               <br />
               <em>stronger systems.</em>
             </h2>
           </div>
           <div className="impact-preview-copy">
             <p>
-              My work is grounded in service and community building—from
-              creating inclusive spaces to improving how information moves
-              through an organization.
+              My work integrates service, community engagement, and operational
+              improvement—strengthening inclusion, communication, and the
+              systems organizations rely on to deliver their missions.
             </p>
             <div className="impact-preview-points">
               <span>Community</span>
@@ -575,15 +575,15 @@ export default function Home() {
           <div>
             <p className="eyebrow">04 / LEADERSHIP & RECOGNITION</p>
             <h2>
-              Leadership built
+              Leadership grounded
               <br />
-              around <em>belonging.</em>
+              in <em>service and inclusion.</em>
             </h2>
           </div>
           <p>
-            My leadership experience is rooted in service: creating welcoming
-            communities, strengthening participation, and using initiative to
-            help people connect.
+            My leadership reflects a sustained commitment to inclusive
+            communities, meaningful engagement, and initiatives that create
+            lasting institutional and social impact.
           </p>
         </div>
         <div className="leadership-highlights">
@@ -633,9 +633,9 @@ export default function Home() {
             </h2>
           </div>
           <p>
-            I connect the full path from a complicated question to a decision
-            people can trust—combining analysis, modeling, visualization, and
-            dependable systems.
+            I connect complex organizational challenges with informed,
+            defensible decisions through analytical rigor, statistical
+            modeling, effective visualization, and reliable systems.
           </p>
         </div>
         <div className="about-system-grid">
@@ -656,16 +656,18 @@ export default function Home() {
             </div>
             <div className="about-narrative">
               <p>
-                I currently work across Finance and Development, bringing data and
-                technical insight to financial and donor analysis,
-                reconciliation, reporting, data quality, systems improvement,
-                and AI-enabled healthcare grant projects.
+                I currently work across finance and development, applying
+                analytical and technical expertise to financial and donor data,
+                reconciliation, management reporting, data quality,
+                organizational systems, and AI-enabled healthcare grant
+                initiatives.
               </p>
               <p>
                 I recently completed my master&apos;s in Analytics and Applied
-                Machine Intelligence at Northeastern University. I care about
-                accuracy at every step—from cleaning and validation to modeling,
-                visualization, and an executive-ready narrative.
+                Machine Intelligence at Northeastern University. My approach
+                emphasizes accuracy and accountability across the full
+                analytical lifecycle—from data validation and modeling to
+                visualization and executive-ready communication.
               </p>
             </div>
           </div>
@@ -695,14 +697,14 @@ export default function Home() {
           <div>
             <p className="eyebrow">06 / CURRENTLY EXPLORING</p>
             <h2>
-              Questions I&apos;m
+              Research advancing
               <br />
-              <em>building toward.</em>
+              <em>responsible innovation.</em>
             </h2>
           </div>
           <p>
-            Applied research directions where better data systems can improve
-            trust, detection, and access.
+            Applied research priorities focused on trustworthy intelligent
+            systems, responsible detection, and equitable access.
           </p>
         </div>
         <div className="exploration-grid">
@@ -752,15 +754,16 @@ export default function Home() {
           <div>
             <p className="eyebrow">OPEN TO OPPORTUNITIES</p>
             <h2>
-              Ready to contribute
+              Advancing organizations
               <br />
-              where <em>data matters.</em>
+              through <em>data and intelligence.</em>
             </h2>
           </div>
           <div>
             <p>
-              I&apos;m interested in roles that combine rigorous analysis,
-              thoughtful modeling, and clear communication.
+              I welcome opportunities that integrate rigorous analytics,
+              applied machine learning, strategic communication, and
+              measurable organizational impact.
             </p>
             <div className="role-pills">
               <span>Data Analysis</span>
@@ -808,9 +811,9 @@ export default function Home() {
         <div className="shell">
           <p className="eyebrow">LET&apos;S WORK TOGETHER</p>
           <h2>
-            Have a data problem
+            Have a strategic challenge
             <br />
-            worth <em>solving?</em>
+            worth <em>solving together?</em>
           </h2>
           <a className="email" href="mailto:samboateng190@gmail.com">
             samboateng190@gmail.com ↗

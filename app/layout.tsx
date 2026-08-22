@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./modern-white.css";
 export const metadata: Metadata = {
-  title: "Sampson Boateng — Data Analyst",
+  title: "Sampson Boateng — Data Analytics & Applied Machine Learning",
   description:
-    "Data analyst and machine learning practitioner turning complex data into clear direction.",
+    "Data analytics and applied machine learning professional transforming data into insight, strategy, and impact.",
   icons: { icon: "/favicon.svg" },
 };
 export default function RootLayout({

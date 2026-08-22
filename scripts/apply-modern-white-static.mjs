@@ -18,6 +18,31 @@ const evidenceByTitle = new Map([
   ["Skin Lesion Segmentation", ["0.9115", "Test Dice score"]],
   ["LLM Evaluation Framework", ["+17.8%", "Average ROUGE gain"]],
 ]);
+const professionalCopy = [
+  ["Sampson Boateng — Data Analyst", "Sampson Boateng — Data Analytics &amp; Applied Machine Learning"],
+  ["Data analyst and machine learning practitioner turning complex data into clear direction.", "Data analytics and applied machine learning professional transforming data into insight, strategy, and impact."],
+  ["DATA ANALYST · ML PRACTITIONER · DATA GOVERNANCE · INTELLIGENT SYSTEMS", "DATA ANALYTICS · APPLIED MACHINE LEARNING · DATA GOVERNANCE · INTELLIGENT SYSTEMS"],
+  ["Turning complex data into <em>clear direction.</em>", "Transforming data into <em>insight, strategy, and impact.</em>"],
+  ["I build reliable analysis, decision-ready dashboards, and practical machine learning systems—working across Finance and Development to bring rigorous data and technical insight to mission-driven work.", "I translate complex information into actionable intelligence, decision-ready reporting, and practical machine learning solutions—supporting finance, development, and mission-driven organizations with rigorous analytical and technical expertise."],
+  ["Projects that solve<br/><em>human problems.</em>", "Applied solutions to<br/><em>real-world challenges.</em>"],
+  ["Each case study explains why the problem mattered, what I built, what the result means, and where the idea can be used.", "Each case study outlines why the challenge matters, the analytical approach, measurable outcomes, and broader real-world applications."],
+  ["Analysis grounded<br/>in <em>real operations.</em>", "Expertise shaped by<br/><em>real-world practice.</em>"],
+  ["Service that becomes<br/><em>stronger systems.</em>", "Service that drives<br/><em>stronger systems.</em>"],
+  ["My work is grounded in service and community building—from creating inclusive spaces to improving how information moves through an organization.", "My work integrates service, community engagement, and operational improvement—strengthening inclusion, communication, and the systems organizations rely on to deliver their missions."],
+  ["Leadership built<br/>around <em>belonging.</em>", "Leadership grounded<br/>in <em>service and inclusion.</em>"],
+  ["My leadership experience is rooted in service: creating welcoming communities, strengthening participation, and using initiative to help people connect.", "My leadership reflects a sustained commitment to inclusive communities, meaningful engagement, and initiatives that create lasting institutional and social impact."],
+  ["I connect the full path from a complicated question to a decision people can trust—combining analysis, modeling, visualization, and dependable systems.", "I connect complex organizational challenges with informed, defensible decisions through analytical rigor, statistical modeling, effective visualization, and reliable systems."],
+  ["I currently work across Finance and Development, bringing data and technical insight to financial and donor analysis, reconciliation, reporting, data quality, systems improvement, and AI-enabled healthcare grant projects.", "I currently work across finance and development, applying analytical and technical expertise to financial and donor data, reconciliation, management reporting, data quality, organizational systems, and AI-enabled healthcare grant initiatives."],
+  ["I recently completed my master's in Analytics and Applied Machine Intelligence at Northeastern University. I care about accuracy at every step—from cleaning and validation to modeling, visualization, and an executive-ready narrative.", "I recently completed my master's in Analytics and Applied Machine Intelligence at Northeastern University. My approach emphasizes accuracy and accountability across the full analytical lifecycle—from data validation and modeling to visualization and executive-ready communication."],
+  ["I recently completed my master&#x27;s in Analytics and Applied Machine Intelligence at Northeastern University. I care about accuracy at every step—from cleaning and validation to modeling, visualization, and an executive-ready narrative.", "I recently completed my master&#x27;s in Analytics and Applied Machine Intelligence at Northeastern University. My approach emphasizes accuracy and accountability across the full analytical lifecycle—from data validation and modeling to visualization and executive-ready communication."],
+  ["Questions I'm<br/><em>building toward.</em>", "Research advancing<br/><em>responsible innovation.</em>"],
+  ["Questions I&#x27;m<br/><em>building toward.</em>", "Research advancing<br/><em>responsible innovation.</em>"],
+  ["Applied research directions where better data systems can improve trust, detection, and access.", "Applied research priorities focused on trustworthy intelligent systems, responsible detection, and equitable access."],
+  ["Ready to contribute<br/>where <em>data matters.</em>", "Advancing organizations<br/>through <em>data and intelligence.</em>"],
+  ["I'm interested in roles that combine rigorous analysis, thoughtful modeling, and clear communication.", "I welcome opportunities that integrate rigorous analytics, applied machine learning, strategic communication, and measurable organizational impact."],
+  ["I&#x27;m interested in roles that combine rigorous analysis, thoughtful modeling, and clear communication.", "I welcome opportunities that integrate rigorous analytics, applied machine learning, strategic communication, and measurable organizational impact."],
+  ["Have a data problem<br/>worth <em>solving?</em>", "Have a strategic challenge<br/>worth <em>solving together?</em>"],
+];
 
 async function walk(directory) {
   const entries = await fs.readdir(directory, { withFileTypes: true });
@@ -37,6 +62,9 @@ for (const root of roots) {
 
   for (const file of await walk(root)) {
     let html = await fs.readFile(file, "utf8");
+    for (const [before, after] of professionalCopy) {
+      html = html.replaceAll(before, after);
+    }
     const newLink = `<link rel="stylesheet" href="${assetHref}"/>`;
 
     const isHome = path.dirname(file) === root;
