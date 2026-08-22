@@ -6,37 +6,37 @@ const interests = [
     index: "01",
     title: "Volunteering",
     kicker: "SERVICE",
-    copy: "Giving time to people and causes that matter keeps me connected to purpose. Volunteering is where empathy becomes action—and where small contributions can strengthen a community.",
+    copy: "Giving time to people and meaningful causes keeps Sam connected to purpose. For him, volunteering turns empathy into action and demonstrates how thoughtful contributions can strengthen a community.",
   },
   {
     index: "02",
     title: "Cooking",
     kicker: "CREATIVITY",
-    copy: "Cooking is one of my favorite ways to slow down, experiment, and bring people together. It rewards patience, attention to detail, and the courage to try a different combination.",
+    copy: "Cooking gives Sam an opportunity to slow down, experiment, and bring people together. It rewards patience, attention to detail, and the confidence to explore new combinations.",
   },
   {
     index: "03",
     title: "Travel",
     kicker: "PERSPECTIVE",
-    copy: "Travel introduces me to new places, cultures, and ways of thinking. Every journey is a reminder that the same problem can look completely different depending on where you stand.",
+    copy: "Travel introduces Sam to new places, cultures, and perspectives. Every journey reinforces the value of approaching familiar challenges from an entirely different point of view.",
   },
   {
     index: "04",
     title: "Fitness",
     kicker: "DISCIPLINE",
-    copy: "Fitness gives structure to my energy. Showing up consistently—especially when motivation is low—reinforces the discipline, resilience, and steady progress I value in every part of life.",
+    copy: "Fitness brings structure to Sam’s energy and routine. Consistent training reinforces the discipline, resilience, and steady progress he values across every area of life.",
   },
   {
     index: "05",
     title: "Music & Audio",
     kicker: "RHYTHM",
-    copy: "Music helps me reset, focus, and stay connected to emotion. I also enjoy listening to audio because ideas, stories, and conversations can turn ordinary moments into opportunities to reflect and learn.",
+    copy: "Music helps Sam reset, focus, and stay connected to emotion. Audiobooks, ideas, stories, and thoughtful conversations turn ordinary moments into opportunities for reflection and learning.",
   },
   {
     index: "06",
     title: "Reading",
     kicker: "CURIOSITY",
-    copy: "Reading lets me step into unfamiliar subjects and perspectives. It is part exploration and part reflection—a quiet habit that keeps my thinking open, curious, and continually growing.",
+    copy: "Reading introduces Sam to unfamiliar subjects and perspectives. Part exploration and part reflection, it keeps his thinking open, curious, and continually evolving.",
   },
 ];
 
@@ -48,12 +48,12 @@ export default function PersonPage() {
         <div className="person-intro">
           <p className="eyebrow">THE PERSON BEHIND THE WORK</p>
           <h1>
-            There is more to me than <em>models and metrics.</em>
+            There is more to Sam than <em>models and metrics.</em>
           </h1>
           <p>
-            My professional work shows what I can build. The life around it
-            shapes how I show up—with curiosity, discipline, empathy,
-            creativity, and an instinct for bringing people together.
+            Sam’s professional work demonstrates what he can build. His life
+            beyond it shapes how he contributes—with curiosity, discipline,
+            empathy, creativity, and an instinct for bringing people together.
           </p>
           <div className="person-scroll">
             SCROLL TO MEET THE PERSON <span>↓</span>
@@ -83,15 +83,15 @@ export default function PersonPage() {
       </div>
       <section className="person-values shell">
         <div>
-          <p className="eyebrow">01 / WHAT KEEPS ME GROUNDED</p>
+          <p className="eyebrow">01 / WHAT KEEPS SAM GROUNDED</p>
           <h2>
             Life outside work is not an <em>afterthought.</em>
           </h2>
         </div>
         <blockquote>
-          “It is where I practice the same qualities that define my work:
-          showing up, staying curious, learning from others, and making room for
-          joy.”
+          “Beyond professional work, Sam practices the same qualities that
+          define his approach: showing up, staying curious, learning from
+          others, and making room for joy.”
         </blockquote>
       </section>
       <section
@@ -132,7 +132,7 @@ export default function PersonPage() {
       <section className="play-section">
         <div className="shell play-grid">
           <div>
-            <p className="eyebrow">02 / HOW I PLAY</p>
+            <p className="eyebrow">02 / HOW SAM PLAYS</p>
             <h2>
               Competition,
               <br />
@@ -141,10 +141,10 @@ export default function PersonPage() {
               and joy.
             </h2>
             <p>
-              Basketball and soccer keep me active, sharpen teamwork, and create
-              an easy way to connect with people beyond job titles and
-              classrooms. Sports are also part of how I build community—one
-              game, one team, and one shared experience at a time.
+              Basketball and soccer keep Sam active, strengthen teamwork, and
+              create opportunities to connect beyond job titles and classrooms.
+              Sports also reflect his commitment to community building—one game,
+              one team, and one shared experience at a time.
             </p>
           </div>
           <div
@@ -213,9 +213,9 @@ export default function PersonPage() {
           Meaningful work is <em>human.</em>
         </h2>
         <p>
-          I bring both sides of myself to what I do: the analyst who looks
-          closely at evidence and the person who values people, movement,
-          culture, creativity, and community.
+          Sam brings both dimensions to his work: an analyst committed to
+          evidence and a person who values people, movement, culture,
+          creativity, and community.
         </p>
         <Link href="/#work">Return to selected work ↗</Link>
       </section>

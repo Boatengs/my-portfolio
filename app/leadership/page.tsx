@@ -13,9 +13,9 @@ export default function Leadership() {
           with <em>purpose.</em>
         </h1>
         <p>
-          Leadership, to me, is practical service: helping people feel welcome,
-          creating ways to participate, and building structures that allow a
-          community to keep growing.
+          Sam approaches leadership as practical service: fostering belonging,
+          creating meaningful opportunities to participate, and building
+          structures that allow communities to grow.
         </p>
       </header>
       <section className="leadership-detail shell">
@@ -23,10 +23,10 @@ export default function Leadership() {
           <h2>Connection is something you build.</h2>
           <p>
             Across universities, student organizations, professional programs,
-            and community initiatives, I have taken on roles that required
-            listening, organizing, communicating, and following through. The
-            titles are different, but the purpose has stayed consistent: make it
-            easier for people to belong and contribute.
+            and community initiatives, Sam has taken on roles requiring active
+            listening, thoughtful coordination, clear communication, and
+            dependable follow-through. Across each position, his purpose remains
+            consistent: make it easier for people to belong and contribute.
           </p>
         </div>
         <div className="leadership-grid">
@@ -221,7 +221,7 @@ export default function Leadership() {
             through <em>action.</em>
           </h2>
           <Link className="email" href="/impact">
-            Read how I work ↗
+            Explore Sam’s approach ↗
           </Link>
           <div className="footer-row">
             <p>© 2026 Sampson Boateng</p>

@@ -132,7 +132,7 @@ export default async function ProjectPage({
         </article>
         <article>
           <span>02</span>
-          <h2>What I built</h2>
+          <h2>What Sam developed</h2>
           <p>{project.approach}</p>
         </article>
         <article>
@@ -156,7 +156,7 @@ export default async function ProjectPage({
         </div>
         <div>
           <span>06 / NEXT ITERATION</span>
-          <h2>How I would move it forward.</h2>
+          <h2>How Sam would advance the work.</h2>
           <p>{project.future}</p>
         </div>
       </section>

@@ -15,8 +15,8 @@ export default function Work() {
         </h1>
         <p>
           Explore the complete collection. Each case study explains why the
-          problem matters, what I built, what the result means, and where the
-          approach can be applied.
+          problem matters, what Sam developed, what the results demonstrate,
+          and where the approach can be applied.
         </p>
       </header>
       <section className="work-index shell">
@@ -37,7 +37,7 @@ export default function Work() {
             <p>© 2026 Sampson Boateng</p>
             <div>
               <Link href="/">Home</Link>
-              <Link href="/impact">How I Work</Link>
+              <Link href="/impact">Sam’s Approach</Link>
             </div>
           </div>
         </div>
