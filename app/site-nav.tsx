@@ -15,7 +15,7 @@ export function SiteNav({ home = false, label = "Primary navigation" }: SiteNavP
         <Link href={home ? "#about" : "/#about"}>About</Link>
         <Link href={home ? "#experience" : "/#experience"}>Experience</Link>
         <Link href={home ? "#work" : "/work"}>Projects</Link>
-        <Link href="/skills">Skills</Link>
+        <Link href={home ? "#skills" : "/skills"}>Skills</Link>
         <Link href={home ? "#leadership" : "/leadership"}>Leadership</Link>
         <Link href="/person">Beyond Work</Link>
         <Link className="nav-cta" href="/resume">

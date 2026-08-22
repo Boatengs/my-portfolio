@@ -2190,3 +2190,67 @@ body {
     border-left: 0;
   }
 }
+
+/* Homepage sections follow the primary navigation from profile to person. */
+.about-system + .experience {
+  padding-top: 72px;
+}
+
+.skills-preview .capability-console {
+  margin-top: 0;
+}
+
+.skills-preview + .leadership-preview {
+  padding-top: 155px;
+}
+
+.beyond-preview {
+  padding-top: 130px;
+  padding-bottom: 34px;
+}
+
+.beyond-preview-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 26px 0;
+  border-top: 1px solid var(--atelier-hairline);
+  border-bottom: 1px solid var(--atelier-hairline);
+}
+
+.beyond-preview-interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.beyond-preview-interests span {
+  padding: 9px 13px;
+  border: 1px solid var(--atelier-hairline);
+  color: #50555d;
+  font-size: 11px;
+}
+
+.beyond-preview-inner > a {
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .about-system + .experience {
+    padding-top: 58px;
+  }
+
+  .skills-preview + .leadership-preview {
+    padding-top: 104px;
+  }
+
+  .beyond-preview {
+    padding-top: 92px;
+  }
+
+  .beyond-preview-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
