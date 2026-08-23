@@ -309,7 +309,7 @@ for (const root of roots) {
       ["community spirit Sam brings", "community spirit he brings"],
       ["IMPACT / SAM’S APPROACH", "IMPACT / PROFESSIONAL APPROACH"],
       ["Sam’s work integrates service", "This work integrates service"],
-      ["Sam welcomes opportunities", "He welcomes opportunities"],
+      ["He welcomes opportunities", "Sam welcomes opportunities"],
       ["Sam approaches leadership as", "Leadership is approached as"],
       ["initiatives, Sam has taken", "initiatives, he has taken"],
       ["Explore Sam’s approach", "Explore the professional approach"],
