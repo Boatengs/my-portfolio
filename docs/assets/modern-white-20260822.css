@@ -1199,7 +1199,15 @@ body {
 .validation-note,
 .metric-context {
   margin-top: 14px;
+  padding: 26px 30px;
+  border: 1px solid #e8eaee;
   border-radius: 15px;
+}
+
+.validation-note > span,
+.metric-context > span {
+  align-self: start;
+  padding-top: 4px;
 }
 
 .case-grid article {
@@ -2252,5 +2260,10 @@ body {
   .beyond-preview-inner {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .validation-note,
+  .metric-context {
+    padding: 22px 20px;
   }
 }
