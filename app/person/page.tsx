@@ -6,37 +6,37 @@ const interests = [
     index: "01",
     title: "Volunteering",
     kicker: "SERVICE",
-    copy: "Giving time to people and meaningful causes keeps Sam connected to purpose. For him, volunteering turns empathy into action and demonstrates how thoughtful contributions can strengthen a community.",
+    copy: "Giving time to people and meaningful causes reflects a commitment to service. Volunteering turns empathy into action and demonstrates how thoughtful contributions can strengthen a community.",
   },
   {
     index: "02",
     title: "Cooking",
     kicker: "CREATIVITY",
-    copy: "Cooking gives Sam an opportunity to slow down, experiment, and bring people together. It rewards patience, attention to detail, and the confidence to explore new combinations.",
+    copy: "Cooking provides an opportunity to slow down, experiment, and bring people together. It rewards patience, attention to detail, and the confidence to explore new combinations.",
   },
   {
     index: "03",
     title: "Travel",
     kicker: "PERSPECTIVE",
-    copy: "Travel introduces Sam to new places, cultures, and perspectives. Every journey reinforces the value of approaching familiar challenges from an entirely different point of view.",
+    copy: "Travel offers exposure to new places, cultures, and perspectives. Every journey reinforces the value of approaching familiar challenges from an entirely different point of view.",
   },
   {
     index: "04",
     title: "Fitness",
     kicker: "DISCIPLINE",
-    copy: "Fitness brings structure to Sam’s energy and routine. Consistent training reinforces the discipline, resilience, and steady progress he values across every area of life.",
+    copy: "Fitness brings structure to daily life. Consistent training reinforces the discipline, resilience, and steady progress he values across every area of life.",
   },
   {
     index: "05",
     title: "Music & Audio",
     kicker: "RHYTHM",
-    copy: "Music helps Sam reset, focus, and stay connected to emotion. Audiobooks, ideas, stories, and thoughtful conversations turn ordinary moments into opportunities for reflection and learning.",
+    copy: "Music provides an opportunity to reset, focus, and stay connected to emotion. Audiobooks, ideas, stories, and thoughtful conversations turn ordinary moments into opportunities for reflection and learning.",
   },
   {
     index: "06",
     title: "Reading",
     kicker: "CURIOSITY",
-    copy: "Reading introduces Sam to unfamiliar subjects and perspectives. Part exploration and part reflection, it keeps his thinking open, curious, and continually evolving.",
+    copy: "Reading opens the door to unfamiliar subjects and perspectives. Part exploration and part reflection, it keeps his thinking open, curious, and continually evolving.",
   },
 ];
 
@@ -51,7 +51,7 @@ export default function PersonPage() {
             There is more to Sam than <em>models and metrics.</em>
           </h1>
           <p>
-            Sam’s professional work demonstrates what he can build. His life
+            Professional work demonstrates technical expertise. Life
             beyond it shapes how he contributes—with curiosity, discipline,
             empathy, creativity, and an instinct for bringing people together.
           </p>
@@ -83,13 +83,13 @@ export default function PersonPage() {
       </div>
       <section className="person-values shell">
         <div>
-          <p className="eyebrow">01 / WHAT KEEPS SAM GROUNDED</p>
+          <p className="eyebrow">01 / WHAT KEEPS HIM GROUNDED</p>
           <h2>
             Life outside work is not an <em>afterthought.</em>
           </h2>
         </div>
         <blockquote>
-          “Beyond professional work, Sam practices the same qualities that
+          “Beyond professional work, he practices the same qualities that
           define his approach: showing up, staying curious, learning from
           others, and making room for joy.”
         </blockquote>
@@ -132,7 +132,7 @@ export default function PersonPage() {
       <section className="play-section">
         <div className="shell play-grid">
           <div>
-            <p className="eyebrow">02 / HOW SAM PLAYS</p>
+            <p className="eyebrow">02 / SPORTS AND CONNECTION</p>
             <h2>
               Competition,
               <br />
@@ -141,7 +141,7 @@ export default function PersonPage() {
               and joy.
             </h2>
             <p>
-              Basketball and soccer keep Sam active, strengthen teamwork, and
+              Basketball and soccer support an active lifestyle, strengthen teamwork, and
               create opportunities to connect beyond job titles and classrooms.
               Sports also reflect his commitment to community building—one game,
               one team, and one shared experience at a time.
@@ -213,7 +213,7 @@ export default function PersonPage() {
           Meaningful work is <em>human.</em>
         </h2>
         <p>
-          Sam brings both dimensions to his work: an analyst committed to
+          Both dimensions contribute to his work: an analyst committed to
           evidence and a person who values people, movement, culture,
           creativity, and community.
         </p>

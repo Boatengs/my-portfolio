@@ -13,7 +13,7 @@ export default function Leadership() {
           with <em>purpose.</em>
         </h1>
         <p>
-          Sam approaches leadership as practical service: fostering belonging,
+          Leadership is approached as practical service: fostering belonging,
           creating meaningful opportunities to participate, and building
           structures that allow communities to grow.
         </p>
@@ -23,7 +23,7 @@ export default function Leadership() {
           <h2>Connection is something you build.</h2>
           <p>
             Across universities, student organizations, professional programs,
-            and community initiatives, Sam has taken on roles requiring active
+            and community initiatives, he has taken on roles requiring active
             listening, thoughtful coordination, clear communication, and
             dependable follow-through. Across each position, his purpose remains
             consistent: make it easier for people to belong and contribute.
@@ -221,7 +221,7 @@ export default function Leadership() {
             through <em>action.</em>
           </h2>
           <Link className="email" href="/impact">
-            Explore Sam’s approach ↗
+            Explore the professional approach ↗
           </Link>
           <div className="footer-row">
             <p>© 2026 Sampson Boateng</p>

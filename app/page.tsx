@@ -363,7 +363,7 @@ export default function Home() {
           </div>
           <div className="hero-aside">
             <p>
-              Sam translates complex information into actionable intelligence,
+              His work transforms complex information into actionable intelligence,
               decision ready reporting, and practical machine learning
               solutions that support finance, development, and mission driven
               organizations with rigorous analytical and technical expertise.
@@ -419,7 +419,7 @@ export default function Home() {
             </h2>
           </div>
           <p>
-            Sam connects complex organizational challenges with informed,
+            His approach connects complex organizational challenges with informed,
             defensible decisions through analytical rigor, statistical
             modeling, effective visualization, and reliable systems.
           </p>
@@ -442,14 +442,14 @@ export default function Home() {
             </div>
             <div className="about-narrative">
               <p>
-                Sam currently works across finance and development, applying
+                His current work spans finance and development, applying
                 analytical and technical expertise to financial and donor data,
                 reconciliation, management reporting, data quality,
                 organizational systems, and AI enabled healthcare grant
                 initiatives.
               </p>
               <p>
-                Sam recently completed his master&apos;s in Analytics and Applied
+                He recently completed his master&apos;s in Analytics and Applied
                 Machine Intelligence at Northeastern University. His approach
                 emphasizes accuracy and accountability across the full
                 analytical lifecycle, from data validation and modeling to
@@ -595,7 +595,7 @@ export default function Home() {
             ))}
           </div>
           <div className="capability-preview-foot">
-            <p>Explore the complete matrix, project evidence, and tools used across Sam’s work.</p>
+            <p>Explore the complete matrix, project evidence, and tools applied across professional and project work.</p>
             <Link href="/skills">View technical skills &amp; tools <span>↗</span></Link>
           </div>
         </div>
@@ -611,7 +611,7 @@ export default function Home() {
             </h2>
           </div>
           <p>
-            Sam’s leadership reflects a sustained commitment to inclusive
+            His leadership reflects a sustained commitment to inclusive
             communities, meaningful engagement, and initiatives that create
             lasting institutional and social impact.
           </p>
@@ -666,7 +666,7 @@ export default function Home() {
           </div>
           <p>
             Volunteering, cooking, travel, fitness, music, reading, and sports
-            reflect the curiosity, discipline, and community spirit Sam brings
+            reflect the curiosity, discipline, and community spirit he brings
             to every part of life.
           </p>
         </div>
@@ -688,7 +688,7 @@ export default function Home() {
       <section className="impact-preview" id="impact">
         <div className="shell impact-preview-grid">
           <div>
-            <p className="eyebrow">IMPACT / SAM’S APPROACH</p>
+            <p className="eyebrow">IMPACT / PROFESSIONAL APPROACH</p>
             <h2>
               Service that drives
               <br />
@@ -697,7 +697,7 @@ export default function Home() {
           </div>
           <div className="impact-preview-copy">
             <p>
-              Sam’s work integrates service, community engagement, and
+              This work integrates service, community engagement, and
               operational improvement, strengthening inclusion, communication,
               and the systems organizations rely on to deliver their missions.
             </p>
@@ -781,7 +781,7 @@ export default function Home() {
           </div>
           <div>
             <p>
-              Sam welcomes opportunities that integrate rigorous analytics,
+              He welcomes opportunities that integrate rigorous analytics,
               applied machine learning, strategic communication, and
               measurable organizational impact.
             </p>

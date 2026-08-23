@@ -218,10 +218,10 @@ function protectConfidentialCapstone(html, file) {
   const category = "Business Analytics · Pricing Strategy";
   const summary = "An NDA protected graduate capstone that examined how pricing and demand analysis can support responsible commercial decision making for a confidential industry partner.";
   const challenge = "The capstone addressed a confidential business question involving the relationship between pricing decisions and customer demand. Because the work was completed under a nondisclosure agreement, the organization, data, findings, and recommendations are intentionally not identified or reproduced.";
-  const approach = "Sam helped develop a machine learning based pricing and demand analysis solution using Linear Regression, Ridge Regression, Random Forest, and XGBoost. The team evaluated these approaches to identify meaningful patterns, support pricing decisions, and produce useful analytical findings for the project sponsor. The dataset, model performance, proprietary results, and final recommendations remain confidential under the NDA.";
+  const approach = "The project produced a machine learning based pricing and demand analysis solution using Linear Regression, Ridge Regression, Random Forest, and XGBoost. The team evaluated these approaches to identify meaningful patterns, support pricing decisions, and produce useful analytical findings for the project sponsor. The dataset, model performance, proprietary results, and final recommendations remain confidential under the NDA.";
   const outcome = "The team presented its analysis and recommendations privately to the project sponsor. No proprietary findings, performance results, business metrics, or company materials are published in this portfolio.";
   const applications = "At a general level, pricing and demand analysis can inform planning in retail, ecommerce, consumer products, subscriptions, travel, and other sectors where organizations must balance customer response, revenue, and long term strategy.";
-  const limitation = "Public discussion is intentionally limited by the nondisclosure agreement. This case study demonstrates the business context and Sam’s professional experience without exposing proprietary information.";
+  const limitation = "Public discussion is intentionally limited by the nondisclosure agreement. This case study demonstrates the business context and the professional experience gained without exposing proprietary information.";
   const future = "Any future advancement, validation, or implementation remains the responsibility of the project sponsor and is not discussed publicly.";
 
   html = html.replaceAll("Confidential Pricing Strategy Capstone", title);
@@ -296,6 +296,56 @@ for (const root of roots) {
       html = html.replaceAll(before, after);
     }
     for (const [before, after] of thirdPersonCopy) {
+      html = html.replaceAll(before, after);
+    }
+    const polishedNarrative = [
+      ["Sam translates complex information", "His work transforms complex information"],
+      ["Sam connects complex organizational challenges", "His approach connects complex organizational challenges"],
+      ["Sam currently works across finance", "His current work spans finance"],
+      ["Sam recently completed his master", "He recently completed his master"],
+      ["tools used across Sam’s work", "tools applied across professional and project work"],
+      ["Sam’s leadership reflects", "His leadership reflects"],
+      ["community spirit Sam brings", "community spirit he brings"],
+      ["IMPACT / SAM’S APPROACH", "IMPACT / PROFESSIONAL APPROACH"],
+      ["Sam’s work integrates service", "This work integrates service"],
+      ["Sam welcomes opportunities", "He welcomes opportunities"],
+      ["Sam approaches leadership as", "Leadership is approached as"],
+      ["initiatives, Sam has taken", "initiatives, he has taken"],
+      ["Explore Sam’s approach", "Explore the professional approach"],
+      ["Sam recognizes that meaningful improvement", "Meaningful improvement"],
+      ["sports, Sam has helped", "sports, he has helped"],
+      ["an event. Sam focuses", "an event. His approach focuses"],
+      ["organization, Sam addressed", "organization, he addressed"],
+      ["SAM’S WORKING PRINCIPLES", "PROFESSIONAL WORKING PRINCIPLES"],
+      ["what Sam developed", "what was developed"],
+      ["Sam’s Approach", "Professional Approach"],
+      ["platforms Sam uses", "platforms applied in practice"],
+      ["Giving time to people and meaningful causes keeps Sam connected to purpose. For him, volunteering", "Giving time to people and meaningful causes reflects a commitment to service. Volunteering"],
+      ["Cooking gives Sam an opportunity", "Cooking provides an opportunity"],
+      ["Travel introduces Sam to", "Travel offers exposure to"],
+      ["Fitness brings structure to Sam’s energy and routine", "Fitness brings structure to daily life"],
+      ["Music helps Sam reset", "Music provides an opportunity to reset"],
+      ["Reading introduces Sam to", "Reading opens the door to"],
+      ["Sam’s professional work demonstrates what he can build. His life", "Professional work demonstrates technical expertise. Life"],
+      ["WHAT KEEPS SAM GROUNDED", "WHAT KEEPS HIM GROUNDED"],
+      ["Beyond professional work, Sam practices", "Beyond professional work, he practices"],
+      ["HOW SAM PLAYS", "SPORTS AND CONNECTION"],
+      ["Basketball and soccer keep Sam active", "Basketball and soccer support an active lifestyle"],
+      ["Sam brings both dimensions", "Both dimensions contribute"],
+      ["Sam cleaned and explored", "The analysis cleaned and explored"],
+      ["Sam compared Logistic Regression", "The evaluation compared Logistic Regression"],
+      ["Sam fine tuned DistilBERT", "The project fine tuned DistilBERT"],
+      ["Sam fine-tuned DistilBERT", "The project fine-tuned DistilBERT"],
+      ["Sam divided project", "The retrieval workflow divided project"],
+      ["Sam used LoRA and QLoRA", "The training process used LoRA and QLoRA"],
+      ["Sam adapted EfficientNetB0", "The implementation adapted EfficientNetB0"],
+      ["Sam built a Gradio application", "The project introduced a Gradio application"],
+      ["Sam trained a 31", "The implementation trained a 31"],
+      ["Sam created a 20", "The evaluation introduced a 20"],
+      ["Sam helped develop a machine learning", "The project produced a machine learning"],
+      ["Sam’s professional experience", "the professional experience gained"],
+    ];
+    for (const [before, after] of polishedNarrative) {
       html = html.replaceAll(before, after);
     }
     html = html.replaceAll(">What Sam developed<", ">What was developed<");
