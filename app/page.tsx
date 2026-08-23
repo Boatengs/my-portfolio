@@ -781,7 +781,7 @@ export default function Home() {
           </div>
           <div>
             <p>
-              He welcomes opportunities that integrate rigorous analytics,
+              Sam welcomes opportunities that integrate rigorous analytics,
               applied machine learning, strategic communication, and
               measurable organizational impact.
             </p>
