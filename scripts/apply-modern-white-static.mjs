@@ -3,7 +3,7 @@ import path from "node:path";
 
 const roots = ["docs", "site-static"];
 const assetName = "modern-white-20260822.css";
-const assetVersion = "8";
+const assetVersion = "9";
 const assetHref = `/my-portfolio/assets/${assetName}?v=${assetVersion}`;
 const stylesheet = await fs.readFile("app/modern-white.css", "utf8");
 const evidenceByTitle = new Map([
@@ -349,6 +349,9 @@ for (const root of roots) {
     for (const [before, after] of polishedNarrative) {
       html = html.replaceAll(before, after);
     }
+    html = html.replaceAll("Visualization &amp; Apps", "Business Intelligence");
+    html = html.replaceAll("Visualization & Apps", "Business Intelligence");
+    html = html.replaceAll("A complete view of the analytical methods, machine learning systems, visualization tools, and platforms applied in practice with project links showing where they appear in practice.", "An integrated view of analytical methods, business intelligence, machine learning, and the platforms behind practical project outcomes.");
     html = html.replaceAll(">What Sam developed<", ">What was developed<");
     html = html.replaceAll(">How Sam would advance the work.<", ">Future advancement<");
     const newLink = `<link rel="stylesheet" href="${assetHref}"/>`;
