@@ -312,3 +312,26 @@ a.tool-item:hover .tool-arrow { color: var(--atlas-accent); transform: translate
 @media (prefers-reduced-motion: reduce) {
   .skill-domain::before, .tool-item, .tool-arrow { transition: none !important; }
 }
+
+/* Compact architectural index: sharper hierarchy and substantially less empty space. */
+.skills-atlas-page .atlas-hero{padding-top:54px;padding-bottom:49px}
+.skills-atlas-page .atlas-hero::after{width:300px;height:300px;top:20px;right:-95px}
+.skills-atlas-page .atlas-section{padding-bottom:86px}
+.skills-atlas-page .atlas-head,.skills-atlas-page .skill-domain{grid-template-columns:56px minmax(210px,275px) minmax(0,1fr);gap:23px}
+.skills-atlas-page .atlas-head{padding:13px 0 12px}
+.skills-atlas-page .skill-domain{padding:27px 0 29px}
+.skills-atlas-page .skill-domain::before{display:none}
+.skills-atlas-page .domain-index{font-size:37px;line-height:1}
+.skills-atlas-page .domain-meta{position:static;padding-right:12px}
+.skills-atlas-page .domain-meta h2{margin-bottom:10px;font-size:clamp(25px,2.25vw,35px);line-height:1}
+.skills-atlas-page .domain-meta p{max-width:255px;margin-bottom:12px;font-size:11px;line-height:1.55}
+.skills-atlas-page .domain-proof{padding-bottom:4px;font-size:10px}
+.skills-atlas-page .tool-matrix{grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid #d7dbe0}
+.skills-atlas-page .tool-item{grid-template-columns:42px minmax(0,1fr) auto;gap:7px;min-height:51px;padding:9px 9px 9px 0}
+.skills-atlas-page .tool-item:nth-child(3n+1),.skills-atlas-page .tool-item:nth-child(3n+2){padding-right:12px;margin-right:12px}
+.skills-atlas-page .tool-name{font-size:12px;font-weight:700}
+.skills-atlas-page .tool-code{font-size:8px}
+.skills-atlas-page .atlas-closing{margin-top:29px;padding-top:18px}
+.skills-atlas-page .skill-domain,.skills-atlas-page .tool-item,.skills-atlas-page .domain-meta,.skills-atlas-page .tool-matrix{border-radius:0}
+@media(max-width:1000px){.skills-atlas-page .atlas-head,.skills-atlas-page .skill-domain{grid-template-columns:45px minmax(180px,220px) minmax(0,1fr);gap:16px}.skills-atlas-page .tool-matrix{grid-template-columns:repeat(2,minmax(0,1fr))}.skills-atlas-page .tool-item:nth-child(3n+1),.skills-atlas-page .tool-item:nth-child(3n+2){margin-right:0;padding-right:9px;border-right:0}.skills-atlas-page .tool-item:nth-child(odd){padding-right:10px;margin-right:10px;border-right:1px solid #e4e7eb}}
+@media(max-width:760px){.skills-atlas-page .atlas-hero{padding-top:39px;padding-bottom:38px}.skills-atlas-page .atlas-head{display:none}.skills-atlas-page .skill-domain{grid-template-columns:42px minmax(0,1fr);gap:13px;padding:23px 0}.skills-atlas-page .domain-index{font-size:31px}.skills-atlas-page .tool-matrix{grid-column:2;grid-template-columns:repeat(2,minmax(0,1fr))}.skills-atlas-page .domain-meta h2{font-size:29px}.skills-atlas-page .tool-item{min-height:48px}}
