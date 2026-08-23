@@ -15,7 +15,7 @@ export default function Work() {
         </h1>
         <p>
           Explore the complete collection. Each case study explains why the
-          problem matters, what Sam developed, what the results demonstrate,
+          problem matters, what was developed, what the results demonstrate,
           and where the approach can be applied.
         </p>
       </header>
@@ -37,7 +37,7 @@ export default function Work() {
             <p>© 2026 Sampson Boateng</p>
             <div>
               <Link href="/">Home</Link>
-              <Link href="/impact">Sam’s Approach</Link>
+              <Link href="/impact">Professional Approach</Link>
             </div>
           </div>
         </div>
