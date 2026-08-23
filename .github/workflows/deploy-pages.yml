@@ -29,6 +29,7 @@ jobs:
         run: |
           printf '\n\n' >> site-static/assets/modern-white-20260822.css
           cat site-static/assets/skills-premium-live.css >> site-static/assets/modern-white-20260822.css
+          find site-static -type f -name '*.html' -exec sed -i 's/modern-white-20260822.css?v=9/modern-white-20260822.css?v=10/g' {} +
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site-static
