@@ -25,6 +25,10 @@ jobs:
       - uses: actions/configure-pages@v5
         with:
           enablement: true
+      - name: Apply live skills design layer
+        run: |
+          printf '\n\n' >> site-static/assets/modern-white-20260822.css
+          cat site-static/assets/skills-premium-live.css >> site-static/assets/modern-white-20260822.css
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site-static
