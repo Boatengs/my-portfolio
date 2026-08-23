@@ -3,7 +3,7 @@ import path from "node:path";
 
 const roots = ["docs", "site-static"];
 const assetName = "modern-white-20260822.css";
-const assetVersion = "9";
+const assetVersion = "10";
 const assetHref = `/my-portfolio/assets/${assetName}?v=${assetVersion}`;
 const stylesheet = await fs.readFile("app/modern-white.css", "utf8");
 const evidenceByTitle = new Map([
