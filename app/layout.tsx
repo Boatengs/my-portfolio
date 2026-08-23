@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./modern-white.css";
 import "./skills-ultramodern.css";
+import "./skills-editorial-fixes.css";
 export const metadata: Metadata = {
   title: "Sampson Boateng — Data Analytics & Applied Machine Learning",
   description:
