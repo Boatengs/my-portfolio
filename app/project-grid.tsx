@@ -7,21 +7,10 @@ function ProjectArt({ slug }: { slug: string }) {
   if (slug === "price-elasticity")
     return (
       <div className="art elasticity-art">
-        <span className="axis-label demand">DEMAND</span>
-        <span className="axis-label price">PRICE</span>
-        <svg viewBox="0 0 600 300" aria-hidden="true">
-          <path
-            className="ghost-curve"
-            d="M28 258 C120 242 202 218 278 168 S450 64 572 42"
-          />
-          <path
-            className="main-curve"
-            d="M28 258 C120 242 202 218 278 168 S450 64 572 42"
-          />
-          <circle cx="278" cy="168" r="8" />
-        </svg>
-        <b>−1.42</b>
-        <small>ELASTICITY INDEX</small>
+        <span className="axis-label demand">CONFIDENTIAL</span>
+        <span className="axis-label price">NDA PROTECTED</span>
+        <b>NDA</b>
+        <small>GRADUATE CAPSTONE</small>
       </div>
     );
   if (slug === "water-quality")

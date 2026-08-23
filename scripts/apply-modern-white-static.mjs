@@ -7,7 +7,6 @@ const assetVersion = "7";
 const assetHref = `/my-portfolio/assets/${assetName}?v=${assetVersion}`;
 const stylesheet = await fs.readFile("app/modern-white.css", "utf8");
 const evidenceByTitle = new Map([
-  ["Price Elasticity Modeling", ["9", "Executive insight areas"]],
   ["Water Quality Analysis", ["3", "Analytical methods"]],
   ["Healthcare Resource Modeling", ["3", "Classifiers compared"]],
   ["Sentiment Analyzer", ["91.19%", "Test accuracy"]],
@@ -70,8 +69,6 @@ const thirdPersonCopy = [
   ["platforms I use—with project links", "platforms Sam uses—with project links"],
   [">What I built<", ">What Sam developed<"],
   [">How I would move it forward.<", ">How Sam would advance the work.<"],
-  ["Working as part of Capstone Team C, I helped", "Working as part of Capstone Team C, Sam helped"],
-  [". We built nine executive insight views", ". The team built nine executive insight views"],
   [">I cleaned and explored", ">Sam cleaned and explored"],
   [">I compared Logistic Regression", ">Sam compared Logistic Regression"],
   [">I fine-tuned DistilBERT", ">Sam fine-tuned DistilBERT"],
@@ -216,6 +213,66 @@ function reorderHomepage(html) {
   return html.slice(0, start) + reordered + html.slice(end);
 }
 
+function protectConfidentialCapstone(html, file) {
+  const title = "Confidential Pricing Strategy Capstone";
+  const category = "Business Analytics · Pricing Strategy";
+  const summary = "An NDA protected graduate capstone that examined how pricing and demand analysis can support responsible commercial decision making for a confidential industry partner.";
+  const challenge = "The capstone addressed a confidential business question involving the relationship between pricing decisions and customer demand. Because the work was completed under a nondisclosure agreement, the organization, data, findings, and recommendations are intentionally not identified or reproduced.";
+  const approach = "Sam contributed to a structured analytical process that included data review, exploratory analysis, model evaluation, interpretation, and stakeholder communication. The specific dataset, methods, implementation details, and deliverables remain confidential under the project NDA.";
+  const outcome = "The team presented its analysis and recommendations privately to the project sponsor. No proprietary findings, performance results, business metrics, or company materials are published in this portfolio.";
+  const applications = "At a general level, pricing and demand analysis can inform planning in retail, ecommerce, consumer products, subscriptions, travel, and other sectors where organizations must balance customer response, revenue, and long term strategy.";
+  const limitation = "Public discussion is intentionally limited by the nondisclosure agreement. This case study demonstrates the business context and Sam’s professional experience without exposing proprietary information.";
+  const future = "Any future advancement, validation, or implementation remains the responsibility of the project sponsor and is not discussed publicly.";
+
+  html = html.replaceAll("Price Elasticity Modeling", title);
+  html = html.replace(/content="A capstone for [^"]*"/g, `content="${summary}"`);
+  html = html.replace(
+    /<a href="\/my-portfolio\/projects\/price-elasticity" class="project-card[^"]*"[^>]*>[\s\S]*?<\/a>/g,
+    (card) => {
+      const art = '<div class="art elasticity-art"><span class="axis-label demand">CONFIDENTIAL</span><span class="axis-label price">NDA PROTECTED</span><b>NDA</b><small>GRADUATE CAPSTONE</small></div>';
+      const info = `<div class="project-info"><p>${category}</p><h3>${title}<i class="project-arrow">↗</i></h3><span>${summary}</span></div>`;
+      return card
+        .replace(/<div class="art elasticity-art">[\s\S]*?<\/div>/, art)
+        .replace(/<div class="project-info">[\s\S]*?<\/div>(?:<\/div>)?(?=<\/a>)/, info);
+    },
+  );
+
+  if (!file.endsWith("projects/price-elasticity/index.html")) return html;
+
+  html = html.replace(
+    /(<meta (?:name="description"|property="og:description") content=")[^"]*("\s*\/?>)/g,
+    `$1${summary}$2`,
+  );
+  html = html.replaceAll("Forecasting · Pricing", category);
+  html = html.replace(
+    /(<section class="detail-hero shell">[\s\S]*?<h1>)[\s\S]*?(<\/h1><p>)[\s\S]*?(<\/p><\/section>)/,
+    `$1${title}$2${summary}$3`,
+  );
+  html = html.replace(
+    /<section class="dataset-strip shell">[\s\S]*?<\/section>/,
+    '<section class="dataset-strip shell"><div><span>DATASET</span><strong>Confidential business dataset</strong></div><div><span>SIZE</span><strong>Withheld under NDA</strong></div><div><span>SOURCE</span><strong>Private industry capstone partner</strong></div></section>',
+  );
+  html = html.replace(/<section class="evidence-panel shell">[\s\S]*?<\/section>/, "");
+  html = html.replace(
+    /<section class="case-grid shell">[\s\S]*?<\/section>/,
+    `<section class="case-grid shell"><article><span>01</span><h2>Why this project matters</h2><p>${challenge}</p></article><article><span>02</span><h2>What was developed</h2><p>${approach}</p></article><article><span>03</span><h2>What it means</h2><p>${outcome}</p></article></section>`,
+  );
+  html = html.replace(
+    /<section class="application-story shell">[\s\S]*?<\/section>/,
+    `<section class="application-story shell"><p class="eyebrow">04 / WHERE THIS WORK APPLIES</p><div><h2>From project to practical use.</h2><p>${applications}</p></div></section>`,
+  );
+  html = html.replace(
+    /<section class="reflection shell">[\s\S]*?<\/section>/,
+    `<section class="reflection shell"><div><span>05 / LIMITATION</span><h2>Confidentiality and disclosure boundaries.</h2><p>${limitation}</p></div><div><span>06 / NEXT ITERATION</span><h2>Future advancement</h2><p>${future}</p></div></section>`,
+  );
+  html = html.replace(
+    /<section class="toolkit shell">[\s\S]*?<\/section>/,
+    '<section class="toolkit shell"><p class="eyebrow">PROFESSIONAL CAPABILITIES</p><div><span>Confidential Business Analysis</span><span>Pricing Strategy</span><span>Demand Analysis</span><span>Stakeholder Communication</span></div><p class="repo-note">Project code, data, analysis, results, and sponsor materials are not publicly available under the nondisclosure agreement.</p></section>',
+  );
+
+  return html;
+}
+
 async function walk(directory) {
   const entries = await fs.readdir(directory, { withFileTypes: true });
   const files = [];
@@ -330,7 +387,7 @@ for (const root of roots) {
       html = html.replace("</head>", `${newLink}</head>`);
     }
 
-    await fs.writeFile(file, plainVisibleText(html));
+    await fs.writeFile(file, plainVisibleText(protectConfidentialCapstone(html, file)));
   }
 }
 
