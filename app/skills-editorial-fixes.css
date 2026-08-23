@@ -1,0 +1,33 @@
+/* Final isolation layer for the editorial skills treatment. */
+.skills-page .skills-index .capability-tags > a > span,
+.skills-page .skills-index .capability-tags > .skill-static > span {
+  display: block;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  transform: none;
+}
+
+.skills-page .skills-index .capability-tags > a > span:hover,
+.skills-page .skills-index .capability-tags > .skill-static > span:hover {
+  border: 0;
+  background: transparent;
+  transform: none;
+}
+
+.skills-page .capability-tags > a > b {
+  position: static;
+  top: auto;
+  right: auto;
+  transform: none;
+}
+
+.skills-page .capability-tags > a:hover > b {
+  transform: translate(2px, -2px);
+}
