@@ -214,7 +214,7 @@ function reorderHomepage(html) {
 }
 
 function protectConfidentialCapstone(html, file) {
-  const title = "Confidential Pricing Strategy Capstone";
+  const title = "Capstone, Price Elasticity Modeling";
   const category = "Business Analytics · Pricing Strategy";
   const summary = "An NDA protected graduate capstone that examined how pricing and demand analysis can support responsible commercial decision making for a confidential industry partner.";
   const challenge = "The capstone addressed a confidential business question involving the relationship between pricing decisions and customer demand. Because the work was completed under a nondisclosure agreement, the organization, data, findings, and recommendations are intentionally not identified or reproduced.";
@@ -224,7 +224,8 @@ function protectConfidentialCapstone(html, file) {
   const limitation = "Public discussion is intentionally limited by the nondisclosure agreement. This case study demonstrates the business context and Sam’s professional experience without exposing proprietary information.";
   const future = "Any future advancement, validation, or implementation remains the responsibility of the project sponsor and is not discussed publicly.";
 
-  html = html.replaceAll("Price Elasticity Modeling", title);
+  html = html.replaceAll("Confidential Pricing Strategy Capstone", title);
+  html = html.replace(/(?<!Capstone, )Price Elasticity Modeling/g, title);
   html = html.replace(/content="A capstone for [^"]*"/g, `content="${summary}"`);
   html = html.replace(
     /<a href="\/my-portfolio\/projects\/price-elasticity" class="project-card[^"]*"[^>]*>[\s\S]*?<\/a>/g,
