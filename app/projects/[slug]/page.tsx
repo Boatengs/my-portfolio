@@ -167,7 +167,12 @@ export default async function ProjectPage({
             <span key={t}>{t}</span>
           ))}
         </div>
-        <div className="project-links">
+        {project.confidential ? (
+          <p className="repo-note">
+            Project code, data, analysis, results, and sponsor materials are not
+            publicly available under the nondisclosure agreement.
+          </p>
+        ) : <div className="project-links">
           <a
             href={project.repoUrl || "https://github.com/Boatengs"}
             target="_blank"
@@ -182,7 +187,7 @@ export default async function ProjectPage({
               Launch on Hugging Face ↗
             </a>
           )}
-        </div>
+        </div>}
         {project.repoNote && <p className="repo-note">{project.repoNote}</p>}
       </section>
       <Link className="next-project" href={`/projects/${next.slug}`}>
