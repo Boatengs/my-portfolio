@@ -442,7 +442,7 @@ export default function Home() {
             </div>
             <div className="about-narrative">
               <p>
-                His current work spans finance and development, applying
+                Sam’s current work spans finance and development, applying
                 analytical and technical expertise to financial and donor data,
                 reconciliation, management reporting, data quality,
                 organizational systems, and AI enabled healthcare grant

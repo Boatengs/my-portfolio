@@ -301,7 +301,8 @@ for (const root of roots) {
     const polishedNarrative = [
       ["Sam translates complex information", "His work transforms complex information"],
       ["Sam connects complex organizational challenges", "His approach connects complex organizational challenges"],
-      ["Sam currently works across finance", "His current work spans finance"],
+      ["Sam currently works across finance", "Sam’s current work spans finance"],
+      ["His current work spans finance", "Sam’s current work spans finance"],
       ["Sam recently completed his master", "He recently completed his master"],
       ["tools used across Sam’s work", "tools applied across professional and project work"],
       ["Sam’s leadership reflects", "His leadership reflects"],
