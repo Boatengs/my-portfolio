@@ -117,7 +117,7 @@ export const skillGroups = [
     ],
   },
   {
-    label: "Business Intelligence",
+    label: "Visualization & Apps",
     proof: "6 project examples",
     href: "/projects/sentiment-analyzer",
     skills: [
