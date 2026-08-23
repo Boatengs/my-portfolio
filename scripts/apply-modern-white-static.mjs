@@ -218,7 +218,7 @@ function protectConfidentialCapstone(html, file) {
   const category = "Business Analytics · Pricing Strategy";
   const summary = "An NDA protected graduate capstone that examined how pricing and demand analysis can support responsible commercial decision making for a confidential industry partner.";
   const challenge = "The capstone addressed a confidential business question involving the relationship between pricing decisions and customer demand. Because the work was completed under a nondisclosure agreement, the organization, data, findings, and recommendations are intentionally not identified or reproduced.";
-  const approach = "Sam contributed to a structured analytical process that included data review, exploratory analysis, model evaluation, interpretation, and stakeholder communication. The specific dataset, methods, implementation details, and deliverables remain confidential under the project NDA.";
+  const approach = "Sam helped develop a machine learning based pricing and demand analysis solution using Linear Regression, Ridge Regression, Random Forest, and XGBoost. The team evaluated these approaches to identify meaningful patterns, support pricing decisions, and produce useful analytical findings for the project sponsor. The dataset, model performance, proprietary results, and final recommendations remain confidential under the NDA.";
   const outcome = "The team presented its analysis and recommendations privately to the project sponsor. No proprietary findings, performance results, business metrics, or company materials are published in this portfolio.";
   const applications = "At a general level, pricing and demand analysis can inform planning in retail, ecommerce, consumer products, subscriptions, travel, and other sectors where organizations must balance customer response, revenue, and long term strategy.";
   const limitation = "Public discussion is intentionally limited by the nondisclosure agreement. This case study demonstrates the business context and Sam’s professional experience without exposing proprietary information.";
@@ -267,7 +267,7 @@ function protectConfidentialCapstone(html, file) {
   );
   html = html.replace(
     /<section class="toolkit shell">[\s\S]*?<\/section>/,
-    '<section class="toolkit shell"><p class="eyebrow">PROFESSIONAL CAPABILITIES</p><div><span>Confidential Business Analysis</span><span>Pricing Strategy</span><span>Demand Analysis</span><span>Stakeholder Communication</span></div><p class="repo-note">Project code, data, analysis, results, and sponsor materials are not publicly available under the nondisclosure agreement.</p></section>',
+    '<section class="toolkit shell"><p class="eyebrow">PROFESSIONAL CAPABILITIES</p><div><span>Linear Regression</span><span>Ridge Regression</span><span>Random Forest</span><span>XGBoost</span><span>Pricing Strategy</span><span>Demand Analysis</span></div><p class="repo-note">Project code, data, analysis, results, and sponsor materials are not publicly available under the nondisclosure agreement.</p></section>',
   );
 
   return html;
