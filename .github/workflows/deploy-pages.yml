@@ -25,10 +25,6 @@ jobs:
       - uses: actions/configure-pages@v5
         with:
           enablement: true
-      - name: Apply dedicated Skills matrix styling
-        run: |
-          cat site-static/assets/skills-matrix-restore.css >> site-static/assets/modern-white-20260822.css
-          sed -i 's/modern-white-20260822.css?v=9/modern-white-20260822.css?v=matrix-restore-1/' site-static/skills/index.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site-static
