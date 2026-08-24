@@ -25,6 +25,7 @@ jobs:
       - uses: actions/configure-pages@v5
         with:
           enablement: true
+      # Deploy the checked-in static site directly; no Skills sidecar injection.
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site-static
