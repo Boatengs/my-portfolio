@@ -11,6 +11,7 @@ const routes = [
   "/projects/sports-chatbot", "/projects/medical-qa",
   "/projects/skin-classifier", "/projects/object-detector",
   "/projects/skin-lesion-segmentation", "/projects/llm-evaluation",
+  "/projects/pfas-water-decision-intelligence",
 ];
 
 await fs.rm(out, { recursive: true, force: true });
