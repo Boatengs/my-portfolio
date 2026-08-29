@@ -1,0 +1,37 @@
+name: Trim PFAS homepage proof block
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/trim-pfas-home-card.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Remove PFAS lower proof block from homepage
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('docs/index.html')
+          text = p.read_text()
+          tag = '<span class="pfas-national-tag">National-scale project · Water infrastructure</span>'
+          proof = '<div class="pfas-proof"><div><strong>1.99M</strong><span>analytical results</span></div><div><strong>1,127</strong><span>systems screened forward</span></div><div><strong>20 years</strong><span>lifecycle economics</span></div></div>'
+          if tag not in text or proof not in text:
+              raise SystemExit('Expected PFAS homepage proof block not found; no change made.')
+          text = text.replace(tag, '', 1).replace(proof, '', 1)
+          p.write_text(text)
+          PY
+      - name: Commit homepage balance update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Balance PFAS and sentiment homepage cards"
+          git push
