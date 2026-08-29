@@ -1,0 +1,52 @@
+name: Update PFAS homepage water artwork
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/update-pfas-water-art.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update PFAS artwork and trim sentiment proof
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          p = Path('docs/index.html')
+          text = p.read_text()
+
+          new_css = '''<style id="pfas-home-feature-20260828">.pfas-card .project-visual{background:linear-gradient(135deg,#061d2a 0%,#0a435b 58%,#4fc9c5 100%);color:#f5fffd}.pfas-card .visual-grid{opacity:.22}.pfas-water-art{position:absolute;z-index:3;inset:0;overflow:hidden}.pfas-water-art:before{content:"";position:absolute;width:330px;height:330px;right:-130px;top:-145px;border:1px solid rgba(255,255,255,.22);border-radius:50%;box-shadow:0 0 0 46px rgba(91,218,214,.065),0 0 0 92px rgba(91,218,214,.035)}.pfas-title-block{position:absolute;z-index:5;top:54px;left:30px}.pfas-title-block>span{display:block;color:#a9eee9!important;font:800 9px/1.2 Arial,sans-serif!important;letter-spacing:.18em;text-transform:uppercase}.pfas-title-block>b{display:block;margin-top:8px;color:#fff;font-size:72px;font-weight:900;letter-spacing:-.075em;line-height:.82}.pfas-title-block>small{display:block;margin-top:11px;color:rgba(255,255,255,.72);font:700 9px/1.2 monospace;letter-spacing:.12em}.pfas-water-scene{position:absolute;z-index:4;top:38px;right:22px;width:235px;height:205px}.pfas-pipe-main{position:absolute;top:27px;right:34px;width:145px;height:28px;background:linear-gradient(180deg,#f2fffd,#a4d8d6);border-radius:4px;box-shadow:inset 0 -5px 0 rgba(8,43,59,.14),0 8px 20px rgba(0,0,0,.08)}.pfas-pipe-main:before{content:"";position:absolute;left:-25px;top:-7px;width:31px;height:42px;border:6px solid rgba(225,250,247,.86);border-right:0;border-radius:7px 0 0 7px}.pfas-pipe-neck{position:absolute;top:46px;right:34px;width:30px;height:54px;background:linear-gradient(90deg,#abdcd9,#f2fffd);border-radius:0 0 7px 7px;box-shadow:inset 5px 0 0 rgba(8,43,59,.1)}.pfas-pipe-mouth{position:absolute;top:93px;right:23px;width:52px;height:20px;background:#d7f2ef;border-radius:3px 3px 9px 9px;box-shadow:inset 0 -5px 0 rgba(8,43,59,.13)}.pfas-water-stream{position:absolute;top:111px;right:43px;width:11px;height:43px;border-radius:0 0 9px 9px;background:linear-gradient(180deg,#d9ffff,#72e5df 58%,#3cc1c3);box-shadow:0 0 16px rgba(126,239,235,.35)}.pfas-water-drop{position:absolute;top:156px;right:32px;width:32px;height:38px;background:linear-gradient(145deg,#d9ffff 2%,#70e8e1 55%,#1ba7b4);border-radius:55% 55% 60% 60% / 68% 68% 40% 40%;transform:rotate(2deg);box-shadow:inset 7px 6px 10px rgba(255,255,255,.34),0 10px 24px rgba(0,0,0,.15)}.pfas-water-drop:before{content:"";position:absolute;left:8px;top:6px;width:7px;height:10px;background:rgba(255,255,255,.55);border-radius:50%;transform:rotate(18deg)}.pfas-ripple{position:absolute;right:2px;bottom:0;border:1px solid rgba(166,244,239,.65);border-radius:50%;height:18px}.pfas-ripple.one{width:112px}.pfas-ripple.two{right:20px;bottom:8px;width:76px;opacity:.55}.pfas-metrics{position:absolute;z-index:5;left:28px;right:28px;bottom:45px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.pfas-metrics>span{display:block;padding:10px 10px 9px;border-top:1px solid rgba(255,255,255,.34);background:rgba(2,20,30,.24);backdrop-filter:blur(2px);color:#fff!important}.pfas-metrics strong{display:block;color:#fff;font-size:17px;line-height:1}.pfas-metrics em{display:block;margin-top:5px;color:rgba(255,255,255,.68);font-size:7px;font-style:normal;font-weight:800;letter-spacing:.09em;line-height:1.25}.pfas-card .visual-label{color:#fff}.pfas-card .open-mark{background:#eaff72;color:#092835}.pfas-card:hover .open-mark{background:#fff}.pfas-card .project-info>p{color:#137281}.pfas-card .project-info h3{max-width:560px}.pfas-card .project-info>span{display:block;max-width:570px;line-height:1.65}@media(max-width:620px){.pfas-title-block{top:50px;left:22px}.pfas-title-block>b{font-size:58px}.pfas-water-scene{right:5px;transform:scale(.84);transform-origin:top right}.pfas-metrics{left:20px;right:20px;gap:5px}.pfas-metrics>span{padding:8px 6px}}</style>'''
+
+          text, n_css = re.subn(r'<style id="pfas-home-feature-20260828">.*?</style>', new_css, text, count=1, flags=re.S)
+          if n_css != 1:
+              raise SystemExit(f'Expected one PFAS style block, replaced {n_css}')
+
+          new_art = '''<div class="art pfas-water-art"><div class="pfas-title-block"><span>NATIONAL WATER INTELLIGENCE</span><b>PFAS</b><small>EPA UCMR 5 · DRINKING WATER</small></div><div class="pfas-water-scene" aria-hidden="true"><span class="pfas-pipe-main"></span><span class="pfas-pipe-neck"></span><span class="pfas-pipe-mouth"></span><span class="pfas-water-stream"></span><span class="pfas-water-drop"></span><span class="pfas-ripple one"></span><span class="pfas-ripple two"></span></div><div class="pfas-metrics"><span><strong>10,313</strong><em>PUBLIC WATER SYSTEMS</em></span><span><strong>388</strong><em>TIER 1 PRIORITIES</em></span><span><strong>$1B</strong><em>CAPITAL SCENARIO</em></span></div></div><span class="visual-label">'''
+
+          text, n_art = re.subn(r'<div class="art pfas-water-art">.*?</div><span class="visual-label">', new_art, text, count=1, flags=re.S)
+          if n_art != 1:
+              raise SystemExit(f'Expected one PFAS artwork block, replaced {n_art}')
+
+          sentiment_proof = '<div class="project-proof"><strong>91.19%</strong><span>Test accuracy</span></div>'
+          if sentiment_proof not in text:
+              raise SystemExit('Expected Sentiment Analyzer proof block not found')
+          text = text.replace(sentiment_proof, '', 1)
+
+          p.write_text(text)
+          PY
+      - name: Commit portfolio homepage update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Refine PFAS water artwork and balance project cards"
+          git push
