@@ -1,0 +1,36 @@
+name: Patch PFAS homepage case-study link
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/patch-pfas-home-link.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Point PFAS homepage card to portfolio case study
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('docs/index.html')
+          text = p.read_text()
+          old = 'href="https://github.com/Boatengs/pfas-water-decision-intelligence" target="_blank" rel="noreferrer" aria-label="Open PFAS Drinking Water Decision Intelligence project on GitHub" class="project-card card-1 pfas-card"'
+          new = 'href="/my-portfolio/projects/pfas-water-decision-intelligence" aria-label="Open PFAS Drinking Water Decision Intelligence case study" class="project-card card-1 pfas-card"'
+          if old not in text:
+              raise SystemExit('Expected PFAS homepage link not found; no change made.')
+          p.write_text(text.replace(old, new, 1))
+          PY
+      - name: Commit homepage link update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Link PFAS homepage card to case study"
+          git push
