@@ -4,6 +4,22 @@ import { useState } from "react";
 import { projects } from "./projects";
 
 function ProjectArt({ slug }: { slug: string }) {
+  if (slug === "pfas-water-decision-intelligence")
+    return (
+      <div className="art water-art">
+        <div className="ripple r1" />
+        <div className="ripple r2" />
+        <div className="ripple r3" />
+        <i className="drop d1" />
+        <i className="drop d2" />
+        <i className="drop d3" />
+        <span>
+          PFAS
+          <br />
+          DECISION
+        </span>
+      </div>
+    );
   if (slug === "price-elasticity")
     return (
       <div className="art elasticity-art">
@@ -124,7 +140,7 @@ export function ProjectGrid({ featured = false }: { featured?: boolean }) {
     "Deployed Apps",
   ];
   const source = featured
-    ? ["price-elasticity", "sentiment-analyzer"]
+    ? ["pfas-water-decision-intelligence", "sentiment-analyzer"]
         .map((slug) => projects.find((project) => project.slug === slug))
         .filter((project): project is (typeof projects)[number] => Boolean(project))
     : projects;
