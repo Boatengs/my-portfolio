@@ -1,0 +1,52 @@
+name: Fix PFAS homepage flow
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/fix-pfas-home-flow.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Remove PFAS pipe artwork and standardize label
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          p = Path('docs/index.html')
+          text = p.read_text()
+
+          clean_css = '''<style id="pfas-home-feature-20260828">.pfas-card .project-visual{background:linear-gradient(135deg,#061d2a 0%,#0b4a62 58%,#58cbc8 100%);color:#f5fffd}.pfas-card .visual-grid{opacity:.3}.pfas-water-art{position:absolute;z-index:3;inset:0;padding:58px 28px 46px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}.pfas-water-art:before{content:"";position:absolute;width:300px;height:300px;right:-95px;top:-105px;border:1px solid rgba(255,255,255,.25);border-radius:50%;box-shadow:0 0 0 42px rgba(91,218,214,.08),0 0 0 84px rgba(91,218,214,.05)}.pfas-title-block,.pfas-metrics{position:relative;z-index:2}.pfas-title-block>span{display:block;color:#9ee9e4!important;font:800 9px/1.2 Arial,sans-serif!important;letter-spacing:.18em;text-transform:uppercase}.pfas-title-block>b{display:block;margin-top:7px;color:#fff;font-size:clamp(54px,6vw,76px);font-weight:900;letter-spacing:-.07em;line-height:.82}.pfas-title-block>small{display:block;margin-top:10px;color:rgba(255,255,255,.74);font:700 9px/1.2 monospace;letter-spacing:.12em}.pfas-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.pfas-metrics>span{display:block;padding:10px 10px 9px;border-top:1px solid rgba(255,255,255,.3);background:rgba(2,20,30,.18);color:#fff!important}.pfas-metrics strong{display:block;color:#fff;font-size:17px;line-height:1}.pfas-metrics em{display:block;margin-top:5px;color:rgba(255,255,255,.66);font-size:7px;font-style:normal;font-weight:800;letter-spacing:.09em;line-height:1.25}.pfas-card .visual-label{color:#fff}.pfas-card .open-mark{background:#eaff72;color:#092835}.pfas-card:hover .open-mark{background:#fff}.pfas-card .project-info>p{color:#137281}.pfas-card .project-info h3{max-width:560px}.pfas-card .project-info>span{display:block;max-width:570px;line-height:1.65}@media(max-width:620px){.pfas-water-art{padding:55px 20px 42px}.pfas-metrics{gap:5px}.pfas-metrics>span{padding:8px 6px}.pfas-title-block>b{font-size:58px}}</style>'''
+
+          text, n_css = re.subn(r'<style id="pfas-home-feature-20260828">.*?</style>', clean_css, text, count=1, flags=re.S)
+          if n_css != 1:
+              raise SystemExit(f'Expected one PFAS style block, replaced {n_css}')
+
+          scene = '<div class="pfas-water-scene" aria-hidden="true"><span class="pfas-pipe-main"></span><span class="pfas-pipe-neck"></span><span class="pfas-pipe-mouth"></span><span class="pfas-water-stream"></span><span class="pfas-water-drop"></span><span class="pfas-ripple one"></span><span class="pfas-ripple two"></span></div>'
+          if scene not in text:
+              raise SystemExit('Expected PFAS pipe artwork not found')
+          text = text.replace(scene, '', 1)
+
+          old_label = '<span class="visual-label">VIEW NATIONAL PROJECT</span>'
+          new_label = '<span class="visual-label">VIEW CASE STUDY</span>'
+          if old_label not in text:
+              raise SystemExit('Expected PFAS visual label not found')
+          text = text.replace(old_label, new_label, 1)
+
+          p.write_text(text)
+          PY
+      - name: Commit homepage update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Restore PFAS card flow with case study label"
+          git push
