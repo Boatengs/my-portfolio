@@ -1,0 +1,10 @@
+analysis_period_years: 20
+discount_rates_real:
+- 0.02
+- 0.03
+- 0.05
+capital_timing: Year 0
+annual_om: Constant real annual cost; no nominal inflation added
+renewal_replacement: Only to extent embedded in published annual O&M; no separate replacement event added
+financing: Not included in lifecycle PV; funding/loan structure analyzed separately
+waite_park: No treatment lifecycle cost until pilot/design inputs support treatment CAPEX and O&M
