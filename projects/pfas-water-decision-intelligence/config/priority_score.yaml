@@ -1,0 +1,39 @@
+version: "current"
+purpose: "Engineering review prioritization; not compliance or health-risk scoring"
+
+epa_comparison_cutoff_ng_l: 4.05
+
+weights:
+  severity: 35
+  affected_point_breadth: 20
+  detection_persistence: 15
+  exposure_proxy: 10
+  treatment_response_gap: 10
+  pfoa_pfos_cooccurrence: 5
+  potential_source_context: 5
+
+exposure_proxy:
+  L:
+    description: "UCMR 5 size class >10,000 retail population"
+    points: 10
+  S:
+    description: "UCMR 5 size class <10,000 retail population"
+    points: 4
+
+treatment_response_gap:
+  targeted_modification_reported: 1
+  prior_testing_and_not_modified: 10
+  no_prior_testing_reported: 7
+  prior_testing_other_response: 6
+  unknown_or_unclassified: 5
+
+tiers:
+  tier_1_min: 70
+  tier_2_min: 55
+  tier_3_min: 40
+
+limitations:
+  - "UCMR 5 results do not establish PFAS NPDWR compliance."
+  - "Exact current SDWIS population is not imputed in current analysis."
+  - "Treatment/source fields are PWS-reported context."
+  - "ZIP codes served are not definitive service-area boundaries."
