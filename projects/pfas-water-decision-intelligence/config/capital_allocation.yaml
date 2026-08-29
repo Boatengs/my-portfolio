@@ -1,0 +1,30 @@
+model_purpose: Scenario-based partial PFAS assistance allocation; not a national construction-cost estimate
+program_budget_millions:
+- 100.0
+- 250.0
+- 500.0
+- 1000.0
+policy_context: EPA announced nearly $1B in new PFAS drinking-water funding to states in May 2026.
+award_schedules_millions:
+  LOW:
+    S: {base_m: 1.5, additional_point_m: 0.25, cap_m: 4.0}
+    L: {base_m: 3.5, additional_point_m: 0.75, cap_m: 10.0}
+  BASE:
+    S: {base_m: 2.0, additional_point_m: 0.5, cap_m: 5.0}
+    L: {base_m: 5.0, additional_point_m: 1.0, cap_m: 15.0}
+  HIGH:
+    S: {base_m: 3.0, additional_point_m: 0.75, cap_m: 7.5}
+    L: {base_m: 8.0, additional_point_m: 1.5, cap_m: 20.0}
+balanced_portfolio_constraints:
+  minimum_small_system_share_by_count: 0.35
+  minimum_large_system_share_by_count: 0.35
+  maximum_single_state_share_of_program_budget: 0.2
+objectives:
+  PRIORITY_REACH: Maximize total engineering-priority points funded.
+  EXPOSURE_EMPHASIS: Priority score x coarse UCMR size multiplier (L=2, S=1).
+  BALANCED: Exposure-emphasis objective plus size-class representation floors and state concentration cap.
+limitations:
+- Standardized awards are partial assistance assumptions, not full treatment costs.
+- Exact population/design flow/current treatment cost are not available nationally.
+- UCMR L/S is a coarse exposure proxy.
+- Project readiness, disadvantaged-community status, state priority rules, match capacity and current funding gap are not yet modeled nationally.
