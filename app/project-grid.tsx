@@ -2,8 +2,25 @@
 import Link from "next/link";
 import { useState } from "react";
 import { projects } from "./projects";
+import { wastewaterProject } from "./wastewater-project";
 
 function ProjectArt({ slug }: { slug: string }) {
+  if (slug === "wastewater-infrastructure-analytics")
+    return (
+      <div className="art water-art">
+        <div className="ripple r1" />
+        <div className="ripple r2" />
+        <div className="ripple r3" />
+        <i className="drop d1" />
+        <i className="drop d2" />
+        <i className="drop d3" />
+        <span>
+          ASSET RISK
+          <br />
+          CAPITAL
+        </span>
+      </div>
+    );
   if (slug === "pfas-water-decision-intelligence")
     return (
       <div className="art water-art">
@@ -139,11 +156,12 @@ export function ProjectGrid({ featured = false }: { featured?: boolean }) {
     "Healthcare",
     "Deployed Apps",
   ];
+  const allProjects = [...projects, wastewaterProject];
   const source = featured
     ? ["pfas-water-decision-intelligence", "sentiment-analyzer"]
-        .map((slug) => projects.find((project) => project.slug === slug))
-        .filter((project): project is (typeof projects)[number] => Boolean(project))
-    : projects;
+        .map((slug) => allProjects.find((project) => project.slug === slug))
+        .filter((project): project is (typeof allProjects)[number] => Boolean(project))
+    : allProjects;
   const [active, setActive] = useState("All");
   const visible =
     active === "All"
@@ -196,8 +214,8 @@ export function ProjectGrid({ featured = false }: { featured?: boolean }) {
                 {f}
                 <span aria-hidden="true">
                   {f === "All"
-                    ? projects.length
-                    : projects.filter((p) => p.filters.includes(f)).length}
+                    ? allProjects.length
+                    : allProjects.filter((p) => p.filters.includes(f)).length}
                 </span>
                 <span className="sr-only"> projects</span>
               </button>
@@ -215,7 +233,7 @@ export function ProjectGrid({ featured = false }: { featured?: boolean }) {
             href={`/projects/${p.slug}`}
             key={p.slug}
             aria-label={`View case study: ${p.title}`}
-            className={`project-card card-${projects.indexOf(p) + 1} ${!featured && i === 0 ? "wide" : ""}`}
+            className={`project-card card-${allProjects.indexOf(p) + 1} ${!featured && i === 0 ? "wide" : ""}`}
             onMouseMove={tilt}
             onMouseLeave={reset}
           >
