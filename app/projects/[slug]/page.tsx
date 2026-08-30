@@ -3,8 +3,12 @@ import Link from "next/link";
 import { SiteNav } from "../../site-nav";
 import { notFound } from "next/navigation";
 import { projects } from "../../projects";
+import { wastewaterProject } from "../../wastewater-project";
+
+const allProjects = [...projects, wastewaterProject];
+
 export function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
+  return allProjects.map((p) => ({ slug: p.slug }));
 }
 export async function generateMetadata({
   params,
@@ -12,7 +16,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params,
-    project = projects.find((p) => p.slug === slug);
+    project = allProjects.find((p) => p.slug === slug);
   if (!project) return {};
   return {
     title: `${project.title} — Sampson Boateng`,
@@ -30,9 +34,9 @@ export default async function ProjectPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params,
-    project = projects.find((p) => p.slug === slug);
+    project = allProjects.find((p) => p.slug === slug);
   if (!project) notFound();
-  const next = projects[(projects.indexOf(project) + 1) % projects.length];
+  const next = allProjects[(allProjects.indexOf(project) + 1) % allProjects.length];
   return (
     <main className="detail-page">
       <SiteNav label="Project page navigation" />
