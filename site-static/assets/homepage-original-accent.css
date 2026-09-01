@@ -1,16 +1,16 @@
-/* Homepage-only teal accent trial for the deployed static site. */
+/* Keep the deployed homepage on the original pepper/red-orange palette. */
 html body > #main-content {
-  --accent: #155E75 !important;
-  --accent-soft: rgba(21, 94, 117, 0.09) !important;
-  --atelier-red: #155E75 !important;
+  --accent: #df513f !important;
+  --accent-soft: rgba(223, 81, 63, 0.09) !important;
+  --atelier-red: #e44c39 !important;
 }
 
 html body > #main-content .hero-kicker i {
-  background: #155E75 !important;
-  box-shadow: 0 0 0 6px rgba(21, 94, 117, 0.12) !important;
+  background: #df513f !important;
+  box-shadow: 0 0 0 6px rgba(223, 81, 63, 0.1) !important;
 }
 
 html body > #main-content ::selection {
-  background: rgba(21, 94, 117, 0.18) !important;
+  background: rgba(223, 81, 63, 0.18) !important;
   color: #121417;
 }
