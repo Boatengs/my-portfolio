@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Wastewater Infrastructure Analytics card visual</title>
+  <desc id="desc">Stylized wastewater asset network flowing through risk scoring, lifecycle cost, and capital prioritization.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071b22"/>
+      <stop offset="1" stop-color="#123b46"/>
+    </linearGradient>
+    <linearGradient id="pipe" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#72e7d3"/>
+      <stop offset="1" stop-color="#2aa8c5"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d7fff8"/>
+      <stop offset="1" stop-color="#68d7c8"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="720" rx="34" fill="url(#bg)"/>
+  <g opacity=".12" stroke="#8ddfd4" stroke-width="1">
+    <path d="M0 110H1200M0 220H1200M0 330H1200M0 440H1200M0 550H1200M0 660H1200"/>
+    <path d="M120 0V720M260 0V720M400 0V720M540 0V720M680 0V720M820 0V720M960 0V720M1100 0V720"/>
+  </g>
+
+  <text x="70" y="80" fill="#9fded6" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="4">ASSET RISK → LIFECYCLE COST → CAPITAL</text>
+
+  <!-- wastewater pipe / asset network -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M95 235H330Q370 235 370 275V380Q370 420 410 420H560" stroke="url(#pipe)" stroke-width="30" opacity=".92"/>
+    <path d="M180 145V235" stroke="url(#pipe)" stroke-width="24"/>
+    <path d="M285 235V320" stroke="url(#pipe)" stroke-width="24"/>
+    <path d="M455 420V505" stroke="url(#pipe)" stroke-width="24"/>
+    <circle cx="180" cy="145" r="26" fill="#0b2d35" stroke="#73e5d1" stroke-width="7"/>
+    <circle cx="285" cy="320" r="26" fill="#0b2d35" stroke="#73e5d1" stroke-width="7"/>
+    <circle cx="455" cy="505" r="26" fill="#0b2d35" stroke="#73e5d1" stroke-width="7"/>
+    <circle cx="95" cy="235" r="30" fill="#0b2d35" stroke="#73e5d1" stroke-width="7"/>
+    <circle cx="560" cy="420" r="30" fill="#0b2d35" stroke="#73e5d1" stroke-width="7"/>
+  </g>
+
+  <!-- risk gauge -->
+  <g transform="translate(650 150)">
+    <rect width="450" height="188" rx="24" fill="#0b2831" stroke="#2f7380" stroke-width="2"/>
+    <text x="28" y="42" fill="#e6fffb" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">ENGINEERING RISK</text>
+    <text x="28" y="73" fill="#8ccbc5" font-family="Arial, Helvetica, sans-serif" font-size="15" letter-spacing="2">LoF × CoF × CRITICALITY</text>
+    <rect x="28" y="105" width="360" height="20" rx="10" fill="#143944"/>
+    <rect x="28" y="105" width="276" height="20" rx="10" fill="url(#accent)" filter="url(#glow)"/>
+    <circle cx="304" cy="115" r="13" fill="#edfffb"/>
+    <text x="28" y="157" fill="#b9e9e1" font-family="Arial, Helvetica, sans-serif" font-size="16">transparent priority assumptions</text>
+  </g>
+
+  <!-- capital allocation queue -->
+  <g transform="translate(650 380)">
+    <rect width="450" height="220" rx="24" fill="#0b2831" stroke="#2f7380" stroke-width="2"/>
+    <text x="28" y="42" fill="#e6fffb" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">CAPITAL SCREENING</text>
+    <text x="28" y="72" fill="#8ccbc5" font-family="Arial, Helvetica, sans-serif" font-size="15" letter-spacing="2">RISK-PER-DOLLAR PRIORITY</text>
+    <g transform="translate(28 100)">
+      <rect width="320" height="18" rx="9" fill="#163d46"/><rect width="292" height="18" rx="9" fill="#69d8c8"/>
+      <rect y="36" width="320" height="18" rx="9" fill="#163d46"/><rect y="36" width="238" height="18" rx="9" fill="#48bfc5"/>
+      <rect y="72" width="320" height="18" rx="9" fill="#163d46"/><rect y="72" width="180" height="18" rx="9" fill="#339eaf"/>
+    </g>
+    <text x="372" y="116" fill="#dffdfa" font-family="Arial, Helvetica, sans-serif" font-size="14">A1</text>
+    <text x="372" y="152" fill="#dffdfa" font-family="Arial, Helvetica, sans-serif" font-size="14">A2</text>
+    <text x="372" y="188" fill="#dffdfa" font-family="Arial, Helvetica, sans-serif" font-size="14">A3</text>
+  </g>
+
+  <!-- stage badge -->
+  <g transform="translate(82 570)">
+    <rect width="420" height="88" rx="22" fill="#d8fff8" opacity=".98"/>
+    <text x="28" y="39" fill="#0d3b43" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="800">6 DECISION STAGES</text>
+    <text x="28" y="66" fill="#28606a" font-family="Arial, Helvetica, sans-serif" font-size="15" letter-spacing="1.5">QA · RISK · COST · PRIORITY · CAPITAL · REVIEW</text>
+  </g>
+</svg>
