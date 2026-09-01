@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <style>{`.skip-link{position:fixed;z-index:10000;top:12px;left:12px;padding:12px 16px;background:#111;color:#fff;border:2px solid #fff;border-radius:4px;font:800 14px/1 Arial,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.22);transform:translateY(calc(-100% - 28px));transition:transform .18s ease}.skip-link:focus,.skip-link:focus-visible{transform:translateY(0);outline:3px solid #d4492f;outline-offset:3px}`}</style>
+        <style>{`.skip-link{position:fixed;z-index:10000;top:12px;left:12px;padding:12px 16px;background:#111;color:#fff;border:2px solid #fff;border-radius:4px;font:800 14px/1 Arial,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.22);transform:translateY(calc(-100% - 28px));transition:transform .18s ease}.skip-link:focus,.skip-link:focus-visible{transform:translateY(0);outline:3px solid #d4492f;outline-offset:3px}#main-content>main:not([class]){--accent:#155E75!important;--accent-soft:rgba(21,94,117,.09)!important;--atelier-red:#155E75!important}#main-content>main:not([class]) .hero-kicker i{background:#155E75!important;box-shadow:0 0 0 6px rgba(21,94,117,.12)!important}#main-content>main:not([class]) ::selection{background:rgba(21,94,117,.18)!important;color:#121417}`}</style>
         <a className="skip-link" href="#main-content">
           Skip to main content
         </a>
