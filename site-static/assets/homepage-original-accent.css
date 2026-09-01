@@ -10,6 +10,10 @@ html body > #main-content .hero-kicker i {
   box-shadow: 0 0 0 6px rgba(223, 81, 63, 0.1) !important;
 }
 
+html body > #main-content .education-grid b {
+  color: #df513f !important;
+}
+
 html body > #main-content ::selection {
   background: rgba(223, 81, 63, 0.18) !important;
   color: #121417;
