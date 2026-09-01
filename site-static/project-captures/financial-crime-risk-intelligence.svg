@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Financial Crime Risk Intelligence portfolio card</title>
+  <desc id="desc">Stylized transaction network and investigator review queue with verified PR-AUC and lift metrics.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#171329"/><stop offset="1" stop-color="#312e81"/></linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#67e8f9"/></linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <g opacity="0.13" stroke="#c4b5fd" stroke-width="1"><path d="M0 100H1200M0 200H1200M0 300H1200M0 400H1200M0 500H1200M0 600H1200"/><path d="M100 0V700M200 0V700M300 0V700M400 0V700M500 0V700M600 0V700M700 0V700M800 0V700M900 0V700M1000 0V700M1100 0V700"/></g>
+  <text x="72" y="86" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#ddd6fe" letter-spacing="3">ELLIPTIC2 · AML PRIORITIZATION</text>
+  <text x="72" y="130" font-family="Arial, sans-serif" font-size="16" fill="#a5b4fc" letter-spacing="2">TRANSACTION NETWORK → INVESTIGATOR QUEUE</text>
+
+  <g stroke="#8b5cf6" stroke-width="4" opacity="0.75">
+    <line x1="140" y1="280" x2="260" y2="210"/><line x1="260" y1="210" x2="390" y2="305"/><line x1="390" y1="305" x2="520" y2="225"/>
+    <line x1="260" y1="210" x2="300" y2="395"/><line x1="300" y1="395" x2="445" y2="420"/><line x1="445" y1="420" x2="520" y2="225"/>
+    <line x1="140" y1="280" x2="300" y2="395"/><line x1="390" y1="305" x2="445" y2="420"/>
+  </g>
+  <g filter="url(#glow)">
+    <circle cx="140" cy="280" r="18" fill="#c4b5fd"/><circle cx="260" cy="210" r="20" fill="#a78bfa"/><circle cx="390" cy="305" r="21" fill="#f472b6"/><circle cx="520" cy="225" r="18" fill="#67e8f9"/><circle cx="300" cy="395" r="17" fill="#c4b5fd"/><circle cx="445" cy="420" r="22" fill="#fb7185"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#f5f3ff"><text x="122" y="318">TX</text><text x="245" y="252">NODE</text><text x="370" y="347">RISK</text><text x="503" y="265">TX</text><text x="280" y="436">NODE</text><text x="423" y="463">REVIEW</text></g>
+
+  <g transform="translate(650 190)">
+    <rect x="0" y="0" width="430" height="340" rx="26" fill="#111827" opacity="0.78" stroke="#6d5dfc" stroke-width="2"/>
+    <text x="32" y="48" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#c4b5fd" letter-spacing="2">PRIORITY QUEUE</text>
+    <g font-family="Arial, sans-serif" font-size="14" fill="#e5e7eb"><text x="32" y="92">01</text><text x="32" y="136">02</text><text x="32" y="180">03</text><text x="32" y="224">04</text><text x="32" y="268">05</text></g>
+    <g fill="url(#bar)"><rect x="78" y="76" width="290" height="18" rx="9"/><rect x="78" y="120" width="255" height="18" rx="9"/><rect x="78" y="164" width="222" height="18" rx="9"/><rect x="78" y="208" width="184" height="18" rx="9"/><rect x="78" y="252" width="148" height="18" rx="9"/></g>
+    <text x="32" y="314" font-family="Arial, sans-serif" font-size="14" fill="#9ca3af">capacity-ranked review</text>
+  </g>
+
+  <g font-family="Arial, sans-serif">
+    <text x="72" y="580" font-size="54" font-weight="800" fill="#ffffff">0.5306</text><text x="72" y="614" font-size="15" fill="#c4b5fd" letter-spacing="2">MATCHED TEST PR-AUC</text>
+    <text x="362" y="580" font-size="54" font-weight="800" fill="#ffffff">41.53×</text><text x="362" y="614" font-size="15" fill="#c4b5fd" letter-spacing="2">TOP-0.5% REVIEW LIFT</text>
+  </g>
+  <rect x="934" y="574" width="166" height="48" rx="24" fill="#7c3aed"/><text x="1017" y="605" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#ffffff" letter-spacing="1">HUMAN REVIEW</text>
+</svg>
