@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { projects } from "./projects";
+import { pfasProject } from "./pfas-project";
 import { wastewaterProject } from "./wastewater-project";
 
 function ProjectArt({ slug }: { slug: string }) {
@@ -156,7 +157,7 @@ export function ProjectGrid({ featured = false }: { featured?: boolean }) {
     "Healthcare",
     "Deployed Apps",
   ];
-  const allProjects = [...projects, wastewaterProject];
+  const allProjects = [...projects, pfasProject, wastewaterProject];
   const source = featured
     ? ["pfas-water-decision-intelligence", "sentiment-analyzer"]
         .map((slug) => allProjects.find((project) => project.slug === slug))
