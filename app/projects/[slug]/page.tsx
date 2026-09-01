@@ -3,9 +3,10 @@ import Link from "next/link";
 import { SiteNav } from "../../site-nav";
 import { notFound } from "next/navigation";
 import { projects } from "../../projects";
+import { pfasProject } from "../../pfas-project";
 import { wastewaterProject } from "../../wastewater-project";
 
-const allProjects = [...projects, wastewaterProject];
+const allProjects = [...projects, pfasProject, wastewaterProject];
 
 export function generateStaticParams() {
   return allProjects.map((p) => ({ slug: p.slug }));
