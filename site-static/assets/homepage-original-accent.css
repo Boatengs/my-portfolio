@@ -1,0 +1,16 @@
+/* Keep the deployed homepage on the original pepper/red-orange palette. */
+html body > #main-content {
+  --accent: #df513f !important;
+  --accent-soft: rgba(223, 81, 63, 0.09) !important;
+  --atelier-red: #e44c39 !important;
+}
+
+html body > #main-content .hero-kicker i {
+  background: #df513f !important;
+  box-shadow: 0 0 0 6px rgba(223, 81, 63, 0.1) !important;
+}
+
+html body > #main-content ::selection {
+  background: rgba(223, 81, 63, 0.18) !important;
+  color: #121417;
+}
