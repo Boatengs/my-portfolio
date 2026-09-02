@@ -159,7 +159,7 @@ export function ProjectGrid({ featured = false }: { featured?: boolean }) {
   ];
   const allProjects = [...projects, pfasProject, wastewaterProject];
   const source = featured
-    ? ["pfas-water-decision-intelligence", "sentiment-analyzer"]
+    ? ["pfas-water-decision-intelligence", "wastewater-infrastructure-analytics"]
         .map((slug) => allProjects.find((project) => project.slug === slug))
         .filter((project): project is (typeof allProjects)[number] => Boolean(project))
     : allProjects;
