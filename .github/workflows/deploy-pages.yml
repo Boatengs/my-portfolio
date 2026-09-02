@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -27,7 +27,15 @@ jobs:
           enablement: true
       - name: Prepare homepage featured projects
         run: node scripts/prepare-pages-featured-projects.mjs
-      # Deploy the checked-in static site after applying the homepage featured-project selection.
+      - name: Persist homepage featured projects
+        run: |
+          if ! git diff --quiet -- site-static/index.html; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add site-static/index.html
+            git commit -m "Sync PFAS and wastewater homepage [skip ci]"
+            git push
+          fi
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site-static
