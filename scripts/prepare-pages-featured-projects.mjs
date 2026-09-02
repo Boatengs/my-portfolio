@@ -2,7 +2,7 @@ import fs from "node:fs";
 
 const homepagePath = "site-static/index.html";
 const workPagePath = "site-static/work/index.html";
-const stylesheetHref = "/my-portfolio/assets/structured-project-visuals.css?v=1";
+const stylesheetHref = "/my-portfolio/assets/structured-project-visuals-v2.css?v=2";
 
 const wastewaterHref = "/my-portfolio/projects/wastewater-infrastructure-analytics/";
 const crimeHref = "/my-portfolio/projects/financial-crime-risk-intelligence/";
@@ -12,7 +12,8 @@ const wastewaterVisual = `<div class="project-visual aqua wastewater-structured"
 const crimeVisual = `<div class="project-visual violet crime-structured"><div class="cursor-glow"></div><span class="project-number">13</span><div class="visual-grid"></div><div class="structured-project-art"><div><span class="structured-project-kicker">GRAPH ANALYTICS · REVIEW PRIORITIZATION</span><strong class="structured-project-word">AML RISK</strong><small class="structured-project-flow">GRAPH · MODEL · CALIBRATE · PRIORITIZE · REVIEW</small></div><div class="structured-project-metrics"><span><strong>0.528</strong><em>Repeated PR-AUC</em></span><span><strong>94.3%</strong><em>Precision @ 0.5%</em></span><span><strong>41.53×</strong><em>Review lift</em></span></div></div><span class="visual-label">VIEW CASE STUDY</span><span class="open-mark">↗</span></div>`;
 
 function ensureStylesheet(html) {
-  if (html.includes(stylesheetHref)) return html;
+  const structuredStylesheet = /\s*<link rel="stylesheet" href="\/my-portfolio\/assets\/structured-project-visuals(?:-v2)?\.css\?v=\d+"\/>\s*/g;
+  html = html.replace(structuredStylesheet, "\n");
   return html.replace("</head>", `  <link rel="stylesheet" href="${stylesheetHref}"/>\n</head>`);
 }
 
@@ -64,4 +65,4 @@ workPage = replaceCardVisual(workPage, crimeHref, crimeVisual);
 workPage = ensureStylesheet(workPage);
 fs.writeFileSync(workPagePath, workPage);
 
-console.log("Portfolio visuals prepared: PFAS-style coded panels for Wastewater and Financial Crime Risk.");
+console.log("Portfolio visuals prepared with cache-busted PFAS-style panels for Wastewater and Financial Crime Risk.");
