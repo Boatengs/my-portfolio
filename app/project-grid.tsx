@@ -8,18 +8,32 @@ import { wastewaterProject } from "./wastewater-project";
 function ProjectArt({ slug }: { slug: string }) {
   if (slug === "wastewater-infrastructure-analytics")
     return (
-      <div className="art water-art">
-        <div className="ripple r1" />
-        <div className="ripple r2" />
-        <div className="ripple r3" />
-        <i className="drop d1" />
-        <i className="drop d2" />
-        <i className="drop d3" />
-        <span>
-          ASSET RISK
-          <br />
-          CAPITAL
-        </span>
+      <div className="structured-project-art">
+        <div>
+          <span className="structured-project-kicker">Asset management · Capital planning</span>
+          <strong className="structured-project-word">WASTEWATER</strong>
+          <small className="structured-project-flow">INGEST · QA · RISK · COST · PRIORITIZE · PLAN</small>
+        </div>
+        <div className="structured-project-metrics">
+          <span><strong>6</strong><em>Decision stages</em></span>
+          <span><strong>LoF × CoF</strong><em>Risk foundation</em></span>
+          <span><strong>4</strong><em>Capital scenarios</em></span>
+        </div>
+      </div>
+    );
+  if (slug === "financial-crime-risk-intelligence")
+    return (
+      <div className="structured-project-art">
+        <div>
+          <span className="structured-project-kicker">Graph analytics · Review prioritization</span>
+          <strong className="structured-project-word">AML RISK</strong>
+          <small className="structured-project-flow">GRAPH · MODEL · CALIBRATE · PRIORITIZE · REVIEW</small>
+        </div>
+        <div className="structured-project-metrics">
+          <span><strong>0.528</strong><em>Repeated PR-AUC</em></span>
+          <span><strong>94.3%</strong><em>Precision @ 0.5%</em></span>
+          <span><strong>41.53×</strong><em>Review lift</em></span>
+        </div>
       </div>
     );
   if (slug === "pfas-water-decision-intelligence")
@@ -229,7 +243,14 @@ export function ProjectGrid({ featured = false }: { featured?: boolean }) {
         </>
       )}
       <div className="project-grid">
-        {visible.map((p, i) => (
+        {visible.map((p, i) => {
+          const structuredClass =
+            p.slug === "wastewater-infrastructure-analytics"
+              ? " wastewater-structured"
+              : p.slug === "financial-crime-risk-intelligence"
+                ? " crime-structured"
+                : "";
+          return (
           <Link
             href={`/projects/${p.slug}`}
             key={p.slug}
@@ -238,7 +259,7 @@ export function ProjectGrid({ featured = false }: { featured?: boolean }) {
             onMouseMove={tilt}
             onMouseLeave={reset}
           >
-            <div className={`project-visual ${p.accent}`}>
+            <div className={`project-visual ${p.accent}${structuredClass}`}>
               <div className="cursor-glow" aria-hidden="true" />
               <span className="project-number">{p.index}</span>
               {p.image ? (
@@ -281,7 +302,8 @@ export function ProjectGrid({ featured = false }: { featured?: boolean }) {
               )}
             </div>
           </Link>
-        ))}
+          );
+        })}
       </div>
     </>
   );
