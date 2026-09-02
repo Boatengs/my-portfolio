@@ -25,15 +25,15 @@ jobs:
       - uses: actions/configure-pages@v5
         with:
           enablement: true
-      - name: Prepare homepage featured projects
+      - name: Prepare portfolio project visuals
         run: node scripts/prepare-pages-featured-projects.mjs
-      - name: Persist homepage featured projects
+      - name: Persist portfolio project visuals
         run: |
-          if ! git diff --quiet -- site-static/index.html; then
+          if ! git diff --quiet -- site-static/index.html site-static/work/index.html; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add site-static/index.html
-            git commit -m "Sync PFAS and wastewater homepage [skip ci]"
+            git add site-static/index.html site-static/work/index.html
+            git commit -m "Sync structured project visuals [skip ci]"
             git push
           fi
       - uses: actions/upload-pages-artifact@v3
