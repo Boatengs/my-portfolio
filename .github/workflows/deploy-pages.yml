@@ -25,7 +25,9 @@ jobs:
       - uses: actions/configure-pages@v5
         with:
           enablement: true
-      # Deploy the checked-in static site directly; no Skills sidecar injection.
+      - name: Prepare homepage featured projects
+        run: node scripts/prepare-pages-featured-projects.mjs
+      # Deploy the checked-in static site after applying the homepage featured-project selection.
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site-static
