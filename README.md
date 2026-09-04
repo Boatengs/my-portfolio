@@ -1,17 +1,18 @@
-# Sampson Boateng — Professional Portfolio
+# Sampson Boateng Portfolio
 
-Modern data analytics and machine learning portfolio, deployed with GitHub Pages.
+This repository contains the source and deployed static artifacts for Sampson Boateng's portfolio.
 
-Live site: https://boatengs.github.io/my-portfolio/
+## Deployment
 
-## Featured Project
+GitHub Pages deploys the `site-static/` directory through `.github/workflows/deploy-pages.yml`.
 
-### PFAS Drinking Water Decision Intelligence
+The deployment preparation step preserves hand-maintained static experiences such as the Beyond Work page and the native World Happiness dashboard while applying current project-card visuals.
 
-End-to-end environmental analytics and engineering decision-support project using **1.99M EPA UCMR 5 records** to screen PFOA/PFOS occurrence, prioritize **1,127 public water systems**, verify real utility treatment cases, model lifecycle economics, and optimize **$100M–$1B** infrastructure-assistance portfolios with Python, SQL, and mixed-integer optimization.
+## Source organization
 
-**[Browse the code, methods, and results →](projects/pfas-water-decision-intelligence/)**
+- `app/` — durable application and static-page source
+- `public/` — public assets used by the application source
+- `site-static/` — GitHub Pages deployment artifact
+- `scripts/` — deployment preparation and export utilities
 
-## Development
-
-The editable Vinext source is in `app/`. The production-ready static export is in `site-static/` and is deployed automatically by GitHub Actions.
+Project-specific repositories remain the source of truth for their analytical code, data-processing logic, tests, notebooks, and README documentation.
