@@ -6,7 +6,7 @@
   <title>World Happiness — Live Dashboard | Sampson Boateng</title>
   <meta name="description" content="Interactive animated World Happiness Report dashboard for 2015–2019, deployed natively inside Sampson Boateng's portfolio."/>
   <link rel="icon" href="/my-portfolio/favicon.svg"/>
-  <link rel="stylesheet" href="/my-portfolio/assets/world-happiness-dashboard.css?v=1"/>
+  <link rel="stylesheet" href="/my-portfolio/assets/world-happiness-dashboard.css?v=2"/>
   <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
 </head>
 <body>
@@ -23,7 +23,47 @@
       <div class="two"><article class="panel"><div class="panel-head"><div><p class="eyebrow">05 / TIME</p><h2>Regional trend</h2></div></div><div id="trendChart" class="chart"></div></article><article class="panel"><div class="panel-head"><div><p class="eyebrow">06 / ASSOCIATION</p><h2>Factor correlation</h2></div></div><div id="corrChart" class="chart"></div><p class="panel-note"><strong>What this shows:</strong> Pearson correlation summarizes linear association in the current region filter; it does not establish cause.</p></article></div>
       <article class="panel"><div class="panel-head"><div><p class="eyebrow">07 / OUT-OF-TIME MODEL</p><h2>Can 2015–2018 relationships explain 2019?</h2></div><p>The browser reproduces the interpretable linear-regression baseline used in the Streamlit project.</p></div><div class="three-metrics"><div class="model-metric" id="modelR2"><strong>—</strong><span>2019 holdout R²</span></div><div class="model-metric" id="modelRmse"><strong>—</strong><span>2019 holdout RMSE</span></div><div class="model-metric" id="modelMae"><strong>—</strong><span>2019 holdout MAE</span></div></div><div class="two"><div id="predictionChart" class="chart"></div><div id="coefChart" class="chart"></div></div><p id="modelNotice" class="panel-note"><strong>How to read this model:</strong> the regression is trained on 2015–2018 and tested on unseen 2019 rows. Coefficients remain descriptive associations, not causal effects.</p></article>
     </section>
+
+    <section class="case-dataset wh-shell" aria-label="Project dataset details">
+      <div><span>DATASET</span><strong>World Happiness Report · 2015–2019</strong></div>
+      <div><span>SIZE</span><strong>782 country-year observations · 5 annual snapshots</strong></div>
+      <div><span>SOURCE</span><a href="https://github.com/evanfrang/world_happiness/blob/48136725441b2d5b8b7d7ee29aa41e7eb95db549/whs_years_updated.csv" target="_blank" rel="noreferrer">World Happiness annual datasets · pinned public historical mirror ↗</a></div>
+    </section>
+
+    <section class="case-evidence wh-shell">
+      <div class="case-heading"><div><p class="eyebrow">MEASURED EVIDENCE</p><h2>What can be verified.</h2></div><p>The evidence below comes from the pinned data and the implemented analytical workflow. It avoids adding presentation metrics that the project itself does not calculate.</p></div>
+      <div class="evidence-grid">
+        <article><strong>782</strong><span>Country-year observations</span><p>158 rows in 2015, 157 in 2016, 155 in 2017, and 156 in both 2018 and 2019.</p></article>
+        <article><strong>5</strong><span>Annual snapshots</span><p>The interactive timeline covers 2015 through 2019 without a manual upload step.</p></article>
+        <article><strong>6</strong><span>Normalized factor dimensions</span><p>GDP per capita, social support, life expectancy, freedom, generosity, and corruption are reconciled across changing annual schemas.</p></article>
+        <article><strong>2019</strong><span>Out-of-time holdout</span><p>The regression trains on 2015–2018 and evaluates on unseen 2019 rows using R², RMSE, and MAE.</p></article>
+      </div>
+      <div class="validation-note"><span>VALIDATION</span><p>Year-specific source columns are normalized into a common schema, region labels are recovered from known historical records where later files omit them, and ranks are recalculated within each year. The regression is evaluated out of time rather than reported only on its training data. Its runtime metrics measure predictive generalization for 2019; they do not validate causal claims about what makes countries happier.</p></div>
+    </section>
+
+    <section class="case-grid wh-shell">
+      <article><span>01</span><h2>Why this project matters</h2><p>World Happiness rankings are widely quoted as annual league tables, but a single rank hides movement over time, regional context, the closeness of neighboring scores, and the relationships among the socioeconomic factors reported alongside happiness. This project turns five separate annual datasets into one exploratory view so those changes can be inspected rather than reduced to a headline ranking.</p></article>
+      <article><span>02</span><h2>What was developed</h2><p>A reproducible analytical pipeline normalizes changing World Happiness schemas, restores region context, computes within-year ranks, and powers animated country, regional, factor, correlation, and trend views. An interpretable linear regression then learns from 2015–2018 and is tested on 2019. The same analysis exists as a Streamlit application and as this browser-native GitHub Pages dashboard.</p></article>
+      <article><span>03</span><h2>What it means</h2><p>The dashboard makes it possible to see which country and regional patterns persist, which rankings shift, and which factors move most closely with reported happiness scores. The holdout model adds a stricter question: whether relationships learned from earlier years transfer to the next year. None of these relationships should be interpreted as isolated causal effects or policy prescriptions.</p></article>
+    </section>
+
+    <section class="case-practical wh-shell">
+      <p class="eyebrow">04 / FROM PROJECT TO PRACTICAL USE</p>
+      <div><h2>From global rankings to an explorable analytical product.</h2><p>The workflow demonstrates how multi-year public indicators can be transformed into an accessible decision-support and communication layer. Similar techniques can support international-development research, policy briefing, social-indicator monitoring, education, nonprofit reporting, comparative country analysis, and executive dashboards where the audience needs both a high-level story and the ability to inspect the underlying variation.</p></div>
+    </section>
+
+    <section class="case-reflection wh-shell">
+      <div><span>05 / LIMITATION</span><h2>What the project does not solve yet.</h2><p>The analysis uses country-level aggregates and a five-year historical window, so it cannot explain individual wellbeing or current conditions. Annual schema changes require normalization, survey and measurement uncertainty remain, and correlations or regression coefficients do not establish causality. The linear model is an interpretable baseline rather than a complete theory of national happiness.</p></div>
+      <div><span>06 / NEXT ITERATION</span><h2>Future advancement</h2><p>Extend the time series beyond 2019 only after validating later schema changes, add uncertainty and confidence-interval views where available, introduce country-comparison bookmarking, and evaluate richer panel or nonlinear models against the current interpretable baseline. A future version could also make the model diagnostics and residual patterns filterable by region without weakening the causal cautions already built into the project.</p></div>
+    </section>
+
     <section class="method wh-shell"><div><p class="eyebrow">METHOD</p><h2>One dataset.<br/>Two deployments.</h2></div><div><p>The original project remains a Streamlit application. This portfolio deployment is deliberately client-side: the browser requests the pinned CSV directly, normalizes the year-specific schemas, restores historical region labels, computes ranks and summary statistics, and renders Plotly charts without requiring a Python server.</p><ul><li>No CSV upload step.</li><li>Source pinned to a specific upstream Git commit.</li><li>Same 2015–2019 analytical scope as the project app.</li><li>Regression uses 2015–2018 training rows and a 2019 holdout.</li></ul></div></section>
+
+    <section class="case-toolkit wh-shell">
+      <p class="eyebrow">TECHNICAL TOOLKIT</p>
+      <div class="tool-chips"><span>Python</span><span>Pandas</span><span>Plotly</span><span>Streamlit</span><span>Scikit-learn</span><span>JavaScript</span><span>GitHub Pages</span></div>
+      <div class="case-links"><a href="https://github.com/Boatengs/World-Happiness-Analysis" target="_blank" rel="noreferrer">Explore project code ↗</a><a href="/my-portfolio/work">Back to all projects →</a></div>
+    </section>
   </main>
   <footer class="footer"><div class="wh-shell">World Happiness Report dashboard · Sampson Boateng · descriptive analytics and portfolio demonstration.</div></footer>
   <script src="/my-portfolio/assets/world-happiness-dashboard.js?v=1"></script>
