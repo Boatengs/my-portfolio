@@ -6,6 +6,20 @@ const basePath = "/my-portfolio";
 const expectedRoutes = JSON.parse(
   fs.readFileSync("tests/portfolio-routes.json", "utf8"),
 );
+const expectedProjectSlugs = [
+  "pfas-water-decision-intelligence",
+  "wastewater-infrastructure-analytics",
+  "financial-crime-risk-intelligence",
+  "water-quality",
+  "healthcare-modeling",
+  "sentiment-analyzer",
+  "sports-chatbot",
+  "medical-qa",
+  "skin-classifier",
+  "object-detector",
+  "skin-lesion-segmentation",
+  "llm-evaluation",
+];
 
 function allFiles(directory, predicate = () => true) {
   const files = [];
@@ -48,10 +62,37 @@ if (generatedRoutes.has("/projects/price-elasticity/")) {
 }
 
 const workHtml = fs.readFileSync("out/work/index.html", "utf8");
-const projectCardCount = (workHtml.match(/class="project-card\b/g) || []).length;
-if (projectCardCount !== 12) {
-  throw new Error(`Public Projects index must render 12 cards; found ${projectCardCount}.`);
+const displayedProjectSlugs = new Set(
+  [...workHtml.matchAll(/href=["']\/my-portfolio\/projects\/([^/"'?#]+)\/?["']/g)].map(
+    (match) => match[1],
+  ),
+);
+const missingProjectCards = expectedProjectSlugs.filter(
+  (slug) => !displayedProjectSlugs.has(slug),
+);
+const unexpectedProjectCards = [...displayedProjectSlugs].filter(
+  (slug) => !expectedProjectSlugs.includes(slug),
+);
+if (missingProjectCards.length || unexpectedProjectCards.length) {
+  throw new Error(
+    [
+      missingProjectCards.length
+        ? `Missing public project cards: ${missingProjectCards.join(", ")}`
+        : null,
+      unexpectedProjectCards.length
+        ? `Unexpected public project cards: ${unexpectedProjectCards.join(", ")}`
+        : null,
+    ]
+      .filter(Boolean)
+      .join("\n"),
+  );
 }
+if (displayedProjectSlugs.size !== expectedProjectSlugs.length) {
+  throw new Error(
+    `Public Projects index must contain ${expectedProjectSlugs.length} unique project links; found ${displayedProjectSlugs.size}.`,
+  );
+}
+
 for (const marker of [
   "PFAS Drinking Water Decision Intelligence",
   "Wastewater Infrastructure Analytics",
@@ -73,7 +114,7 @@ for (const marker of [
 if (workHtml.includes("price-elasticity") || workHtml.includes("Price Elasticity Modeling")) {
   throw new Error("Public Projects index must not expose the NDA Price Elasticity project.");
 }
-if (workHtml.includes('href="/my-portfolio/projects/world-happiness-analysis')) {
+if (displayedProjectSlugs.has("world-happiness-analysis")) {
   throw new Error("World Happiness should remain a standalone case study, not a 13th Projects-index card.");
 }
 requireText("out/work/index.html", "/my-portfolio/project-captures/water-quality-analysis.svg");
@@ -154,5 +195,5 @@ if (missingAssets.length) {
 }
 
 console.log(
-  `Validated ${expectedRoutes.length} required routes, 12 public project cards, protected special pages, and asset paths across ${htmlFiles.length} HTML files.`,
+  `Validated ${expectedRoutes.length} required routes, ${expectedProjectSlugs.length} public project links, protected special pages, and asset paths across ${htmlFiles.length} HTML files.`,
 );
