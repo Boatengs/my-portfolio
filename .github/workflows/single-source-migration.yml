@@ -75,6 +75,53 @@ jobs:
           grep -q 'class="mobile-nav"' out/person/index.html
 
           grep -q "world-happiness-analysis" out/work/index.html
+      - name: Verify GitHub Pages asset paths
+        run: |
+          node --input-type=module <<'EOF'
+          import fs from 'node:fs';
+          import path from 'node:path';
+
+          const htmlFiles = [];
+          function walk(directory) {
+            for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+              const full = path.join(directory, entry.name);
+              if (entry.isDirectory()) walk(full);
+              else if (entry.isFile() && entry.name.endsWith('.html')) htmlFiles.push(full);
+            }
+          }
+          walk('out');
+
+          const badRootUrls = [];
+          const missingAssets = [];
+          const assetExt = /\.(?:css|js|mjs|png|webp|jpe?g|svg|pdf|ico|woff2?)(?:$|[?#])/i;
+
+          for (const file of htmlFiles) {
+            const html = fs.readFileSync(file, 'utf8');
+            for (const match of html.matchAll(/(?:src|href)=["'](\/[^"']*)["']/g)) {
+              const url = match[1];
+              if (!(url === '/my-portfolio' || url.startsWith('/my-portfolio/'))) {
+                badRootUrls.push(`${file}: ${url}`);
+                continue;
+              }
+
+              const pathname = url.split(/[?#]/, 1)[0];
+              if (assetExt.test(pathname)) {
+                const relative = pathname.replace(/^\/my-portfolio\/?/, '');
+                if (!fs.existsSync(path.join('out', relative))) {
+                  missingAssets.push(`${file}: ${url}`);
+                }
+              }
+            }
+          }
+
+          if (badRootUrls.length) {
+            throw new Error(`Root-relative URLs bypass GitHub Pages base path:\n${badRootUrls.join('\n')}`);
+          }
+          if (missingAssets.length) {
+            throw new Error(`Referenced static assets are missing from export:\n${missingAssets.join('\n')}`);
+          }
+          console.log(`Validated base-path and static asset references across ${htmlFiles.length} HTML files.`);
+          EOF
       - name: Verify core generated pages
         run: |
           test -f out/index.html
