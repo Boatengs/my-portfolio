@@ -4,9 +4,13 @@ import { wastewaterProject } from "./wastewater-project";
 import { financialCrimeProject } from "./financial-crime-project";
 import { worldHappinessProject } from "./world-happiness-project";
 
-const publicBaseProjects = projects.filter(
-  (project) => project.slug !== "price-elasticity",
-);
+const publicBaseProjects = projects
+  .filter((project) => project.slug !== "price-elasticity")
+  .map((project) =>
+    project.slug === "water-quality"
+      ? { ...project, image: "/project-captures/water-quality-analysis.svg" }
+      : project,
+  );
 
 // This order mirrors the public Projects page visitors see today.
 export const allProjects = [
