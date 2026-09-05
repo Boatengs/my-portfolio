@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "node scripts/finalize-static-export.mjs",
     "start": "next start",
     "test": "npm run build",
     "lint": "eslint . --ignore-pattern out --ignore-pattern .next"
