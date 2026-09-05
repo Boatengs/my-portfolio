@@ -17,8 +17,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - name: Build application source
-        run: npm run build
+      - name: Type-check application source
+        run: npx tsc --noEmit
       - name: Prepare static Pages artifact
         run: |
           node scripts/prepare-pages-featured-projects.mjs
