@@ -4,6 +4,7 @@ import "./modern-white.css";
 import "./structured-project-visuals.css";
 import "./responsive.css";
 import "./pfas-responsive.css";
+import "./project-thumbnail-stability.css";
 export const metadata: Metadata = {
   title: "Sampson Boateng — Data Analytics & Applied Machine Learning",
   description:

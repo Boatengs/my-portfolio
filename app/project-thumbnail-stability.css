@@ -1,0 +1,58 @@
+/*
+ * Project thumbnail stability guardrails.
+ *
+ * Real screenshot cards used to sit inside the same 3D transform layer as the
+ * CSS-drawn project artwork. Mobile browsers can intermittently drop those
+ * raster/SVG image layers while scrolling or repainting. Keep screenshot cards
+ * on a simple 2D paint path and reserve the 3D tilt effect for generated art.
+ */
+
+.demo-capture {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  opacity: 1 !important;
+  visibility: visible !important;
+  background: #f4f5f7;
+}
+
+/* Modern browsers: screenshot cards never need the 3D project-art layer. */
+@supports selector(.project-card:has(.demo-capture)) {
+  .project-card:has(.demo-capture) .project-visual {
+    transform: none !important;
+    transform-style: flat !important;
+    will-change: auto !important;
+  }
+}
+
+/* Touch / tablet / phone: remove compositing effects that can cause image
+ * layers to disappear after scrolling, orientation changes, or memory pressure.
+ */
+@media (hover: none), (pointer: coarse), (max-width: 900px) {
+  .project-visual,
+  .wide .project-visual {
+    transform: none !important;
+    transform-style: flat !important;
+    perspective: none !important;
+    will-change: auto !important;
+  }
+
+  .demo-capture,
+  .project-card:hover .demo-capture {
+    transform: none !important;
+    transition: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-backface-visibility: visible !important;
+  }
+
+  .cursor-glow {
+    display: none !important;
+  }
+}
