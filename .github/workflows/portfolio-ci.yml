@@ -1,0 +1,43 @@
+name: Portfolio CI
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Build application source
+        run: npm run build
+      - name: Prepare static Pages artifact
+        run: |
+          node scripts/prepare-pages-featured-projects.mjs
+          node scripts/prepare-responsive-pages.mjs
+      - name: Verify mobile deployment hooks
+        run: |
+          node --input-type=module <<'EOF'
+          import fs from 'node:fs';
+          const home = fs.readFileSync('site-static/index.html', 'utf8');
+          const work = fs.readFileSync('site-static/work/index.html', 'utf8');
+          const whr = fs.readFileSync('site-static/projects/world-happiness-analysis/index.html', 'utf8');
+          const css = fs.readFileSync('site-static/assets/portfolio-responsive.css', 'utf8');
+          for (const [name, html] of [['home', home], ['work', work]]) {
+            if (!html.includes('portfolio-responsive.css?v=1')) throw new Error(`${name} is missing responsive stylesheet`);
+            if (!html.includes('class="mobile-nav"')) throw new Error(`${name} is missing mobile navigation`);
+            if (!html.includes('name="viewport"')) throw new Error(`${name} is missing viewport metadata`);
+          }
+          if (whr.includes('portfolio-responsive.css?v=1')) throw new Error('WHR dashboard should keep its isolated responsive styling');
+          for (const marker of ['@media (max-width: 760px)', '@media (max-width: 520px)', '.project-filters', '.mobile-nav-panel']) {
+            if (!css.includes(marker)) throw new Error(`responsive CSS is missing ${marker}`);
+          }
+          EOF
