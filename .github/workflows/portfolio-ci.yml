@@ -10,77 +10,17 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_PAGES: "true"
     steps:
       - uses: actions/checkout@v4
-      - name: Prepare static Pages artifact twice
-        run: |
-          node scripts/prepare-pages-featured-projects.mjs
-          node scripts/prepare-responsive-pages.mjs
-          node scripts/prepare-responsive-pages.mjs
-      - name: Verify mobile deployment output
-        run: |
-          node --input-type=module <<'EOF'
-          import fs from 'node:fs';
-          import path from 'node:path';
-
-          const siteRoot = 'site-static';
-          const whrPath = path.normalize('site-static/projects/world-happiness-analysis/index.html');
-          const pfasPath = path.normalize('site-static/projects/pfas-water-decision-intelligence/index.html');
-          const css = fs.readFileSync('site-static/assets/portfolio-responsive.css', 'utf8');
-
-          function htmlFiles(directory) {
-            const out = [];
-            for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
-              const full = path.join(directory, entry.name);
-              if (entry.isDirectory()) out.push(...htmlFiles(full));
-              else if (entry.isFile() && entry.name.endsWith('.html')) out.push(full);
-            }
-            return out;
-          }
-
-          const pages = htmlFiles(siteRoot);
-          let checkedShellPages = 0;
-          for (const file of pages) {
-            const html = fs.readFileSync(file, 'utf8');
-            const normalized = path.normalize(file);
-            const cssCount = (html.match(/portfolio-responsive\.css\?v=2/g) || []).length;
-            const navCount = (html.match(/class="mobile-nav"/g) || []).length;
-
-            if (normalized === whrPath) {
-              if (cssCount !== 0) throw new Error('WHR dashboard should keep its isolated responsive styling');
-              continue;
-            }
-
-            if (html.includes('class="nav shell"')) {
-              checkedShellPages += 1;
-              if (cssCount !== 1) throw new Error(`${file} must contain exactly one responsive stylesheet link; found ${cssCount}`);
-              if (navCount !== 1) throw new Error(`${file} must contain exactly one mobile navigation; found ${navCount}`);
-              if (!/name=["']viewport["']/i.test(html)) throw new Error(`${file} is missing viewport metadata`);
-            }
-
-            if (normalized === pfasPath && !html.includes('class="detail-stage pfas-detail-stage"')) {
-              throw new Error('PFAS project page is missing the expected detail-stage hook');
-            }
-          }
-
-          if (checkedShellPages < 2) throw new Error(`Expected multiple portfolio shell pages, checked only ${checkedShellPages}`);
-
-          for (const marker of [
-            '@media (max-width: 760px)',
-            '@media (max-width: 520px)',
-            '@media (max-width: 380px)',
-            '.project-filters',
-            '.mobile-nav-panel',
-            'overflow-x: clip',
-            'grid-template-columns: minmax(0, 1fr)',
-            '.pfas-detail-stage',
-            '.pfas-stage-core',
-            '.pfas-stage-metrics',
-            'position: relative !important',
-            'aspect-ratio: auto !important',
-          ]) {
-            if (!css.includes(marker)) throw new Error(`responsive CSS is missing ${marker}`);
-          }
-
-          console.log(`Validated responsive deployment hooks on ${checkedShellPages} portfolio pages, including the PFAS mobile composition.`);
-          EOF
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Build canonical portfolio
+        run: npm run build
+      - name: Validate exported portfolio
+        run: node scripts/validate-portfolio-export.mjs
