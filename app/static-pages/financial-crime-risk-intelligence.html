@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="/my-portfolio/assets/portfolio-20260809-v6.css"/>
+  <title>Financial Crime Risk Intelligence, Sampson Boateng</title>
+  <meta name="description" content="A scalable blockchain AML decision-support project using Elliptic2 to prioritize connected transaction patterns under constrained investigator review capacity."/>
+  <meta property="og:title" content="Financial Crime Risk Intelligence — Sampson Boateng"/>
+  <meta property="og:description" content="Scalable Elliptic2 graph ingestion, validated model selection, constrained-review prioritization, calibration, explainability, and a graph-native benchmark."/>
+  <meta property="og:type" content="article"/>
+  <link rel="icon" href="/my-portfolio/favicon.svg"/>
+  <style id="a11y-critical">.skip-link{position:fixed;z-index:10000;top:12px;left:12px;padding:12px 16px;background:#111;color:#fff;border:2px solid #fff;border-radius:4px;font:800 14px/1 Arial,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.22);transform:translateY(calc(-100% - 28px));transition:transform .18s ease}.skip-link:focus,.skip-link:focus-visible{transform:translateY(0);outline:3px solid #d4492f;outline-offset:3px}</style>
+  <link rel="stylesheet" href="/my-portfolio/assets/modern-white-20260822.css?v=10"/>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<main id="main-content" tabindex="-1" class="detail-page">
+  <nav class="nav shell" aria-label="Primary navigation">
+    <a class="wordmark" href="/my-portfolio/">SB<span>.</span></a>
+    <div class="nav-links">
+      <a href="/my-portfolio/#about">About</a>
+      <a href="/my-portfolio/#experience">Experience</a>
+      <a href="/my-portfolio/work">Projects</a>
+      <a href="/my-portfolio/skills">Skills</a>
+      <a href="/my-portfolio/leadership">Leadership</a>
+      <a href="/my-portfolio/person">Beyond Work</a>
+      <a class="nav-cta" href="/my-portfolio/resume">Résumé <span>↗</span></a>
+    </div>
+  </nav>
+
+  <section class="detail-hero shell">
+    <a href="/my-portfolio/work/" class="back-link">← Back to all projects</a>
+    <p class="eyebrow">PROJECT 13 / Financial Crime Analytics · Graph ML</p>
+    <h1>Financial Crime Risk Intelligence</h1>
+    <p>A scalable blockchain anti-money-laundering decision-support project that turns Elliptic2 transaction subgraphs into a validated investigator priority queue, explicit workload trade-offs, calibration controls, case-specific statistical evidence, and a matched graph-native benchmark.</p>
+  </section>
+
+  <section class="detail-stage violet">
+    <div class="detail-orbit one"></div>
+    <div class="detail-orbit two"></div>
+    <div class="detail-bars"><i style="height:18%"></i><i style="height:91%"></i><i style="height:42%"></i><i style="height:76%"></i><i style="height:55%"></i><i style="height:97%"></i><i style="height:68%"></i></div>
+    <span>INGEST · VALIDATE · RANK · EXPLAIN</span>
+  </section>
+
+  <section class="dataset-strip shell">
+    <div><span>DATASET</span><strong>Elliptic2 blockchain transaction graph</strong></div>
+    <div><span>SIZE</span><strong>49.3M background nodes · 196.2M edges · 121,810 labeled components</strong></div>
+    <div><span>SOURCE</span><a href="https://www.kaggle.com/datasets/ellipticco/elliptic2-data-set" target="_blank" rel="noreferrer">Elliptic2 public dataset ↗</a></div>
+  </section>
+
+  <section class="evidence-panel shell">
+    <div class="evidence-heading">
+      <div><p class="eyebrow">MEASURED EVIDENCE</p><h2>What the validated analysis shows.</h2></div>
+      <p>These metrics come from the locally executed Elliptic2 pipeline and validation runs. Published paper benchmarks are kept separate from project results.</p>
+    </div>
+    <div class="evidence-grid">
+      <article><strong>0.5279</strong><span>Mean PR-AUC</span><p>The preferred node-enriched random forest remained stable across five stratified 80/20 splits with PR-AUC SD of 0.0081.</p></article>
+      <article><strong>41.53×</strong><span>Top-0.5% lift</span><p>The preferred model captured about 115 suspicious components on average in roughly 122 reviews at the tightest tested review budget.</p></article>
+      <article><strong>196.2M</strong><span>Background edges scanned</span><p>All 367,137 labeled edges matched exactly once to the large background-edge table using the full source, target, and transaction key.</p></article>
+      <article><strong>0.2498</strong><span>GraphSAGE PR-AUC</span><p>A directed GraphSAGE model on the exact seed-42 RF test components materially underperformed the node-enriched RF at 0.5306 PR-AUC.</p></article>
+    </div>
+    <div class="validation-note"><span>VALIDATION</span><p>Repeated-split stability, shuffled-label sanity, schema-leakage checks, feature-dominance review, edge-match integrity, held-out calibration, and a matched graph-native comparison were evaluated before the preferred model was finalized. Shuffled-label RF PR-AUC collapsed to 0.0210 against 0.0227 prevalence.</p></div>
+    <div class="metric-context"><span>PLAIN-LANGUAGE INTERPRETATION</span><p>The model is designed to order connected transaction patterns for human review when investigation capacity is limited. The raw score is treated as a ranking signal rather than proof or a literal probability of criminal activity.</p></div>
+  </section>
+
+  <section class="case-grid shell">
+    <article><span>01</span><h2>Why this project matters</h2><p>Financial-crime monitoring is not only a classification problem. Real review teams operate under severe workload constraints, suspicious cases are rare, and network behavior can be distributed across connected transactions. The useful question is therefore not simply whether a model can separate classes, but whether it can put the right connected patterns near the top of a finite investigator queue.</p></article>
+    <article><span>02</span><h2>What was developed</h2><p>The project builds an out-of-core DuckDB and Parquet feature pipeline across tens of millions of nodes and hundreds of millions of edges, creates structural and anonymized node-feature aggregates, compares logistic regression and random forest baselines, validates repeated review-budget performance, tests a 380-feature edge enrichment, compares sigmoid and isotonic calibration, produces a capacity-ranked queue with case-specific statistical evidence cues, and benchmarks a directed GraphSAGE classifier on the exact same seed-42 held-out components as the RF.</p></article>
+    <article><span>03</span><h2>What it means</h2><p>The strongest operational result came from the node-enriched random forest rather than the largest feature set or the graph-native model. Node features lifted mean PR-AUC from near-random structural performance to 0.5279; edge enrichment reduced mean RF PR-AUC to 0.5022; and directed GraphSAGE reached 0.2498 versus 0.5306 for RF on the matched seed-42 test set. The project therefore treats both the edge and GraphSAGE experiments as evidence for parsimony: more data, features, or model complexity do not automatically create more investigator value.</p></article>
+  </section>
+
+  <section class="application-story shell">
+    <p class="eyebrow">04 / INVESTIGATOR WORKFLOW</p>
+    <div><h2>From score to review evidence.</h2><p>The final queue uses capacity-based tiers such as top 0.5%, 1%, 2%, 5%, and 10% instead of arbitrary probability-like thresholds. Each queued component can be paired with three statistical evidence cues describing unusual values among globally important anonymized features, including percentile, standardized deviation, and model importance. The evidence is designed to support review, not to invent causal explanations.</p></div>
+  </section>
+
+  <section class="reflection shell">
+    <div><span>05 / CALIBRATION &amp; GOVERNANCE</span><h2>Ranking and probability are separated.</h2><p>A held-out 60/20/20 experiment showed that sigmoid calibration reduced expected calibration error from 0.00881 to 0.00272 while preserving ranking and constrained-review results. Isotonic calibration achieved better probability metrics but reduced PR-AUC and top-budget capture, so the raw random-forest score remains the operational ranking signal and sigmoid is optional for research probability estimates.</p></div>
+    <div><span>06 / LIMITATION</span><h2>What the project does not claim.</h2><p>Elliptic2 features are anonymized, so the project does not assign unsupported business meanings to feature numbers. Scores and evidence cues do not identify real people, establish criminal conduct, make legal determinations, or automate regulatory reporting. The completed GraphSAGE benchmark uses the compact labeled-subgraph universe and is not a reproduction of published GLASS; a true full-background-graph GLASS reproduction remains an optional research extension.</p></div>
+  </section>
+
+  <section class="toolkit shell">
+    <p class="eyebrow">TECHNICAL TOOLKIT</p>
+    <div><span>Python</span><span>DuckDB</span><span>Parquet</span><span>Pandas</span><span>scikit-learn</span><span>PyTorch</span><span>PyTorch Geometric</span><span>Seaborn</span><span>Plotly</span></div>
+    <div class="project-links"><a href="https://github.com/Boatengs/financial-crime-risk-intelligence" target="_blank" rel="noreferrer">Explore project code ↗</a></div>
+  </section>
+
+  <a href="/my-portfolio/projects/wastewater-infrastructure-analytics/" class="next-project"><span>NEXT PROJECT</span><strong>Wastewater Infrastructure Analytics</strong><i>→</i></a>
+</main>
+</body>
+</html>
