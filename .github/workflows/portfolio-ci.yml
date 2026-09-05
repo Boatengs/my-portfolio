@@ -25,6 +25,7 @@ jobs:
 
           const siteRoot = 'site-static';
           const whrPath = path.normalize('site-static/projects/world-happiness-analysis/index.html');
+          const pfasPath = path.normalize('site-static/projects/pfas-water-decision-intelligence/index.html');
           const css = fs.readFileSync('site-static/assets/portfolio-responsive.css', 'utf8');
 
           function htmlFiles(directory) {
@@ -42,7 +43,7 @@ jobs:
           for (const file of pages) {
             const html = fs.readFileSync(file, 'utf8');
             const normalized = path.normalize(file);
-            const cssCount = (html.match(/portfolio-responsive\.css\?v=1/g) || []).length;
+            const cssCount = (html.match(/portfolio-responsive\.css\?v=2/g) || []).length;
             const navCount = (html.match(/class="mobile-nav"/g) || []).length;
 
             if (normalized === whrPath) {
@@ -56,6 +57,10 @@ jobs:
               if (navCount !== 1) throw new Error(`${file} must contain exactly one mobile navigation; found ${navCount}`);
               if (!/name=["']viewport["']/i.test(html)) throw new Error(`${file} is missing viewport metadata`);
             }
+
+            if (normalized === pfasPath && !html.includes('class="detail-stage pfas-detail-stage"')) {
+              throw new Error('PFAS project page is missing the expected detail-stage hook');
+            }
           }
 
           if (checkedShellPages < 2) throw new Error(`Expected multiple portfolio shell pages, checked only ${checkedShellPages}`);
@@ -68,9 +73,14 @@ jobs:
             '.mobile-nav-panel',
             'overflow-x: clip',
             'grid-template-columns: minmax(0, 1fr)',
+            '.pfas-detail-stage',
+            '.pfas-stage-core',
+            '.pfas-stage-metrics',
+            'position: relative !important',
+            'aspect-ratio: auto !important',
           ]) {
             if (!css.includes(marker)) throw new Error(`responsive CSS is missing ${marker}`);
           }
 
-          console.log(`Validated responsive deployment hooks on ${checkedShellPages} portfolio pages.`);
+          console.log(`Validated responsive deployment hooks on ${checkedShellPages} portfolio pages, including the PFAS mobile composition.`);
           EOF
