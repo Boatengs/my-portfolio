@@ -7,9 +7,7 @@ const expectedRoutes = JSON.parse(
   fs.readFileSync("tests/portfolio-routes.json", "utf8"),
 );
 const expectedProjectSlugs = [
-  "pfas-water-decision-intelligence",
-  "wastewater-infrastructure-analytics",
-  "financial-crime-risk-intelligence",
+  "price-elasticity",
   "water-quality",
   "healthcare-modeling",
   "sentiment-analyzer",
@@ -19,6 +17,10 @@ const expectedProjectSlugs = [
   "object-detector",
   "skin-lesion-segmentation",
   "llm-evaluation",
+  "pfas-water-decision-intelligence",
+  "wastewater-infrastructure-analytics",
+  "financial-crime-risk-intelligence",
+  "world-happiness-analysis",
 ];
 
 function allFiles(directory, predicate = () => true) {
@@ -57,11 +59,9 @@ const missingRoutes = expectedRoutes.filter((route) => !generatedRoutes.has(rout
 if (missingRoutes.length) {
   throw new Error(`Missing required portfolio routes: ${missingRoutes.join(", ")}`);
 }
-if (generatedRoutes.has("/projects/price-elasticity/")) {
-  throw new Error("NDA Price Elasticity route must not be part of the public portfolio export.");
-}
 
 const workHtml = fs.readFileSync("out/work/index.html", "utf8");
+const projectCardCount = (workHtml.match(/class="project-card\b/g) || []).length;
 const displayedProjectSlugs = new Set(
   [...workHtml.matchAll(/href=["']\/my-portfolio\/projects\/([^/"'?#]+)\/?["']/g)].map(
     (match) => match[1],
@@ -92,11 +92,14 @@ if (displayedProjectSlugs.size !== expectedProjectSlugs.length) {
     `Public Projects index must contain ${expectedProjectSlugs.length} unique project links; found ${displayedProjectSlugs.size}.`,
   );
 }
+if (projectCardCount !== expectedProjectSlugs.length) {
+  throw new Error(
+    `Public Projects index must render exactly ${expectedProjectSlugs.length} project cards with no duplicates; found ${projectCardCount}.`,
+  );
+}
 
 for (const marker of [
-  "PFAS Drinking Water Decision Intelligence",
-  "Wastewater Infrastructure Analytics",
-  "Financial Crime Risk Intelligence",
+  "Price Elasticity Modeling",
   "Water Quality Analysis",
   "Healthcare Resource Modeling",
   "Sentiment Analyzer",
@@ -106,18 +109,18 @@ for (const marker of [
   "Open Vocabulary Object Detector",
   "Skin Lesion Segmentation",
   "LLM Evaluation Framework",
+  "PFAS Drinking Water Decision Intelligence",
+  "Wastewater Infrastructure Analytics",
+  "Financial Crime Risk Intelligence",
+  "World Happiness Dashboard",
 ]) {
   if (!workHtml.includes(marker)) {
     throw new Error(`Public Projects index is missing: ${marker}`);
   }
 }
-if (workHtml.includes("price-elasticity") || workHtml.includes("Price Elasticity Modeling")) {
-  throw new Error("Public Projects index must not expose the NDA Price Elasticity project.");
-}
-if (displayedProjectSlugs.has("world-happiness-analysis")) {
-  throw new Error("World Happiness should remain a standalone case study, not a 13th Projects-index card.");
-}
 requireText("out/work/index.html", "/my-portfolio/project-captures/water-quality-analysis.svg");
+requireText("out/work/index.html", "/my-portfolio/project-captures/world-happiness-2019.svg");
+requireText("out/work/index.html", "OPEN LIVE DASHBOARD");
 
 requireText(
   "out/projects/pfas-water-decision-intelligence/index.html",
@@ -150,14 +153,31 @@ requireText("out/person/index.html", "sam-beyond-work.webp");
 requireText("out/person/index.html", "portfolio-responsive.css?v=3");
 requireText("out/person/index.html", 'class="mobile-nav"');
 
-requireText(
+const whrHtml = requireText(
   "out/projects/world-happiness-analysis/index.html",
   "World Happiness",
 );
-requireText(
-  "out/projects/world-happiness-analysis/index.html",
-  "world-happiness-dashboard.js",
-);
+for (const marker of [
+  'id="dashboard"',
+  'id="mapChart"',
+  'id="rankChart"',
+  'id="regionChart"',
+  'id="scatterChart"',
+  'id="trendChart"',
+  'id="corrChart"',
+  'id="predictionChart"',
+  'id="coefChart"',
+  "/my-portfolio/assets/world-happiness-dashboard.css",
+  "/my-portfolio/assets/world-happiness-dashboard.js",
+  "cdn.plot.ly/plotly-2.35.2.min.js",
+]) {
+  if (!whrHtml.includes(marker)) {
+    throw new Error(`World Happiness dashboard export is missing: ${marker}`);
+  }
+}
+for (const marker of ["DATA_URL", "Plotly.react", "renderAll", "startPlayback"]) {
+  requireText("out/assets/world-happiness-dashboard.js", marker);
+}
 
 const htmlFiles = allFiles(outRoot, (file) => file.endsWith(".html"));
 const badRootUrls = [];
@@ -195,5 +215,5 @@ if (missingAssets.length) {
 }
 
 console.log(
-  `Validated ${expectedRoutes.length} required routes, ${expectedProjectSlugs.length} public project links, protected special pages, and asset paths across ${htmlFiles.length} HTML files.`,
+  `Validated ${expectedRoutes.length} required routes, ${expectedProjectSlugs.length} unique public project cards, WHR dashboard runtime assets, protected special pages, and asset paths across ${htmlFiles.length} HTML files.`,
 );
