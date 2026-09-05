@@ -1,8 +1,0 @@
-component,max_points,definition
-Contamination severity,35,Maximum complete-location EPA-method PFOA/PFOS average relative to 4.05 ng/L; saturates at 5× cutoff.
-Affected-point breadth,20,Fraction of eligible PFOA/PFOS sampling points in the PWS with either screening trigger.
-Detection persistence,15,Detected core-PFAS events / observed core-PFAS events for complete analyte sets at triggered points.
-Exposure proxy,10,"UCMR Size L (>10,000) = 10; S (<10,000) = 4. Exact SDWIS population is not imputed."
-Reported treatment-response gap,10,Lowest if GAC/IEX/NRO modification reported; highest when prior PFAS testing + NMT is reported.
-PFOA/PFOS co-occurrence,5,5 if both PFOA and PFOS trigger somewhere in the system.
-Potential-source context,5,5 if PWS reported awareness of a potential current/historical PFAS source.
