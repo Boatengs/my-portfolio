@@ -27,6 +27,8 @@ jobs:
           enablement: true
       - name: Prepare portfolio project visuals
         run: node scripts/prepare-pages-featured-projects.mjs
+      - name: Prepare mobile responsive portfolio
+        run: node scripts/prepare-responsive-pages.mjs
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site-static
