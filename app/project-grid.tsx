@@ -1,9 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { projects } from "./projects";
-import { pfasProject } from "./pfas-project";
-import { wastewaterProject } from "./wastewater-project";
+import { allProjects } from "./project-registry";
 
 function ProjectArt({ slug }: { slug: string }) {
   if (slug === "wastewater-infrastructure-analytics")
@@ -171,7 +169,6 @@ export function ProjectGrid({ featured = false }: { featured?: boolean }) {
     "Healthcare",
     "Deployed Apps",
   ];
-  const allProjects = [...projects, pfasProject, wastewaterProject];
   const source = featured
     ? ["pfas-water-decision-intelligence", "wastewater-infrastructure-analytics"]
         .map((slug) => allProjects.find((project) => project.slug === slug))
@@ -251,57 +248,57 @@ export function ProjectGrid({ featured = false }: { featured?: boolean }) {
                 ? " crime-structured"
                 : "";
           return (
-          <Link
-            href={`/projects/${p.slug}`}
-            key={p.slug}
-            aria-label={`View case study: ${p.title}`}
-            className={`project-card card-${allProjects.indexOf(p) + 1} ${!featured && i === 0 ? "wide" : ""}`}
-            onMouseMove={tilt}
-            onMouseLeave={reset}
-          >
-            <div className={`project-visual ${p.accent}${structuredClass}`}>
-              <div className="cursor-glow" aria-hidden="true" />
-              <span className="project-number">{p.index}</span>
-              {p.image ? (
-                <img
-                  className="demo-capture"
-                  src={p.image}
-                  width="1200"
-                  height="675"
-                  loading="lazy"
-                  decoding="async"
-                  alt={`${p.title} application interface`}
-                />
-              ) : (
-                <>
-                  <div className="visual-grid" aria-hidden="true" />
-                  <ProjectArt slug={p.slug} />
-                </>
-              )}
-              <span className="visual-label" aria-hidden="true">
-                VIEW CASE STUDY
-              </span>
-              <span className="open-mark" aria-hidden="true">
-                ↗
-              </span>
-            </div>
-            <div className="project-info">
-              <p>{p.category}</p>
-              <h3>
-                {p.title}
-                <i className="project-arrow" aria-hidden="true">
+            <Link
+              href={`/projects/${p.slug}`}
+              key={p.slug}
+              aria-label={`View case study: ${p.title}`}
+              className={`project-card card-${allProjects.indexOf(p) + 1} ${!featured && i === 0 ? "wide" : ""}`}
+              onMouseMove={tilt}
+              onMouseLeave={reset}
+            >
+              <div className={`project-visual ${p.accent}${structuredClass}`}>
+                <div className="cursor-glow" aria-hidden="true" />
+                <span className="project-number">{p.index}</span>
+                {p.image ? (
+                  <img
+                    className="demo-capture"
+                    src={p.image}
+                    width="1200"
+                    height="675"
+                    loading="lazy"
+                    decoding="async"
+                    alt={`${p.title} application interface`}
+                  />
+                ) : (
+                  <>
+                    <div className="visual-grid" aria-hidden="true" />
+                    <ProjectArt slug={p.slug} />
+                  </>
+                )}
+                <span className="visual-label" aria-hidden="true">
+                  {p.slug === "world-happiness-analysis" ? "OPEN LIVE DASHBOARD" : "VIEW CASE STUDY"}
+                </span>
+                <span className="open-mark" aria-hidden="true">
                   ↗
-                </i>
-              </h3>
-              <span>{p.summary}</span>
-              {p.evidence?.[0] && (
-                <div className="project-proof">
-                  <strong>{p.evidence[0].value}</strong>
-                  <span>{p.evidence[0].label}</span>
-                </div>
-              )}
-            </div>
-          </Link>
+                </span>
+              </div>
+              <div className="project-info">
+                <p>{p.category}</p>
+                <h3>
+                  {p.title}
+                  <i className="project-arrow" aria-hidden="true">
+                    ↗
+                  </i>
+                </h3>
+                <span>{p.summary}</span>
+                {p.evidence?.[0] && (
+                  <div className="project-proof">
+                    <strong>{p.evidence[0].value}</strong>
+                    <span>{p.evidence[0].label}</span>
+                  </div>
+                )}
+              </div>
+            </Link>
           );
         })}
       </div>
