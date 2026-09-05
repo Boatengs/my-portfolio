@@ -1,0 +1,41 @@
+name: Single Source Migration
+
+on:
+  push:
+    branches: [refactor/single-source-portfolio]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-compare:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAGES: "true"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Build canonical app export
+        run: npm run build
+      - name: Show generated routes
+        run: |
+          echo "Generated HTML routes:"
+          find out -name index.html -o -name 404.html | sort
+      - name: Verify core generated pages
+        run: |
+          test -f out/index.html
+          test -f out/work/index.html
+          test -f out/skills/index.html
+          test -f out/leadership/index.html
+          test -f out/person/index.html
+          test -f out/resume/index.html
+          test -f out/projects/pfas-water-decision-intelligence/index.html
+          test -f out/projects/wastewater-infrastructure-analytics/index.html
