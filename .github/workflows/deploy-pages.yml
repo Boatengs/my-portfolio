@@ -20,20 +20,26 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    env:
+      GITHUB_PAGES: "true"
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
       - uses: actions/configure-pages@v5
         with:
           enablement: true
-      - name: Prepare portfolio project visuals
-        run: node scripts/prepare-pages-featured-projects.mjs
-      - name: Prepare mobile responsive portfolio
-        run: node scripts/prepare-responsive-pages.mjs
+      - name: Install dependencies
+        run: npm ci
+      - name: Build canonical portfolio
+        run: npm run build
+      - name: Validate exported portfolio
+        run: node scripts/validate-portfolio-export.mjs
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: site-static
-      - name: Avoid overlapping Pages deployment
-        run: sleep 35
+          path: out
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
