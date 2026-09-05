@@ -3,8 +3,9 @@ import path from "node:path";
 
 const siteRoot = "site-static";
 const sourceCss = "app/responsive.css";
+const pfasResponsiveCss = "app/pfas-responsive.css";
 const targetCss = "site-static/assets/portfolio-responsive.css";
-const stylesheetHref = "/my-portfolio/assets/portfolio-responsive.css?v=1";
+const stylesheetHref = "/my-portfolio/assets/portfolio-responsive.css?v=2";
 const worldHappinessPage = path.normalize(
   "site-static/projects/world-happiness-analysis/index.html",
 );
@@ -49,12 +50,17 @@ function ensureMobileNavigation(html) {
   return html.replace(match[0], enhanced);
 }
 
-if (!fs.existsSync(sourceCss)) {
-  throw new Error(`Responsive source stylesheet is missing: ${sourceCss}`);
+for (const cssPath of [sourceCss, pfasResponsiveCss]) {
+  if (!fs.existsSync(cssPath)) {
+    throw new Error(`Responsive source stylesheet is missing: ${cssPath}`);
+  }
 }
 
 fs.mkdirSync(path.dirname(targetCss), { recursive: true });
-fs.copyFileSync(sourceCss, targetCss);
+const responsiveBundle = [sourceCss, pfasResponsiveCss]
+  .map((cssPath) => fs.readFileSync(cssPath, "utf8").trim())
+  .join("\n\n");
+fs.writeFileSync(targetCss, `${responsiveBundle}\n`);
 
 let updated = 0;
 for (const htmlPath of listHtmlFiles(siteRoot)) {

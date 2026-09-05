@@ -1,0 +1,151 @@
+/* PFAS case-study mobile composition.
+ * Scoped to the PFAS project so the desktop art direction can remain intact
+ * while the phone layout uses normal document flow instead of layered absolute positioning.
+ */
+
+@media (max-width: 760px) {
+  .pfas-page .detail-hero {
+    padding-bottom: 34px !important;
+  }
+
+  .pfas-page .detail-hero > p:last-child {
+    font-size: 15px !important;
+    line-height: 1.58 !important;
+  }
+
+  .pfas-detail-stage {
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+    padding: 34px 0 24px;
+  }
+
+  .pfas-detail-stage::before {
+    width: 270px;
+    height: 270px;
+    right: -105px;
+    top: -75px;
+    box-shadow:
+      0 0 0 42px rgba(97, 214, 206, 0.08),
+      0 0 0 84px rgba(97, 214, 206, 0.045);
+  }
+
+  .pfas-detail-stage::after {
+    background-size: 44px 44px;
+    opacity: 0.72;
+  }
+
+  .pfas-stage-core {
+    position: relative !important;
+    inset: auto !important;
+    z-index: 3;
+    padding: 0 22px;
+  }
+
+  .pfas-stage-core > span {
+    max-width: 310px;
+    font-size: 9px !important;
+    line-height: 1.45;
+    letter-spacing: 0.15em !important;
+  }
+
+  .pfas-stage-core strong {
+    margin-top: 14px !important;
+    font-size: clamp(58px, 18vw, 76px) !important;
+    line-height: 0.86 !important;
+    letter-spacing: -0.065em !important;
+  }
+
+  .pfas-stage-core p {
+    max-width: none !important;
+    margin: 18px 0 0 !important;
+    color: rgba(255, 255, 255, 0.86) !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+
+  .pfas-stage-metrics {
+    position: relative !important;
+    inset: auto !important;
+    z-index: 3;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    margin: 30px 22px 0;
+    background: transparent !important;
+  }
+
+  .pfas-stage-metrics div {
+    min-width: 0;
+    padding: 14px 13px !important;
+    border: 1px solid rgba(255, 255, 255, 0.17);
+    border-radius: 12px;
+    background: rgba(4, 29, 41, 0.58) !important;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  .pfas-stage-metrics b {
+    font-size: clamp(23px, 7vw, 29px) !important;
+    line-height: 1 !important;
+  }
+
+  .pfas-stage-metrics span {
+    margin-top: 7px !important;
+    font-size: 8px !important;
+    line-height: 1.35 !important;
+    letter-spacing: 0.09em !important;
+  }
+
+  .pfas-detail-stage > small {
+    position: relative !important;
+    inset: auto !important;
+    z-index: 3;
+    display: block;
+    margin: 18px 22px 0;
+    font-size: 8px !important;
+    line-height: 1.45 !important;
+    letter-spacing: 0.09em !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .pfas-detail-stage {
+    padding-top: 30px;
+    padding-bottom: 22px;
+  }
+
+  .pfas-stage-core {
+    padding-inline: 18px;
+  }
+
+  .pfas-stage-core strong {
+    font-size: clamp(56px, 17vw, 68px) !important;
+  }
+
+  .pfas-stage-metrics {
+    margin: 26px 18px 0;
+    gap: 7px !important;
+  }
+
+  .pfas-stage-metrics div {
+    padding: 13px 11px !important;
+  }
+
+  .pfas-detail-stage > small {
+    margin: 16px 18px 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .pfas-stage-core p {
+    font-size: 13.5px !important;
+  }
+
+  .pfas-stage-metrics b {
+    font-size: 22px !important;
+  }
+
+  .pfas-stage-metrics span {
+    font-size: 7.5px !important;
+  }
+}
