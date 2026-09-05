@@ -2,22 +2,19 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteNav } from "../../site-nav";
 import { notFound } from "next/navigation";
-import { projects } from "../../projects";
-import { pfasProject } from "../../pfas-project";
-import { wastewaterProject } from "../../wastewater-project";
-
-const allProjects = [...projects, pfasProject, wastewaterProject];
+import { allProjects, generatedProjectPages } from "../../project-registry";
 
 export function generateStaticParams() {
-  return allProjects.map((p) => ({ slug: p.slug }));
+  return generatedProjectPages.map((project) => ({ slug: project.slug }));
 }
+
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params,
-    project = allProjects.find((p) => p.slug === slug);
+  const { slug } = await params;
+  const project = generatedProjectPages.find((item) => item.slug === slug);
   if (!project) return {};
   return {
     title: `${project.title} — Sampson Boateng`,
@@ -29,15 +26,19 @@ export async function generateMetadata({
     },
   };
 }
+
 export default async function ProjectPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params,
-    project = allProjects.find((p) => p.slug === slug);
+  const { slug } = await params;
+  const project = generatedProjectPages.find((item) => item.slug === slug);
   if (!project) notFound();
-  const next = allProjects[(allProjects.indexOf(project) + 1) % allProjects.length];
+
+  const projectIndex = allProjects.findIndex((item) => item.slug === project.slug);
+  const next = allProjects[(projectIndex + 1) % allProjects.length];
+
   return (
     <main className="detail-page">
       <SiteNav label="Project page navigation" />
@@ -67,8 +68,8 @@ export default async function ProjectPage({
           <div className="detail-orbit one" />
           <div className="detail-orbit two" />
           <div className="detail-bars">
-            {[24, 68, 43, 82, 56, 91, 73].map((h, i) => (
-              <i key={i} style={{ height: `${h}%` }} />
+            {[24, 68, 43, 82, 56, 91, 73].map((height, index) => (
+              <i key={index} style={{ height: `${height}%` }} />
             ))}
           </div>
           <span>EXPLORE · MODEL · VALIDATE · COMMUNICATE</span>
@@ -168,8 +169,8 @@ export default async function ProjectPage({
       <section className="toolkit shell">
         <p className="eyebrow">TECHNICAL TOOLKIT</p>
         <div>
-          {project.tools.map((t) => (
-            <span key={t}>{t}</span>
+          {project.tools.map((tool) => (
+            <span key={tool}>{tool}</span>
           ))}
         </div>
         {project.confidential ? (
@@ -177,22 +178,24 @@ export default async function ProjectPage({
             Project code, data, analysis, results, and sponsor materials are not
             publicly available under the nondisclosure agreement.
           </p>
-        ) : <div className="project-links">
-          <a
-            href={project.repoUrl || "https://github.com/Boatengs"}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {project.repoUrl === "https://github.com/Boatengs"
-              ? "Browse GitHub profile ↗"
-              : "Explore project code ↗"}
-          </a>
-          {project.hfUrl && (
-            <a href={project.hfUrl} target="_blank" rel="noreferrer">
-              Launch on Hugging Face ↗
+        ) : (
+          <div className="project-links">
+            <a
+              href={project.repoUrl || "https://github.com/Boatengs"}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {project.repoUrl === "https://github.com/Boatengs"
+                ? "Browse GitHub profile ↗"
+                : "Explore project code ↗"}
             </a>
-          )}
-        </div>}
+            {project.hfUrl && (
+              <a href={project.hfUrl} target="_blank" rel="noreferrer">
+                Launch on Hugging Face ↗
+              </a>
+            )}
+          </div>
+        )}
         {project.repoNote && <p className="repo-note">{project.repoNote}</p>}
       </section>
       <Link className="next-project" href={`/projects/${next.slug}`}>
