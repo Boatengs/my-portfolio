@@ -177,6 +177,8 @@ for (const marker of [
   "8,690",
   "VERIFIED PJM FORECAST BENCHMARK",
   "https://github.com/Boatengs/gridpulse-energy-grid-analytics",
+  "Launch live dashboard",
+  "https://gridpulse-energy-grid-analytics-mmwt26f5tdfp6ussj87qdr.streamlit.app/",
 ]) {
   if (!gridPulseHtml.includes(marker)) {
     throw new Error(`GridPulse portfolio export is missing: ${marker}`);
@@ -250,5 +252,5 @@ if (missingAssets.length) {
 }
 
 console.log(
-  `Validated ${expectedRoutes.length} required routes, ${expectedProjectSlugs.length} unique public project cards, NDA route exclusion, GridPulse evidence, WHR dashboard runtime assets, protected special pages, and asset paths across ${htmlFiles.length} HTML files.`,
+  `Validated ${expectedRoutes.length} required routes, ${expectedProjectSlugs.length} unique public project cards, NDA route exclusion, GridPulse evidence and live dashboard link, WHR dashboard runtime assets, protected special pages, and asset paths across ${htmlFiles.length} HTML files.`,
 );
