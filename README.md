@@ -10,6 +10,7 @@ All portfolio content is authored under `app/` and `public/`.
 - `public/` — portfolio images, project captures, résumé assets, and favicon
 - `scripts/finalize-static-export.mjs` — finalizes special presentation pages and GitHub Pages asset paths after the Next.js export
 - `scripts/validate-portfolio-export.mjs` — verifies required public routes, the public project set, protected special pages, and static assets
+- `scripts/validate-project-order.mjs` — verifies that the newest public project appears first on the Projects page
 - `tests/portfolio-routes.json` — explicit manifest of public portfolio routes that must remain available
 - `.github/workflows/portfolio-ci.yml` — builds and validates the canonical source on pull requests
 - `.github/workflows/deploy-pages.yml` — builds the same canonical source and deploys the generated `out/` artifact to GitHub Pages
@@ -19,5 +20,7 @@ The generated `out/` directory is a build artifact. It is not a second editable 
 ## Updating the portfolio
 
 Future portfolio changes should be made only in `app/` and `public/`. Do not create or maintain parallel `docs/`, `site-static/`, or other hand-edited deployment copies.
+
+Public project cards follow a newest-first presentation rule. Newly published work should be added at the beginning of `recentProjects` in `app/project-registry.ts`, so the latest project appears at the top of the Projects page while older work keeps its relative order below it.
 
 Project-specific repositories remain the source of truth for their analytical code, data-processing logic, tests, notebooks, and technical README documentation. The portfolio repository contains only the presentation material needed to showcase those projects.
