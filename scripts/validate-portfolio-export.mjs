@@ -7,7 +7,6 @@ const expectedRoutes = JSON.parse(
   fs.readFileSync("tests/portfolio-routes.json", "utf8"),
 );
 const expectedProjectSlugs = [
-  "price-elasticity",
   "water-quality",
   "healthcare-modeling",
   "sentiment-analyzer",
@@ -22,6 +21,7 @@ const expectedProjectSlugs = [
   "financial-crime-risk-intelligence",
   "world-happiness-analysis",
 ];
+const forbiddenProjectSlugs = ["price-elasticity"];
 
 function allFiles(directory, predicate = () => true) {
   const files = [];
@@ -58,6 +58,12 @@ const generatedRoutes = new Set(indexRoutes(outRoot));
 const missingRoutes = expectedRoutes.filter((route) => !generatedRoutes.has(route));
 if (missingRoutes.length) {
   throw new Error(`Missing required portfolio routes: ${missingRoutes.join(", ")}`);
+}
+for (const slug of forbiddenProjectSlugs) {
+  const route = `/projects/${slug}/`;
+  if (generatedRoutes.has(route)) {
+    throw new Error(`Confidential/NDA portfolio route must not be generated: ${route}`);
+  }
 }
 
 const workHtml = fs.readFileSync("out/work/index.html", "utf8");
@@ -97,9 +103,18 @@ if (projectCardCount !== expectedProjectSlugs.length) {
     `Public Projects index must render exactly ${expectedProjectSlugs.length} project cards with no duplicates; found ${projectCardCount}.`,
   );
 }
+for (const slug of forbiddenProjectSlugs) {
+  if (displayedProjectSlugs.has(slug)) {
+    throw new Error(`Confidential/NDA project card must not be public: ${slug}`);
+  }
+}
+for (const marker of ["Price Elasticity Modeling", "NDA PROTECTED"]) {
+  if (workHtml.includes(marker)) {
+    throw new Error(`Confidential/NDA portfolio content must not be public: ${marker}`);
+  }
+}
 
 for (const marker of [
-  "Price Elasticity Modeling",
   "Water Quality Analysis",
   "Healthcare Resource Modeling",
   "Sentiment Analyzer",
@@ -215,5 +230,5 @@ if (missingAssets.length) {
 }
 
 console.log(
-  `Validated ${expectedRoutes.length} required routes, ${expectedProjectSlugs.length} unique public project cards, WHR dashboard runtime assets, protected special pages, and asset paths across ${htmlFiles.length} HTML files.`,
+  `Validated ${expectedRoutes.length} required routes, ${expectedProjectSlugs.length} unique public project cards, NDA route exclusion, WHR dashboard runtime assets, protected special pages, and asset paths across ${htmlFiles.length} HTML files.`,
 );
