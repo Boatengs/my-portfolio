@@ -1,6 +1,11 @@
 import type { Project } from "./projects";
 
-export const gridPulseProject: Project = {
+type GridPulseProject = Project & {
+  imageLabel?: string;
+  liveUrl?: string;
+};
+
+export const gridPulseProject: GridPulseProject = {
   slug: "gridpulse-energy-grid-analytics",
   index: "14",
   title: "GridPulse Energy Grid Analytics",
