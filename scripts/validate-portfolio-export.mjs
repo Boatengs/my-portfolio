@@ -67,6 +67,36 @@ for (const slug of forbiddenProjectSlugs) {
   }
 }
 
+const projectGridSource = fs.readFileSync("app/project-grid.tsx", "utf8");
+for (const marker of [
+  'loading="lazy"',
+  "onMouseMove={tilt}",
+  "onMouseLeave={reset}",
+  "const tilt =",
+]) {
+  if (projectGridSource.includes(marker)) {
+    throw new Error(`Project thumbnail stability regression detected: ${marker}`);
+  }
+}
+if (!projectGridSource.includes('loading="eager"')) {
+  throw new Error("Project screenshot thumbnails must load eagerly for stable rendering.");
+}
+const thumbnailStabilityCss = fs.readFileSync(
+  "app/project-thumbnail-stability.css",
+  "utf8",
+);
+for (const marker of [
+  ".project-card:hover",
+  "perspective: none !important;",
+  "transform: none !important;",
+  ".demo-capture",
+  "filter: none !important;",
+]) {
+  if (!thumbnailStabilityCss.includes(marker)) {
+    throw new Error(`Project thumbnail stability CSS is missing: ${marker}`);
+  }
+}
+
 const workHtml = fs.readFileSync("out/work/index.html", "utf8");
 const projectCardCount = (workHtml.match(/class="project-card\b/g) || []).length;
 const displayedProjectSlugs = new Set(
@@ -252,5 +282,5 @@ if (missingAssets.length) {
 }
 
 console.log(
-  `Validated ${expectedRoutes.length} required routes, ${expectedProjectSlugs.length} unique public project cards, NDA route exclusion, GridPulse evidence and live dashboard link, WHR dashboard runtime assets, protected special pages, and asset paths across ${htmlFiles.length} HTML files.`,
+  `Validated ${expectedRoutes.length} required routes, ${expectedProjectSlugs.length} unique public project cards, NDA route exclusion, project thumbnail stability guardrails, GridPulse evidence and live dashboard link, WHR dashboard runtime assets, protected special pages, and asset paths across ${htmlFiles.length} HTML files.`,
 );
