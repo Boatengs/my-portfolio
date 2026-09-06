@@ -41,6 +41,8 @@ export const gridPulseProject: GridPulseProject = {
   image: "/project-captures/gridpulse-energy-grid.svg",
   imageLabel: "VERIFIED PJM FORECAST BENCHMARK",
   repoUrl: "https://github.com/Boatengs/gridpulse-energy-grid-analytics",
+  liveUrl:
+    "https://gridpulse-energy-grid-analytics-mmwt26f5tdfp6ussj87qdr.streamlit.app/",
   evidence: [
     {
       value: "44.2%",
