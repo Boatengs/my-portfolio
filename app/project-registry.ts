@@ -19,14 +19,18 @@ const numberedProjects = publicProjects.map((project) => {
   return project;
 });
 
+// New public work belongs at the top of the portfolio. Add each newly published
+// project to the beginning of this list so visitors see the most recent work first.
+const recentProjects = [gridPulseProject];
+
 // Keep the visible portfolio numbered continuously after excluding confidential
-// work. New public projects are registered here once, then generated everywhere.
+// work. Projects are registered once here, then generated everywhere.
 export const allProjects = [
+  ...recentProjects,
   ...numberedProjects,
   wastewaterProject,
   financialCrimeProject,
   worldHappinessProject,
-  gridPulseProject,
 ].map((project, index) => ({
   ...project,
   index: String(index + 1).padStart(2, "0"),
