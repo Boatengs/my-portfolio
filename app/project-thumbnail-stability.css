@@ -7,6 +7,23 @@
  * filters, or compositor-heavy image effects that can intermittently blank.
  */
 
+/* The card container itself must never enter a transformed/perspective layer.
+ * Earlier fixes stabilized the image and visual, but the parent card still used
+ * a hover translate plus perspective. Moving the whole card could still push a
+ * screenshot into a browser compositor layer and reproduce intermittent blanks.
+ */
+.project-card,
+.project-card:hover,
+.project-card:focus-visible,
+.project-card:focus-within {
+  transform: none !important;
+  perspective: none !important;
+  transform-style: flat !important;
+  will-change: auto !important;
+  backface-visibility: visible !important;
+  -webkit-backface-visibility: visible !important;
+}
+
 .project-visual,
 .wide .project-visual {
   transform: none !important;
@@ -60,6 +77,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .project-card,
   .project-visual,
   .demo-capture {
     transition: none !important;
