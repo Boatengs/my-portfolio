@@ -1,11 +1,21 @@
 /*
  * Project thumbnail stability guardrails.
  *
- * Real screenshot cards used to sit inside the same 3D transform layer as the
- * CSS-drawn project artwork. Mobile browsers can intermittently drop those
- * raster/SVG image layers while scrolling or repainting. Keep screenshot cards
- * on a simple 2D paint path and reserve the 3D tilt effect for generated art.
+ * Project cards must stay visible on every browser and device. Real screenshot
+ * thumbnails and CSS-drawn artwork now use a stable 2D paint path everywhere;
+ * the portfolio keeps lightweight hover cues without relying on 3D transforms,
+ * filters, or compositor-heavy image effects that can intermittently blank.
  */
+
+.project-visual,
+.wide .project-visual {
+  transform: none !important;
+  transform-style: flat !important;
+  perspective: none !important;
+  will-change: auto !important;
+  backface-visibility: visible !important;
+  -webkit-backface-visibility: visible !important;
+}
 
 .demo-capture {
   position: relative;
@@ -18,41 +28,40 @@
   opacity: 1 !important;
   visibility: visible !important;
   background: #f4f5f7;
+  transform: none !important;
+  transition: none !important;
+  filter: none !important;
+  will-change: auto !important;
+  backface-visibility: visible !important;
+  -webkit-backface-visibility: visible !important;
 }
 
-/* Modern browsers: screenshot cards never need the 3D project-art layer. */
-@supports selector(.project-card:has(.demo-capture)) {
-  .project-card:has(.demo-capture) .project-visual {
-    transform: none !important;
-    transform-style: flat !important;
-    will-change: auto !important;
-  }
+.project-card:hover .demo-capture,
+.project-card:focus-visible .demo-capture,
+.project-card:focus-within .demo-capture {
+  transform: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
-/* Touch / tablet / phone: remove compositing effects that can cause image
- * layers to disappear after scrolling, orientation changes, or memory pressure.
+/* The moving cursor glow creates another composited layer over the card. Keep
+ * the presentation reliable and use the existing arrow/label hover cues instead.
  */
-@media (hover: none), (pointer: coarse), (max-width: 900px) {
+.cursor-glow {
+  display: none !important;
+}
+
+/* Preserve lightweight interaction without moving the visual itself. */
+.project-card:hover .project-visual,
+.project-card:focus-visible .project-visual,
+.project-card:focus-within .project-visual {
+  transform: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
   .project-visual,
-  .wide .project-visual {
-    transform: none !important;
-    transform-style: flat !important;
-    perspective: none !important;
-    will-change: auto !important;
-  }
-
-  .demo-capture,
-  .project-card:hover .demo-capture {
-    transform: none !important;
+  .demo-capture {
     transition: none !important;
-    filter: none !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    backface-visibility: visible !important;
-    -webkit-backface-visibility: visible !important;
-  }
-
-  .cursor-glow {
-    display: none !important;
   }
 }
