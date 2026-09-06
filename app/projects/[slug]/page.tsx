@@ -38,6 +38,14 @@ export default async function ProjectPage({
 
   const projectIndex = allProjects.findIndex((item) => item.slug === project.slug);
   const next = allProjects[(projectIndex + 1) % allProjects.length];
+  const imageLabel =
+    "imageLabel" in project && typeof project.imageLabel === "string"
+      ? project.imageLabel
+      : "LIVE APPLICATION CAPTURE";
+  const liveUrl =
+    "liveUrl" in project && typeof project.liveUrl === "string"
+      ? project.liveUrl
+      : undefined;
 
   return (
     <main className="detail-page">
@@ -61,7 +69,7 @@ export default async function ProjectPage({
             decoding="async"
             alt={`${project.title} application interface`}
           />
-          <span>LIVE APPLICATION CAPTURE</span>
+          <span>{imageLabel}</span>
         </section>
       ) : (
         <section className={`detail-stage ${project.accent}`}>
@@ -180,6 +188,11 @@ export default async function ProjectPage({
           </p>
         ) : (
           <div className="project-links">
+            {liveUrl && (
+              <a href={liveUrl} target="_blank" rel="noreferrer">
+                Launch live dashboard ↗
+              </a>
+            )}
             <a
               href={project.repoUrl || "https://github.com/Boatengs"}
               target="_blank"
