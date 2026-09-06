@@ -3,6 +3,7 @@ import { pfasProject } from "./pfas-project";
 import { wastewaterProject } from "./wastewater-project";
 import { financialCrimeProject } from "./financial-crime-project";
 import { worldHappinessProject } from "./world-happiness-project";
+import { gridPulseProject } from "./gridpulse-project";
 
 // Confidential/NDA work stays in its standalone GitHub repository and is never
 // published through the portfolio. The portfolio registry is the public gate.
@@ -19,12 +20,13 @@ const numberedProjects = publicProjects.map((project) => {
 });
 
 // Keep the visible portfolio numbered continuously after excluding confidential
-// work, without changing the underlying standalone project repositories.
+// work. New public projects are registered here once, then generated everywhere.
 export const allProjects = [
   ...numberedProjects,
   wastewaterProject,
   financialCrimeProject,
   worldHappinessProject,
+  gridPulseProject,
 ].map((project, index) => ({
   ...project,
   index: String(index + 1).padStart(2, "0"),
