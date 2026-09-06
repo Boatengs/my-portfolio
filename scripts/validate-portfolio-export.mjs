@@ -20,6 +20,7 @@ const expectedProjectSlugs = [
   "wastewater-infrastructure-analytics",
   "financial-crime-risk-intelligence",
   "world-happiness-analysis",
+  "gridpulse-energy-grid-analytics",
 ];
 const forbiddenProjectSlugs = ["price-elasticity"];
 
@@ -128,6 +129,7 @@ for (const marker of [
   "Wastewater Infrastructure Analytics",
   "Financial Crime Risk Intelligence",
   "World Happiness Dashboard",
+  "GridPulse Energy Grid Analytics",
 ]) {
   if (!workHtml.includes(marker)) {
     throw new Error(`Public Projects index is missing: ${marker}`);
@@ -135,6 +137,7 @@ for (const marker of [
 }
 requireText("out/work/index.html", "/my-portfolio/project-captures/water-quality-analysis.svg");
 requireText("out/work/index.html", "/my-portfolio/project-captures/world-happiness-2019.svg");
+requireText("out/work/index.html", "/my-portfolio/project-captures/gridpulse-energy-grid.svg");
 requireText("out/work/index.html", "OPEN LIVE DASHBOARD");
 
 requireText(
@@ -162,6 +165,23 @@ requireText(
   "out/projects/financial-crime-risk-intelligence/index.html",
   'class="mobile-nav"',
 );
+
+const gridPulseHtml = requireText(
+  "out/projects/gridpulse-energy-grid-analytics/index.html",
+  "GridPulse Energy Grid Analytics",
+);
+for (const marker of [
+  "44.2%",
+  "36.0%",
+  "13 / 13",
+  "8,690",
+  "VERIFIED PJM FORECAST BENCHMARK",
+  "https://github.com/Boatengs/gridpulse-energy-grid-analytics",
+]) {
+  if (!gridPulseHtml.includes(marker)) {
+    throw new Error(`GridPulse portfolio export is missing: ${marker}`);
+  }
+}
 
 requireText("out/person/index.html", "THE PERSON BEHIND THE WORK");
 requireText("out/person/index.html", "sam-beyond-work.webp");
@@ -230,5 +250,5 @@ if (missingAssets.length) {
 }
 
 console.log(
-  `Validated ${expectedRoutes.length} required routes, ${expectedProjectSlugs.length} unique public project cards, NDA route exclusion, WHR dashboard runtime assets, protected special pages, and asset paths across ${htmlFiles.length} HTML files.`,
+  `Validated ${expectedRoutes.length} required routes, ${expectedProjectSlugs.length} unique public project cards, NDA route exclusion, GridPulse evidence, WHR dashboard runtime assets, protected special pages, and asset paths across ${htmlFiles.length} HTML files.`,
 );
