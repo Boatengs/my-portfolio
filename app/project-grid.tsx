@@ -50,15 +50,6 @@ function ProjectArt({ slug }: { slug: string }) {
         </span>
       </div>
     );
-  if (slug === "price-elasticity")
-    return (
-      <div className="art elasticity-art">
-        <span className="axis-label demand">CONFIDENTIAL</span>
-        <span className="axis-label price">NDA PROTECTED</span>
-        <b>NDA</b>
-        <small>GRADUATE CAPSTONE</small>
-      </div>
-    );
   if (slug === "water-quality")
     return (
       <div className="art water-art">
@@ -179,29 +170,7 @@ export function ProjectGrid({ featured = false }: { featured?: boolean }) {
     active === "All"
       ? source
       : source.filter((p) => p.filters.includes(active));
-  const tilt = (e: React.MouseEvent<HTMLElement>) => {
-    if (
-      !matchMedia("(pointer:fine) and (prefers-reduced-motion:no-preference)")
-        .matches
-    )
-      return;
-    const el = e.currentTarget,
-      r = el.getBoundingClientRect(),
-      px = e.clientX - r.left,
-      py = e.clientY - r.top,
-      x = px / r.width - 0.5,
-      y = py / r.height - 0.5;
-    requestAnimationFrame(() => {
-      el.style.setProperty("--rx", `${-y * 7}deg`);
-      el.style.setProperty("--ry", `${x * 9}deg`);
-      el.style.setProperty("--mx", `${px}px`);
-      el.style.setProperty("--my", `${py}px`);
-    });
-  };
-  const reset = (e: React.MouseEvent<HTMLElement>) => {
-    e.currentTarget.style.setProperty("--rx", "0deg");
-    e.currentTarget.style.setProperty("--ry", "0deg");
-  };
+
   return (
     <>
       {!featured && (
@@ -253,8 +222,6 @@ export function ProjectGrid({ featured = false }: { featured?: boolean }) {
               key={p.slug}
               aria-label={`View case study: ${p.title}`}
               className={`project-card card-${allProjects.indexOf(p) + 1} ${!featured && i === 0 ? "wide" : ""}`}
-              onMouseMove={tilt}
-              onMouseLeave={reset}
             >
               <div className={`project-visual ${p.accent}${structuredClass}`}>
                 <div className="cursor-glow" aria-hidden="true" />
@@ -265,7 +232,7 @@ export function ProjectGrid({ featured = false }: { featured?: boolean }) {
                     src={p.image}
                     width="1200"
                     height="675"
-                    loading="lazy"
+                    loading="eager"
                     decoding="async"
                     alt={`${p.title} application interface`}
                   />
