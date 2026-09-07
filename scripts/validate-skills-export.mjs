@@ -12,6 +12,7 @@ for (const marker of [
   "skills-premium",
   "TECHNICAL TOOLKIT",
   "CORE STACK",
+  "WORKING STACK",
   "CAPABILITY LIBRARY",
   "Data &amp; Analysis",
   "Statistical &amp; Modeling",
@@ -19,7 +20,7 @@ for (const marker of [
   "ML, NLP &amp; LLM",
   "Computer Vision &amp; Deep Learning",
   "Tools &amp; Platforms",
-  "VISUAL SYSTEM",
+  "THE POINT OF THE STACK",
 ]) {
   if (!html.includes(marker)) {
     throw new Error(`Premium technical toolkit is missing: ${marker}`);
@@ -31,6 +32,8 @@ for (const forbidden of [
   "price-elasticity",
   'loading="lazy"',
   "Price Elasticity",
+  "capability-tags",
+  "capability-card",
 ]) {
   if (html.includes(forbidden)) {
     throw new Error(`Technical toolkit regression detected: ${forbidden}`);
@@ -40,6 +43,16 @@ for (const forbidden of [
 const skillCardCount = (html.match(/class="premium-skill-card(?:\s|\")/g) || []).length;
 if (skillCardCount !== 58) {
   throw new Error(`Technical toolkit must render exactly 58 capability cards; found ${skillCardCount}.`);
+}
+
+const disciplineCount = (html.match(/class="toolkit-discipline tone-/g) || []).length;
+if (disciplineCount !== 6) {
+  throw new Error(`Technical toolkit must render exactly 6 premium discipline panels; found ${disciplineCount}.`);
+}
+
+const coreNodeCount = (html.match(/class="stack-node"/g) || []).length;
+if (coreNodeCount !== 9) {
+  throw new Error(`Technical toolkit must render exactly 9 core-stack nodes; found ${coreNodeCount}.`);
 }
 
 const remoteImages = [...html.matchAll(/<img[^>]+src=["'](https?:\/\/[^"']+)["']/g)].map(
@@ -70,5 +83,5 @@ for (const url of logoUrls) {
 }
 
 console.log(
-  `Validated premium technical toolkit: 58 capability cards, ${logoUrls.length} local brand marks, no NDA links, and no remote image dependencies.`,
+  `Validated premium technical toolkit: 58 capability cards, 6 discipline panels, 9 core-stack nodes, ${logoUrls.length} local brand marks, no NDA links, and no remote image dependencies.`,
 );
