@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { SiteNav } from "../site-nav";
 
+const resumeUrl = "/sampson-boateng-resume.pdf?v=20260826-1";
+
 export default function Resume() {
   return (
     <main className="resume-page">
@@ -15,23 +17,23 @@ export default function Resume() {
       </section>
       <section className="pdf-shell shell">
         <div className="resume-document">
-        <img
-          src="/sampson-boateng-resume-page.png?v=20260818-2"
-          width="1275"
-          height="1650"
-          decoding="async"
-          alt="Sampson Boateng résumé, showing professional summary, skills, experience, projects, and education"
-        />
+          <object
+            className="resume-pdf-frame"
+            data={`${resumeUrl}#view=FitH`}
+            type="application/pdf"
+            aria-label="Sampson Boateng résumé"
+          >
+            <p>
+              Your browser cannot display the PDF inline.{" "}
+              <a href={resumeUrl}>Open the résumé PDF</a>.
+            </p>
+          </object>
         </div>
         <div className="pdf-actions">
-          <a
-            href="/sampson-boateng-resume.pdf?v=20260818-2"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href={resumeUrl} target="_blank" rel="noreferrer">
             Open the original PDF ↗
           </a>
-          <a href="/sampson-boateng-resume.pdf?v=20260818-2" download>
+          <a href={resumeUrl} download="Sampson-Boateng-Resume.pdf">
             Download a copy ↓
           </a>
         </div>
