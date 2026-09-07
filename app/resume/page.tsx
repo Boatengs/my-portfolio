@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SiteNav } from "../site-nav";
 
-const resumeUrl = "/sampson-boateng-resume.pdf?v=20260826-1";
+const resumeUrl = "/sampson-boateng-resume.pdf?v=20260907-1";
 
 export default function Resume() {
   return (
@@ -17,17 +17,12 @@ export default function Resume() {
       </section>
       <section className="pdf-shell shell">
         <div className="resume-document">
-          <object
+          <iframe
             className="resume-pdf-frame"
-            data={`${resumeUrl}#view=FitH`}
-            type="application/pdf"
-            aria-label="Sampson Boateng résumé"
-          >
-            <p>
-              Your browser cannot display the PDF inline.{" "}
-              <a href={resumeUrl}>Open the résumé PDF</a>.
-            </p>
-          </object>
+            src={`${resumeUrl}#view=FitH`}
+            title="Sampson Boateng résumé"
+            loading="eager"
+          />
         </div>
         <div className="pdf-actions">
           <a href={resumeUrl} target="_blank" rel="noreferrer">
