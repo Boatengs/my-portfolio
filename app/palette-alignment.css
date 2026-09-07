@@ -260,6 +260,17 @@
   color: var(--accent) !important;
 }
 
+/* The live resume is the PDF itself. Do not render a stale screenshot preview. */
+.resume-pdf-frame {
+  display: block;
+  width: 100%;
+  aspect-ratio: 8.5 / 11;
+  height: auto;
+  min-height: 720px;
+  border: 0;
+  background: #fff;
+}
+
 @media (max-width: 980px) and (min-width: 761px) {
   #main-content > main:not([class]) .availability-grid {
     grid-template-columns: minmax(0, 1.2fr) minmax(270px, 0.8fr);
@@ -281,5 +292,9 @@
     max-width: 100%;
     font-size: clamp(42px, 12vw, 50px);
     line-height: 0.96;
+  }
+
+  .resume-pdf-frame {
+    min-height: 620px;
   }
 }
