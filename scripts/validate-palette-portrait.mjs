@@ -22,6 +22,11 @@ for (const marker of [
   "var(--accent)",
   "/my-portfolio/sam-profile.png",
   "/sam-profile.png",
+  "#main-content > main:not([class]) .availability-grid",
+  "#main-content > main:not([class]) .availability h2",
+  "word-break: keep-all",
+  ".project-grid--featured .project-cover-proof strong",
+  ".project-grid--featured .project-editorial-proof strong",
 ]) {
   if (!palette.includes(marker)) {
     throw new Error(`Shared palette/portrait layer is missing: ${marker}`);
@@ -40,6 +45,17 @@ if (!home.includes("Professional portrait of Sampson Boateng")) {
 if (!home.includes("/my-portfolio/sam-profile.webp")) {
   throw new Error("Homepage portrait does not resolve through the GitHub Pages base path.");
 }
+for (const marker of [
+  "Advancing organizations",
+  "1.99M",
+  "Analytical-result records",
+  ">6<",
+  "Decision stages",
+]) {
+  if (!home.includes(marker)) {
+    throw new Error(`Homepage brand polish is missing expected content: ${marker}`);
+  }
+}
 
 const cssFiles = [];
 function walk(dir) {
@@ -54,5 +70,8 @@ const css = cssFiles.map((file) => fs.readFileSync(file, "utf8")).join("\n");
 if (!css.includes("/my-portfolio/sam-profile.png")) {
   throw new Error("Compiled portfolio CSS is missing the deployed portrait fallback.");
 }
+if (!css.includes("word-break:keep-all") && !css.includes("word-break: keep-all")) {
+  throw new Error("Compiled homepage CSS is missing the protected opportunity-headline word wrapping rule.");
+}
 
-console.log("Validated shared homepage/project/toolkit palette alignment and resilient homepage portrait assets.");
+console.log("Validated shared homepage/project/toolkit palette alignment, featured homepage metric accent, balanced opportunity headline, and resilient homepage portrait assets.");
