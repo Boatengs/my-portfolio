@@ -21,6 +21,14 @@ for (const marker of [
   "Computer Vision &amp; Deep Learning",
   "Tools &amp; Platforms",
   "THE POINT OF THE STACK",
+  "SQLite",
+  "SVM",
+  "Isolation Forest",
+  "GitHub",
+  "/my-portfolio/projects/healthcare-modeling",
+  "/my-portfolio/projects/water-quality",
+  "/my-portfolio/skill-logos/sqlite.svg",
+  "/my-portfolio/skill-logos/github.svg",
 ]) {
   if (!html.includes(marker)) {
     throw new Error(`Premium technical toolkit is missing: ${marker}`);
@@ -34,6 +42,13 @@ for (const forbidden of [
   "Price Elasticity",
   "capability-tags",
   "capability-card",
+  "Scikit-learn",
+  "K-Means",
+  "Grad-CAM",
+  "Zero-Shot Learning",
+  "U-Net",
+  "Fine-tuning",
+  "Deep-learning",
 ]) {
   if (html.includes(forbidden)) {
     throw new Error(`Technical toolkit regression detected: ${forbidden}`);
@@ -41,8 +56,8 @@ for (const forbidden of [
 }
 
 const skillCardCount = (html.match(/class="premium-skill-card(?:\s|\")/g) || []).length;
-if (skillCardCount !== 58) {
-  throw new Error(`Technical toolkit must render exactly 58 capability cards; found ${skillCardCount}.`);
+if (skillCardCount !== 61) {
+  throw new Error(`Technical toolkit must render exactly 61 capability cards; found ${skillCardCount}.`);
 }
 
 const disciplineCount = (html.match(/class="toolkit-discipline tone-/g) || []).length;
@@ -70,8 +85,8 @@ const logoUrls = [
   ),
 ];
 
-if (logoUrls.length < 10) {
-  throw new Error(`Expected at least 10 locally stored brand marks; found ${logoUrls.length}.`);
+if (logoUrls.length < 13) {
+  throw new Error(`Expected at least 13 locally stored brand marks; found ${logoUrls.length}.`);
 }
 
 for (const url of logoUrls) {
@@ -83,5 +98,5 @@ for (const url of logoUrls) {
 }
 
 console.log(
-  `Validated premium technical toolkit: 58 capability cards, 6 discipline panels, 9 core-stack nodes, ${logoUrls.length} local brand marks, no NDA links, and no remote image dependencies.`,
+  `Validated premium technical toolkit: 61 capability cards, 6 discipline panels, 9 core-stack nodes, ${logoUrls.length} local brand marks, SVM and Isolation Forest project evidence, GitHub naming, SQLite, no NDA links, and no remote image dependencies.`,
 );
