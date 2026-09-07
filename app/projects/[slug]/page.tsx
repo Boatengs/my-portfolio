@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteNav } from "../../site-nav";
+import { ProjectCover } from "../../project-cover";
 import { notFound } from "next/navigation";
 import { allProjects, generatedProjectPages } from "../../project-registry";
 
@@ -38,10 +39,10 @@ export default async function ProjectPage({
 
   const projectIndex = allProjects.findIndex((item) => item.slug === project.slug);
   const next = allProjects[(projectIndex + 1) % allProjects.length];
-  const imageLabel =
+  const visualLabel =
     "imageLabel" in project && typeof project.imageLabel === "string"
       ? project.imageLabel
-      : "LIVE APPLICATION CAPTURE";
+      : "PROJECT CASE STUDY";
   const liveUrl =
     "liveUrl" in project && typeof project.liveUrl === "string"
       ? project.liveUrl
@@ -60,29 +61,12 @@ export default async function ProjectPage({
         <h1>{project.title}</h1>
         <p>{project.summary}</p>
       </section>
-      {project.image ? (
-        <section className="detail-capture">
-          <img
-            src={project.image}
-            width="1200"
-            height="675"
-            decoding="async"
-            alt={`${project.title} application interface`}
-          />
-          <span>{imageLabel}</span>
-        </section>
-      ) : (
-        <section className={`detail-stage ${project.accent}`}>
-          <div className="detail-orbit one" />
-          <div className="detail-orbit two" />
-          <div className="detail-bars">
-            {[24, 68, 43, 82, 56, 91, 73].map((height, index) => (
-              <i key={index} style={{ height: `${height}%` }} />
-            ))}
-          </div>
-          <span>EXPLORE · MODEL · VALIDATE · COMMUNICATE</span>
-        </section>
-      )}
+      <section
+        className="detail-editorial-visual"
+        aria-label={`${project.title} project visual`}
+      >
+        <ProjectCover project={project} variant="detail" label={visualLabel} />
+      </section>
       <section className="dataset-strip shell">
         <div>
           <span>DATASET</span>
