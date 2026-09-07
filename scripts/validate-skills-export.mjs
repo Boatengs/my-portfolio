@@ -1,0 +1,74 @@
+import fs from "node:fs";
+import path from "node:path";
+
+const file = "out/skills/index.html";
+if (!fs.existsSync(file)) {
+  throw new Error("Premium technical toolkit export is missing: out/skills/index.html");
+}
+
+const html = fs.readFileSync(file, "utf8");
+
+for (const marker of [
+  "skills-premium",
+  "TECHNICAL TOOLKIT",
+  "CORE STACK",
+  "CAPABILITY LIBRARY",
+  "Data &amp; Analysis",
+  "Statistical &amp; Modeling",
+  "Business Intelligence",
+  "ML, NLP &amp; LLM",
+  "Computer Vision &amp; Deep Learning",
+  "Tools &amp; Platforms",
+  "VISUAL SYSTEM",
+]) {
+  if (!html.includes(marker)) {
+    throw new Error(`Premium technical toolkit is missing: ${marker}`);
+  }
+}
+
+for (const forbidden of [
+  "api.iconify.design",
+  "price-elasticity",
+  'loading="lazy"',
+  "Price Elasticity",
+]) {
+  if (html.includes(forbidden)) {
+    throw new Error(`Technical toolkit regression detected: ${forbidden}`);
+  }
+}
+
+const skillCardCount = (html.match(/class="premium-skill-card(?:\s|\")/g) || []).length;
+if (skillCardCount !== 58) {
+  throw new Error(`Technical toolkit must render exactly 58 capability cards; found ${skillCardCount}.`);
+}
+
+const remoteImages = [...html.matchAll(/<img[^>]+src=["'](https?:\/\/[^"']+)["']/g)].map(
+  (match) => match[1],
+);
+if (remoteImages.length) {
+  throw new Error(`Technical toolkit must not depend on remote images: ${remoteImages.join(", ")}`);
+}
+
+const logoUrls = [
+  ...new Set(
+    [...html.matchAll(/src=["'](\/my-portfolio\/skill-logos\/[^"']+\.svg)["']/g)].map(
+      (match) => match[1],
+    ),
+  ),
+];
+
+if (logoUrls.length < 10) {
+  throw new Error(`Expected at least 10 locally stored brand marks; found ${logoUrls.length}.`);
+}
+
+for (const url of logoUrls) {
+  const relative = url.replace(/^\/my-portfolio\//, "");
+  const asset = path.join("out", relative);
+  if (!fs.existsSync(asset)) {
+    throw new Error(`Technical toolkit references a missing local brand mark: ${url}`);
+  }
+}
+
+console.log(
+  `Validated premium technical toolkit: 58 capability cards, ${logoUrls.length} local brand marks, no NDA links, and no remote image dependencies.`,
+);
