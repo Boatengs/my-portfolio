@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { ProjectCover } from "./project-cover";
 import { allProjects } from "./project-registry";
 
 type PortfolioProject = (typeof allProjects)[number];
@@ -15,68 +16,6 @@ const filterOptions = [
   { key: "Healthcare", label: "Healthcare" },
   { key: "Deployed Apps", label: "Live apps" },
 ];
-
-const coverCodes: Record<string, [string, string]> = {
-  "gridpulse-energy-grid-analytics": ["GRID", "PULSE"],
-  "water-quality": ["WATER", "SIGNALS"],
-  "healthcare-modeling": ["RESOURCE", "MODEL"],
-  "sentiment-analyzer": ["TEXT", "SIGNAL"],
-  "sports-chatbot": ["RAG", "SPORTS"],
-  "medical-qa": ["MEDICAL", "Q+A"],
-  "skin-classifier": ["VISION", "EXPLAIN"],
-  "object-detector": ["OPEN", "VOCAB"],
-  "skin-lesion-segmentation": ["LESION", "SEGMENT"],
-  "llm-evaluation": ["LLM", "EVAL"],
-  "pfas-water-decision-intelligence": ["PFAS", "DECISION"],
-  "wastewater-infrastructure-analytics": ["ASSET", "RISK"],
-  "financial-crime-risk-intelligence": ["GRAPH", "RISK"],
-  "world-happiness-analysis": ["WHR", "LIVE"],
-};
-
-function primaryCategory(category: string) {
-  return category.split("·")[0]?.trim() || category;
-}
-
-function surfaceLabel(project: PortfolioProject) {
-  if (project.slug === "world-happiness-analysis") return "OPEN LIVE DASHBOARD";
-  if (project.slug === "gridpulse-energy-grid-analytics") return "LIVE CONTROL ROOM + CASE STUDY";
-  return "VIEW CASE STUDY";
-}
-
-function ProjectCover({ project }: { project: PortfolioProject }) {
-  const code = coverCodes[project.slug] ?? ["CASE", "STUDY"];
-  const proof = project.evidence?.[0];
-
-  return (
-    <div className={`project-cover cover-${project.accent}`} aria-hidden="true">
-      <div className="project-cover-grid" />
-      <div className="project-cover-topline">
-        <span>{project.index}</span>
-        <span>{primaryCategory(project.category)}</span>
-      </div>
-      <div className="project-cover-code">
-        <strong>{code[0]}</strong>
-        <strong>{code[1]}</strong>
-      </div>
-      <div className="project-cover-footer">
-        <span className="project-cover-proof">
-          {proof ? (
-            <>
-              <strong>{proof.value}</strong>
-              <small>{proof.label}</small>
-            </>
-          ) : (
-            <>
-              <strong>CASE</strong>
-              <small>Project evidence</small>
-            </>
-          )}
-        </span>
-        <span className="project-cover-action">{surfaceLabel(project)}</span>
-      </div>
-    </div>
-  );
-}
 
 function ProjectCard({
   project,
