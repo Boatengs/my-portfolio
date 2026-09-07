@@ -1,25 +1,47 @@
 import Link from "next/link";
 import { ProjectGrid } from "../project-grid";
+import { allProjects } from "../project-registry";
 import { SiteNav } from "../site-nav";
 
 export default function Work() {
+  const focusAreas = new Set(allProjects.flatMap((project) => project.filters)).size;
+  const liveApps = allProjects.filter((project) =>
+    project.filters.includes("Deployed Apps"),
+  ).length;
+
   return (
     <main className="work-page">
       <SiteNav label="Work page navigation" />
       <header className="work-page-hero shell">
-        <p className="eyebrow">SELECTED WORK / COMPLETE INDEX</p>
-        <h1>
-          Projects built around
-          <br />
-          <em>real questions.</em>
-        </h1>
-        <p>
-          Explore the complete collection. Each case study explains why the
-          problem matters, what was developed, what the results demonstrate,
-          and where the approach can be applied.
-        </p>
+        <div className="work-hero-copy">
+          <p className="eyebrow">PORTFOLIO / ANALYTICS · ML · AI</p>
+          <h1>
+            Work that turns analysis
+            <br />
+            into <em>decisions.</em>
+          </h1>
+          <p className="work-hero-intro">
+            A curated body of applied analytics, machine learning, and decision-support
+            projects. Each case study is organized around the problem, evidence, outcome,
+            and practical use—not just the technology used to build it.
+          </p>
+        </div>
+        <div className="work-hero-facts" aria-label="Portfolio overview">
+          <div>
+            <strong>{allProjects.length}</strong>
+            <span>Public projects</span>
+          </div>
+          <div>
+            <strong>{focusAreas}</strong>
+            <span>Focus areas</span>
+          </div>
+          <div>
+            <strong>{liveApps}</strong>
+            <span>Live applications</span>
+          </div>
+        </div>
       </header>
-      <section className="work-index shell">
+      <section className="work-index shell" aria-label="Project portfolio">
         <ProjectGrid />
       </section>
       <footer className="footer">

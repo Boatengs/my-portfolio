@@ -69,18 +69,28 @@ for (const slug of forbiddenProjectSlugs) {
 
 const projectGridSource = fs.readFileSync("app/project-grid.tsx", "utf8");
 for (const marker of [
+  "<img",
+  "demo-capture",
   'loading="lazy"',
   "onMouseMove={tilt}",
   "onMouseLeave={reset}",
   "const tilt =",
 ]) {
   if (projectGridSource.includes(marker)) {
-    throw new Error(`Project thumbnail stability regression detected: ${marker}`);
+    throw new Error(`Project index stability regression detected: ${marker}`);
   }
 }
-if (!projectGridSource.includes('loading="eager"')) {
-  throw new Error("Project screenshot thumbnails must load eagerly for stable rendering.");
+for (const marker of [
+  "project-cover",
+  "project-card--lead",
+  "Browse by expertise",
+  "Latest project",
+]) {
+  if (!projectGridSource.includes(marker)) {
+    throw new Error(`Editorial project index source is missing: ${marker}`);
+  }
 }
+
 const thumbnailStabilityCss = fs.readFileSync(
   "app/project-thumbnail-stability.css",
   "utf8",
@@ -89,21 +99,33 @@ for (const marker of [
   ".project-card:hover",
   "perspective: none !important;",
   "transform: none !important;",
-  ".demo-capture",
-  "filter: none !important;",
 ]) {
   if (!thumbnailStabilityCss.includes(marker)) {
     throw new Error(`Project thumbnail stability CSS is missing: ${marker}`);
   }
 }
 
+const workRedesignCss = fs.readFileSync("app/work-redesign.css", "utf8");
+for (const marker of [
+  ".project-grid--editorial",
+  ".project-card--lead",
+  ".project-cover",
+  "transform: none !important;",
+  "filter: none !important;",
+  "opacity: 1 !important;",
+]) {
+  if (!workRedesignCss.includes(marker)) {
+    throw new Error(`Modern project index CSS is missing: ${marker}`);
+  }
+}
+
 const workHtml = fs.readFileSync("out/work/index.html", "utf8");
-const projectCardCount = (workHtml.match(/class="project-card\b/g) || []).length;
-const displayedProjectSlugs = new Set(
-  [...workHtml.matchAll(/href=["']\/my-portfolio\/projects\/([^/"'?#]+)\/?["']/g)].map(
-    (match) => match[1],
-  ),
-);
+const projectCardCount = (workHtml.match(/class="project-card project-card--editorial/g) || []).length;
+const projectCoverCount = (workHtml.match(/class="project-cover cover-/g) || []).length;
+const orderedProjectSlugs = [
+  ...workHtml.matchAll(/href=["']\/my-portfolio\/projects\/([^/"'?#]+)\/?["']/g),
+].map((match) => match[1]);
+const displayedProjectSlugs = new Set(orderedProjectSlugs);
 const missingProjectCards = expectedProjectSlugs.filter(
   (slug) => !displayedProjectSlugs.has(slug),
 );
@@ -133,6 +155,24 @@ if (projectCardCount !== expectedProjectSlugs.length) {
   throw new Error(
     `Public Projects index must render exactly ${expectedProjectSlugs.length} project cards with no duplicates; found ${projectCardCount}.`,
   );
+}
+if (projectCoverCount !== expectedProjectSlugs.length) {
+  throw new Error(
+    `Public Projects index must render exactly ${expectedProjectSlugs.length} stable editorial covers; found ${projectCoverCount}.`,
+  );
+}
+if (orderedProjectSlugs[0] !== "gridpulse-energy-grid-analytics") {
+  throw new Error(
+    `Newest project must be first on the Projects index; found ${orderedProjectSlugs[0] || "none"}.`,
+  );
+}
+if (workHtml.includes("demo-capture")) {
+  throw new Error("Projects index must not render screenshot image cards; use stable editorial covers.");
+}
+for (const marker of ["Browse by expertise", "Latest project", "Project index"]) {
+  if (!workHtml.includes(marker)) {
+    throw new Error(`Modern Projects index is missing: ${marker}`);
+  }
 }
 for (const slug of forbiddenProjectSlugs) {
   if (displayedProjectSlugs.has(slug)) {
@@ -165,10 +205,8 @@ for (const marker of [
     throw new Error(`Public Projects index is missing: ${marker}`);
   }
 }
-requireText("out/work/index.html", "/my-portfolio/project-captures/water-quality-analysis.svg");
-requireText("out/work/index.html", "/my-portfolio/project-captures/world-happiness-2019.svg");
-requireText("out/work/index.html", "/my-portfolio/project-captures/gridpulse-energy-grid.svg");
 requireText("out/work/index.html", "OPEN LIVE DASHBOARD");
+requireText("out/work/index.html", "LIVE CONTROL ROOM + CASE STUDY");
 
 requireText(
   "out/projects/pfas-water-decision-intelligence/index.html",
@@ -282,5 +320,5 @@ if (missingAssets.length) {
 }
 
 console.log(
-  `Validated ${expectedRoutes.length} required routes, ${expectedProjectSlugs.length} unique public project cards, NDA route exclusion, project thumbnail stability guardrails, GridPulse evidence and live dashboard link, WHR dashboard runtime assets, protected special pages, and asset paths across ${htmlFiles.length} HTML files.`,
+  `Validated ${expectedRoutes.length} required routes, ${expectedProjectSlugs.length} unique public project cards, stable editorial project covers with newest-first ordering, NDA route exclusion, GridPulse evidence and live dashboard link, WHR dashboard runtime assets, protected special pages, and asset paths across ${htmlFiles.length} HTML files.`,
 );
