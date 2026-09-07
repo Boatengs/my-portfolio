@@ -1,0 +1,231 @@
+/* Shared palette alignment
+ * Homepage, Projects, project detail pages, and Technical Toolkit use the same
+ * neutral surfaces, ink, muted copy, borders, shadows, and coral accent.
+ */
+
+.work-page,
+.skills-premium {
+  background: var(--surface) !important;
+  color: var(--ink) !important;
+}
+
+.work-page .work-page-hero h1,
+.work-page .work-hero-facts strong,
+.work-page .project-index-heading h2,
+.work-page .project-editorial-copy h3,
+.work-page .project-editorial-proof strong,
+.work-page .project-editorial-link,
+.work-page .project-cover-code strong,
+.skills-premium .toolkit-section-intro h2,
+.skills-premium .toolkit-discipline-head h3,
+.skills-premium .atlas-skill-copy strong,
+.skills-premium .toolkit-close h2 {
+  color: var(--ink) !important;
+}
+
+.work-page .work-page-hero .eyebrow,
+.work-page .work-hero-intro,
+.work-page .work-hero-facts span,
+.work-page .project-index-heading > span,
+.work-page .project-index-heading p,
+.work-page .project-index-status,
+.work-page .project-editorial-meta,
+.work-page .project-editorial-copy > p,
+.work-page .project-editorial-proof span,
+.work-page .project-cover-proof small,
+.work-page .project-cover-action,
+.skills-premium .toolkit-section-intro > span,
+.skills-premium .toolkit-section-intro p,
+.skills-premium .toolkit-discipline-head > p,
+.skills-premium .atlas-skill-copy span,
+.skills-premium .toolkit-close > div > span {
+  color: var(--muted) !important;
+}
+
+.work-page .work-hero-facts,
+.work-page .work-hero-facts > div,
+.work-page .project-index-controls,
+.skills-premium .toolkit-section-intro,
+.skills-premium .toolkit-close {
+  border-color: var(--line) !important;
+}
+
+.work-page .project-filter-row button {
+  border-color: rgba(18, 20, 23, 0.13) !important;
+  background: var(--paper) !important;
+  color: var(--ink) !important;
+}
+
+.work-page .project-filter-row button:hover,
+.work-page .project-filter-row button:focus-visible {
+  border-color: rgba(18, 20, 23, 0.25) !important;
+  background: var(--surface) !important;
+}
+
+.work-page .project-filter-row button.active {
+  border-color: var(--ink) !important;
+  background: var(--ink) !important;
+  color: var(--paper) !important;
+}
+
+.work-page .project-filter-row button small {
+  background: var(--surface-strong) !important;
+  color: var(--muted) !important;
+}
+
+.work-page .project-filter-row button.active small {
+  background: rgba(255, 255, 255, 0.14) !important;
+  color: #fff !important;
+}
+
+.work-page .project-grid--editorial .project-card,
+.work-page .project-grid--editorial .project-card:hover,
+.work-page .project-grid--editorial .project-card:focus-visible,
+.work-page .project-grid--editorial .project-card:focus-within {
+  border-color: rgba(18, 20, 23, 0.11) !important;
+  background: var(--paper) !important;
+  color: var(--ink) !important;
+  box-shadow: 0 1px 2px rgba(18, 20, 23, 0.03) !important;
+}
+
+.work-page .project-grid--editorial .project-card:hover {
+  border-color: rgba(18, 20, 23, 0.2) !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+.work-page .project-card--lead .project-editorial-meta span:first-child,
+.skills-premium .discipline-kicker,
+.skills-premium .discipline-proof span,
+.skills-premium .atlas-skill-card > i {
+  color: var(--accent) !important;
+}
+
+.detail-editorial-visual {
+  background: var(--surface-strong) !important;
+  border-color: var(--line) !important;
+}
+
+.detail-editorial-visual .project-cover--detail {
+  border-color: rgba(18, 20, 23, 0.11) !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+.skills-premium {
+  --ink: #121417;
+  --muted: #616771;
+  --paper: #f6f7f9;
+  --line: rgba(18, 20, 23, 0.11);
+}
+
+.skills-premium .toolkit-hero-surface {
+  border-color: rgba(255, 255, 255, 0.09) !important;
+  background:
+    radial-gradient(circle at 84% 16%, rgba(223, 81, 63, 0.18), transparent 30%),
+    radial-gradient(circle at 64% 78%, rgba(255, 255, 255, 0.05), transparent 26%),
+    #111316 !important;
+  box-shadow: var(--shadow-deep) !important;
+}
+
+.skills-premium .toolkit-hero-copy h1 {
+  color: #fff !important;
+}
+
+.skills-premium .toolkit-hero-copy h1 em {
+  color: rgba(255, 255, 255, 0.76) !important;
+}
+
+.skills-premium .toolkit-hero-copy > p:not(.eyebrow),
+.skills-premium .stack-constellation-head p {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.skills-premium .eyebrow,
+.skills-premium .stack-constellation-head > span {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+.skills-premium .toolkit-hero-stats > div,
+.skills-premium .stack-constellation {
+  background: rgba(255, 255, 255, 0.045) !important;
+}
+
+.skills-premium .toolkit-hero-stats strong,
+.skills-premium .stack-node strong {
+  color: #fff !important;
+}
+
+.skills-premium .toolkit-hero-stats span,
+.skills-premium .stack-node > span {
+  color: rgba(255, 255, 255, 0.58) !important;
+}
+
+.skills-premium .flow-card,
+.skills-premium .toolkit-discipline,
+.skills-premium .premium-skill-card.atlas-skill-card,
+.skills-premium .atlas-skill-mark--brand {
+  background: var(--paper) !important;
+  border-color: rgba(18, 20, 23, 0.11) !important;
+}
+
+.skills-premium .flow-card {
+  box-shadow: 0 8px 30px rgba(18, 20, 23, 0.035) !important;
+}
+
+.skills-premium .flow-card > span {
+  background: var(--ink) !important;
+  color: #fff !important;
+}
+
+.skills-premium .flow-card h3 {
+  color: var(--ink) !important;
+}
+
+.skills-premium .flow-card p {
+  color: var(--muted) !important;
+}
+
+.skills-premium .toolkit-discipline {
+  --accent: #df513f !important;
+  --soft: rgba(223, 81, 63, 0.075) !important;
+  box-shadow: 0 14px 50px rgba(18, 20, 23, 0.045) !important;
+}
+
+.skills-premium .discipline-number,
+.skills-premium .atlas-skill-mark--method {
+  background: rgba(223, 81, 63, 0.075) !important;
+  color: var(--accent) !important;
+  border-color: rgba(223, 81, 63, 0.16) !important;
+}
+
+.skills-premium .discipline-proof {
+  border-color: rgba(223, 81, 63, 0.22) !important;
+  background: rgba(223, 81, 63, 0.07) !important;
+  color: var(--ink) !important;
+}
+
+.skills-premium .atlas-skill-card--proof:hover,
+.skills-premium .atlas-skill-card--proof:focus-visible {
+  border-color: rgba(223, 81, 63, 0.35) !important;
+  background: #fff !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+/* Professional portrait fallback. The first URL is for GitHub Pages and the
+ * second keeps local development working. The actual img can load over it.
+ */
+.about-system .profile-photo {
+  background-color: var(--surface-strong);
+  background-image: url("/my-portfolio/sam-profile.png"), url("/sam-profile.png");
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+}
+
+.about-system .profile-photo img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
