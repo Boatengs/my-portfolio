@@ -1,273 +1,181 @@
 "use client";
+
 import Link from "next/link";
 import { useState } from "react";
 import { allProjects } from "./project-registry";
 
-function ProjectArt({ slug }: { slug: string }) {
-  if (slug === "wastewater-infrastructure-analytics")
-    return (
-      <div className="structured-project-art">
-        <div>
-          <span className="structured-project-kicker">Asset management · Capital planning</span>
-          <strong className="structured-project-word">WASTEWATER</strong>
-          <small className="structured-project-flow">INGEST · QA · RISK · COST · PRIORITIZE · PLAN</small>
-        </div>
-        <div className="structured-project-metrics">
-          <span><strong>6</strong><em>Decision stages</em></span>
-          <span><strong>LoF × CoF</strong><em>Risk foundation</em></span>
-          <span><strong>4</strong><em>Capital scenarios</em></span>
-        </div>
-      </div>
-    );
-  if (slug === "financial-crime-risk-intelligence")
-    return (
-      <div className="structured-project-art">
-        <div>
-          <span className="structured-project-kicker">Graph analytics · Review prioritization</span>
-          <strong className="structured-project-word">AML RISK</strong>
-          <small className="structured-project-flow">GRAPH · MODEL · CALIBRATE · PRIORITIZE · REVIEW</small>
-        </div>
-        <div className="structured-project-metrics">
-          <span><strong>0.528</strong><em>Repeated PR-AUC</em></span>
-          <span><strong>94.3%</strong><em>Precision @ 0.5%</em></span>
-          <span><strong>41.53×</strong><em>Review lift</em></span>
-        </div>
-      </div>
-    );
-  if (slug === "pfas-water-decision-intelligence")
-    return (
-      <div className="art water-art">
-        <div className="ripple r1" />
-        <div className="ripple r2" />
-        <div className="ripple r3" />
-        <i className="drop d1" />
-        <i className="drop d2" />
-        <i className="drop d3" />
-        <span>
-          PFAS
-          <br />
-          DECISION
-        </span>
-      </div>
-    );
-  if (slug === "water-quality")
-    return (
-      <div className="art water-art">
-        <div className="ripple r1" />
-        <div className="ripple r2" />
-        <div className="ripple r3" />
-        <i className="drop d1" />
-        <i className="drop d2" />
-        <i className="drop d3" />
-        <span>
-          ANOMALY
-          <br />
-          FIELD
-        </span>
-      </div>
-    );
-  if (slug === "healthcare-modeling")
-    return (
-      <div className="art network-art">
-        <div className="network-line l1" />
-        <div className="network-line l2" />
-        <div className="network-line l3" />
-        <div className="network-line l4" />
-        {["INPUT", "PCA", "SVM", "RF", "DECISION"].map((n, i) => (
-          <span className={`node n${i + 1}`} key={n}>
-            {n}
-          </span>
-        ))}
-      </div>
-    );
-  if (slug === "sentiment-analyzer")
-    return (
-      <div className="art sentiment-art">
-        <div className="quote">
-          “A surprising,
-          <br />
-          <em>beautifully made</em> story.”
-        </div>
-        <div className="score">
-          <b>91.2</b>
-          <span>% ACCURACY</span>
-        </div>
-        <div className="signal">
-          {[3, 7, 5, 9, 4, 8, 6, 10, 5, 8, 4, 7].map((h, i) => (
-            <i key={i} style={{ height: `${h * 7}px` }} />
-          ))}
-        </div>
-      </div>
-    );
-  if (slug === "sports-chatbot")
-    return (
-      <div className="art sports-art">
-        <div className="court">
-          <i />
-          <i />
-          <i />
-        </div>
-        <div className="trajectory">
-          <span />
-          <span />
-          <span />
-          <span />
-        </div>
-        <b>?</b>
-        <small>RETRIEVE → RANK → ANSWER</small>
-      </div>
-    );
-  if (slug === "medical-qa")
-    return (
-      <div className="art token-art">
-        <div className="token-stack">
-          {["Q", "L", "o", "R", "A"].map((x, i) => (
-            <span key={i}>{x}</span>
-          ))}
-        </div>
-        <div className="threads">
-          {[1, 2, 3, 4, 5].map((i) => (
-            <i key={i} />
-          ))}
-        </div>
-        <small>7B PARAMETERS · ADAPTER TUNED</small>
-      </div>
-    );
+type PortfolioProject = (typeof allProjects)[number];
+
+const filterOptions = [
+  { key: "All", label: "All work" },
+  { key: "Data Analytics", label: "Analytics" },
+  { key: "Machine Learning", label: "Machine learning" },
+  { key: "Generative AI", label: "Generative AI" },
+  { key: "Computer Vision", label: "Computer vision" },
+  { key: "Healthcare", label: "Healthcare" },
+  { key: "Deployed Apps", label: "Live apps" },
+];
+
+const coverCodes: Record<string, [string, string]> = {
+  "gridpulse-energy-grid-analytics": ["GRID", "PULSE"],
+  "water-quality": ["WATER", "SIGNALS"],
+  "healthcare-modeling": ["RESOURCE", "MODEL"],
+  "sentiment-analyzer": ["TEXT", "SIGNAL"],
+  "sports-chatbot": ["RAG", "SPORTS"],
+  "medical-qa": ["MEDICAL", "Q+A"],
+  "skin-classifier": ["VISION", "EXPLAIN"],
+  "object-detector": ["OPEN", "VOCAB"],
+  "skin-lesion-segmentation": ["LESION", "SEGMENT"],
+  "llm-evaluation": ["LLM", "EVAL"],
+  "pfas-water-decision-intelligence": ["PFAS", "DECISION"],
+  "wastewater-infrastructure-analytics": ["ASSET", "RISK"],
+  "financial-crime-risk-intelligence": ["GRAPH", "RISK"],
+  "world-happiness-analysis": ["WHR", "LIVE"],
+};
+
+function primaryCategory(category: string) {
+  return category.split("·")[0]?.trim() || category;
+}
+
+function surfaceLabel(project: PortfolioProject) {
+  if (project.slug === "world-happiness-analysis") return "OPEN LIVE DASHBOARD";
+  if (project.slug === "gridpulse-energy-grid-analytics") return "LIVE CONTROL ROOM + CASE STUDY";
+  return "VIEW CASE STUDY";
+}
+
+function ProjectCover({ project }: { project: PortfolioProject }) {
+  const code = coverCodes[project.slug] ?? ["CASE", "STUDY"];
+  const proof = project.evidence?.[0];
+
   return (
-    <div className="art heatmap-art">
-      <div className="scan-frame">
-        <i className="heat h1" />
-        <i className="heat h2" />
-        <i className="heat h3" />
-        <span className="focus-box" />
+    <div className={`project-cover cover-${project.accent}`} aria-hidden="true">
+      <div className="project-cover-grid" />
+      <div className="project-cover-topline">
+        <span>{project.index}</span>
+        <span>{primaryCategory(project.category)}</span>
       </div>
-      <div className="confidence">
-        <b>0.94</b>
-        <span>CONFIDENCE</span>
+      <div className="project-cover-code">
+        <strong>{code[0]}</strong>
+        <strong>{code[1]}</strong>
       </div>
-      <small>GRAD-CAM EXPLANATION</small>
+      <div className="project-cover-footer">
+        <span className="project-cover-proof">
+          {proof ? (
+            <>
+              <strong>{proof.value}</strong>
+              <small>{proof.label}</small>
+            </>
+          ) : (
+            <>
+              <strong>CASE</strong>
+              <small>Project evidence</small>
+            </>
+          )}
+        </span>
+        <span className="project-cover-action">{surfaceLabel(project)}</span>
+      </div>
     </div>
   );
 }
 
+function ProjectCard({
+  project,
+  lead = false,
+}: {
+  project: PortfolioProject;
+  lead?: boolean;
+}) {
+  const proof = project.evidence?.[0];
+
+  return (
+    <Link
+      href={`/projects/${project.slug}`}
+      aria-label={`View case study: ${project.title}`}
+      className={`project-card project-card--editorial${lead ? " project-card--lead" : ""}`}
+    >
+      <ProjectCover project={project} />
+      <div className="project-editorial-copy">
+        <div className="project-editorial-meta">
+          <span>{lead ? "Latest project" : project.index}</span>
+          <span>{project.category}</span>
+        </div>
+        <h3>{project.title}</h3>
+        <p>{project.summary}</p>
+        {proof && (
+          <div className="project-editorial-proof">
+            <strong>{proof.value}</strong>
+            <span>{proof.label}</span>
+          </div>
+        )}
+        <span className="project-editorial-link">
+          {project.slug === "world-happiness-analysis" ? "Open dashboard" : "View case study"}
+          <span aria-hidden="true">↗</span>
+        </span>
+      </div>
+    </Link>
+  );
+}
+
 export function ProjectGrid({ featured = false }: { featured?: boolean }) {
-  const filters = [
-    "All",
-    "Data Analytics",
-    "Machine Learning",
-    "Generative AI",
-    "Computer Vision",
-    "Healthcare",
-    "Deployed Apps",
-  ];
   const source = featured
     ? ["pfas-water-decision-intelligence", "wastewater-infrastructure-analytics"]
         .map((slug) => allProjects.find((project) => project.slug === slug))
-        .filter((project): project is (typeof allProjects)[number] => Boolean(project))
+        .filter((project): project is PortfolioProject => Boolean(project))
     : allProjects;
+
   const [active, setActive] = useState("All");
   const visible =
     active === "All"
       ? source
-      : source.filter((p) => p.filters.includes(active));
+      : source.filter((project) => project.filters.includes(active));
+
+  const leadProject = !featured && active === "All" ? visible[0] : undefined;
+  const indexProjects = leadProject ? visible.slice(1) : visible;
 
   return (
     <>
       {!featured && (
-        <>
-          <div className="filter-heading">
-            <span>EXPLORE BY FOCUS</span>
-            <p>Browse the complete body of work by discipline.</p>
+        <div className="project-index-controls">
+          <div className="project-index-heading">
+            <span>Project index</span>
+            <div>
+              <h2>Browse by expertise</h2>
+              <p>
+                A focused index of analytics, machine learning, AI, and decision-support work.
+              </p>
+            </div>
           </div>
-          <div
-            className="project-filters"
-            role="group"
-            aria-label="Filter projects"
-          >
-            {filters.map((f) => (
-              <button
-                key={f}
-                type="button"
-                className={active === f ? "active" : ""}
-                aria-pressed={active === f}
-                onClick={() => setActive(f)}
-              >
-                {f}
-                <span aria-hidden="true">
-                  {f === "All"
-                    ? allProjects.length
-                    : allProjects.filter((p) => p.filters.includes(f)).length}
-                </span>
-                <span className="sr-only"> projects</span>
-              </button>
-            ))}
+          <div className="project-filter-row" role="group" aria-label="Filter projects by expertise">
+            {filterOptions.map((option) => {
+              const count =
+                option.key === "All"
+                  ? allProjects.length
+                  : allProjects.filter((project) => project.filters.includes(option.key)).length;
+              return (
+                <button
+                  key={option.key}
+                  type="button"
+                  className={active === option.key ? "active" : ""}
+                  aria-pressed={active === option.key}
+                  onClick={() => setActive(option.key)}
+                >
+                  <span>{option.label}</span>
+                  <small aria-hidden="true">{count}</small>
+                </button>
+              );
+            })}
           </div>
-          <p className="sr-only" role="status" aria-live="polite">
-            Showing {visible.length}{" "}
-            {visible.length === 1 ? "project" : "projects"} for {active}.
+          <p className="project-index-status" role="status" aria-live="polite">
+            Showing {visible.length} of {allProjects.length} public projects
           </p>
-        </>
+        </div>
       )}
-      <div className="project-grid">
-        {visible.map((p, i) => {
-          const structuredClass =
-            p.slug === "wastewater-infrastructure-analytics"
-              ? " wastewater-structured"
-              : p.slug === "financial-crime-risk-intelligence"
-                ? " crime-structured"
-                : "";
-          return (
-            <Link
-              href={`/projects/${p.slug}`}
-              key={p.slug}
-              aria-label={`View case study: ${p.title}`}
-              className={`project-card card-${allProjects.indexOf(p) + 1} ${!featured && i === 0 ? "wide" : ""}`}
-            >
-              <div className={`project-visual ${p.accent}${structuredClass}`}>
-                <div className="cursor-glow" aria-hidden="true" />
-                <span className="project-number">{p.index}</span>
-                {p.image ? (
-                  <img
-                    className="demo-capture"
-                    src={p.image}
-                    width="1200"
-                    height="675"
-                    loading="eager"
-                    decoding="async"
-                    alt={`${p.title} application interface`}
-                  />
-                ) : (
-                  <>
-                    <div className="visual-grid" aria-hidden="true" />
-                    <ProjectArt slug={p.slug} />
-                  </>
-                )}
-                <span className="visual-label" aria-hidden="true">
-                  {p.slug === "world-happiness-analysis" ? "OPEN LIVE DASHBOARD" : "VIEW CASE STUDY"}
-                </span>
-                <span className="open-mark" aria-hidden="true">
-                  ↗
-                </span>
-              </div>
-              <div className="project-info">
-                <p>{p.category}</p>
-                <h3>
-                  {p.title}
-                  <i className="project-arrow" aria-hidden="true">
-                    ↗
-                  </i>
-                </h3>
-                <span>{p.summary}</span>
-                {p.evidence?.[0] && (
-                  <div className="project-proof">
-                    <strong>{p.evidence[0].value}</strong>
-                    <span>{p.evidence[0].label}</span>
-                  </div>
-                )}
-              </div>
-            </Link>
-          );
-        })}
+
+      <div className={`project-grid project-grid--editorial${featured ? " project-grid--featured" : ""}`}>
+        {leadProject && <ProjectCard project={leadProject} lead />}
+        {indexProjects.map((project) => (
+          <ProjectCard key={project.slug} project={project} />
+        ))}
       </div>
     </>
   );
