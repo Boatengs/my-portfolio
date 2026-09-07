@@ -1,50 +1,11 @@
 import Link from "next/link";
-import type { LucideIcon } from "lucide-react";
-import {
-  BarChart3,
-  Binary,
-  BookOpen,
-  Bot,
-  Boxes,
-  BrainCircuit,
-  Building2,
-  Cloud,
-  Code2,
-  Crosshair,
-  Database,
-  Eye,
-  FileSpreadsheet,
-  FlaskConical,
-  Gauge,
-  GitBranch,
-  GitMerge,
-  Image as ImageIcon,
-  Kanban,
-  Languages,
-  Layers,
-  LayoutDashboard,
-  LineChart,
-  MessageSquare,
-  Monitor,
-  Network,
-  Orbit,
-  Search,
-  Settings,
-  Sigma,
-  Sparkles,
-  Split,
-  Table2,
-  TrendingUp,
-  Workflow,
-  Zap,
-} from "lucide-react";
 import { SiteNav } from "../site-nav";
 
 type Skill = {
   name: string;
   type: string;
   logo?: string;
-  icon?: LucideIcon;
+  glyph?: string;
   proof?: string;
 };
 
@@ -67,15 +28,15 @@ const groups: SkillGroup[] = [
     proofHref: "/projects/gridpulse-energy-grid-analytics",
     proofLabel: "GridPulse evidence",
     skills: [
-      { name: "SQL", type: "Query language", icon: Database },
-      { name: "Excel", type: "Spreadsheet analysis", icon: FileSpreadsheet },
+      { name: "SQL", type: "Query language", glyph: "SQL" },
+      { name: "Excel", type: "Spreadsheet analysis", glyph: "XLS" },
       { name: "Python", type: "Programming language", logo: logo("python"), proof: "/projects/gridpulse-energy-grid-analytics" },
       { name: "Pandas", type: "Data library", logo: logo("pandas") },
       { name: "NumPy", type: "Numerical library", logo: logo("numpy") },
-      { name: "SciPy", type: "Scientific computing", icon: Sigma },
-      { name: "Apache Spark", type: "Distributed computing", icon: Sparkles },
-      { name: "Hadoop", type: "Distributed data", icon: Boxes },
-      { name: "Apache Hive", type: "Data warehouse", icon: Table2 },
+      { name: "SciPy", type: "Scientific computing", glyph: "Σ" },
+      { name: "Apache Spark", type: "Distributed computing", glyph: "SPK" },
+      { name: "Hadoop", type: "Distributed data", glyph: "HDP" },
+      { name: "Apache Hive", type: "Data warehouse", glyph: "HIV" },
     ],
   },
   {
@@ -85,17 +46,17 @@ const groups: SkillGroup[] = [
     proofHref: "/projects/gridpulse-energy-grid-analytics",
     proofLabel: "Forecasting evidence",
     skills: [
-      { name: "Regression", type: "Statistical method", icon: TrendingUp },
-      { name: "Ridge", type: "Regularized model", icon: LineChart },
-      { name: "Random Forest", type: "Ensemble model", icon: GitBranch },
-      { name: "XGBoost", type: "Gradient boosting", icon: Gauge },
-      { name: "Train/Test Split", type: "Validation method", icon: Split },
-      { name: "PCA", type: "Dimensionality reduction", icon: Orbit },
-      { name: "K-Means", type: "Clustering", icon: Network },
-      { name: "Anomaly Detection", type: "Detection method", icon: Search },
-      { name: "Forecasting", type: "Time-series modeling", icon: LineChart, proof: "/projects/gridpulse-energy-grid-analytics" },
-      { name: "A/B Testing", type: "Experiment design", icon: FlaskConical },
-      { name: "Hypothesis Testing", type: "Statistical inference", icon: Binary },
+      { name: "Regression", type: "Statistical method", glyph: "β" },
+      { name: "Ridge", type: "Regularized model", glyph: "L2" },
+      { name: "Random Forest", type: "Ensemble model", glyph: "RF" },
+      { name: "XGBoost", type: "Gradient boosting", glyph: "XGB" },
+      { name: "Train/Test Split", type: "Validation method", glyph: "80/20" },
+      { name: "PCA", type: "Dimensionality reduction", glyph: "PCA" },
+      { name: "K-Means", type: "Clustering", glyph: "K" },
+      { name: "Anomaly Detection", type: "Detection method", glyph: "!" },
+      { name: "Forecasting", type: "Time-series modeling", glyph: "t+1", proof: "/projects/gridpulse-energy-grid-analytics" },
+      { name: "A/B Testing", type: "Experiment design", glyph: "A/B" },
+      { name: "Hypothesis Testing", type: "Statistical inference", glyph: "H₀" },
     ],
   },
   {
@@ -105,10 +66,10 @@ const groups: SkillGroup[] = [
     proofHref: "/projects/water-quality",
     proofLabel: "Analytics evidence",
     skills: [
-      { name: "Tableau", type: "BI platform", icon: BarChart3 },
-      { name: "Power BI", type: "BI platform", icon: LayoutDashboard },
-      { name: "Matplotlib", type: "Visualization library", icon: LineChart },
-      { name: "Seaborn", type: "Visualization library", icon: BarChart3 },
+      { name: "Tableau", type: "BI platform", glyph: "TBL" },
+      { name: "Power BI", type: "BI platform", glyph: "PBI" },
+      { name: "Matplotlib", type: "Visualization library", glyph: "MPL" },
+      { name: "Seaborn", type: "Visualization library", glyph: "SNS" },
       { name: "Plotly", type: "Interactive visualization", logo: logo("plotly"), proof: "/projects/world-happiness-analysis" },
       { name: "Streamlit", type: "App framework", logo: logo("streamlit"), proof: "/projects/gridpulse-energy-grid-analytics" },
       { name: "Gradio", type: "ML interface", logo: logo("gradio") },
@@ -122,18 +83,18 @@ const groups: SkillGroup[] = [
     proofHref: "/projects/llm-evaluation",
     proofLabel: "LLM evaluation evidence",
     skills: [
-      { name: "Scikit-learn", type: "ML framework", icon: BrainCircuit },
-      { name: "Transformers", type: "Model framework", icon: Languages },
-      { name: "DistilBERT", type: "Language model", icon: BookOpen },
-      { name: "LangChain", type: "LLM framework", icon: Workflow },
-      { name: "ChromaDB", type: "Vector database", icon: Database },
-      { name: "RAG", type: "Retrieval method", icon: Network },
-      { name: "Llama 3.2", type: "Language model", icon: Bot },
-      { name: "Mistral 7B", type: "Language model", icon: MessageSquare },
-      { name: "LoRA / QLoRA", type: "Fine-tuning method", icon: SlidersIcon },
-      { name: "PEFT", type: "Fine-tuning framework", icon: Settings },
-      { name: "TRL", type: "Training framework", icon: BrainCircuit },
-      { name: "ROUGE", type: "Evaluation metric", icon: Gauge },
+      { name: "Scikit-learn", type: "ML framework", glyph: "SK" },
+      { name: "Transformers", type: "Model framework", glyph: "HF" },
+      { name: "DistilBERT", type: "Language model", glyph: "BERT" },
+      { name: "LangChain", type: "LLM framework", glyph: "LC" },
+      { name: "ChromaDB", type: "Vector database", glyph: "VDB" },
+      { name: "RAG", type: "Retrieval method", glyph: "RAG" },
+      { name: "Llama 3.2", type: "Language model", glyph: "L3" },
+      { name: "Mistral 7B", type: "Language model", glyph: "M7" },
+      { name: "LoRA / QLoRA", type: "Fine-tuning method", glyph: "LoRA" },
+      { name: "PEFT", type: "Fine-tuning framework", glyph: "PEFT" },
+      { name: "TRL", type: "Training framework", glyph: "TRL" },
+      { name: "ROUGE", type: "Evaluation metric", glyph: "R" },
     ],
   },
   {
@@ -145,13 +106,13 @@ const groups: SkillGroup[] = [
     skills: [
       { name: "TensorFlow", type: "Deep-learning framework", logo: logo("tensorflow") },
       { name: "PyTorch", type: "Deep-learning framework", logo: logo("pytorch") },
-      { name: "EfficientNetB0", type: "Vision architecture", icon: Layers },
-      { name: "Transfer Learning", type: "Training method", icon: GitMerge },
-      { name: "Grad-CAM", type: "Interpretability", icon: Eye },
-      { name: "Grounding DINO", type: "Object detection", icon: Crosshair },
-      { name: "Zero-Shot Learning", type: "Generalization method", icon: Sparkles },
-      { name: "U-Net", type: "Segmentation architecture", icon: Network },
-      { name: "Image Segmentation", type: "Vision task", icon: ImageIcon },
+      { name: "EfficientNetB0", type: "Vision architecture", glyph: "EN" },
+      { name: "Transfer Learning", type: "Training method", glyph: "TL" },
+      { name: "Grad-CAM", type: "Interpretability", glyph: "CAM" },
+      { name: "Grounding DINO", type: "Object detection", glyph: "DINO" },
+      { name: "Zero-Shot Learning", type: "Generalization method", glyph: "0S" },
+      { name: "U-Net", type: "Segmentation architecture", glyph: "U" },
+      { name: "Image Segmentation", type: "Vision task", glyph: "SEG" },
     ],
   },
   {
@@ -163,22 +124,16 @@ const groups: SkillGroup[] = [
     skills: [
       { name: "Git", type: "Version control", logo: logo("git") },
       { name: "Jira", type: "Project management", logo: logo("jira") },
-      { name: "Dataiku", type: "Data science platform", icon: Workflow },
-      { name: "Bloomerang CRM", type: "CRM platform", icon: Building2 },
-      { name: "Adobe Analytics", type: "Digital analytics", icon: BarChart3 },
+      { name: "Dataiku", type: "Data science platform", glyph: "DKU" },
+      { name: "Bloomerang CRM", type: "CRM platform", glyph: "CRM" },
+      { name: "Adobe Analytics", type: "Digital analytics", glyph: "AA" },
       { name: "Zapier", type: "Automation platform", logo: logo("zapier") },
-      { name: "Google Workspace Admin", type: "Cloud administration", icon: Cloud },
-      { name: "Microsoft 365 Admin", type: "Enterprise administration", icon: Monitor },
-      { name: "Microsoft Office", type: "Productivity suite", icon: FileSpreadsheet },
+      { name: "Google Workspace Admin", type: "Cloud administration", glyph: "GWS" },
+      { name: "Microsoft 365 Admin", type: "Enterprise administration", glyph: "M365" },
+      { name: "Microsoft Office", type: "Productivity suite", glyph: "MS" },
     ],
   },
 ];
-
-// Keep a stable, familiar icon for parameter-efficient fine-tuning without
-// pretending that methods such as LoRA / QLoRA have an official brand logo.
-function SlidersIcon(props: React.ComponentProps<"svg">) {
-  return <Code2 {...props} />;
-}
 
 const featured = [
   { name: "Python", type: "Language", logo: logo("python") },
@@ -202,10 +157,9 @@ function SkillMark({ skill }: { skill: Skill }) {
       </span>
     );
   }
-  const Icon = skill.icon || Code2;
   return (
     <span className="skill-visual skill-visual--method" aria-hidden="true">
-      <Icon size={25} strokeWidth={1.65} />
+      <b>{skill.glyph || "•"}</b>
     </span>
   );
 }
