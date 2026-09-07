@@ -1,0 +1,109 @@
+/* Shared project-detail visual system.
+ * Generated project pages use the same stable editorial cover language as the
+ * Projects index. No screenshot image is required to render the hero visual.
+ */
+
+.detail-editorial-visual {
+  padding: clamp(24px, 4vw, 48px) max(24px, calc((100vw - 1240px) / 2));
+  background: #eef1f5;
+  border-top: 1px solid #d9dee7;
+  border-bottom: 1px solid #d9dee7;
+}
+
+.detail-editorial-visual .project-cover--detail {
+  width: 100%;
+  min-height: clamp(440px, 52vw, 650px);
+  margin: 0 auto;
+  padding: clamp(30px, 5vw, 56px);
+  border: 1px solid rgba(16, 24, 40, .12);
+  border-radius: 24px;
+  box-shadow: 0 20px 55px rgba(16, 24, 40, .08);
+  transform: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  will-change: auto !important;
+}
+
+.detail-editorial-visual .project-cover--detail .project-cover-topline span {
+  font-size: 12px;
+}
+
+.detail-editorial-visual .project-cover--detail .project-cover-topline span:first-child {
+  font-size: 15px;
+}
+
+.detail-editorial-visual .project-cover--detail .project-cover-code {
+  padding: clamp(52px, 7vw, 96px) 0;
+}
+
+.detail-editorial-visual .project-cover--detail .project-cover-code strong {
+  font-size: clamp(72px, 10vw, 148px);
+  line-height: .78;
+}
+
+.detail-editorial-visual .project-cover--detail .project-cover-proof strong {
+  font-size: clamp(26px, 3vw, 38px);
+}
+
+.detail-editorial-visual .project-cover--detail .project-cover-proof small {
+  max-width: 220px;
+  font-size: 11px;
+}
+
+.detail-editorial-visual .project-cover--detail .project-cover-action {
+  max-width: 280px;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.detail-editorial-visual .project-cover--detail::before {
+  width: clamp(320px, 34vw, 520px);
+  height: clamp(320px, 34vw, 520px);
+  right: clamp(-150px, -8vw, -90px);
+  bottom: clamp(-190px, -10vw, -110px);
+}
+
+.detail-editorial-visual .project-cover--detail::after {
+  width: clamp(170px, 18vw, 270px);
+  height: clamp(170px, 18vw, 270px);
+  right: clamp(36px, 6vw, 90px);
+  bottom: clamp(-100px, -6vw, -55px);
+}
+
+@media (max-width: 760px) {
+  .detail-editorial-visual {
+    padding: 14px;
+  }
+
+  .detail-editorial-visual .project-cover--detail {
+    min-height: 390px;
+    padding: 24px;
+    border-radius: 18px;
+  }
+
+  .detail-editorial-visual .project-cover--detail .project-cover-code {
+    padding: 48px 0 54px;
+  }
+
+  .detail-editorial-visual .project-cover--detail .project-cover-code strong {
+    font-size: clamp(54px, 18vw, 86px);
+  }
+
+  .detail-editorial-visual .project-cover--detail .project-cover-footer {
+    align-items: flex-end;
+  }
+
+  .detail-editorial-visual .project-cover--detail .project-cover-action {
+    max-width: 145px;
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .detail-editorial-visual .project-cover--detail,
+  .detail-editorial-visual .project-cover--detail * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
