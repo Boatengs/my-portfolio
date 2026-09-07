@@ -8,6 +8,7 @@ import "./project-thumbnail-stability.css";
 import "./work-redesign.css";
 import "./project-detail-redesign.css";
 import "./skills-premium.css";
+import "./palette-alignment.css";
 export const metadata: Metadata = {
   title: "Sampson Boateng — Data Analytics & Applied Machine Learning",
   description:
