@@ -5,10 +5,12 @@ for (const file of [
   "app/palette-alignment.css",
   "app/layout.tsx",
   "out/index.html",
+  "out/resume/index.html",
   "out/sam-profile.png",
   "out/sam-profile.webp",
+  "out/sampson-boateng-resume.pdf",
 ]) {
-  if (!fs.existsSync(file)) throw new Error(`Palette/portrait validation is missing: ${file}`);
+  if (!fs.existsSync(file)) throw new Error(`Palette/portrait/resume validation is missing: ${file}`);
 }
 
 const palette = fs.readFileSync("app/palette-alignment.css", "utf8");
@@ -27,9 +29,10 @@ for (const marker of [
   "word-break: keep-all",
   ".project-grid--featured .project-cover-proof strong",
   ".project-grid--featured .project-editorial-proof strong",
+  ".resume-pdf-frame",
 ]) {
   if (!palette.includes(marker)) {
-    throw new Error(`Shared palette/portrait layer is missing: ${marker}`);
+    throw new Error(`Shared palette/portrait/resume layer is missing: ${marker}`);
   }
 }
 
@@ -57,6 +60,30 @@ for (const marker of [
   }
 }
 
+const resume = fs.readFileSync("out/resume/index.html", "utf8");
+for (const marker of [
+  'class="resume-pdf-frame"',
+  "/my-portfolio/sampson-boateng-resume.pdf?v=20260826-1#view=FitH",
+  "/my-portfolio/sampson-boateng-resume.pdf?v=20260826-1",
+  'download="Sampson-Boateng-Resume.pdf"',
+]) {
+  if (!resume.includes(marker)) {
+    throw new Error(`Latest resume export is missing: ${marker}`);
+  }
+}
+for (const forbidden of [
+  "sampson-boateng-resume-page.png",
+  "v=20260818-2",
+]) {
+  if (resume.includes(forbidden)) {
+    throw new Error(`Stale resume preview/version detected: ${forbidden}`);
+  }
+}
+const resumeBytes = fs.statSync("out/sampson-boateng-resume.pdf").size;
+if (resumeBytes !== 320876) {
+  throw new Error(`Expected the August 26 resume PDF (320876 bytes); found ${resumeBytes} bytes.`);
+}
+
 const cssFiles = [];
 function walk(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -73,5 +100,8 @@ if (!css.includes("/my-portfolio/sam-profile.png")) {
 if (!css.includes("word-break:keep-all") && !css.includes("word-break: keep-all")) {
   throw new Error("Compiled homepage CSS is missing the protected opportunity-headline word wrapping rule.");
 }
+if (!css.includes("resume-pdf-frame")) {
+  throw new Error("Compiled portfolio CSS is missing the live resume PDF frame styling.");
+}
 
-console.log("Validated shared homepage/project/toolkit palette alignment, featured homepage metric accent, balanced opportunity headline, and resilient homepage portrait assets.");
+console.log("Validated shared palette alignment, homepage brand polish, resilient portrait assets, and the exact August 26 live resume PDF.");
