@@ -120,8 +120,8 @@ for (const marker of [
 }
 
 const workHtml = fs.readFileSync("out/work/index.html", "utf8");
-const projectCardCount = (workHtml.match(/class="project-card\b/g) || []).length;
-const projectCoverCount = (workHtml.match(/class="project-cover\b/g) || []).length;
+const projectCardCount = (workHtml.match(/class="project-card project-card--editorial/g) || []).length;
+const projectCoverCount = (workHtml.match(/class="project-cover cover-/g) || []).length;
 const orderedProjectSlugs = [
   ...workHtml.matchAll(/href=["']\/my-portfolio\/projects\/([^/"'?#]+)\/?["']/g),
 ].map((match) => match[1]);
