@@ -63,7 +63,6 @@ for (const marker of [
 const resume = fs.readFileSync("out/resume/index.html", "utf8");
 for (const marker of [
   'class="resume-pdf-frame"',
-  "/my-portfolio/sampson-boateng-resume.pdf?v=20260826-1#view=FitH",
   "/my-portfolio/sampson-boateng-resume.pdf?v=20260826-1",
   'download="Sampson-Boateng-Resume.pdf"',
 ]) {
