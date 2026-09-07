@@ -22,6 +22,19 @@ const expectedProjectSlugs = [
   "world-happiness-analysis",
   "gridpulse-energy-grid-analytics",
 ];
+const generatedProjectSlugs = [
+  "gridpulse-energy-grid-analytics",
+  "water-quality",
+  "healthcare-modeling",
+  "sentiment-analyzer",
+  "sports-chatbot",
+  "medical-qa",
+  "skin-classifier",
+  "object-detector",
+  "skin-lesion-segmentation",
+  "llm-evaluation",
+  "wastewater-infrastructure-analytics",
+];
 const forbiddenProjectSlugs = ["price-elasticity"];
 
 function allFiles(directory, predicate = () => true) {
@@ -81,13 +94,39 @@ for (const marker of [
   }
 }
 for (const marker of [
-  "project-cover",
+  "ProjectCover",
   "project-card--lead",
   "Browse by expertise",
   "Latest project",
 ]) {
   if (!projectGridSource.includes(marker)) {
     throw new Error(`Editorial project index source is missing: ${marker}`);
+  }
+}
+
+const sharedCoverSource = fs.readFileSync("app/project-cover.tsx", "utf8");
+for (const marker of [
+  "GRID",
+  "PULSE",
+  "WATER",
+  "SIGNALS",
+  'variant?: "card" | "detail"',
+  "project-cover--detail",
+]) {
+  if (!sharedCoverSource.includes(marker)) {
+    throw new Error(`Shared project cover source is missing: ${marker}`);
+  }
+}
+
+const detailPageSource = fs.readFileSync("app/projects/[slug]/page.tsx", "utf8");
+for (const marker of ["<img", "project.image ?", "detail-capture", "application interface"]) {
+  if (detailPageSource.includes(marker)) {
+    throw new Error(`Generated project detail visual regression detected: ${marker}`);
+  }
+}
+for (const marker of ["ProjectCover", 'variant="detail"', "detail-editorial-visual"]) {
+  if (!detailPageSource.includes(marker)) {
+    throw new Error(`Generated project detail source is missing: ${marker}`);
   }
 }
 
@@ -116,6 +155,19 @@ for (const marker of [
 ]) {
   if (!workRedesignCss.includes(marker)) {
     throw new Error(`Modern project index CSS is missing: ${marker}`);
+  }
+}
+
+const detailRedesignCss = fs.readFileSync("app/project-detail-redesign.css", "utf8");
+for (const marker of [
+  ".detail-editorial-visual",
+  ".project-cover--detail",
+  "transform: none !important;",
+  "filter: none !important;",
+  "opacity: 1 !important;",
+]) {
+  if (!detailRedesignCss.includes(marker)) {
+    throw new Error(`Project detail redesign CSS is missing: ${marker}`);
   }
 }
 
@@ -207,6 +259,21 @@ for (const marker of [
 }
 requireText("out/work/index.html", "OPEN LIVE DASHBOARD");
 requireText("out/work/index.html", "LIVE CONTROL ROOM + CASE STUDY");
+
+for (const slug of generatedProjectSlugs) {
+  const file = `out/projects/${slug}/index.html`;
+  const html = requireText(file, "detail-editorial-visual");
+  requireText(file, "project-cover--detail");
+  const detailCoverCount = (html.match(/project-cover--detail/g) || []).length;
+  if (detailCoverCount !== 1) {
+    throw new Error(`${file} must render exactly one stable detail cover; found ${detailCoverCount}.`);
+  }
+  for (const forbidden of ["detail-capture", "application interface"]) {
+    if (html.includes(forbidden)) {
+      throw new Error(`${file} contains legacy screenshot detail markup: ${forbidden}`);
+    }
+  }
+}
 
 requireText(
   "out/projects/pfas-water-decision-intelligence/index.html",
@@ -320,5 +387,5 @@ if (missingAssets.length) {
 }
 
 console.log(
-  `Validated ${expectedRoutes.length} required routes, ${expectedProjectSlugs.length} unique public project cards, stable editorial project covers with newest-first ordering, NDA route exclusion, GridPulse evidence and live dashboard link, WHR dashboard runtime assets, protected special pages, and asset paths across ${htmlFiles.length} HTML files.`,
+  `Validated ${expectedRoutes.length} required routes, ${expectedProjectSlugs.length} unique public project cards, stable shared editorial covers across the index and ${generatedProjectSlugs.length} generated project pages, newest-first ordering, NDA route exclusion, GridPulse evidence and live dashboard link, WHR dashboard runtime assets, protected special pages, and asset paths across ${htmlFiles.length} HTML files.`,
 );
