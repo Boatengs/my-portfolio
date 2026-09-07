@@ -34,6 +34,7 @@ const groups: SkillGroup[] = [
     tone: "blue",
     skills: [
       { name: "SQL", type: "Query language", icon: "database" },
+      { name: "SQLite", type: "Embedded database", logo: logo("sqlite") },
       { name: "Excel", type: "Spreadsheet analysis", icon: "sheet" },
       { name: "Python", type: "Programming language", logo: logo("python"), proof: "/projects/gridpulse-energy-grid-analytics" },
       { name: "Pandas", type: "Data library", logo: logo("pandas"), proof: "/projects/water-quality" },
@@ -49,7 +50,7 @@ const groups: SkillGroup[] = [
     title: "Statistical & Modeling",
     kicker: "MODELS THAT CAN SURVIVE SCRUTINY",
     description:
-      "Inference, validation, segmentation, and forecasting methods used to make analytical results defensible, measurable, and decision-ready.",
+      "Inference, validation, segmentation, and forecasting methods used to make analytical results defensible, measurable, and decision ready.",
     proofHref: "/projects/gridpulse-energy-grid-analytics",
     proofLabel: "See forecasting evidence",
     tone: "amber",
@@ -58,11 +59,13 @@ const groups: SkillGroup[] = [
       { name: "Ridge", type: "Regularized model", icon: "curve" },
       { name: "Random Forest", type: "Ensemble model", icon: "tree" },
       { name: "XGBoost", type: "Gradient boosting", icon: "boost" },
-      { name: "Train/Test Split", type: "Validation method", icon: "split" },
+      { name: "SVM", type: "Classification model", icon: "boundary", proof: "/projects/healthcare-modeling" },
+      { name: "Train Test Split", type: "Validation method", icon: "split" },
       { name: "PCA", type: "Dimensionality reduction", icon: "dimensions" },
-      { name: "K-Means", type: "Clustering", icon: "cluster" },
+      { name: "K Means", type: "Clustering", icon: "cluster", proof: "/projects/water-quality" },
       { name: "Anomaly Detection", type: "Detection method", icon: "anomaly" },
-      { name: "Forecasting", type: "Time-series modeling", icon: "forecast", proof: "/projects/gridpulse-energy-grid-analytics" },
+      { name: "Isolation Forest", type: "Anomaly detection model", icon: "forest", proof: "/projects/water-quality" },
+      { name: "Forecasting", type: "Time series modeling", icon: "forecast", proof: "/projects/gridpulse-energy-grid-analytics" },
       { name: "A/B Testing", type: "Experiment design", icon: "experiment" },
       { name: "Hypothesis Testing", type: "Statistical inference", icon: "science" },
     ],
@@ -92,12 +95,12 @@ const groups: SkillGroup[] = [
     title: "ML, NLP & LLM",
     kicker: "PRACTICAL INTELLIGENT SYSTEMS",
     description:
-      "Evaluation, retrieval, embeddings, language models, and fine-tuning workflows for building useful generative-AI systems with measurable behavior.",
+      "Evaluation, retrieval, embeddings, language models, and fine tuning workflows for building useful generative AI systems with measurable behavior.",
     proofHref: "/projects/llm-evaluation",
     proofLabel: "See LLM evaluation evidence",
     tone: "violet",
     skills: [
-      { name: "Scikit-learn", type: "ML framework", icon: "model" },
+      { name: "Scikit learn", type: "ML framework", icon: "model", proof: "/projects/healthcare-modeling" },
       { name: "Transformers", type: "Model framework", icon: "transform" },
       { name: "DistilBERT", type: "Language model", icon: "language" },
       { name: "LangChain", type: "LLM framework", icon: "chain" },
@@ -105,8 +108,8 @@ const groups: SkillGroup[] = [
       { name: "RAG", type: "Retrieval method", icon: "retrieval" },
       { name: "Llama 3.2", type: "Language model", icon: "brain" },
       { name: "Mistral 7B", type: "Language model", icon: "wind" },
-      { name: "LoRA / QLoRA", type: "Fine-tuning method", icon: "tune" },
-      { name: "PEFT", type: "Fine-tuning framework", icon: "tune" },
+      { name: "LoRA / QLoRA", type: "Fine tuning method", icon: "tune" },
+      { name: "PEFT", type: "Fine tuning framework", icon: "tune" },
       { name: "TRL", type: "Training framework", icon: "route" },
       { name: "ROUGE", type: "Evaluation metric", icon: "evaluate", proof: "/projects/llm-evaluation" },
     ],
@@ -116,19 +119,19 @@ const groups: SkillGroup[] = [
     title: "Computer Vision & Deep Learning",
     kicker: "STRUCTURE FROM VISUAL DATA",
     description:
-      "Deep-learning, interpretability, detection, and segmentation techniques for extracting useful structure from images and visual data.",
+      "Deep learning, interpretability, detection, and segmentation techniques for extracting useful structure from images and visual data.",
     proofHref: "/projects/skin-lesion-segmentation",
     proofLabel: "See vision evidence",
     tone: "rose",
     skills: [
-      { name: "TensorFlow", type: "Deep-learning framework", logo: logo("tensorflow") },
-      { name: "PyTorch", type: "Deep-learning framework", logo: logo("pytorch"), proof: "/projects/skin-lesion-segmentation" },
+      { name: "TensorFlow", type: "Deep learning framework", logo: logo("tensorflow") },
+      { name: "PyTorch", type: "Deep learning framework", logo: logo("pytorch"), proof: "/projects/skin-lesion-segmentation" },
       { name: "EfficientNetB0", type: "Vision architecture", icon: "layers" },
       { name: "Transfer Learning", type: "Training method", icon: "transfer" },
-      { name: "Grad-CAM", type: "Interpretability", icon: "heatmap" },
+      { name: "Grad CAM", type: "Interpretability", icon: "heatmap" },
       { name: "Grounding DINO", type: "Object detection", icon: "scan" },
-      { name: "Zero-Shot Learning", type: "Generalization method", icon: "sparkle" },
-      { name: "U-Net", type: "Segmentation architecture", icon: "network" },
+      { name: "Zero Shot Learning", type: "Generalization method", icon: "sparkle" },
+      { name: "U Net", type: "Segmentation architecture", icon: "network" },
       { name: "Image Segmentation", type: "Vision task", icon: "segment" },
     ],
   },
@@ -142,7 +145,7 @@ const groups: SkillGroup[] = [
     proofLabel: "See portfolio evidence",
     tone: "slate",
     skills: [
-      { name: "Git", type: "Version control", logo: logo("git") },
+      { name: "GitHub", type: "Version control and collaboration", logo: logo("github"), proof: "/work" },
       { name: "Jira", type: "Project management", logo: logo("jira") },
       { name: "Dataiku", type: "Data science platform", icon: "platform" },
       { name: "Bloomerang CRM", type: "CRM platform", icon: "crm" },
@@ -164,7 +167,7 @@ const featured = [
   { name: "FastAPI", role: "API", logo: logo("fastapi") },
   { name: "TensorFlow", role: "DEEP LEARNING", logo: logo("tensorflow") },
   { name: "PyTorch", role: "DEEP LEARNING", logo: logo("pytorch") },
-  { name: "Git", role: "DELIVERY", logo: logo("git") },
+  { name: "GitHub", role: "DELIVERY", logo: logo("github") },
 ];
 
 const stages = [
@@ -189,8 +192,9 @@ function MethodIcon({ name }: { name?: string }) {
     case "vectors":
       return <svg {...common}><ellipse cx="24" cy="11" rx="13" ry="5"/><path d="M11 11v12c0 2.8 5.8 5 13 5s13-2.2 13-5V11M11 23v12c0 2.8 5.8 5 13 5s13-2.2 13-5V23"/></svg>;
     case "sheet":
-      return <svg {...common}><rect x="9" y="7" width="30" height="34" rx="4"/><path d="M18 7v34M9 18h30M9 29h30"/><path d="m23 24 6 6m0-6-6 6"/></svg>;
+      return <svg {...common}><rect x="9" y="7" width="30" height="34" rx="4"/><path d="M18 7v34M9 18h30M9 29h30"/></svg>;
     case "science":
+    case "experiment":
       return <svg {...common}><path d="M18 7h12M21 7v10L11 35a4 4 0 0 0 3.5 6h19a4 4 0 0 0 3.5-6L27 17V7"/><path d="M16 31h16"/></svg>;
     case "spark":
     case "boost":
@@ -205,15 +209,16 @@ function MethodIcon({ name }: { name?: string }) {
     case "curve":
       return <svg {...common}><path d="M7 31c6-18 12 18 18 0s10-8 16-18"/></svg>;
     case "tree":
-      return <svg {...common}><path d="M24 39V22M16 39h16"/><circle cx="24" cy="12" r="7"/><circle cx="14" cy="22" r="6"/><circle cx="34" cy="22" r="6"/></svg>;
+    case "forest":
+      return <svg {...common}><path d="M24 40V23M15 40h18"/><circle cx="24" cy="12" r="7"/><circle cx="14" cy="22" r="6"/><circle cx="34" cy="22" r="6"/></svg>;
+    case "boundary":
+      return <svg {...common}><path d="M8 37 40 11M8 29 32 9M16 40 40 20"/><circle cx="13" cy="14" r="3"/><circle cx="35" cy="35" r="3"/></svg>;
     case "split":
-      return <svg {...common}><path d="M9 12h9c8 0 8 24 16 24h5M9 36h9c8 0 8-24 16-24h5"/><path d="m35 8 4 4-4 4M35 32l4 4-4 4"/></svg>;
+      return <svg {...common}><path d="M9 12h9c8 0 8 24 16 24h5M9 36h9c8 0 8-24 16-24h5"/></svg>;
     case "dimensions":
       return <svg {...common}><rect x="8" y="8" width="12" height="12" rx="2"/><rect x="28" y="28" width="12" height="12" rx="2"/><path d="M20 14h10M34 18v10"/></svg>;
     case "anomaly":
       return <svg {...common}><path d="M24 7 42 39H6L24 7Z"/><path d="M24 18v10M24 34h.01"/></svg>;
-    case "experiment":
-      return <svg {...common}><path d="M16 8h16M20 8v12L11 36a4 4 0 0 0 3.5 6h19a4 4 0 0 0 3.5-6L28 20V8"/><path d="M17 33h14"/></svg>;
     case "dashboard":
     case "bars":
     case "analytics":
@@ -232,7 +237,7 @@ function MethodIcon({ name }: { name?: string }) {
     case "chain":
       return <svg {...common}><path d="m19 29-4 4a7 7 0 0 1-10-10l7-7a7 7 0 0 1 10 0M29 19l4-4a7 7 0 1 1 10 10l-7 7a7 7 0 0 1-10 0"/><path d="m17 31 14-14"/></svg>;
     case "retrieval":
-      return <svg {...common}><path d="M8 9h25v30H8z"/><path d="M14 16h13M14 22h13M14 28h8"/><circle cx="34" cy="32" r="7"/><path d="m39 37 4 4"/></svg>;
+      return <svg {...common}><path d="M8 9h25v30H8z"/><path d="M14 16h13M14 22h13M14 28h8"/><circle cx="34" cy="32" r="7"/></svg>;
     case "wind":
       return <svg {...common}><path d="M7 15h25c6 0 6-8 0-8-3 0-5 2-5 4M7 24h33M7 33h22c6 0 6 8 0 8-3 0-5-2-5-4"/></svg>;
     case "tune":
@@ -244,11 +249,11 @@ function MethodIcon({ name }: { name?: string }) {
     case "layers":
       return <svg {...common}><path d="m24 7 17 9-17 9L7 16l17-9Z"/><path d="m9 24 15 8 15-8M9 32l15 8 15-8"/></svg>;
     case "heatmap":
-      return <svg {...common}><rect x="8" y="8" width="12" height="12" rx="2"/><rect x="28" y="8" width="12" height="12" rx="2"/><rect x="8" y="28" width="12" height="12" rx="2"/><rect x="28" y="28" width="12" height="12" rx="2"/><circle cx="34" cy="34" r="4"/></svg>;
+      return <svg {...common}><rect x="8" y="8" width="12" height="12" rx="2"/><rect x="28" y="8" width="12" height="12" rx="2"/><rect x="8" y="28" width="12" height="12" rx="2"/><rect x="28" y="28" width="12" height="12" rx="2"/></svg>;
     case "scan":
       return <svg {...common}><path d="M17 8H8v9M31 8h9v9M17 40H8v-9M31 40h9v-9"/><rect x="15" y="15" width="18" height="18" rx="4"/></svg>;
     case "sparkle":
-      return <svg {...common}><path d="m24 6 3 9 9 3-9 3-3 9-3-9-9-3 9-3 3-9ZM37 30l1.5 4.5L43 36l-4.5 1.5L37 42l-1.5-4.5L31 36l4.5-1.5L37 30Z"/></svg>;
+      return <svg {...common}><path d="m24 6 3 9 9 3-9 3-3 9-3-9-9-3 9-3 3-9Z"/></svg>;
     case "network":
     case "segment":
       return <svg {...common}><circle cx="12" cy="12" r="4"/><circle cx="36" cy="12" r="4"/><circle cx="12" cy="36" r="4"/><circle cx="36" cy="36" r="4"/><circle cx="24" cy="24" r="4"/><path d="m15 15 6 6m6 6 6 6m0-18-6 6m-6 6-6 6"/></svg>;
@@ -287,7 +292,7 @@ export default function SkillsPage() {
             <p className="eyebrow">TECHNICAL TOOLKIT</p>
             <h1>Technical depth,<br /><em>built for decisions.</em></h1>
             <p>
-              A working stack spanning analysis, statistical modeling, machine learning, visualization, and deployment—organized around how the work moves from raw data to something people can trust and use.
+              A working stack spanning analysis, statistical modeling, machine learning, visualization, and deployment, organized around how the work moves from raw data to something people can trust and use.
             </p>
             <div className="toolkit-hero-stats" aria-label="Toolkit summary">
               <div><strong>{capabilityCount}</strong><span>capabilities</span></div>
@@ -338,7 +343,7 @@ export default function SkillsPage() {
           <span>CAPABILITY LIBRARY</span>
           <div>
             <h2 id="capability-library-title">Six disciplines. One <em>coherent toolkit.</em></h2>
-            <p>Real product marks are stored locally where a branded technology has an official identity. Statistical methods and technical concepts use purpose-built visual symbols rather than fake logos.</p>
+            <p>Real product marks are stored locally where a branded technology has an official identity. Statistical methods and technical concepts use purpose built visual symbols rather than invented logos.</p>
           </div>
         </div>
 
@@ -374,7 +379,7 @@ export default function SkillsPage() {
                     <Link
                       className="premium-skill-card atlas-skill-card atlas-skill-card--proof"
                       href={skill.proof}
-                      aria-label={`${skill.name} — view portfolio evidence`}
+                      aria-label={`${skill.name}, view portfolio evidence`}
                       key={skill.name}
                     >
                       {content}
