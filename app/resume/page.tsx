@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SiteNav } from "../site-nav";
 
-const resumeUrl = "/sampson-boateng-resume.pdf?v=20260907-1";
+const resumeUrl = "/sampson-boateng-resume.pdf?v=20260908-1";
 
 export default function Resume() {
   return (
