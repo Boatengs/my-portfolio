@@ -64,7 +64,7 @@ const resume = fs.readFileSync("out/resume/index.html", "utf8");
 for (const marker of [
   "<iframe",
   'class="resume-pdf-frame"',
-  "/my-portfolio/sampson-boateng-resume.pdf?v=20260907-1",
+  "/my-portfolio/sampson-boateng-resume.pdf?v=20260908-1",
   'download="Sampson-Boateng-Resume.pdf"',
 ]) {
   if (!resume.includes(marker)) {
@@ -76,14 +76,15 @@ for (const forbidden of [
   "Your browser cannot display the PDF inline",
   "v=20260818-2",
   "v=20260826-1",
+  "v=20260907-1",
 ]) {
   if (resume.includes(forbidden)) {
     throw new Error(`Stale or browser-fragile resume rendering detected: ${forbidden}`);
   }
 }
 const resumeBytes = fs.statSync("out/sampson-boateng-resume.pdf").size;
-if (resumeBytes !== 320876) {
-  throw new Error(`Expected the August 26 resume PDF (320876 bytes); found ${resumeBytes} bytes.`);
+if (resumeBytes !== 111830) {
+  throw new Error(`Expected the September 8 resume PDF (111830 bytes); found ${resumeBytes} bytes.`);
 }
 
 const cssFiles = [];
@@ -106,4 +107,4 @@ if (!css.includes("resume-pdf-frame")) {
   throw new Error("Compiled portfolio CSS is missing the live resume PDF frame styling.");
 }
 
-console.log("Validated shared palette alignment, homepage brand polish, resilient portrait assets, and the exact August 26 resume rendered through the browser compatible iframe viewer.");
+console.log("Validated shared palette alignment, homepage brand polish, resilient portrait assets, and the September 8 resume rendered through the browser compatible iframe viewer.");
