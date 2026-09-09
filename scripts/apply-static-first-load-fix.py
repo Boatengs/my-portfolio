@@ -105,16 +105,9 @@ replace_once(
 
 replace_once(
     "next.config.ts",
-    'const basePath = process.env.GITHUB_PAGES === "true" ? "/my-portfolio" : "";',
-    'const basePath =\n  process.env.NEXT_PUBLIC_BASE_PATH ||\n  (process.env.GITHUB_PAGES === "true" ? "/my-portfolio" : "");',
+    '  assetPrefix: basePath || undefined,\n',
+    '  assetPrefix: basePath || undefined,\n  env: { NEXT_PUBLIC_BASE_PATH: basePath },\n',
 )
-
-for wf in [".github/workflows/deploy-pages.yml", ".github/workflows/portfolio-ci.yml"]:
-    replace_once(
-        wf,
-        '      GITHUB_PAGES: "true"',
-        '      GITHUB_PAGES: "true"\n      NEXT_PUBLIC_BASE_PATH: "/my-portfolio"',
-    )
 
 write(
     "scripts/validate-first-load-assets.mjs",
@@ -196,5 +189,4 @@ if marker not in package["scripts"]["postbuild"]:
     package["scripts"]["postbuild"] += f" && {marker}"
 package_path.write_text(json.dumps(package, indent=2) + "\n", encoding="utf-8")
 
-Path(".github/workflows/apply-static-first-load-fix.yml").unlink()
 Path("scripts/apply-static-first-load-fix.py").unlink()
