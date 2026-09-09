@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { StaticLink as Link } from "../static-link";
 import { SiteNav } from "../site-nav";
 
 export default function Impact() {

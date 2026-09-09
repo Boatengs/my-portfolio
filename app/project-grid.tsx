@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { StaticLink as Link } from "./static-link";
 import { useState } from "react";
 import { ProjectCover } from "./project-cover";
 import { allProjects } from "./project-registry";

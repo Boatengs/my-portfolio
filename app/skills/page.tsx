@@ -1,5 +1,6 @@
-import Link from "next/link";
+import { StaticLink as Link } from "../static-link";
 import { SiteNav } from "../site-nav";
+import { sitePath } from "../site-path";
 
 type Skill = {
   name: string;
@@ -20,7 +21,7 @@ type SkillGroup = {
   skills: Skill[];
 };
 
-const logo = (name: string) => `/skill-logos/${name}.svg`;
+const logo = (name: string) => sitePath(`/skill-logos/${name}.svg`);
 
 const groups: SkillGroup[] = [
   {
