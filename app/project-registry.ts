@@ -4,6 +4,7 @@ import { wastewaterProject } from "./wastewater-project";
 import { financialCrimeProject } from "./financial-crime-project";
 import { worldHappinessProject } from "./world-happiness-project";
 import { gridPulseProject } from "./gridpulse-project";
+import { sitePath } from "./site-path";
 
 // Confidential/NDA work stays in its standalone GitHub repository and is never
 // published through the portfolio. The portfolio registry is the public gate.
@@ -33,6 +34,7 @@ export const allProjects = [
   worldHappinessProject,
 ].map((project, index) => ({
   ...project,
+  image: project.image ? sitePath(project.image) : undefined,
   index: String(index + 1).padStart(2, "0"),
 }));
 

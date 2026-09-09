@@ -9,11 +9,12 @@ import "./work-redesign.css";
 import "./project-detail-redesign.css";
 import "./skills-premium.css";
 import "./palette-alignment.css";
+import { sitePath } from "./site-path";
 export const metadata: Metadata = {
   title: "Sampson Boateng — Data Analytics & Applied Machine Learning",
   description:
     "Data analytics and applied machine learning professional transforming data into insight, strategy, and impact.",
-  icons: { icon: "/favicon.svg" },
+  icons: { icon: sitePath("/favicon.svg") },
 };
 export default function RootLayout({
   children,

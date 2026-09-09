@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { StaticLink as Link } from "../static-link";
 import { ProjectGrid } from "../project-grid";
 import { allProjects } from "../project-registry";
 import { SiteNav } from "../site-nav";
