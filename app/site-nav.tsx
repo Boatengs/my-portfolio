@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { StaticLink as Link } from "./static-link";
 
 type SiteNavProps = {
   home?: boolean;

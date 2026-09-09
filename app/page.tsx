@@ -1,6 +1,7 @@
-import Link from "next/link";
+import { StaticLink as Link } from "./static-link";
 import { ProjectGrid } from "./project-grid";
 import { SiteNav } from "./site-nav";
+import { sitePath } from "./site-path";
 export const skillGroups = [
   {
     label: "Data & Analysis",
@@ -430,10 +431,11 @@ export default function Home() {
               <div className="profile-photo">
                 <span className="photo-orbit" aria-hidden="true" />
                 <img
-                  src="/sam-profile.webp"
+                  src={sitePath("/sam-profile.webp")}
                   width="900"
                   height="900"
-                  loading="lazy"
+                  loading="eager"
+                  fetchPriority="high"
                   decoding="async"
                   alt="Professional portrait of Sampson Boateng"
                 />
