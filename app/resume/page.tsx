@@ -1,7 +1,8 @@
-import Link from "next/link";
+import { StaticLink as Link } from "../static-link";
 import { SiteNav } from "../site-nav";
+import { sitePath } from "../site-path";
 
-const resumeUrl = "/sampson-boateng-resume.pdf?v=20260908-2";
+const resumeUrl = sitePath("/sampson-boateng-resume.pdf?v=20260908-2");
 
 export default function Resume() {
   return (

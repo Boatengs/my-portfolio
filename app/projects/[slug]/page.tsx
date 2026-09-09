@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { StaticLink as Link } from "../../static-link";
 import { SiteNav } from "../../site-nav";
 import { ProjectCover } from "../../project-cover";
 import { notFound } from "next/navigation";
