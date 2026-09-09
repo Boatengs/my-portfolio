@@ -1,3 +1,4 @@
+import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -64,7 +65,7 @@ const resume = fs.readFileSync("out/resume/index.html", "utf8");
 for (const marker of [
   "<iframe",
   'class="resume-pdf-frame"',
-  "/my-portfolio/sampson-boateng-resume.pdf?v=20260908-1",
+  "/my-portfolio/sampson-boateng-resume.pdf?v=20260908-2",
   'download="Sampson-Boateng-Resume.pdf"',
 ]) {
   if (!resume.includes(marker)) {
@@ -77,14 +78,21 @@ for (const forbidden of [
   "v=20260818-2",
   "v=20260826-1",
   "v=20260907-1",
+  "v=20260908-1",
 ]) {
   if (resume.includes(forbidden)) {
     throw new Error(`Stale or browser-fragile resume rendering detected: ${forbidden}`);
   }
 }
-const resumeBytes = fs.statSync("out/sampson-boateng-resume.pdf").size;
+const resumePath = "out/sampson-boateng-resume.pdf";
+const resumeBytes = fs.statSync(resumePath).size;
 if (resumeBytes !== 111830) {
   throw new Error(`Expected the September 8 resume PDF (111830 bytes); found ${resumeBytes} bytes.`);
+}
+const resumeSha256 = crypto.createHash("sha256").update(fs.readFileSync(resumePath)).digest("hex");
+const expectedResumeSha256 = "79c59994d36b8fac11037835dd9cc75e3775c591cb88d8514f57f66aec51ae57";
+if (resumeSha256 !== expectedResumeSha256) {
+  throw new Error(`Expected exact September 8 resume SHA-256 ${expectedResumeSha256}; found ${resumeSha256}.`);
 }
 
 const cssFiles = [];
@@ -107,4 +115,4 @@ if (!css.includes("resume-pdf-frame")) {
   throw new Error("Compiled portfolio CSS is missing the live resume PDF frame styling.");
 }
 
-console.log("Validated shared palette alignment, homepage brand polish, resilient portrait assets, and the September 8 resume rendered through the browser compatible iframe viewer.");
+console.log("Validated shared palette alignment, homepage brand polish, resilient portrait assets, and the exact September 8 resume rendered through the browser compatible iframe viewer.");
