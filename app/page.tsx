@@ -294,6 +294,11 @@ export const skillGroups = [
         href: "",
       },
       {
+        name: "Hugging Face",
+        icon: sitePath("/skill-logos/huggingface.svg"),
+        href: "https://huggingface.co/samurvivor-07",
+      },
+      {
         name: "Jira",
         icon: "https://api.iconify.design/logos/jira.svg",
         href: "",

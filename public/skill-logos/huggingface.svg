@@ -1,0 +1,11 @@
+<svg role="img" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <title>Hugging Face</title>
+  <circle cx="32" cy="30" r="23" fill="#FFD21E"/>
+  <path d="M13 37C7 34 3 36 3 41c0 7 8 13 16 13 4 0 7-2 9-5l-6-7c-3 3-6 3-9-1z" fill="#FF9D00"/>
+  <path d="M51 37c6-3 10-1 10 4 0 7-8 13-16 13-4 0-7-2-9-5l6-7c3 3 6 3 9-1z" fill="#FF9D00"/>
+  <ellipse cx="24" cy="27" rx="3" ry="4" fill="#32343D"/>
+  <ellipse cx="40" cy="27" rx="3" ry="4" fill="#32343D"/>
+  <path d="M22 37c3 4 7 6 10 6s7-2 10-6" fill="none" stroke="#32343D" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="18" cy="34" r="3" fill="#FFAD03"/>
+  <circle cx="46" cy="34" r="3" fill="#FFAD03"/>
+</svg>

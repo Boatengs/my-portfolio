@@ -147,6 +147,7 @@ const groups: SkillGroup[] = [
     tone: "slate",
     skills: [
       { name: "GitHub", type: "Version control and collaboration", logo: logo("github"), proof: "/work" },
+      { name: "Hugging Face", type: "Model hub and ML collaboration", logo: logo("huggingface") },
       { name: "Jira", type: "Project management", logo: logo("jira") },
       { name: "Dataiku", type: "Data science platform", icon: "platform" },
       { name: "Bloomerang CRM", type: "CRM platform", icon: "crm" },
@@ -169,6 +170,7 @@ const featured = [
   { name: "TensorFlow", role: "DEEP LEARNING", logo: logo("tensorflow") },
   { name: "PyTorch", role: "DEEP LEARNING", logo: logo("pytorch") },
   { name: "GitHub", role: "DELIVERY", logo: logo("github") },
+  { name: "Hugging Face", role: "MODEL HUB", logo: logo("huggingface") },
 ];
 
 const stages = [

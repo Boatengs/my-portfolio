@@ -612,3 +612,22 @@
 @media(prefers-reduced-motion:reduce){
   .atlas-skill-card--proof{transition:none}
 }
+
+
+/* Color-forward capability marks */
+.premium-skill-card.atlas-skill-card{
+  border-color:color-mix(in srgb,var(--accent) 16%,#e2e6ec);
+  background:linear-gradient(145deg,#fff 0%,var(--soft) 135%);
+}
+.atlas-skill-mark--brand{
+  border-color:color-mix(in srgb,var(--accent) 18%,#e6e9ee);
+  background:linear-gradient(145deg,#fff 35%,var(--soft) 100%);
+  box-shadow:0 10px 24px color-mix(in srgb,var(--accent) 10%,transparent);
+}
+.atlas-skill-mark--brand img,
+.stack-node img{
+  filter:none;
+}
+.stack-node>div{
+  background:linear-gradient(145deg,#fff 45%,#eef2ff 100%);
+}
