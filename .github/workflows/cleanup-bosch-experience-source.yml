@@ -1,0 +1,68 @@
+name: Clean Bosch experience source
+
+on:
+  push:
+    branches:
+      - fix/bosch-resume-title
+    paths:
+      - ".github/workflows/cleanup-bosch-experience-source.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out fix branch
+        uses: actions/checkout@v4
+        with:
+          ref: fix/bosch-resume-title
+          fetch-depth: 0
+
+      - name: Normalize Bosch source formatting
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+
+          path = Path("app/page.tsx")
+          text = path.read_text()
+          old = '''              <h3>Software Engineer Intern</h3>
+    <h4>Bosch Techno-Engineering Ltd</h4>
+    <p>
+      Improved system stability by 20% through structured debugging,
+      defect resolution, performance tuning, and validation across
+      software development and testing cycles. Designed and developed
+      an internal encryption and decryption testing tool to verify data
+      integrity and reinforce security practices. Wrote test cases,
+      validated functionality, and documented results to support
+      reliable end to end software delivery.
+    </p>'''
+          new = '''              <h3>Software Engineer Intern</h3>
+              <h4>Bosch Techno-Engineering Ltd</h4>
+              <p>
+                Improved system stability by 20% through structured debugging,
+                defect resolution, performance tuning, and validation across
+                software development and testing cycles. Designed and developed
+                an internal encryption and decryption testing tool to verify data
+                integrity and reinforce security practices. Wrote test cases,
+                validated functionality, and documented results to support
+                reliable end to end software delivery.
+              </p>'''
+          if old not in text:
+              raise SystemExit("Expected Bosch source block was not found")
+          path.write_text(text.replace(old, new, 1))
+          PY
+          rm .github/workflows/cleanup-bosch-experience-source.yml
+
+      - name: Commit source cleanup
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app/page.tsx .github/workflows/cleanup-bosch-experience-source.yml
+          git commit -m "Clean Bosch experience source formatting"
+          git push origin HEAD:fix/bosch-resume-title
