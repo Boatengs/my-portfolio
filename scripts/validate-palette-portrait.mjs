@@ -1,4 +1,3 @@
-import { execFileSync } from "node:child_process";
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
@@ -94,40 +93,6 @@ const resumeSha256 = crypto.createHash("sha256").update(fs.readFileSync(resumePa
 const expectedResumeSha256 = "79c59994d36b8fac11037835dd9cc75e3775c591cb88d8514f57f66aec51ae57";
 if (resumeSha256 !== expectedResumeSha256) {
   throw new Error(`Expected exact September 8 resume SHA-256 ${expectedResumeSha256}; found ${resumeSha256}.`);
-}
-
-// Temporary inspection for the Bosch experience wording. Removed before merge.
-try {
-  const oldCommit = "3bf367616a71cdbf86c2311302acf96b156bdb86";
-  execFileSync("git", ["fetch", "origin", oldCommit, "--depth=1"], { stdio: "ignore" });
-  const oldPdf = execFileSync("git", ["show", `${oldCommit}:public/sampson-boateng-resume.pdf`]);
-  const oldResumePath = "/tmp/august18-resume.pdf";
-  fs.writeFileSync(oldResumePath, oldPdf);
-
-  const python = `
-import subprocess, sys
-subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--quiet', '--target', '/tmp/pypdf-target', 'pypdf'])
-sys.path.insert(0, '/tmp/pypdf-target')
-from pypdf import PdfReader
-
-def block(path, label):
-    reader = PdfReader(path)
-    text = '\\n'.join((page.extract_text() or '') for page in reader.pages)
-    lines = [line.strip() for line in text.splitlines() if line.strip()]
-    for i, line in enumerate(lines):
-        if 'bosch' in line.lower() or 'programmer intern' in line.lower() or 'software engineer' in line.lower():
-            start = max(0, i - 2)
-            end = min(len(lines), i + 12)
-            print(label + ': ' + ' | '.join(lines[start:end]))
-            break
-
-block('${resumePath}', 'SEPTEMBER8_BOSCH_BLOCK')
-block('${oldResumePath}', 'AUGUST18_BOSCH_BLOCK')
-`;
-  const resumeText = execFileSync("python3", ["-c", python], { encoding: "utf8" });
-  console.log(resumeText.trim());
-} catch (error) {
-  console.log(`RESUME_BOSCH_INSPECTION_FAILED: ${error instanceof Error ? error.message : String(error)}`);
 }
 
 const cssFiles = [];
