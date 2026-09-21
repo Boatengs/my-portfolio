@@ -1,3 +1,4 @@
+import { execFileSync } from "node:child_process";
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
@@ -93,6 +94,18 @@ const resumeSha256 = crypto.createHash("sha256").update(fs.readFileSync(resumePa
 const expectedResumeSha256 = "79c59994d36b8fac11037835dd9cc75e3775c591cb88d8514f57f66aec51ae57";
 if (resumeSha256 !== expectedResumeSha256) {
   throw new Error(`Expected exact September 8 resume SHA-256 ${expectedResumeSha256}; found ${resumeSha256}.`);
+}
+
+// Temporary inspection for the Bosch role title. Removed before merge.
+try {
+  const resumeText = execFileSync("pdftotext", [resumePath, "-"], { encoding: "utf8" });
+  const roleLines = resumeText
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter((line) => /bosch|programmer|software engineer/i.test(line));
+  console.log(`RESUME_BOSCH_INSPECTION: ${roleLines.join(" | ")}`);
+} catch (error) {
+  console.log(`RESUME_BOSCH_INSPECTION_FAILED: ${error instanceof Error ? error.message : String(error)}`);
 }
 
 const cssFiles = [];
