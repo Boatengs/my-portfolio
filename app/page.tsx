@@ -511,13 +511,17 @@ export default function Home() {
               <span>Saratov, Russia</span>
             </div>
             <div>
-              <h3>Programmer Intern</h3>
-              <h4>Bosch Techno-Engineering Ltd</h4>
-              <p>
-                Supported development and QA cycles, diagnosed defects, helped
-                improve system stability by 20%, and built an internal
-                encryption and decryption testing utility.
-              </p>
+              <h3>Software Engineer Intern</h3>
+    <h4>Bosch Techno-Engineering Ltd</h4>
+    <p>
+      Improved system stability by 20% through structured debugging,
+      defect resolution, performance tuning, and validation across
+      software development and testing cycles. Designed and developed
+      an internal encryption and decryption testing tool to verify data
+      integrity and reinforce security practices. Wrote test cases,
+      validated functionality, and documented results to support
+      reliable end to end software delivery.
+    </p>
             </div>
           </article>
           <article>
