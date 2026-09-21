@@ -25,10 +25,12 @@ for (const marker of [
   "SVM",
   "Isolation Forest",
   "GitHub",
+  "Hugging Face",
   "/my-portfolio/projects/healthcare-modeling",
   "/my-portfolio/projects/water-quality",
   "/my-portfolio/skill-logos/sqlite.svg",
   "/my-portfolio/skill-logos/github.svg",
+  "/my-portfolio/skill-logos/huggingface.svg",
 ]) {
   if (!html.includes(marker)) {
     throw new Error(`Premium technical toolkit is missing: ${marker}`);
@@ -56,8 +58,8 @@ for (const forbidden of [
 }
 
 const skillCardCount = (html.match(/class="premium-skill-card(?:\s|\")/g) || []).length;
-if (skillCardCount !== 61) {
-  throw new Error(`Technical toolkit must render exactly 61 capability cards; found ${skillCardCount}.`);
+if (skillCardCount !== 62) {
+  throw new Error(`Technical toolkit must render exactly 62 capability cards; found ${skillCardCount}.`);
 }
 
 const disciplineCount = (html.match(/class="toolkit-discipline tone-/g) || []).length;
@@ -66,8 +68,8 @@ if (disciplineCount !== 6) {
 }
 
 const coreNodeCount = (html.match(/class="stack-node"/g) || []).length;
-if (coreNodeCount !== 9) {
-  throw new Error(`Technical toolkit must render exactly 9 core-stack nodes; found ${coreNodeCount}.`);
+if (coreNodeCount !== 10) {
+  throw new Error(`Technical toolkit must render exactly 10 core-stack nodes; found ${coreNodeCount}.`);
 }
 
 const remoteImages = [...html.matchAll(/<img[^>]+src=["'](https?:\/\/[^"']+)["']/g)].map(
@@ -85,7 +87,7 @@ const logoUrls = [
   ),
 ];
 
-if (logoUrls.length < 13) {
+if (logoUrls.length < 14) {
   throw new Error(`Expected at least 13 locally stored brand marks; found ${logoUrls.length}.`);
 }
 
@@ -98,5 +100,5 @@ for (const url of logoUrls) {
 }
 
 console.log(
-  `Validated premium technical toolkit: 61 capability cards, 6 discipline panels, 9 core-stack nodes, ${logoUrls.length} local brand marks, SVM and Isolation Forest project evidence, GitHub naming, SQLite, no NDA links, and no remote image dependencies.`,
+  `Validated premium technical toolkit: 62 capability cards, 6 discipline panels, 10 core-stack nodes, ${logoUrls.length} local brand marks, SVM and Isolation Forest project evidence, GitHub naming, SQLite, no NDA links, and no remote image dependencies.`,
 );
