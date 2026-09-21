@@ -28,17 +28,20 @@ jobs:
           git checkout origin/main -- scripts/validate-palette-portrait.mjs
           python3 - <<'PY'
           from pathlib import Path
+          import re
 
           path = Path("app/page.tsx")
           text = path.read_text()
-          old = '''              <h3>Programmer Intern</h3>
-              <h4>Bosch Techno-Engineering Ltd</h4>
-              <p>
-                Supported development and QA cycles, diagnosed defects, helped
-                improve system stability by 20%, and built an internal
-                encryption and decryption testing utility.
-              </p>'''
-          new = '''              <h3>Software Engineer Intern</h3>
+          pattern = re.compile(
+              r'<h3>Programmer Intern</h3>\s*'
+              r'<h4>Bosch Techno-Engineering Ltd</h4>\s*'
+              r'<p>\s*'
+              r'Supported development and QA cycles, diagnosed defects, helped\s*'
+              r'improve system stability by 20%, and built an internal\s*'
+              r'encryption and decryption testing utility\.\s*'
+              r'</p>'
+          )
+          replacement = '''<h3>Software Engineer Intern</h3>
               <h4>Bosch Techno-Engineering Ltd</h4>
               <p>
                 Improved system stability by 20% through structured debugging,
@@ -49,9 +52,10 @@ jobs:
                 validated functionality, and documented results to support
                 reliable end to end software delivery.
               </p>'''
-          if old not in text:
-              raise SystemExit("Expected Bosch homepage block was not found")
-          path.write_text(text.replace(old, new, 1))
+          text, count = pattern.subn(replacement, text, count=1)
+          if count != 1:
+              raise SystemExit(f"Expected one Bosch homepage block; replaced {count}")
+          path.write_text(text)
           PY
           rm .github/workflows/apply-bosch-experience-fix.yml
 
