@@ -31,6 +31,9 @@ for (const marker of [
   "/my-portfolio/skill-logos/sqlite.svg",
   "/my-portfolio/skill-logos/github.svg",
   "/my-portfolio/skill-logos/huggingface.svg",
+  "/my-portfolio/skill-logos/powerbi.svg",
+  "/my-portfolio/skill-logos/tableau.svg",
+  "/my-portfolio/skill-logos/excel.svg",
 ]) {
   if (!html.includes(marker)) {
     throw new Error(`Premium technical toolkit is missing: ${marker}`);
@@ -87,7 +90,7 @@ const logoUrls = [
   ),
 ];
 
-if (logoUrls.length < 14) {
+if (logoUrls.length < 30) {
   throw new Error(`Expected at least 13 locally stored brand marks; found ${logoUrls.length}.`);
 }
 
