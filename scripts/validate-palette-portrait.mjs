@@ -100,7 +100,8 @@ if (resumeSha256 !== expectedResumeSha256) {
 try {
   const python = `
 import subprocess, sys
-subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--quiet', 'pypdf'])
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--quiet', '--target', '/tmp/pypdf-target', 'pypdf'])
+sys.path.insert(0, '/tmp/pypdf-target')
 from pypdf import PdfReader
 reader = PdfReader('${resumePath}')
 text = '\\n'.join((page.extract_text() or '') for page in reader.pages)
@@ -108,7 +109,7 @@ lines = [line.strip() for line in text.splitlines() if line.strip()]
 for i, line in enumerate(lines):
     if 'bosch' in line.lower() or 'programmer intern' in line.lower() or 'software engineer' in line.lower():
         start = max(0, i - 2)
-        end = min(len(lines), i + 8)
+        end = min(len(lines), i + 10)
         print('RESUME_BOSCH_BLOCK: ' + ' | '.join(lines[start:end]))
 `;
   const resumeText = execFileSync("python3", ["-c", python], { encoding: "utf8" });
