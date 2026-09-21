@@ -511,7 +511,7 @@ export default function Home() {
               <span>Saratov, Russia</span>
             </div>
             <div>
-              <h3>Programmer Intern</h3>
+              <h3>Software Engineer - Intern</h3>
               <h4>Bosch Techno-Engineering Ltd</h4>
               <p>
                 Supported development and QA cycles, diagnosed defects, helped
