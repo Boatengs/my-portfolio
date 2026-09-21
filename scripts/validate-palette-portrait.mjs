@@ -98,19 +98,31 @@ if (resumeSha256 !== expectedResumeSha256) {
 
 // Temporary inspection for the Bosch experience wording. Removed before merge.
 try {
+  const oldCommit = "b32563f932702b59fc8026f5fcb78f86c7a2cea9";
+  execFileSync("git", ["fetch", "origin", oldCommit, "--depth=1"], { stdio: "ignore" });
+  const oldPdf = execFileSync("git", ["show", `${oldCommit}:docs/sampson-boateng-resume.pdf`]);
+  const oldResumePath = "/tmp/august26-resume.pdf";
+  fs.writeFileSync(oldResumePath, oldPdf);
+
   const python = `
 import subprocess, sys
 subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--quiet', '--target', '/tmp/pypdf-target', 'pypdf'])
 sys.path.insert(0, '/tmp/pypdf-target')
 from pypdf import PdfReader
-reader = PdfReader('${resumePath}')
-text = '\\n'.join((page.extract_text() or '') for page in reader.pages)
-lines = [line.strip() for line in text.splitlines() if line.strip()]
-for i, line in enumerate(lines):
-    if 'bosch' in line.lower() or 'programmer intern' in line.lower() or 'software engineer' in line.lower():
-        start = max(0, i - 2)
-        end = min(len(lines), i + 10)
-        print('RESUME_BOSCH_BLOCK: ' + ' | '.join(lines[start:end]))
+
+def block(path, label):
+    reader = PdfReader(path)
+    text = '\\n'.join((page.extract_text() or '') for page in reader.pages)
+    lines = [line.strip() for line in text.splitlines() if line.strip()]
+    for i, line in enumerate(lines):
+        if 'bosch' in line.lower() or 'programmer intern' in line.lower() or 'software engineer' in line.lower():
+            start = max(0, i - 2)
+            end = min(len(lines), i + 10)
+            print(label + ': ' + ' | '.join(lines[start:end]))
+            break
+
+block('${resumePath}', 'SEPTEMBER8_BOSCH_BLOCK')
+block('${oldResumePath}', 'AUGUST26_BOSCH_BLOCK')
 `;
   const resumeText = execFileSync("python3", ["-c", python], { encoding: "utf8" });
   console.log(resumeText.trim());
