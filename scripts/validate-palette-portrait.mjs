@@ -98,10 +98,10 @@ if (resumeSha256 !== expectedResumeSha256) {
 
 // Temporary inspection for the Bosch experience wording. Removed before merge.
 try {
-  const oldCommit = "b32563f932702b59fc8026f5fcb78f86c7a2cea9";
+  const oldCommit = "3bf367616a71cdbf86c2311302acf96b156bdb86";
   execFileSync("git", ["fetch", "origin", oldCommit, "--depth=1"], { stdio: "ignore" });
-  const oldPdf = execFileSync("git", ["show", `${oldCommit}:docs/sampson-boateng-resume.pdf`]);
-  const oldResumePath = "/tmp/august26-resume.pdf";
+  const oldPdf = execFileSync("git", ["show", `${oldCommit}:public/sampson-boateng-resume.pdf`]);
+  const oldResumePath = "/tmp/august18-resume.pdf";
   fs.writeFileSync(oldResumePath, oldPdf);
 
   const python = `
@@ -117,12 +117,12 @@ def block(path, label):
     for i, line in enumerate(lines):
         if 'bosch' in line.lower() or 'programmer intern' in line.lower() or 'software engineer' in line.lower():
             start = max(0, i - 2)
-            end = min(len(lines), i + 10)
+            end = min(len(lines), i + 12)
             print(label + ': ' + ' | '.join(lines[start:end]))
             break
 
 block('${resumePath}', 'SEPTEMBER8_BOSCH_BLOCK')
-block('${oldResumePath}', 'AUGUST26_BOSCH_BLOCK')
+block('${oldResumePath}', 'AUGUST18_BOSCH_BLOCK')
 `;
   const resumeText = execFileSync("python3", ["-c", python], { encoding: "utf8" });
   console.log(resumeText.trim());
