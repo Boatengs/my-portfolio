@@ -34,6 +34,7 @@ for (const marker of [
   "/my-portfolio/skill-logos/powerbi.svg",
   "/my-portfolio/skill-logos/tableau.svg",
   "/my-portfolio/skill-logos/excel.svg",
+  "/my-portfolio/skill-logos/xgboost.svg",
 ]) {
   if (!html.includes(marker)) {
     throw new Error(`Premium technical toolkit is missing: ${marker}`);

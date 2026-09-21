@@ -59,7 +59,7 @@ const groups: SkillGroup[] = [
       { name: "Regression", type: "Statistical method", icon: "trend" },
       { name: "Ridge", type: "Regularized model", icon: "curve" },
       { name: "Random Forest", type: "Ensemble model", icon: "tree" },
-      { name: "XGBoost", type: "Gradient boosting", icon: "boost" },
+      { name: "XGBoost", type: "Gradient boosting library", logo: logo("xgboost") },
       { name: "SVM", type: "Classification model", icon: "boundary", proof: "/projects/healthcare-modeling" },
       { name: "Train Test Split", type: "Validation method", icon: "split" },
       { name: "PCA", type: "Dimensionality reduction", icon: "dimensions" },
