@@ -1,6 +1,7 @@
 import { StaticLink as Link } from "../static-link";
 import { SiteNav } from "../site-nav";
 import { sitePath } from "../site-path";
+import type { CSSProperties } from "react";
 
 type Skill = {
   name: string;
@@ -12,6 +13,7 @@ type Skill = {
 
 type SkillGroup = {
   num: string;
+  slug: string;
   title: string;
   kicker: string;
   description: string;
@@ -26,6 +28,7 @@ const logo = (name: string) => sitePath(`/skill-logos/${name}.svg`);
 const groups: SkillGroup[] = [
   {
     num: "01",
+    slug: "data-analysis",
     title: "Data & Analysis",
     kicker: "FROM RAW RECORDS TO RELIABLE SIGNAL",
     description:
@@ -48,6 +51,7 @@ const groups: SkillGroup[] = [
   },
   {
     num: "02",
+    slug: "statistical-modeling",
     title: "Statistical & Modeling",
     kicker: "MODELS THAT CAN SURVIVE SCRUTINY",
     description:
@@ -73,6 +77,7 @@ const groups: SkillGroup[] = [
   },
   {
     num: "03",
+    slug: "business-intelligence",
     title: "Business Intelligence",
     kicker: "ANALYSIS PEOPLE CAN ACTUALLY USE",
     description:
@@ -93,6 +98,7 @@ const groups: SkillGroup[] = [
   },
   {
     num: "04",
+    slug: "ml-nlp-llm",
     title: "ML, NLP & LLM",
     kicker: "PRACTICAL INTELLIGENT SYSTEMS",
     description:
@@ -117,6 +123,7 @@ const groups: SkillGroup[] = [
   },
   {
     num: "05",
+    slug: "computer-vision",
     title: "Computer Vision & Deep Learning",
     kicker: "STRUCTURE FROM VISUAL DATA",
     description:
@@ -138,6 +145,7 @@ const groups: SkillGroup[] = [
   },
   {
     num: "06",
+    slug: "tools-platforms",
     title: "Tools & Platforms",
     kicker: "THE DELIVERY LAYER",
     description:
@@ -292,26 +300,26 @@ export default function SkillsPage() {
       <header className="toolkit-hero shell">
         <div className="toolkit-hero-surface">
           <div className="toolkit-hero-copy">
-            <p className="eyebrow">TECHNICAL TOOLKIT</p>
-            <h1>Technical depth,<br /><em>built for decisions.</em></h1>
+            <div className="toolkit-live-label"><i /> TECHNICAL CAPABILITY STUDIO</div>
+            <h1>Built to turn<br /><em>complexity into clarity.</em></h1>
             <p>
-              A working stack spanning analysis, statistical modeling, machine learning, visualization, and deployment, organized around how the work moves from raw data to something people can trust and use.
+              An applied toolkit spanning analysis, statistical modeling, machine learning, visualization, and delivery—organized around the work of making decisions more reliable.
             </p>
             <div className="toolkit-hero-stats" aria-label="Toolkit summary">
               <div><strong>{capabilityCount}</strong><span>capabilities</span></div>
-              <div><strong>{groups.length}</strong><span>disciplines</span></div>
-              <div><strong>100%</strong><span>local visuals</span></div>
+              <div><strong>{groups.length}</strong><span>technical disciplines</span></div>
+              <div><strong>10</strong><span>portfolio case studies</span></div>
             </div>
           </div>
 
           <div className="stack-constellation" aria-label="Core technology stack">
             <div className="stack-constellation-head">
-              <span>CORE STACK</span>
-              <p>Languages, frameworks, and delivery tools that recur across the portfolio.</p>
+              <span>CORE STACK / 10</span>
+              <p>Technologies that recur across analysis, modeling, product, and delivery work.</p>
             </div>
             <div className="stack-node-grid">
-              {featured.map((item) => (
-                <article className="stack-node" key={item.name}>
+              {featured.map((item, index) => (
+                <article className="stack-node" key={item.name} style={{ "--node": index } as CSSProperties}>
                   <span>{item.role}</span>
                   <div><img src={item.logo} alt="" width="52" height="52" loading="eager" decoding="sync" /></div>
                   <strong>{item.name}</strong>
@@ -322,18 +330,31 @@ export default function SkillsPage() {
         </div>
       </header>
 
+      <nav className="discipline-rail" aria-label="Skill disciplines">
+        <div className="shell discipline-rail-inner">
+          <span>EXPLORE THE STACK</span>
+          <div>
+            {groups.map((group) => (
+              <a href={`#${group.slug}`} key={group.slug}>
+                <b>{group.num}</b>{group.title}
+              </a>
+            ))}
+          </div>
+        </div>
+      </nav>
+
       <section className="toolkit-flow shell" aria-labelledby="toolkit-flow-title">
         <div className="toolkit-section-intro">
-          <span>WORKING STACK</span>
+          <span>HOW THE WORK MOVES</span>
           <div>
-            <h2 id="toolkit-flow-title">The tools matter because of <em>how they connect.</em></h2>
-            <p>The portfolio uses technology as a sequence: understand the data, choose the right method, validate the result, then ship the decision surface.</p>
+            <h2 id="toolkit-flow-title">A connected practice,<br /><em>not a list of software.</em></h2>
+            <p>Every engagement moves through the same disciplined sequence: understand the evidence, select the method, test the result, and deliver something people can use.</p>
           </div>
         </div>
         <div className="toolkit-flow-grid">
           {stages.map((stage) => (
             <article className="flow-card" key={stage.num}>
-              <span>{stage.num}</span>
+              <div className="flow-card-number"><span>{stage.num}</span><i /></div>
               <h3>{stage.title}</h3>
               <p>{stage.copy}</p>
             </article>
@@ -343,16 +364,16 @@ export default function SkillsPage() {
 
       <section className="toolkit-atlas shell" aria-labelledby="capability-library-title">
         <div className="toolkit-section-intro toolkit-atlas-intro">
-          <span>CAPABILITY LIBRARY</span>
+          <span>CAPABILITY ATLAS</span>
           <div>
-            <h2 id="capability-library-title">Six disciplines. One <em>coherent toolkit.</em></h2>
-            <p>Real product marks are stored locally where a branded technology has an official identity. Statistical methods and technical concepts use purpose built visual symbols rather than invented logos.</p>
+            <h2 id="capability-library-title">Six disciplines.<br />One <em>coherent system.</em></h2>
+            <p>Official product marks identify branded technologies. Statistical methods and technical concepts retain purpose-built symbols so the visual language stays accurate as well as expressive.</p>
           </div>
         </div>
 
         <div className="toolkit-discipline-list">
-          {groups.map((group) => (
-            <article className={`toolkit-discipline tone-${group.tone}`} key={group.num}>
+          {groups.map((group, groupIndex) => (
+            <article className={`toolkit-discipline tone-${group.tone}`} id={group.slug} key={group.num}>
               <header className="toolkit-discipline-head">
                 <div className="discipline-meta">
                   <span className="discipline-number">{group.num}</span>
@@ -363,10 +384,11 @@ export default function SkillsPage() {
                 <Link href={group.proofHref} className="discipline-proof">
                   {group.proofLabel} <span aria-hidden="true">↗</span>
                 </Link>
+                <span className="discipline-count">{String(group.skills.length).padStart(2, "0")} CAPABILITIES</span>
               </header>
 
               <div className="atlas-skill-grid">
-                {group.skills.map((skill) => {
+                {group.skills.map((skill, skillIndex) => {
                   const content = (
                     <>
                       <SkillMark skill={skill} />
@@ -384,11 +406,12 @@ export default function SkillsPage() {
                       href={skill.proof}
                       aria-label={`${skill.name}, view portfolio evidence`}
                       key={skill.name}
+                      style={{ "--card-index": groupIndex * 12 + skillIndex } as CSSProperties}
                     >
                       {content}
                     </Link>
                   ) : (
-                    <div className="premium-skill-card atlas-skill-card" key={skill.name}>
+                    <div className="premium-skill-card atlas-skill-card" key={skill.name} style={{ "--card-index": groupIndex * 12 + skillIndex } as CSSProperties}>
                       {content}
                     </div>
                   );
@@ -400,11 +423,12 @@ export default function SkillsPage() {
       </section>
 
       <section className="toolkit-close shell">
-        <div>
+        <div className="toolkit-close-copy">
           <span>THE POINT OF THE STACK</span>
-          <h2>Tools are useful when they make the work <em>clearer, faster, and more defensible.</em></h2>
+          <h2>Technology earns its place when it makes the work <em>clearer, faster, and more defensible.</em></h2>
+          <p>The portfolio shows how these capabilities combine in practice—from raw records and model evaluation to executive-ready decision surfaces.</p>
         </div>
-        <Link href="/work">Explore project case studies <span>↗</span></Link>
+        <Link href="/work"><span>Explore project case studies</span><b>↗</b></Link>
       </section>
 
       <footer className="footer">
