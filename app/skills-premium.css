@@ -698,3 +698,20 @@
 .atlas-skill-copy span{color:#929dac}
 .atlas-skill-copy strong{color:#f1f4f8}
 .toolkit-close>a{background:#f5f7fb;color:#0b0d12}
+
+
+/* Full-bleed black page canvas */
+html:has(main.skills-premium),
+body:has(main.skills-premium){
+  background:#000!important;
+}
+main.skills-premium,
+.skills-premium .toolkit-hero,
+.skills-premium .toolkit-flow,
+.skills-premium .toolkit-atlas,
+.skills-premium .toolkit-close{
+  background-color:#000!important;
+}
+.skills-premium .footer{
+  background:#000!important;
+}
