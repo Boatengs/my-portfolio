@@ -10,10 +10,10 @@ const html = fs.readFileSync(file, "utf8");
 
 for (const marker of [
   "skills-premium",
-  "TECHNICAL CAPABILITY STUDIO",
+  "TECHNICAL TOOLKIT",
   "CORE STACK",
-  "HOW THE WORK MOVES",
-  "CAPABILITY ATLAS",
+  "WORKING STACK",
+  "CAPABILITY LIBRARY",
   "Data &amp; Analysis",
   "Statistical &amp; Modeling",
   "Business Intelligence",
