@@ -1,5 +1,6 @@
 import { StaticLink as Link } from "./static-link";
 import { ProjectGrid } from "./project-grid";
+import { allProjects } from "./project-registry";
 import { SiteNav } from "./site-nav";
 import { sitePath } from "./site-path";
 export const skillGroups = [
@@ -567,7 +568,7 @@ export default function Home() {
             Explore all projects <span>↗</span>
           </Link>
           <p>
-            Ten case studies across analytics, machine learning, generative AI,
+            {allProjects.length} case studies across analytics, machine learning, generative AI,
             computer vision, and healthcare.
           </p>
         </div>
