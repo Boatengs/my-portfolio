@@ -51,10 +51,11 @@ if (!home.includes("/my-portfolio/sam-profile.webp")) {
 }
 for (const marker of [
   "Advancing organizations",
-  "1.99M",
-  "Analytical-result records",
-  ">6<",
-  "Decision stages",
+  // The home page features the two newest projects; check their headline evidence renders.
+  "3,257",
+  "Projects reconciled",
+  "4.7%",
+  "2025 mainline margin, from 15.1%",
 ]) {
   if (!home.includes(marker)) {
     throw new Error(`Homepage brand polish is missing expected content: ${marker}`);

@@ -56,11 +56,9 @@ function ProjectCard({
 }
 
 export function ProjectGrid({ featured = false }: { featured?: boolean }) {
-  const source = featured
-    ? ["pfas-water-decision-intelligence", "wastewater-infrastructure-analytics"]
-        .map((slug) => allProjects.find((project) => project.slug === slug))
-        .filter((project): project is PortfolioProject => Boolean(project))
-    : allProjects;
+  // The home page always features the two newest projects, so adding a project at the
+  // front of recentProjects in project-registry.ts puts it on the home page too.
+  const source = featured ? allProjects.slice(0, 2) : allProjects;
 
   const [active, setActive] = useState("All");
   const visible =
