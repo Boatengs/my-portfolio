@@ -1,7 +1,7 @@
 import { StaticLink as Link } from "./static-link";
 import { ProjectGrid } from "./project-grid";
 import { allProjects } from "./project-registry";
-import { orcidUrl, ownName, publications } from "./publications";
+import { publications } from "./publications";
 import { SiteNav } from "./site-nav";
 import { sitePath } from "./site-path";
 export const skillGroups = [
@@ -777,67 +777,17 @@ export default function Home() {
             <span>Agriculture</span>
           </div>
         </div>
-      </section>
-      <section className="section shell publications" id="publications">
-        <div className="section-head">
+        <div className="research-publications">
           <div>
-            <p className="eyebrow">09 / PUBLICATIONS</p>
-            <h2>
-              Published
-              <br />
-              <em>research.</em>
-            </h2>
+            <p className="eyebrow">PUBLISHED RESEARCH</p>
+            <p>
+              {publications.length} co-authored reviews, on machine learning in
+              oncology and on sentiment analysis for customer retention.
+            </p>
           </div>
-          <p>
-            Co-authored reviews on machine learning in oncology and on
-            sentiment analysis for customer retention. Author order is as
-            published.
-          </p>
-        </div>
-        <ol className="publication-list">
-          {publications.map((paper) => (
-            <li key={paper.doi}>
-              <div className="publication-meta">
-                <span>{paper.year}</span>
-                <p>{paper.type}</p>
-              </div>
-              <div className="publication-body">
-                <h3>
-                  <a href={`https://doi.org/${paper.doi}`} target="_blank" rel="noreferrer">
-                    {paper.title}
-                  </a>
-                </h3>
-                <p className="publication-authors">
-                  {paper.authors.map((author, i) => (
-                    <span key={author}>
-                      {author === ownName ? <b>{author}</b> : author}
-                      {i < paper.authors.length - 1 ? ", " : ""}
-                    </span>
-                  ))}
-                </p>
-                <p className="publication-source">
-                  <em>{paper.journal}</em>, Vol. {paper.volume}, Issue {paper.issue} ·
-                  Published {paper.published}
-                </p>
-                <div className="publication-foot">
-                  <div className="publication-tags">
-                    {paper.keywords.map((k) => (
-                      <span key={k}>{k}</span>
-                    ))}
-                  </div>
-                  <a href={`https://doi.org/${paper.doi}`} target="_blank" rel="noreferrer">
-                    DOI {paper.doi} <span>↗</span>
-                  </a>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ol>
-        <div className="section-cta">
-          <a href={orcidUrl} target="_blank" rel="noreferrer">
-            Full record on ORCID <span>↗</span>
-          </a>
-          <p>ORCID iD 0009-0008-0127-9361</p>
+          <Link className="impact-link dark" href="/publications">
+            View publications and ORCID record <span>↗</span>
+          </Link>
         </div>
       </section>
       <section className="availability">
@@ -868,7 +818,7 @@ export default function Home() {
         </div>
       </section>
       <section className="education shell">
-        <p className="eyebrow">10 / EDUCATION</p>
+        <p className="eyebrow">09 / EDUCATION</p>
         <div className="education-grid">
           <article>
             <span>2025</span>

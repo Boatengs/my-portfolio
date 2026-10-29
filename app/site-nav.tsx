@@ -12,7 +12,7 @@ export function SiteNav({ home = false, label = "Primary navigation" }: SiteNavP
     { label: "Projects", href: home ? "#work" : "/work" },
     { label: "Skills", href: home ? "#skills" : "/skills" },
     { label: "Leadership", href: home ? "#leadership" : "/leadership" },
-    { label: "Publications", href: home ? "#publications" : "/#publications" },
+    { label: "Publications", href: "/publications" },
     { label: "Beyond Work", href: "/person" },
   ];
 
