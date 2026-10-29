@@ -21,6 +21,6 @@ The generated `out/` directory is a build artifact. It is not a second editable 
 
 Future portfolio changes should be made only in `app/` and `public/`. Do not create or maintain parallel `docs/`, `site-static/`, or other hand-edited deployment copies.
 
-Public project cards follow a newest-first presentation rule. Newly published work should be added at the beginning of `recentProjects` in `app/project-registry.ts`, so the latest project appears at the top of the Projects page while older work keeps its relative order below it.
+Public project cards follow a newest-first presentation rule. Newly published work should be added at the beginning of `recentProjects` in `app/project-registry.ts`, so the latest project appears at the top of the Projects page while older work keeps its relative order below it. The home page features the first two projects in that order, so new work reaches the home page automatically.
 
 Project-specific repositories remain the source of truth for their analytical code, data-processing logic, tests, notebooks, and technical README documentation. The portfolio repository contains only the presentation material needed to showcase those projects.

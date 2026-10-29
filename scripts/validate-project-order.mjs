@@ -22,4 +22,14 @@ if (projectSlugs[0] !== newestProjectSlug) {
   );
 }
 
-console.log(`Validated newest-first project ordering: ${newestProjectSlug} is first.`);
+const homeHtml = fs.readFileSync("out/index.html", "utf8");
+const featuredStart = homeHtml.indexOf("project-grid--featured");
+const featuredSlugs = [
+  ...homeHtml.slice(featuredStart).matchAll(/href=["']\/my-portfolio\/projects\/([^/"'?#]+)\/?["']/g),
+].map((match) => match[1]).filter((slug, i, all) => all.indexOf(slug) === i).slice(0, 2);
+const newestTwo = [...new Set(projectSlugs)].slice(0, 2);
+if (featuredStart < 0 || featuredSlugs.join(",") !== newestTwo.join(",")) {
+  throw new Error(`Home page must feature the two newest projects (${newestTwo.join(", ")}); found ${featuredSlugs.join(", ") || "none"}.`);
+}
+
+console.log(`Validated newest-first project ordering: ${newestProjectSlug} is first, and the home page features ${newestTwo.join(" and ")}.`);
