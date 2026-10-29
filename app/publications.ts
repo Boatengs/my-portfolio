@@ -17,7 +17,9 @@ export type Publication = {
 
 export const ownName = "Sampson Boateng";
 
-export const orcidUrl = "https://orcid.org/0009-0008-0127-9361";
+export const orcidId = "0009-0008-0127-9361";
+
+export const orcidUrl = `https://orcid.org/${orcidId}`;
 
 export const publications: Publication[] = [
   {
