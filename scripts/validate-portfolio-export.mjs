@@ -19,8 +19,12 @@ const expectedProjectSlugs = [
   "financial-crime-risk-intelligence",
   "world-happiness-analysis",
   "gridpulse-energy-grid-analytics",
+  "recoverylens",
+  "delta-fpna",
 ];
 const generatedProjectSlugs = [
+  "recoverylens",
+  "delta-fpna",
   "gridpulse-energy-grid-analytics",
   "water-quality",
   "healthcare-modeling",
@@ -122,7 +126,7 @@ if (missingCards.length || unexpectedCards.length) {
 if (displayedProjectSlugs.size !== expectedProjectSlugs.length || projectCardCount !== expectedProjectSlugs.length || projectCoverCount !== expectedProjectSlugs.length) {
   throw new Error(`Projects index must contain exactly ${expectedProjectSlugs.length} unique editorial cards and covers.`);
 }
-if (orderedProjectSlugs[0] !== "gridpulse-energy-grid-analytics") throw new Error("Newest project must be first on the Projects index.");
+if (orderedProjectSlugs.slice(0, 3).join(",") !== "recoverylens,delta-fpna,gridpulse-energy-grid-analytics") throw new Error("Newest projects must lead the Projects index: RecoveryLens, Delta FP&A, then GridPulse.");
 for (const marker of ["demo-capture", "Price Elasticity Modeling", "NDA PROTECTED"]) {
   if (workHtml.includes(marker)) throw new Error(`Public Projects index contains forbidden content: ${marker}`);
 }
@@ -150,6 +154,16 @@ requireText("out/projects/financial-crime-risk-intelligence/index.html", "Financ
 requireText("out/projects/financial-crime-risk-intelligence/index.html", "41.53×");
 requireText("out/projects/financial-crime-risk-intelligence/index.html", 'class="mobile-nav"');
 
+for (const [slug, markers] of [
+  ["recoverylens", ["RecoveryLens Disaster Recovery Funding", "3,257", "240 / 290", "Launch live dashboard", "https://recoverylens.streamlit.app", "https://github.com/Boatengs/recoverylens"]],
+  ["delta-fpna", ["Delta Air Lines FP&amp;A and Network Analytics", "15.1% to 4.7%", "3.96%", "Launch live dashboard", "https://delta-fpna.streamlit.app", "https://github.com/Boatengs/financial-planning-performance-dashboard"]],
+]) {
+  const html = fs.readFileSync(`out/projects/${slug}/index.html`, "utf8");
+  for (const marker of markers) if (!html.includes(marker)) throw new Error(`${slug} portfolio export is missing: ${marker}`);
+}
+for (const marker of ["LIVE EXPLORER + CASE STUDY", "LIVE DASHBOARD + CASE STUDY"]) {
+  if (!workHtml.includes(marker)) throw new Error(`Projects index is missing the live label: ${marker}`);
+}
 const gridPulseHtml = requireText("out/projects/gridpulse-energy-grid-analytics/index.html", "GridPulse Energy Grid Analytics");
 for (const marker of ["44.2%", "36.0%", "13 / 13", "8,690", "VERIFIED PJM FORECAST BENCHMARK", "https://github.com/Boatengs/gridpulse-energy-grid-analytics", "Launch live dashboard", "https://gridpulse-energy-grid-analytics-mmwt26f5tdfp6ussj87qdr.streamlit.app/"]) {
   if (!gridPulseHtml.includes(marker)) throw new Error(`GridPulse portfolio export is missing: ${marker}`);

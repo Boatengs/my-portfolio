@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">RecoveryLens North Carolina pilot</title>
+  <desc id="desc">Portfolio visual for RecoveryLens pilot release 1.0: share of FEMA Public Assistance funding not coded to a single county for three North Carolina disasters, and the model check against a median baseline.</desc>
+  <rect width="1200" height="675" fill="#ffffff"/>
+  <rect x="46" y="42" width="1108" height="591" rx="28" fill="#f8fafb" stroke="#dbe5e8" stroke-width="2"/>
+  <text x="88" y="108" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" letter-spacing="4" fill="#0f766e">RECOVERYLENS</text>
+  <text x="88" y="157" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" fill="#17252a">FEMA aid · storm losses · social vulnerability</text>
+  <text x="88" y="191" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#5f7078">Pilot release 1.0 · three North Carolina disasters, 2018 to 2020</text>
+  <g transform="translate(88 246)">
+    <line x1="0" y1="260" x2="680" y2="260" stroke="#cfdadd" stroke-width="2"/>
+    <line x1="0" y1="200" x2="680" y2="200" stroke="#e5ecee" stroke-width="1"/>
+    <text x="686" y="205" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#98a8ad">25%</text>
+    <line x1="0" y1="140" x2="680" y2="140" stroke="#e5ecee" stroke-width="1"/>
+    <text x="686" y="145" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#98a8ad">50%</text>
+    <line x1="0" y1="80" x2="680" y2="80" stroke="#e5ecee" stroke-width="1"/>
+    <text x="686" y="85" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#98a8ad">75%</text>
+    <line x1="0" y1="20" x2="680" y2="20" stroke="#e5ecee" stroke-width="1"/>
+    <text x="686" y="25" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#98a8ad">100%</text>
+    <rect x="40" y="190" width="150" height="70" rx="8" fill="#9fc9c4"/>
+    <text x="115" y="178" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#17252a">29%</text>
+    <text x="115" y="286" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#44555b">Florence 2018</text>
+    <rect x="255" y="227" width="150" height="33" rx="8" fill="#9fc9c4"/>
+    <text x="330" y="215" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#17252a">14%</text>
+    <text x="330" y="286" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#44555b">Dorian 2019</text>
+    <rect x="470" y="46" width="150" height="214" rx="8" fill="#0f766e"/>
+    <text x="545" y="34" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#17252a">89%</text>
+    <text x="545" y="286" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#44555b">Feb 2020 storms</text>
+    <text x="0" y="318" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#5f7078">Share of net federal funding in two years not coded to a single county</text>
+  </g>
+  <g transform="translate(830 246)">
+    <rect y="0" width="282" height="108" rx="18" fill="#ffffff" stroke="#dbe5e8" stroke-width="2"/>
+    <text x="24" y="42" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" fill="#0f766e">$10.06</text>
+    <text x="24" y="72" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#17252a">MODEL ERROR</text>
+    <text x="24" y="94" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#6c7b81">per resident, 2020 counties</text>
+    <rect y="128" width="282" height="108" rx="18" fill="#ffffff" stroke="#dbe5e8" stroke-width="2"/>
+    <text x="24" y="170" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" fill="#0f766e">$8.21</text>
+    <text x="24" y="200" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#17252a">MEDIAN GUESS ERROR</text>
+    <text x="24" y="222" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#6c7b81">the model did not beat it</text>
+    <rect y="256" width="282" height="108" rx="18" fill="#17252a"/>
+    <text x="24" y="298" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" fill="#ffffff">3,257</text>
+    <text x="24" y="328" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#ffffff">PROJECTS RECONCILED</text>
+    <text x="24" y="350" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#c8d3d6">to the cent, OpenFEMA</text>
+  </g>
+</svg>
