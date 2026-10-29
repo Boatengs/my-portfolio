@@ -1,6 +1,8 @@
 import type { Project } from "./projects";
 
 const coverCodes: Record<string, [string, string]> = {
+  "recoverylens": ["RECOVERY", "LENS"],
+  "delta-fpna": ["DELTA", "FP&A"],
   "gridpulse-energy-grid-analytics": ["GRID", "PULSE"],
   "water-quality": ["WATER", "SIGNALS"],
   "healthcare-modeling": ["RESOURCE", "MODEL"],
@@ -24,6 +26,8 @@ function primaryCategory(category: string) {
 function defaultSurfaceLabel(project: Project) {
   if (project.slug === "world-happiness-analysis") return "OPEN LIVE DASHBOARD";
   if (project.slug === "gridpulse-energy-grid-analytics") return "LIVE CONTROL ROOM + CASE STUDY";
+  if (project.slug === "recoverylens") return "LIVE EXPLORER + CASE STUDY";
+  if (project.slug === "delta-fpna") return "LIVE DASHBOARD + CASE STUDY";
   return "VIEW CASE STUDY";
 }
 
