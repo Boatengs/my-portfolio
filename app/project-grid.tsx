@@ -14,6 +14,7 @@ const filterOptions = [
   { key: "Generative AI", label: "Generative AI" },
   { key: "Computer Vision", label: "Computer vision" },
   { key: "Healthcare", label: "Healthcare" },
+  { key: "Dashboards", label: "Tableau & dashboards" },
   { key: "Deployed Apps", label: "Live apps" },
 ];
 

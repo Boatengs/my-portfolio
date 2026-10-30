@@ -29,7 +29,7 @@ export const worldHappinessProject: Project = {
     "The analysis uses country-level aggregates and a five-year historical window, so it cannot explain individual wellbeing or current conditions. Annual schema changes require normalization, and correlations or regression coefficients do not establish causality.",
   future:
     "Extend the time series only after validating later schema changes, add uncertainty views where available, introduce country-comparison bookmarking, and evaluate richer panel or nonlinear models against the current interpretable baseline.",
-  filters: ["Data Analytics", "Deployed Apps"],
+  filters: ["Data Analytics", "Dashboards", "Deployed Apps"],
   dataset: "World Happiness Report · 2015–2019",
   datasetSize: "782 country-year observations · 5 annual snapshots",
   datasetSource: "Pinned public World Happiness historical dataset",

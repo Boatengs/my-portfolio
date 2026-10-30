@@ -43,7 +43,7 @@ export const deltaFpnaProject: DeltaProject = {
     "Mainline measures exclude Delta Connection partner flights, which report under their own carrier codes, so some short route growth may be flying moved onto Delta's own aircraft rather than new demand. Unit measures are public figures matched to one scope, not Delta's investor relations TRASM and CASM. Budget, forecast and scenario values are models built on public actuals, not Delta guidance, and the fuel scenario holds price flat with no fare response.",
   future:
     "Replace the flat fuel scenario with a jet fuel futures curve, add partner carriers to test how much route growth is shifted flying, and publish the Tableau Public workbook built from the committed extract.",
-  filters: ["Data Analytics", "Deployed Apps"],
+  filters: ["Data Analytics", "Dashboards", "Deployed Apps"],
   dataset: "SEC CompanyFacts, DOT Form 41 and BTS T-100 segments",
   datasetSize: "2019 to 2026 · 3,338 city pairs in the latest 12 months",
   datasetSource: "SEC EDGAR · U.S. DOT Bureau of Transportation Statistics",
