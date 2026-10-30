@@ -22,10 +22,14 @@ const expectedProjectSlugs = [
   "recoverylens",
   "delta-fpna",
   "countersignal",
+  "indonesia-earthquake-activity",
+  "online-retail-sales-returns",
 ];
 const generatedProjectSlugs = [
   "countersignal",
   "recoverylens",
+  "indonesia-earthquake-activity",
+  "online-retail-sales-returns",
   "delta-fpna",
   "gridpulse-energy-grid-analytics",
   "water-quality",
@@ -128,7 +132,7 @@ if (missingCards.length || unexpectedCards.length) {
 if (displayedProjectSlugs.size !== expectedProjectSlugs.length || projectCardCount !== expectedProjectSlugs.length || projectCoverCount !== expectedProjectSlugs.length) {
   throw new Error(`Projects index must contain exactly ${expectedProjectSlugs.length} unique editorial cards and covers.`);
 }
-if (orderedProjectSlugs.slice(0, 4).join(",") !== "countersignal,recoverylens,delta-fpna,gridpulse-energy-grid-analytics") throw new Error("Newest projects must lead the Projects index: CounterSignal, RecoveryLens, Delta FP&A, then GridPulse.");
+if (orderedProjectSlugs.slice(0, 6).join(",") !== "countersignal,recoverylens,indonesia-earthquake-activity,online-retail-sales-returns,delta-fpna,gridpulse-energy-grid-analytics") throw new Error("Newest projects must lead the Projects index: CounterSignal, RecoveryLens, the two Tableau dashboards, Delta FP&A, then GridPulse.");
 for (const marker of ["demo-capture", "Price Elasticity Modeling", "NDA PROTECTED"]) {
   if (workHtml.includes(marker)) throw new Error(`Public Projects index contains forbidden content: ${marker}`);
 }
@@ -159,12 +163,14 @@ requireText("out/projects/financial-crime-risk-intelligence/index.html", 'class=
 for (const [slug, markers] of [
   ["countersignal", ["CounterSignal Clinical AI Monitoring", "99.5%", "180,177", "12.0%", "https://github.com/Boatengs/countersignal"]],
   ["recoverylens", ["RecoveryLens Disaster Recovery Funding", "3,257", "240 / 290", "Launch live dashboard", "https://recoverylens.streamlit.app", "https://github.com/Boatengs/recoverylens"]],
+  ["indonesia-earthquake-activity", ["Indonesia Earthquake Activity Analysis", "13,023", "1,278", "7.8", "INTERACTIVE DASHBOARD", "https://public.tableau.com/views/IndonesiaEarthquakeActivityAnalysis/IndonesiaEarthquakeOverview", "Open on Tableau Public"]],
+  ["online-retail-sales-returns", ["Online Retail Sales and Returns Analysis", "£20.81M", "41,943", "4.13%", "INTERACTIVE DASHBOARD", "https://public.tableau.com/views/OnlineRetailSalesandReturnsAnalysis/Dashboard1", "Open on Tableau Public", "10.24432/C5CG6D"]],
   ["delta-fpna", ["Delta Air Lines FP&amp;A and Network Analytics", "15.1% to 4.7%", "3.96%", "Launch live dashboard", "https://delta-fpna.streamlit.app", "https://github.com/Boatengs/financial-planning-performance-dashboard"]],
 ]) {
   const html = fs.readFileSync(`out/projects/${slug}/index.html`, "utf8");
   for (const marker of markers) if (!html.includes(marker)) throw new Error(`${slug} portfolio export is missing: ${marker}`);
 }
-for (const marker of ["OPEN SOURCE TOOL + CASE STUDY", "LIVE EXPLORER + CASE STUDY", "LIVE DASHBOARD + CASE STUDY"]) {
+for (const marker of ["OPEN SOURCE TOOL + CASE STUDY", "LIVE EXPLORER + CASE STUDY", "LIVE DASHBOARD + CASE STUDY", "LIVE TABLEAU DASHBOARD + CASE STUDY"]) {
   if (!workHtml.includes(marker)) throw new Error(`Projects index is missing the live label: ${marker}`);
 }
 const gridPulseHtml = requireText("out/projects/gridpulse-energy-grid-analytics/index.html", "GridPulse Energy Grid Analytics");

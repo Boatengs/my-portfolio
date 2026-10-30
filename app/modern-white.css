@@ -2478,3 +2478,49 @@ body {
     font-size: 21px;
   }
 }
+
+/* Embedded Tableau Public dashboards on project pages */
+.live-embed {
+  display: grid;
+  gap: 18px;
+  padding-top: 56px;
+  padding-bottom: 8px;
+}
+.live-embed-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 32px;
+}
+.live-embed-heading p:last-child {
+  max-width: 560px;
+  margin: 0;
+  color: #4b5563;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.live-embed-frame {
+  width: 100%;
+  aspect-ratio: 1200 / 860;
+  border: 1px solid #d9d4c7;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #ffffff;
+}
+.live-embed-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+@media (max-width: 760px) {
+  .live-embed {
+    padding-top: 36px;
+  }
+  .live-embed-frame {
+    aspect-ratio: auto;
+    height: 560px;
+    overflow: auto;
+  }
+}
