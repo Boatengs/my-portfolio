@@ -54,6 +54,7 @@ export const counterSignalProject: CounterSignalProject = {
   image: "/project-captures/countersignal.svg",
   imageLabel: "TWO DATASETS · FOUR MONITORS · INDEPENDENTLY REVIEWED",
   repoUrl: "https://github.com/Boatengs/countersignal",
+  liveUrl: "https://countersignal.streamlit.app",
   evidence: [
     {
       value: "99.5%",
