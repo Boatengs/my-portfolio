@@ -21,8 +21,10 @@ const expectedProjectSlugs = [
   "gridpulse-energy-grid-analytics",
   "recoverylens",
   "delta-fpna",
+  "countersignal",
 ];
 const generatedProjectSlugs = [
+  "countersignal",
   "recoverylens",
   "delta-fpna",
   "gridpulse-energy-grid-analytics",
@@ -126,7 +128,7 @@ if (missingCards.length || unexpectedCards.length) {
 if (displayedProjectSlugs.size !== expectedProjectSlugs.length || projectCardCount !== expectedProjectSlugs.length || projectCoverCount !== expectedProjectSlugs.length) {
   throw new Error(`Projects index must contain exactly ${expectedProjectSlugs.length} unique editorial cards and covers.`);
 }
-if (orderedProjectSlugs.slice(0, 3).join(",") !== "recoverylens,delta-fpna,gridpulse-energy-grid-analytics") throw new Error("Newest projects must lead the Projects index: RecoveryLens, Delta FP&A, then GridPulse.");
+if (orderedProjectSlugs.slice(0, 4).join(",") !== "countersignal,recoverylens,delta-fpna,gridpulse-energy-grid-analytics") throw new Error("Newest projects must lead the Projects index: CounterSignal, RecoveryLens, Delta FP&A, then GridPulse.");
 for (const marker of ["demo-capture", "Price Elasticity Modeling", "NDA PROTECTED"]) {
   if (workHtml.includes(marker)) throw new Error(`Public Projects index contains forbidden content: ${marker}`);
 }
@@ -155,13 +157,14 @@ requireText("out/projects/financial-crime-risk-intelligence/index.html", "41.53Ã
 requireText("out/projects/financial-crime-risk-intelligence/index.html", 'class="mobile-nav"');
 
 for (const [slug, markers] of [
+  ["countersignal", ["CounterSignal Clinical AI Monitoring", "99.5%", "180,177", "12.0%", "https://github.com/Boatengs/countersignal"]],
   ["recoverylens", ["RecoveryLens Disaster Recovery Funding", "3,257", "240 / 290", "Launch live dashboard", "https://recoverylens.streamlit.app", "https://github.com/Boatengs/recoverylens"]],
   ["delta-fpna", ["Delta Air Lines FP&amp;A and Network Analytics", "15.1% to 4.7%", "3.96%", "Launch live dashboard", "https://delta-fpna.streamlit.app", "https://github.com/Boatengs/financial-planning-performance-dashboard"]],
 ]) {
   const html = fs.readFileSync(`out/projects/${slug}/index.html`, "utf8");
   for (const marker of markers) if (!html.includes(marker)) throw new Error(`${slug} portfolio export is missing: ${marker}`);
 }
-for (const marker of ["LIVE EXPLORER + CASE STUDY", "LIVE DASHBOARD + CASE STUDY"]) {
+for (const marker of ["OPEN SOURCE TOOL + CASE STUDY", "LIVE EXPLORER + CASE STUDY", "LIVE DASHBOARD + CASE STUDY"]) {
   if (!workHtml.includes(marker)) throw new Error(`Projects index is missing the live label: ${marker}`);
 }
 const gridPulseHtml = requireText("out/projects/gridpulse-energy-grid-analytics/index.html", "GridPulse Energy Grid Analytics");
