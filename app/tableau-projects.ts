@@ -38,7 +38,7 @@ export const indonesiaEarthquakeProject: TableauProject = {
     "It describes the catalogue; it doesn’t forecast earthquakes or measure risk. 2020 starts on 18 August and 2026 is a partial year, so those totals can’t be compared with full years. Only 38 events below magnitude 4.0 appear, which most likely reflects what the catalogue records rather than a lack of small earthquakes.",
   future:
     "Group aftershocks with their main shock, break activity down by depth class, and refresh the data automatically from the USGS feed.",
-  filters: ["Data Analytics"],
+  filters: ["Data Analytics", "Dashboards"],
   dataset: "Indonesia Earthquake Dataset, from the USGS Earthquake Catalog via Tableau Public",
   datasetSize: "13,023 earthquakes · 18 August 2020 to 2026 (partial year)",
   datasetSource: "USGS Earthquake Catalog",
@@ -106,7 +106,7 @@ export const onlineRetailProject: TableauProject = {
     "The data stops on 9 December 2011, so the sharp drop in the final month is a partial month, not a collapse in sales. The two most returned products are far ahead of every other product, which looks more like a few very large cancelled orders than a pattern; the dashboard doesn’t separate those out yet. It covers one retailer, so the figures don’t describe UK retail in general.",
   future:
     "Add customer level analysis such as RFM segmentation and repeat purchase rates, and separate one off bulk cancellations from everyday returns.",
-  filters: ["Data Analytics"],
+  filters: ["Data Analytics", "Dashboards"],
   dataset: "Online Retail II, UCI Machine Learning Repository",
   datasetSize: "1,067,371 transaction lines · 1 December 2009 to 9 December 2011",
   datasetSource: "UCI Machine Learning Repository · CC BY 4.0",

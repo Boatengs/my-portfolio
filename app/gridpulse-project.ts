@@ -34,7 +34,7 @@ export const gridPulseProject: GridPulseProject = {
     "The verified result is specific to PJM and the frozen 2022–2025 EIA-930 snapshot. The model is not better in every local-hour slice: 08:00 PJM local shows a 0.8% MAE regression. At the highest-demand decile, average peak misses are smaller but the remaining misses are more frequently underforecasts. The stress score is an analytical screen, not an official reliability rating or blackout probability.",
   future:
     "Replicate the benchmark across additional balancing authorities, tighten feature-availability checks against an explicit forecast-issuance clock, investigate the 08:00 local regression, and test peak-focused calibration or asymmetric-loss approaches for the highest-demand hours.",
-  filters: ["Data Analytics", "Machine Learning", "Deployed Apps"],
+  filters: ["Data Analytics", "Machine Learning", "Dashboards", "Deployed Apps"],
   dataset: "EIA-930 PJM hourly grid operations",
   datasetSize: "35,064 hourly rows · 2022–2025",
   datasetSource: "U.S. Energy Information Administration · Form EIA-930",
