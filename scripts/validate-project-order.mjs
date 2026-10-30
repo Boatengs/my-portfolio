@@ -1,7 +1,7 @@
 import fs from "node:fs";
 
 const workFile = "out/work/index.html";
-const newestProjectSlug = "recoverylens";
+const newestProjectSlug = "countersignal";
 
 if (!fs.existsSync(workFile)) {
   throw new Error(`${workFile} does not exist. Build the canonical portfolio first.`);
