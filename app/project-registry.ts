@@ -7,6 +7,7 @@ import { gridPulseProject } from "./gridpulse-project";
 import { counterSignalProject } from "./countersignal-project";
 import { recoveryLensProject } from "./recoverylens-project";
 import { deltaFpnaProject } from "./delta-fpna-project";
+import { indonesiaEarthquakeProject, onlineRetailProject } from "./tableau-projects";
 import { sitePath } from "./site-path";
 
 // Confidential/NDA work stays in its standalone GitHub repository and is never
@@ -25,7 +26,14 @@ const numberedProjects = publicProjects.map((project) => {
 
 // New public work belongs at the top of the portfolio. Add each newly published
 // project to the beginning of this list so visitors see the most recent work first.
-const recentProjects = [counterSignalProject, recoveryLensProject, deltaFpnaProject, gridPulseProject];
+const recentProjects = [
+  counterSignalProject,
+  recoveryLensProject,
+  indonesiaEarthquakeProject,
+  onlineRetailProject,
+  deltaFpnaProject,
+  gridPulseProject,
+];
 
 // Keep the visible portfolio numbered continuously after excluding confidential
 // work. Projects are registered once here, then generated everywhere.

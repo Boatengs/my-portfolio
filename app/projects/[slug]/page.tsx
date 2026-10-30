@@ -67,6 +67,28 @@ export default async function ProjectPage({
       >
         <ProjectCover project={project} variant="detail" label={visualLabel} />
       </section>
+      {project.embedUrl && (
+        <section
+          className="live-embed shell"
+          aria-label={`${project.title} interactive dashboard`}
+        >
+          <div className="live-embed-heading">
+            <p className="eyebrow">INTERACTIVE DASHBOARD</p>
+            <p>
+              Live from Tableau Public. Hover for details, use the filters, and
+              switch views with the buttons inside the dashboard.
+            </p>
+          </div>
+          <div className="live-embed-frame">
+            <iframe
+              src={project.embedUrl}
+              title={`${project.title}, interactive dashboard on Tableau Public`}
+              loading="lazy"
+              allowFullScreen
+            />
+          </div>
+        </section>
+      )}
       <section className="dataset-strip shell">
         <div>
           <span>DATASET</span>
@@ -174,18 +196,20 @@ export default async function ProjectPage({
           <div className="project-links">
             {liveUrl && (
               <a href={liveUrl} target="_blank" rel="noreferrer">
-                Launch live dashboard ↗
+                {project.liveLabel || "Launch live dashboard ↗"}
               </a>
             )}
-            <a
-              href={project.repoUrl || "https://github.com/Boatengs"}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {project.repoUrl === "https://github.com/Boatengs"
-                ? "Browse GitHub profile ↗"
-                : "Explore project code ↗"}
-            </a>
+            {!project.noRepo && (
+              <a
+                href={project.repoUrl || "https://github.com/Boatengs"}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {project.repoUrl === "https://github.com/Boatengs"
+                  ? "Browse GitHub profile ↗"
+                  : "Explore project code ↗"}
+              </a>
+            )}
             {project.hfUrl && (
               <a href={project.hfUrl} target="_blank" rel="noreferrer">
                 Launch on Hugging Face ↗

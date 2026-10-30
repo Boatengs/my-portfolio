@@ -3,6 +3,8 @@ import type { Project } from "./projects";
 const coverCodes: Record<string, [string, string]> = {
   "countersignal": ["COUNTER", "SIGNAL"],
   "recoverylens": ["RECOVERY", "LENS"],
+  "indonesia-earthquake-activity": ["QUAKE", "ATLAS"],
+  "online-retail-sales-returns": ["RETAIL", "RETURNS"],
   "delta-fpna": ["DELTA", "FP&A"],
   "gridpulse-energy-grid-analytics": ["GRID", "PULSE"],
   "water-quality": ["WATER", "SIGNALS"],
@@ -30,6 +32,7 @@ function defaultSurfaceLabel(project: Project) {
   if (project.slug === "countersignal") return "OPEN SOURCE TOOL + CASE STUDY";
   if (project.slug === "recoverylens") return "LIVE EXPLORER + CASE STUDY";
   if (project.slug === "delta-fpna") return "LIVE DASHBOARD + CASE STUDY";
+  if (project.embedUrl) return "LIVE TABLEAU DASHBOARD + CASE STUDY";
   return "VIEW CASE STUDY";
 }
 
