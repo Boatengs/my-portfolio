@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">CounterSignal benchmark</title>
+  <desc id="desc">Portfolio visual for CounterSignal: share of simulated deployments in which each monitor caught drift among treated patients, and its false alarm rate with the model unchanged, for the sepsis logistic regression configuration.</desc>
+  <rect width="1200" height="675" fill="#ffffff"/>
+  <rect x="46" y="42" width="1108" height="591" rx="28" fill="#f9f8fc" stroke="#e1dcee" stroke-width="2"/>
+  <text x="88" y="108" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" letter-spacing="4" fill="#6d4fc2">COUNTERSIGNAL</text>
+  <text x="88" y="157" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" fill="#25212e">Monitoring clinical AI whose alerts change care</text>
+  <text x="88" y="193" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#5d5770">Sepsis mortality model · 110,204 real admissions · 200 simulated deployments per scenario</text>
+  <text x="330" y="250" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="2" fill="#5d5770">DRIFT AMONG TREATED PATIENTS CAUGHT</text>
+  <text x="1080" y="250" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="2" fill="#5d5770">FALSE ALARMS</text>
+    <text x="310" y="300" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#25212e" font-weight="400">Standard monitor</text>
+  <rect x="330" y="278" width="640" height="34" rx="6" fill="#eeeaf6"/>
+  <rect x="330" y="278" width="102.4" height="34" rx="6" fill="#9aa5ad"/>
+  <text x="444.4" y="302" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#25212e">16.0%</text>
+  <text x="1080" y="302" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#5d5770">100.0%</text>
+  <text x="310" y="372" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#25212e" font-weight="400">Untreated only</text>
+  <rect x="330" y="350" width="640" height="34" rx="6" fill="#eeeaf6"/>
+  <rect x="330" y="350" width="464.0" height="34" rx="6" fill="#c08a4b"/>
+  <text x="806.0" y="374" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#25212e">72.5%</text>
+  <text x="1080" y="374" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#5d5770">5.5%</text>
+  <text x="310" y="444" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#25212e" font-weight="400">Feng et al.</text>
+  <rect x="330" y="422" width="640" height="34" rx="6" fill="#eeeaf6"/>
+  <rect x="330" y="422" width="448.0" height="34" rx="6" fill="#7b8fb8"/>
+  <text x="790.0" y="446" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#25212e">70.0%</text>
+  <text x="1080" y="446" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#5d5770">6.5%</text>
+  <text x="310" y="516" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#25212e" font-weight="700">CounterSignal</text>
+  <rect x="330" y="494" width="640" height="34" rx="6" fill="#eeeaf6"/>
+  <rect x="330" y="494" width="636.8" height="34" rx="6" fill="#6d4fc2"/>
+  <text x="954.8" y="518" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#ffffff">99.5%</text>
+  <text x="1080" y="518" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#5d5770">8.5%</text>
+  <text x="88" y="600" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#5d5770">False alarms: share of 12 month deployments with any alarm while the model was unchanged (planned 5%).</text>
+</svg>
