@@ -14,7 +14,7 @@ export default function Work() {
       <SiteNav label="Work page navigation" />
       <header className="work-page-hero shell">
         <div className="work-hero-copy">
-          <p className="eyebrow">PORTFOLIO / ANALYTICS · ML · AI</p>
+          <p className="eyebrow">PORTFOLIO / HEALTHCARE · ANALYTICS · ML · AI</p>
           <h1>
             Work that turns analysis
             <br />
