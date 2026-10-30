@@ -362,8 +362,8 @@ export default function Home() {
         <div className="hero-grid">
           <div>
             <p className="eyebrow">
-              DATA ANALYTICS · APPLIED MACHINE LEARNING · DATA GOVERNANCE ·
-              INTELLIGENT SYSTEMS
+              HEALTHCARE AI · DATA ANALYTICS · APPLIED MACHINE LEARNING ·
+              DATA GOVERNANCE · INTELLIGENT SYSTEMS
             </p>
             <h1>
               Transforming data into <em>insight, strategy, and impact.</em>
