@@ -413,7 +413,7 @@ export default function Home() {
               and measurable organizational impact.
             </p>
             <div className="profile-overview-credentials">
-              <span>M.S. Applied Machine Intelligence</span>
+              <span>MPS Applied Machine Intelligence</span>
               <span>B.S. Computer Science</span>
             </div>
           </div>
@@ -756,7 +756,7 @@ export default function Home() {
         <div className="education-grid">
           <article>
             <span>2025</span>
-            <h3>Master of Science</h3>
+            <h3>Master of Professional Studies (MPS)</h3>
             <p>Applied Machine Intelligence</p>
             <b>
               Northeastern University
