@@ -186,3 +186,9 @@
     transition: none;
   }
 }
+
+/* Education sits between About and Experience; neighbours supply the spacing */
+#education.education {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}

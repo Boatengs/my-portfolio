@@ -469,10 +469,41 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="education shell" id="education">
+        <p className="eyebrow">03 / EDUCATION</p>
+        <div className="education-grid">
+          <article>
+            <span>2025</span>
+            <h3>Master of Professional Studies (MPS)</h3>
+            <p>Applied Machine Intelligence</p>
+            <b>
+              Northeastern University
+              <br />
+              The Roux Institute
+            </b>
+          </article>
+          <article>
+            <span>2023</span>
+            <h3>Bachelor of Science</h3>
+            <p>Computer Science</p>
+            <b>Saratov State University</b>
+          </article>
+          <article>
+            <span>2023</span>
+            <h3>Diploma</h3>
+            <p>Data Analysis and Machine Learning</p>
+            <b>
+              Innopolis University
+              <br />
+              Russia
+            </b>
+          </article>
+        </div>
+      </section>
       <section className="section shell experience" id="experience">
         <div className="section-head compact">
           <div>
-            <p className="eyebrow">03 / EXPERIENCE</p>
+            <p className="eyebrow">04 / EXPERIENCE</p>
             <h2>
               Expertise shaped by
               <br />
@@ -485,7 +516,7 @@ export default function Home() {
       <section className="section shell" id="work">
         <div className="section-head">
           <div>
-            <p className="eyebrow">04 / PROJECTS</p>
+            <p className="eyebrow">05 / PROJECTS</p>
             <h2>
               Applied solutions to
               <br />
@@ -511,7 +542,7 @@ export default function Home() {
       <section className="section shell skills-preview" id="skills">
         <div className="section-head">
           <div>
-            <p className="eyebrow">05 / SKILLS</p>
+            <p className="eyebrow">06 / SKILLS</p>
             <h2>
               Technical capabilities
               <br />
@@ -546,7 +577,7 @@ export default function Home() {
       <section className="leadership-preview shell" id="leadership">
         <div className="leadership-preview-head">
           <div>
-            <p className="eyebrow">06 / LEADERSHIP & RECOGNITION</p>
+            <p className="eyebrow">07 / LEADERSHIP & RECOGNITION</p>
             <h2>
               Leadership grounded
               <br />
@@ -600,7 +631,7 @@ export default function Home() {
       <section className="section shell beyond-preview" id="beyond-work">
         <div className="section-head">
           <div>
-            <p className="eyebrow">07 / BEYOND WORK</p>
+            <p className="eyebrow">08 / BEYOND WORK</p>
             <h2>
               The person behind
               <br />
@@ -658,7 +689,7 @@ export default function Home() {
       <section className="section shell exploration" id="exploring">
         <div className="section-head">
           <div>
-            <p className="eyebrow">08 / CURRENTLY EXPLORING</p>
+            <p className="eyebrow">09 / CURRENTLY EXPLORING</p>
             <h2>
               Research advancing
               <br />
@@ -749,37 +780,6 @@ export default function Home() {
             </div>
             <a href="mailto:samboateng190@gmail.com">Start a conversation ↗</a>
           </div>
-        </div>
-      </section>
-      <section className="education shell">
-        <p className="eyebrow">09 / EDUCATION</p>
-        <div className="education-grid">
-          <article>
-            <span>2025</span>
-            <h3>Master of Professional Studies (MPS)</h3>
-            <p>Applied Machine Intelligence</p>
-            <b>
-              Northeastern University
-              <br />
-              The Roux Institute
-            </b>
-          </article>
-          <article>
-            <span>2023</span>
-            <h3>Bachelor of Science</h3>
-            <p>Computer Science</p>
-            <b>Saratov State University</b>
-          </article>
-          <article>
-            <span>2023</span>
-            <h3>Diploma</h3>
-            <p>Data Analysis and Machine Learning</p>
-            <b>
-              Innopolis University
-              <br />
-              Russia
-            </b>
-          </article>
         </div>
       </section>
       <footer className="footer">
