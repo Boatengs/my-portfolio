@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>The Person Behind the Work — Sampson Boateng</title>
-  <meta name="description" content="Sampson Boateng beyond work: volunteering, cooking, travel, fitness, music, reading, and the sports and games he plays, from soccer and basketball to Call of Duty."/>
+  <meta name="description" content="Sampson Boateng beyond work: volunteering, cooking, travel, fitness, music, reading, and the sports and games he plays, from soccer and basketball to Call of Duty and pool."/>
   <link rel="icon" href="/my-portfolio/favicon.svg"/>
   <link rel="preload" as="image" href="/my-portfolio/sam-beyond-work.webp"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -127,6 +127,13 @@
     .book-line b{font-family:"DM Serif Display",Georgia,serif;font-size:19px;font-weight:400}
     .sport-tiles.three{grid-template-columns:repeat(3,1fr)}
     .sport-tiles.main .sport-tile{min-height:150px}.sport-tiles.main .sport-tile b{font-size:32px}
+    .person-marquee .marquee-track{display:flex;width:max-content;animation:marquee 95s linear infinite}
+    .person-marquee .marquee-track span{flex:none;padding-right:0;white-space:nowrap}
+    .person-page .interest-card.travel{transition:background .35s ease,color .35s ease,transform .35s ease,box-shadow .35s ease}
+    .person-page .interest-card.travel:hover,.person-page .interest-card.travel:focus-within{background:var(--bw-yellow)!important;color:var(--bw-plum)!important;filter:none!important;opacity:1!important}
+    .person-page .interest-card.travel:hover h2,.person-page .interest-card.travel:hover .interest-copy,.person-page .interest-card.travel:hover .travel-text>p,.person-page .interest-card.travel:hover .interest-index,.person-page .interest-card.travel:hover .interest-tag,.person-page .interest-card.travel:hover .photo-credit,.person-page .interest-card.travel:focus-within h2,.person-page .interest-card.travel:focus-within .interest-copy{color:var(--bw-plum)!important;opacity:1!important;text-shadow:none!important}
+    .person-page .interest-card.travel:hover .place-pins span{background:rgba(39,21,34,.08);border-color:rgba(39,21,34,.3);color:var(--bw-plum)}
+    .person-page .interest-card.travel:hover .place-pins span:before{background:var(--bw-coral)}
     .person-closing{text-align:left}
     .reveal{opacity:1;transform:none}
     .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
@@ -144,13 +151,13 @@
 
   <section class="person-hero shell"><div class="person-intro"><p class="eyebrow">THE PERSON BEHIND THE WORK</p><h1>There’s more to Sam than <em>models and metrics.</em></h1><p>Away from the data, he cooks, travels, reads, trains and plays on whichever court will have him. The same habits show up in both places: patience, curiosity, and a pull towards people.</p><div class="person-scroll">SCROLL TO MEET THE PERSON <span>↓</span></div></div><div class="person-portrait"><span class="portrait-ring ring-one" aria-hidden="true"></span><span class="portrait-ring ring-two" aria-hidden="true"></span><img src="/my-portfolio/sam-beyond-work.webp" decoding="async" width="420" height="525" alt="Casual portrait of Sampson Boateng"/><div class="portrait-note"><span>BEYOND THE SCREEN</span><b>Present. Curious. Always moving.</b></div></div></section>
 
-  <div class="person-marquee" aria-hidden="true"><div>VOLUNTEER · COOK · TRAVEL · TRAIN · LISTEN · READ · PLAY · CONNECT · VOLUNTEER · COOK · TRAVEL · TRAIN · LISTEN · READ · PLAY · CONNECT · </div></div>
+  <div class="person-marquee" aria-hidden="true"><div class="marquee-track"><span>VOLUNTEER · COOK · TRAVEL · TRAIN · LISTEN · READ · PLAY · CONNECT · VOLUNTEER · COOK · TRAVEL · TRAIN · LISTEN · READ · PLAY · CONNECT · VOLUNTEER · COOK · TRAVEL · TRAIN · LISTEN · READ · PLAY · CONNECT · VOLUNTEER · COOK · TRAVEL · TRAIN · LISTEN · READ · PLAY · CONNECT · VOLUNTEER · COOK · TRAVEL · TRAIN · LISTEN · READ · PLAY · CONNECT · </span><span>VOLUNTEER · COOK · TRAVEL · TRAIN · LISTEN · READ · PLAY · CONNECT · VOLUNTEER · COOK · TRAVEL · TRAIN · LISTEN · READ · PLAY · CONNECT · VOLUNTEER · COOK · TRAVEL · TRAIN · LISTEN · READ · PLAY · CONNECT · VOLUNTEER · COOK · TRAVEL · TRAIN · LISTEN · READ · PLAY · CONNECT · VOLUNTEER · COOK · TRAVEL · TRAIN · LISTEN · READ · PLAY · CONNECT · </span></div></div>
 
   <section class="person-values shell reveal"><div><p class="eyebrow">01 / WHAT KEEPS HIM GROUNDED</p><h2>The things he <em>makes time for.</em></h2></div><p class="values-line">Show up. Stay curious. Learn from people. <span>Leave room for joy.</span></p></section>
 
   <section class="interest-grid shell" aria-label="Interests and hobbies">
     <article class="interest-card feature span-7 reveal"><span class="interest-index">01</span><div class="interest-symbol" aria-hidden="true">✦</div><p>SERVICE</p><h2>Volunteering</h2><div class="interest-copy">Giving time to people and causes he cares about. It’s where empathy stops being a feeling and turns into something useful.</div><span class="interest-tag">Teaches: empathy in action</span></article>
-    <article class="interest-card span-5 with-art reveal"><span class="interest-index">02</span><div class="interest-symbol" aria-hidden="true">○</div><img class="interest-photo" src="/my-portfolio/beyond/sam-cooking.webp" width="960" height="1280" loading="lazy" style="object-position:center 55%" alt="A plate of stir fried noodles with scrambled egg, sausage and vegetables, cooked by Sam"/><p class="photo-credit">Cooked by Sam</p><p>CREATIVITY</p><h2>Cooking</h2><div class="interest-copy">From Ghanaian jollof rice with grilled chicken and salad to a quick plate of stir fried noodles with egg and sausage, like this one. Cooking is how he slows down, experiments and gets people around the same table.</div><span class="interest-tag">Teaches: patience</span></article>
+    <article class="interest-card span-5 with-art reveal"><span class="interest-index">02</span><div class="interest-symbol" aria-hidden="true">○</div><img class="interest-photo" src="/my-portfolio/beyond/sam-cooking.webp" width="1280" height="800" loading="lazy" alt="A plate of stir fried noodles with scrambled egg, sausage and vegetables, cooked by Sam"/><p class="photo-credit">Cooked by Sam</p><p>CREATIVITY</p><h2>Cooking</h2><div class="interest-copy">From Ghanaian jollof rice with grilled chicken and salad to a quick plate of stir fried noodles with egg and sausage, like this one. Cooking is how he slows down, experiments and gets people around the same table.</div><span class="interest-tag">Teaches: patience</span></article>
     <article class="interest-card travel reveal"><div class="travel-text"><span class="interest-index">03</span><p>PERSPECTIVE</p><h2>Travel</h2><div class="interest-copy">New places, cultures and ways of seeing. Familiar problems look different when you come home.</div><div class="place-pins"><span>Bordeaux, France</span><span>Porto de Mós, Portugal</span></div><span class="interest-tag">Teaches: a wider lens</span></div>
       <div class="travel-photos">
         <figure><div class="frame"><img src="/my-portfolio/beyond/bordeaux-cathedral.webp" width="960" height="1280" loading="lazy" alt="Cathédrale Saint-André and its twin spires in Bordeaux, France"/><figcaption>Bordeaux, France</figcaption></div><p class="photo-credit">Cathédrale Saint-André</p></figure>
@@ -158,7 +165,7 @@
       </div></article>
     <article class="interest-card mint span-4 reveal"><span class="interest-index">04</span><div class="interest-symbol" aria-hidden="true">+</div><p>DISCIPLINE</p><h2>Fitness</h2><div class="interest-copy">Training gives the week its shape. Small, steady gains, the same way good work gets done.</div><span class="interest-tag">Teaches: consistency</span></article>
     <article class="interest-card span-4 reveal"><span class="interest-index">05</span><div class="interest-symbol" aria-hidden="true">≈</div><p>RHYTHM</p><h2>Music &amp; Audio</h2><div class="interest-copy">Music to reset and focus. Audiobooks, stories and good conversations to keep learning on the move.</div><span class="interest-tag">Teaches: focus</span></article>
-    <article class="interest-card pink span-4 reveal"><span class="interest-index">06</span><div class="interest-symbol" aria-hidden="true">◎</div><p>PLAY</p><h2>Gaming</h2><div class="interest-copy">When it’s time to switch off, it’s Call of Duty. Quick thinking and teamwork, just in a different arena.</div><span class="interest-tag">Teaches: quick decisions</span></article>
+    <article class="interest-card pink span-4 reveal"><span class="interest-index">06</span><div class="interest-symbol" aria-hidden="true">◎</div><p>PLAY</p><h2>Gaming</h2><div class="interest-copy">When it’s time to switch off, it’s Call of Duty or a game of pool. Quick thinking, focus and a steady hand, just in a different arena.</div><span class="interest-tag">Teaches: quick decisions</span></article>
     <article class="interest-card wide reveal"><div class="wide-title"><span class="interest-index">07</span><p>CURIOSITY</p><h2>Reading</h2></div><div class="interest-copy">Part exploration, part reflection. Reading takes him into subjects he’d never meet at work, and keeps his thinking open long after the book is closed.<div class="book-line">On his shelf: <b>Attitude Is Everything</b> by Keith Harrell</div></div><div class="interest-symbol" aria-hidden="true">Aa</div></article>
   </section>
 
