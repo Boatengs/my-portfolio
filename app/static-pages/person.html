@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>The Person Behind the Work — Sampson Boateng</title>
-  <meta name="description" content="Sampson Boateng beyond work: volunteering, cooking, travel, fitness, music, reading, and the sports he plays."/>
+  <meta name="description" content="Sampson Boateng beyond work: volunteering, cooking, travel, fitness, music, reading, and the sports and games he plays, from soccer and basketball to Call of Duty."/>
   <link rel="icon" href="/my-portfolio/favicon.svg"/>
   <link rel="preload" as="image" href="/my-portfolio/sam-beyond-work.webp"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -105,14 +105,36 @@
     .sport-tile b{font-family:"DM Serif Display",Georgia,serif;font-size:26px;font-weight:400;line-height:1}
     .sport-tile.hot{background:var(--bw-coral);border-color:var(--bw-coral)}.sport-tile.cool{background:var(--bw-blue);border-color:var(--bw-blue);color:var(--bw-plum)}
 
+    .photo-credit{margin:6px 0 0;color:inherit;opacity:.62;font-size:10px;line-height:1.4}.photo-credit a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+    .interest-photo{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;margin:18px 0 0;border-radius:16px}
+    .interest-card.travel{grid-column:1/-1;display:grid;grid-template-columns:.78fr 1.22fr;gap:44px;align-items:center;background:var(--bw-plum);color:#fff}
+    .interest-card.travel .interest-copy{color:rgba(255,255,255,.86)}
+    .interest-card.travel .travel-text>p{margin:0 0 9px;padding-top:58px;color:rgba(255,255,255,.68);font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+    .travel-photos{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .travel-photos figure{margin:0}
+    .travel-photos .frame{position:relative;overflow:hidden;border-radius:16px}
+    .travel-photos img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .6s ease}
+    .travel-photos figure:hover img{transform:scale(1.04)}
+    .travel-photos figcaption{position:absolute;left:12px;bottom:12px;padding:8px 12px;border-radius:999px;background:rgba(23,15,20,.72);color:#fff;font-size:12px;font-weight:800}
+    .interest-card.pink{background:var(--bw-pink)}.interest-card.pink .interest-copy{color:#3d2a33}
+    .interest-art{display:block;width:100%;height:auto;margin:18px 0 6px;border-radius:16px;border:1px solid var(--bw-line)}
+    .art-note{margin:0 0 4px;color:#9a7f8a;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+    .interest-card.with-art>p{padding-top:18px}
+    .place-pins{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+    .place-pins span{display:inline-flex;align-items:center;gap:6px;padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);font-size:11px;font-weight:700}
+    .place-pins span:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--bw-yellow)}
+    .book-line{margin-top:16px;padding:12px 16px;border-radius:14px;background:rgba(255,255,255,.55);color:var(--bw-plum);font-size:14px;line-height:1.5}
+    .book-line b{font-family:"DM Serif Display",Georgia,serif;font-size:19px;font-weight:400}
+    .sport-tiles.three{grid-template-columns:repeat(3,1fr)}
+    .sport-tiles.main .sport-tile{min-height:150px}.sport-tiles.main .sport-tile b{font-size:32px}
     .person-closing{text-align:left}
     .reveal{opacity:1;transform:none}
     .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
     .js .reveal.is-visible{opacity:1;transform:none}
 
-    @media(max-width:1050px){.person-values{grid-template-columns:1fr;gap:34px}.interest-card.span-7,.interest-card.span-5,.interest-card.span-4{grid-column:span 6}.interest-card.span-4:last-of-type{grid-column:1/-1}.interest-card.wide{flex-direction:column;align-items:flex-start;gap:14px}}
-    @media(max-width:760px){.interest-card,.interest-card.wide{min-height:0}.interest-card>p{padding-top:44px}.sport-tiles{grid-template-columns:repeat(2,1fr)}.court{padding:22px}.court-ring{display:none}}
-    @media(prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}.court-ring{animation:none}.sport-tile{transition:none}}
+    @media(max-width:1050px){.interest-card.travel{grid-template-columns:1fr;gap:20px}.interest-card.travel .travel-text>p{padding-top:30px}.person-values{grid-template-columns:1fr;gap:34px}.interest-card.span-7,.interest-card.span-5,.interest-card.span-4{grid-column:span 6}.interest-card.pink{grid-column:1/-1}.interest-card.wide{flex-direction:column;align-items:flex-start;gap:14px}}
+    @media(max-width:760px){.sport-tiles.three{grid-template-columns:repeat(2,1fr)}.sport-tiles.three .sport-tile:last-child{grid-column:1/-1}.interest-card,.interest-card.wide{min-height:0}.interest-card>p{padding-top:44px}.sport-tiles{grid-template-columns:repeat(2,1fr)}.court{padding:22px}.court-ring{display:none}}
+    @media(prefers-reduced-motion:reduce){.travel-photos img{transition:none}.js .reveal{opacity:1;transform:none;transition:none}.court-ring{animation:none}.sport-tile{transition:none}}
   </style>
 </head>
 <body>
@@ -128,20 +150,28 @@
 
   <section class="interest-grid shell" aria-label="Interests and hobbies">
     <article class="interest-card feature span-7 reveal"><span class="interest-index">01</span><div class="interest-symbol" aria-hidden="true">✦</div><p>SERVICE</p><h2>Volunteering</h2><div class="interest-copy">Giving time to people and causes he cares about. It’s where empathy stops being a feeling and turns into something useful.</div><span class="interest-tag">Teaches: empathy in action</span></article>
-    <article class="interest-card span-5 reveal"><span class="interest-index">02</span><div class="interest-symbol" aria-hidden="true">○</div><p>CREATIVITY</p><h2>Cooking</h2><div class="interest-copy">His way to slow down and experiment. A good meal is also the easiest way to get people around the same table.</div><span class="interest-tag">Teaches: patience</span></article>
-    <article class="interest-card dark span-4 reveal"><span class="interest-index">03</span><div class="interest-symbol" aria-hidden="true">↗</div><p>PERSPECTIVE</p><h2>Travel</h2><div class="interest-copy">New places, cultures and ways of seeing. Familiar problems look different when you come home.</div><span class="interest-tag">Teaches: a wider lens</span></article>
+    <article class="interest-card span-5 with-art reveal"><span class="interest-index">02</span><div class="interest-symbol" aria-hidden="true">○</div><img class="interest-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Jollof_rice_and_veggies.jpg" width="720" height="426" loading="lazy" alt="Ghanaian jollof rice served with grilled chicken and a vegetable salad"/><p class="photo-credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Jollof_rice_and_veggies.jpg" target="_blank" rel="noreferrer">daSupremo</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noreferrer">CC BY-SA 4.0</a>, via Wikimedia Commons</p><p>CREATIVITY</p><h2>Cooking</h2><div class="interest-copy">His go to is Ghanaian jollof rice, made the way it’s done at home, with grilled chicken and a fresh salad. Cooking is how he slows down, experiments and gets people around the same table.</div><span class="interest-tag">Teaches: patience</span></article>
+    <article class="interest-card travel reveal"><div class="travel-text"><span class="interest-index">03</span><p>PERSPECTIVE</p><h2>Travel</h2><div class="interest-copy">New places, cultures and ways of seeing. Familiar problems look different when you come home.</div><div class="place-pins"><span>Bordeaux, France</span><span>Porto de Mós, Portugal</span></div><span class="interest-tag">Teaches: a wider lens</span></div>
+      <div class="travel-photos">
+        <figure><div class="frame"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/139_-_Place_de_la_Bourse_et_le_miroir_d%27eau_-_Bordeaux.jpg?width=960" width="960" height="640" loading="lazy" alt="Place de la Bourse in Bordeaux reflected in the water mirror"/><figcaption>Bordeaux, France</figcaption></div><p class="photo-credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:139_-_Place_de_la_Bourse_et_le_miroir_d%27eau_-_Bordeaux.jpg" target="_blank" rel="noreferrer">Patrick Despoix</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noreferrer">CC BY-SA 3.0</a>, via Wikimedia Commons</p></figure>
+        <figure><div class="frame"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Castelo_de_Porto_de_M%C3%B3s_27.jpg?width=960" width="960" height="640" loading="lazy" alt="The castle of Porto de Mós with its green towers in evening light"/><figcaption>Porto de Mós, Portugal</figcaption></div><p class="photo-credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Castelo_de_Porto_de_M%C3%B3s_27.jpg" target="_blank" rel="noreferrer">Celia Ascenso</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noreferrer">CC BY-SA 3.0</a>, via Wikimedia Commons</p></figure>
+      </div></article>
     <article class="interest-card mint span-4 reveal"><span class="interest-index">04</span><div class="interest-symbol" aria-hidden="true">+</div><p>DISCIPLINE</p><h2>Fitness</h2><div class="interest-copy">Training gives the week its shape. Small, steady gains, the same way good work gets done.</div><span class="interest-tag">Teaches: consistency</span></article>
     <article class="interest-card span-4 reveal"><span class="interest-index">05</span><div class="interest-symbol" aria-hidden="true">≈</div><p>RHYTHM</p><h2>Music &amp; Audio</h2><div class="interest-copy">Music to reset and focus. Audiobooks, stories and good conversations to keep learning on the move.</div><span class="interest-tag">Teaches: focus</span></article>
-    <article class="interest-card wide reveal"><div class="wide-title"><span class="interest-index">06</span><p>CURIOSITY</p><h2>Reading</h2></div><div class="interest-copy">Part exploration, part reflection. Reading takes him into subjects he’d never meet at work, and keeps his thinking open long after the book is closed.</div><div class="interest-symbol" aria-hidden="true">Aa</div></article>
+    <article class="interest-card pink span-4 reveal"><span class="interest-index">06</span><div class="interest-symbol" aria-hidden="true">◎</div><p>PLAY</p><h2>Gaming</h2><div class="interest-copy">When it’s time to switch off, it’s Call of Duty. Quick thinking and teamwork, just in a different arena.</div><span class="interest-tag">Teaches: quick decisions</span></article>
+    <article class="interest-card wide reveal"><div class="wide-title"><span class="interest-index">07</span><p>CURIOSITY</p><h2>Reading</h2></div><div class="interest-copy">Part exploration, part reflection. Reading takes him into subjects he’d never meet at work, and keeps his thinking open long after the book is closed.<div class="book-line">On his shelf: <b>Attitude Is Everything</b> by Keith Harrell</div></div><div class="interest-symbol" aria-hidden="true">Aa</div></article>
   </section>
 
-  <section class="play-section"><div class="shell play-grid"><div class="reveal"><p class="eyebrow">02 / SPORTS AND CONNECTION</p><h2>Competition,<br/><em>connection,</em><br/>and joy.</h2><p>Sam doesn’t stick to one sport. He likes the movement, the challenge and the people that come with it. Team games keep him connected; cycling and running give him space to reset and build endurance on his own.</p></div>
+  <section class="play-section"><div class="shell play-grid"><div class="reveal"><p class="eyebrow">02 / SPORTS AND CONNECTION</p><h2>Competition,<br/><em>connection,</em><br/>and joy.</h2><p>Soccer and basketball are his main sports. He also plays volleyball, badminton and tennis, and cycling and running give him space to reset and build endurance on his own. For Sam it’s about the movement, the challenge and the people that come with it.</p></div>
     <div class="court reveal" aria-label="Sports Sam plays"><span class="court-ring" aria-hidden="true"></span>
-      <div class="court-group"><span>Team games</span><div class="sport-tiles">
+      <div class="court-group"><span>Main sports</span><div class="sport-tiles main">
         <div class="sport-tile hot"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="17" cy="17" r="14"/><path d="M3 17h28M17 3v28M7 7c5 4 5 16 0 20M27 7c-5 4-5 16 0 20"/></svg><b>Basketball</b></div>
         <div class="sport-tile cool"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="17" cy="17" r="14"/><path d="M17 10l6 4-2 7h-8l-2-7z"/><path d="M17 10V4M23 14l6-2M21 21l4 6M13 21l-4 6M11 14l-6-2"/></svg><b>Soccer</b></div>
+      </div></div>
+      <div class="court-group"><span>Also plays</span><div class="sport-tiles three">
         <div class="sport-tile"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="17" cy="17" r="14"/><path d="M17 3c-2 6 0 11 6 14M31 19c-6-1-11 2-12 9M6 26c4-5 4-11-1-15"/></svg><b>Volleyball</b></div>
         <div class="sport-tile"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="17" cy="27" r="4"/><path d="M14 24L8 6M20 24l6-18M17 23V5M8 6h18M10 12h14M12 18h10"/></svg><b>Badminton</b></div>
+        <div class="sport-tile"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="17" cy="17" r="14"/><path d="M6 8c6 4 6 14 0 18M28 8c-6 4-6 14 0 18"/></svg><b>Tennis</b></div>
       </div></div>
       <div class="court-group"><span>On his own</span><div class="sport-tiles two">
         <div class="sport-tile"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="8" cy="23" r="6"/><circle cx="26" cy="23" r="6"/><path d="M8 23l6-10h8l4 10M14 13l3 10h-9M20 9h4"/></svg><b>Cycling</b></div>
