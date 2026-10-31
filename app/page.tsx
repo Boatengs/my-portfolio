@@ -3,6 +3,7 @@ import { ProjectGrid } from "./project-grid";
 import { allProjects } from "./project-registry";
 import { publications } from "./publications";
 import { SiteNav } from "./site-nav";
+import { ExperienceTimeline } from "./experience-timeline";
 import { sitePath } from "./site-path";
 export const skillGroups = [
   {
@@ -479,74 +480,7 @@ export default function Home() {
             </h2>
           </div>
         </div>
-        <div className="timeline">
-          <article>
-            <div className="timeline-meta">
-              <b>2025 to PRESENT</b>
-              <span>New York</span>
-            </div>
-            <div>
-              <h3>Finance, Development & IT Administration Support Analyst</h3>
-              <h4>Village Health Works</h4>
-              <p>
-                Analyze financial and donor data, investigate discrepancies,
-                prepare forecasts and management reporting, and establish
-                data-quality standards that improve trust in organizational
-                records.
-              </p>
-            </div>
-          </article>
-          <article>
-            <div className="timeline-meta">
-              <b>2024 to 2025</b>
-              <span>Portland, Maine</span>
-            </div>
-            <div>
-              <h3>Student Ambassador</h3>
-              <h4>Northeastern University · The Roux Institute</h4>
-              <p>
-                Represented the student experience through campus programs and
-                community events, welcomed prospective and incoming students,
-                provided peer guidance, and helped strengthen engagement and
-                connections across the Roux community.
-              </p>
-            </div>
-          </article>
-          <article>
-            <div className="timeline-meta">
-              <b>2022</b>
-              <span>Saratov, Russia</span>
-            </div>
-            <div>
-              <h3>Software Engineer - Intern</h3>
-              <h4>Bosch Techno-Engineering Ltd</h4>
-              <p>
-                Supported development and QA cycles, diagnosed defects, helped
-                improve system stability by 20%, and built an internal
-                encryption and decryption testing utility.
-              </p>
-            </div>
-          </article>
-          <article>
-            <div className="timeline-meta">
-              <b>2019 to 2023</b>
-              <span>Saratov, Russia</span>
-            </div>
-            <div>
-              <h3>Peer Tutor, English Language</h3>
-              <h4>Independent Academic &amp; Language Support</h4>
-              <p>
-                Provided personalized English-language instruction to Russian
-                learners, strengthening conversational fluency, reading
-                comprehension, and practical communication for academic study,
-                international travel, tourism, and everyday situations.
-                Adapted lessons to individual goals and confidence levels,
-                helping students use English effectively in real-world
-                settings.
-              </p>
-            </div>
-          </article>
-        </div>
+        <ExperienceTimeline />
       </section>
       <section className="section shell" id="work">
         <div className="section-head">
