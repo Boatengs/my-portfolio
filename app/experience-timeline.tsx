@@ -128,9 +128,6 @@ export function ExperienceTimeline() {
                   className="role-panel"
                 >
                   <div>
-                    <p className="role-panel-label">
-                      RESPONSIBILITIES · {role.duties.length}
-                    </p>
                     <ul>
                       {role.duties.map((duty) => (
                         <li key={duty}>{duty}</li>
