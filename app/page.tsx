@@ -121,6 +121,33 @@ export const skillGroups = [
     ],
   },
   {
+    label: "Data Engineering & Databases",
+    proof: "Data pipelines and storage",
+    href: "/skills",
+    skills: [
+      {
+        name: "ETL Pipelines",
+        icon: "",
+        href: "",
+      },
+      {
+        name: "Data Cleaning & Validation",
+        icon: "",
+        href: "",
+      },
+      {
+        name: "Data Modeling",
+        icon: "",
+        href: "",
+      },
+      {
+        name: "PostgreSQL",
+        icon: "",
+        href: "",
+      },
+    ],
+  },
+  {
     label: "Business Intelligence",
     proof: "6 project examples",
     href: "/projects/sentiment-analyzer",
@@ -287,6 +314,33 @@ export const skillGroups = [
     ],
   },
   {
+    label: "Cloud, DevOps & Development",
+    proof: "Cloud and developer tools",
+    href: "/skills",
+    skills: [
+      {
+        name: "AWS",
+        icon: "",
+        href: "",
+      },
+      {
+        name: "Microsoft Azure",
+        icon: "",
+        href: "",
+      },
+      {
+        name: "Google Cloud Platform",
+        icon: "",
+        href: "",
+      },
+      {
+        name: "Kubernetes",
+        icon: "",
+        href: "",
+      },
+    ],
+  },
+  {
     label: "Tools & Platforms",
     proof: "Professional toolkit",
     href: "/work",
@@ -339,6 +393,33 @@ export const skillGroups = [
       {
         name: "Microsoft Office",
         icon: "https://api.iconify.design/simple-icons/microsoftoffice.svg",
+        href: "",
+      },
+    ],
+  },
+  {
+    label: "Business, Quality & Professional",
+    proof: "Process and people skills",
+    href: "/skills",
+    skills: [
+      {
+        name: "Process Optimization",
+        icon: "",
+        href: "",
+      },
+      {
+        name: "Audit Support (SOX / SSAE)",
+        icon: "",
+        href: "",
+      },
+      {
+        name: "Technical Writing",
+        icon: "",
+        href: "",
+      },
+      {
+        name: "Problem Solving",
+        icon: "",
         href: "",
       },
     ],
@@ -557,7 +638,7 @@ export default function Home() {
         <div className="capability-console">
           <div className="capability-console-head">
             <p>TECHNICAL SKILLS AND TOOLS</p>
-            <span>Six disciplines · one connected workflow</span>
+            <span>Nine disciplines · one connected workflow</span>
           </div>
           <div className="capability-preview-grid">
             {skillGroups.map((s, i) => (
