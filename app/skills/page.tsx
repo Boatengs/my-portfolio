@@ -44,6 +44,8 @@ const groups: SkillGroup[] = [
       { name: "Apache Spark", type: "Distributed computing", logo: logo("apache-spark") },
       { name: "Hadoop", type: "Distributed data", logo: logo("hadoop") },
       { name: "Apache Hive", type: "Data warehouse", logo: logo("hive") },
+      { name: "R", type: "Programming language", logo: logo("r") },
+      { name: "DuckDB", type: "Analytical database", logo: logo("duckdb") },
     ],
   },
   {
@@ -69,10 +71,35 @@ const groups: SkillGroup[] = [
       { name: "Forecasting", type: "Time series modeling", icon: "forecast", proof: "/projects/gridpulse-energy-grid-analytics" },
       { name: "A/B Testing", type: "Experiment design", icon: "experiment" },
       { name: "Hypothesis Testing", type: "Statistical inference", icon: "science" },
+      { name: "Statistical Analysis", type: "Quantitative method", icon: "chart" },
+      { name: "Exploratory Data Analysis", type: "Analysis method", icon: "scatter" },
+      { name: "Predictive Modeling", type: "Modeling method", icon: "forecast" },
     ],
   },
   {
     num: "03",
+    title: "Data Engineering & Databases",
+    kicker: "GETTING THE DATA READY TO TRUST",
+    description:
+      "Extraction, transformation, validation and storage work that moves data between systems and keeps it consistent before anyone reports on it.",
+    proofHref: "/work",
+    proofLabel: "See portfolio evidence",
+    tone: "teal",
+    skills: [
+      { name: "ETL Pipelines", type: "Extract, transform, load", icon: "pipeline" },
+      { name: "Data Cleaning & Validation", type: "Data quality", icon: "evaluate" },
+      { name: "Data Modeling", type: "Data design", icon: "warehouse" },
+      { name: "Data Integration", type: "Systems integration", icon: "chain" },
+      { name: "Data Migration", type: "Data movement", icon: "transfer" },
+      { name: "Workflow Automation", type: "Process automation", icon: "route" },
+      { name: "MySQL", type: "Relational database", logo: logo("mysql") },
+      { name: "PostgreSQL", type: "Relational database", logo: logo("postgresql") },
+      { name: "SQL Server", type: "Relational database", icon: "database" },
+      { name: "Snowflake", type: "Cloud data warehouse", logo: logo("snowflake") },
+    ],
+  },
+  {
+    num: "04",
     title: "Business Intelligence",
     kicker: "ANALYSIS PEOPLE CAN ACTUALLY USE",
     description:
@@ -89,10 +116,12 @@ const groups: SkillGroup[] = [
       { name: "Streamlit", type: "App framework", logo: logo("streamlit"), proof: "/projects/gridpulse-energy-grid-analytics" },
       { name: "Gradio", type: "ML interface", logo: logo("gradio") },
       { name: "FastAPI", type: "API framework", logo: logo("fastapi") },
+      { name: "Qlik Sense", type: "BI platform", logo: logo("qlik") },
+      { name: "Excel PivotTables & Macros", type: "Spreadsheet reporting", logo: logo("excel") },
     ],
   },
   {
-    num: "04",
+    num: "05",
     title: "ML, NLP & LLM",
     kicker: "PRACTICAL INTELLIGENT SYSTEMS",
     description:
@@ -116,7 +145,7 @@ const groups: SkillGroup[] = [
     ],
   },
   {
-    num: "05",
+    num: "06",
     title: "Computer Vision & Deep Learning",
     kicker: "STRUCTURE FROM VISUAL DATA",
     description:
@@ -137,7 +166,29 @@ const groups: SkillGroup[] = [
     ],
   },
   {
-    num: "06",
+    num: "07",
+    title: "Cloud, DevOps & Development",
+    kicker: "WHERE THE WORK RUNS",
+    description:
+      "Cloud storage, managed databases, containers and developer tools used to host data, train models and test the services around them.",
+    proofHref: "/work",
+    proofLabel: "See portfolio evidence",
+    tone: "indigo",
+    skills: [
+      { name: "AWS S3", type: "Cloud storage", icon: "cloud" },
+      { name: "AWS SageMaker", type: "Cloud ML platform", icon: "cloud" },
+      { name: "AWS RDS", type: "Managed database", icon: "database" },
+      { name: "Microsoft Azure", type: "Cloud platform", icon: "cloud" },
+      { name: "Google Cloud Platform", type: "Cloud platform", logo: logo("google-cloud") },
+      { name: "Kubernetes", type: "Container orchestration", logo: logo("kubernetes") },
+      { name: "PowerShell", type: "Scripting", icon: "terminal" },
+      { name: "HTML", type: "Markup language", logo: logo("html5") },
+      { name: "VS Code", type: "Code editor", icon: "code" },
+      { name: "Postman", type: "API testing", logo: logo("postman") },
+    ],
+  },
+  {
+    num: "08",
     title: "Tools & Platforms",
     kicker: "THE DELIVERY LAYER",
     description:
@@ -156,6 +207,37 @@ const groups: SkillGroup[] = [
       { name: "Google Workspace Admin", type: "Cloud administration", logo: logo("google-workspace") },
       { name: "Microsoft 365 Admin", type: "Enterprise administration", logo: logo("microsoft-365") },
       { name: "Microsoft Office", type: "Productivity suite", logo: logo("microsoft-office") },
+      { name: "Microsoft Teams", type: "Team communication", icon: "chat" },
+      { name: "SharePoint", type: "Document management", icon: "folder" },
+      { name: "Confluence", type: "Team documentation", logo: logo("confluence") },
+      { name: "ServiceNow", type: "IT service management", icon: "ticket" },
+      { name: "Slack", type: "Team communication", icon: "chat" },
+      { name: "Box", type: "Cloud content management", logo: logo("box") },
+    ],
+  },
+  {
+    num: "09",
+    title: "Business, Quality & Professional Skills",
+    kicker: "HOW THE WORK GETS DONE WITH PEOPLE",
+    description:
+      "Performance tracking, process improvement, audit support and the working habits that keep analysis useful to the teams who depend on it.",
+    proofHref: "/leadership",
+    proofLabel: "See leadership and service",
+    tone: "coral",
+    skills: [
+      { name: "Supplier Performance Analytics", type: "Business analytics", icon: "bars" },
+      { name: "Quality Metrics", type: "Quality management", icon: "gauge" },
+      { name: "KPI Tracking", type: "Performance reporting", icon: "dashboard" },
+      { name: "Continuous Improvement", type: "Operations practice", icon: "cycle" },
+      { name: "Process Optimization", type: "Operations practice", icon: "tune" },
+      { name: "Process Mapping", type: "Process design", icon: "route" },
+      { name: "Process Development", type: "Process design", icon: "layers" },
+      { name: "Audit Support (SOX / SSAE)", type: "Controls and compliance", icon: "shield" },
+      { name: "Technical Writing", type: "Documentation", icon: "doc" },
+      { name: "Problem Solving", type: "Professional skill", icon: "sparkle" },
+      { name: "Teamwork", type: "Professional skill", icon: "people" },
+      { name: "Interpersonal Communication", type: "Professional skill", icon: "language" },
+      { name: "Conflict Resolution", type: "Professional skill", icon: "handshake" },
     ],
   },
 ];
@@ -267,6 +349,32 @@ function MethodIcon({ name }: { name?: string }) {
       return <svg {...common}><rect x="8" y="8" width="14" height="14" rx="3"/><rect x="26" y="8" width="14" height="14" rx="3"/><rect x="8" y="26" width="14" height="14" rx="3"/><rect x="26" y="26" width="14" height="14" rx="3"/></svg>;
     case "crm":
       return <svg {...common}><circle cx="17" cy="18" r="6"/><circle cx="32" cy="19" r="5"/><path d="M7 39c1-8 6-12 12-12s11 4 12 12M29 28c6 0 10 4 11 11"/></svg>;
+    case "cloud":
+      return <svg {...common}><path d="M14 36h21a8 8 0 0 0 1-15.9A11 11 0 0 0 15 18a9 9 0 0 0-1 18Z"/></svg>;
+    case "terminal":
+      return <svg {...common}><rect x="7" y="9" width="34" height="30" rx="4"/><path d="m14 19 6 5-6 5M24 31h10"/></svg>;
+    case "code":
+      return <svg {...common}><path d="m17 14-10 10 10 10M31 14l10 10-10 10M27 9l-6 30"/></svg>;
+    case "pipeline":
+      return <svg {...common}><rect x="6" y="18" width="10" height="12" rx="2"/><rect x="32" y="18" width="10" height="12" rx="2"/><path d="M16 24h16M26 19l5 5-5 5"/><path d="M11 18V10h26v8"/></svg>;
+    case "chat":
+      return <svg {...common}><path d="M8 10h32v20H22l-9 8v-8H8V10Z"/><path d="M15 18h18M15 24h11"/></svg>;
+    case "folder":
+      return <svg {...common}><path d="M7 14a3 3 0 0 1 3-3h9l4 5h15a3 3 0 0 1 3 3v17a3 3 0 0 1-3 3H10a3 3 0 0 1-3-3V14Z"/></svg>;
+    case "ticket":
+      return <svg {...common}><path d="M7 14h34v6a4 4 0 0 0 0 8v6H7v-6a4 4 0 0 0 0-8v-6Z"/><path d="M30 14v20"/></svg>;
+    case "gauge":
+      return <svg {...common}><path d="M8 32a16 16 0 1 1 32 0"/><path d="m24 32 8-10"/><circle cx="24" cy="32" r="2"/></svg>;
+    case "cycle":
+      return <svg {...common}><path d="M38 20a15 15 0 0 0-27-5M10 28a15 15 0 0 0 27 5"/><path d="M11 7v8h8M37 41v-8h-8"/></svg>;
+    case "shield":
+      return <svg {...common}><path d="M24 6 39 12v11c0 9-6.5 16-15 19C15.5 39 9 32 9 23V12l15-6Z"/><path d="m17 24 5 5 9-10"/></svg>;
+    case "doc":
+      return <svg {...common}><path d="M12 6h17l9 9v27H12V6Z"/><path d="M29 6v9h9M18 24h14M18 30h14M18 36h9"/></svg>;
+    case "people":
+      return <svg {...common}><circle cx="17" cy="17" r="6"/><circle cx="32" cy="18" r="5"/><path d="M6 39c1-8 6-12 11-12s10 4 11 12M27 28c6 0 10 4 11 11"/></svg>;
+    case "handshake":
+      return <svg {...common}><path d="M6 22 14 14l8 4 6-4 14 8-8 10-6-4-4 4-6-4-4 2-8-8Z"/><path d="m22 18 6 6"/></svg>;
     default:
       return <svg {...common}><circle cx="24" cy="24" r="16"/><path d="M16 24h16M24 16v16"/></svg>;
   }
@@ -345,7 +453,7 @@ export default function SkillsPage() {
         <div className="toolkit-section-intro toolkit-atlas-intro">
           <span>CAPABILITY LIBRARY</span>
           <div>
-            <h2 id="capability-library-title">Six disciplines. One <em>coherent toolkit.</em></h2>
+            <h2 id="capability-library-title">Nine disciplines. One <em>coherent toolkit.</em></h2>
             <p>Real product marks are stored locally where a branded technology has an official identity. Statistical methods and technical concepts use purpose built visual symbols rather than invented logos.</p>
           </div>
         </div>

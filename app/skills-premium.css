@@ -338,6 +338,9 @@
 .tone-violet{--accent:#7655c5;--soft:#f4efff}
 .tone-rose{--accent:#bd4a65;--soft:#fff0f3}
 .tone-slate{--accent:#48576a;--soft:#f0f3f7}
+.tone-teal{--accent:#0f7c86;--soft:#e9f7f8}
+.tone-indigo{--accent:#4453b8;--soft:#eef0ff}
+.tone-coral{--accent:#c8553d;--soft:#fff1ec}
 
 .toolkit-discipline-head{
   align-self:start;
