@@ -62,8 +62,8 @@ for (const forbidden of [
 }
 
 const skillCardCount = (html.match(/class="premium-skill-card(?:\s|\")/g) || []).length;
-if (skillCardCount !== 108) {
-  throw new Error(`Technical toolkit must render exactly 108 capability cards; found ${skillCardCount}.`);
+if (skillCardCount !== 111) {
+  throw new Error(`Technical toolkit must render exactly 111 capability cards; found ${skillCardCount}.`);
 }
 
 const disciplineCount = (html.match(/class="toolkit-discipline tone-/g) || []).length;
@@ -104,5 +104,5 @@ for (const url of logoUrls) {
 }
 
 console.log(
-  `Validated premium technical toolkit: 108 capability cards, 9 discipline panels, 10 core-stack nodes, ${logoUrls.length} local brand marks, SVM and Isolation Forest project evidence, GitHub naming, SQLite, no NDA links, and no remote image dependencies.`,
+  `Validated premium technical toolkit: 111 capability cards, 9 discipline panels, 10 core-stack nodes, ${logoUrls.length} local brand marks, SVM and Isolation Forest project evidence, GitHub naming, SQLite, no NDA links, and no remote image dependencies.`,
 );
