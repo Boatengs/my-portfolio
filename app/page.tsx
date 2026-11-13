@@ -480,15 +480,21 @@ export default function Home() {
           <div className="profile-overview-copy">
             <p>
               I am a data analyst, data engineer and machine learning
-              practitioner with an MPS in Applied Machine Intelligence and hands
-              on experience in financial analysis, donor data analysis,
-              reporting, data governance and healthcare analytics.
+              practitioner who builds dependable analytical systems for
+              healthcare, finance and public sector data. I hold an MPS in
+              Applied Machine Intelligence from Northeastern University and
+              bring hands on experience in financial analysis, donor data
+              analysis, reconciliation, reporting and data governance.
             </p>
             <p>
-              I work with Python, SQL, Excel, Tableau, statistical modeling,
-              natural language processing, computer vision and generative AI.
-              My focus is turning complex data into accurate, well documented
-              analysis that decision makers can rely on and act on.apos;m a coauthor on two published reviews on machine learning.
+              My work covers every stage of an analytical project: designing
+              data pipelines and validation checks, building and evaluating
+              predictive models, and delivering dashboards and reports that
+              leaders can trust. I work in Python, SQL, Excel and Tableau,
+              alongside statistical modeling, natural language processing,
+              computer vision and generative AI. On every project I hold the
+              same standard: results that are accurate and clear about their
+              limits.apos;m a coauthor on two published reviews on machine learning.
             </p>
             <div className="profile-overview-credentials">
               <span>MPS Applied Machine Intelligence</span>
