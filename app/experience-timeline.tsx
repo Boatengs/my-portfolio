@@ -57,7 +57,7 @@ const roles: Role[] = [
 ];
 
 export function ExperienceTimeline() {
-  const [open, setOpen] = useState<Set<number>>(() => new Set([0]));
+  const [open, setOpen] = useState<Set<number>>(() => new Set());
   const allOpen = open.size === roles.length;
 
   const toggle = (index: number) =>
