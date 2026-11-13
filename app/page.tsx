@@ -479,25 +479,16 @@ export default function Home() {
           </div>
           <div className="profile-overview-copy">
             <p>
-              I&apos;m a data analyst and machine learning practitioner focused
-              on healthcare AI and public interest data. I studied computer
-              science at Saratov State University, earned a diploma in Data
-              Analysis and Machine Learning from Innopolis University, and
-              interned as a software engineer at Bosch, where my testing and
-              debugging work helped improve system stability by 20%. I then
-              completed an MPS in Applied Machine Intelligence at Northeastern
-              University&apos;s Roux Institute.
+              I am a data analytics and applied machine learning professional
+              with an MPS in Applied Machine Intelligence and hands on
+              experience in financial operations, donor data analysis,
+              reporting, data governance and healthcare analytics.
             </p>
             <p>
-              My work centers on whether a result can be trusted before someone
-              acts on it. In healthcare, that led me to build CounterSignal, a
-              tool that monitors clinical risk models after deployment, along
-              with projects in medical imaging and medical language models. With
-              public data, I&apos;ve screened 10,313 water systems for PFAS
-              review, traced FEMA recovery funding to counties, and beaten the
-              EIA day ahead electricity demand forecast for PJM by 44% on
-              average error. My main tools are Python, SQL and Tableau, and
-              II&apos;ve co-authored two published reviews on machine learning.apos;m a coauthor on two published reviews on machine learning.
+              I work with Python, SQL, Excel, Tableau, statistical modeling,
+              natural language processing, computer vision and generative AI.
+              My focus is turning complex data into accurate, well documented
+              analysis that decision makers can rely on and act on.apos;m a coauthor on two published reviews on machine learning.
             </p>
             <div className="profile-overview-credentials">
               <span>MPS Applied Machine Intelligence</span>
