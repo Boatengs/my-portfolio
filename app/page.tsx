@@ -483,15 +483,17 @@ export default function Home() {
               practitioner who builds dependable analytical systems for
               healthcare, finance and public sector data. I hold an MPS in
               Applied Machine Intelligence from Northeastern University and
-              bring hands on experience in financial analysis, donor data
-              analysis, reconciliation, reporting and data governance.
+              bring hands on experience in healthcare analysis, financial
+              analysis, donor data analysis, reconciliation, reporting and data
+              governance.
             </p>
             <p>
               My work covers every stage of an analytical project: designing
               data pipelines and validation checks, building and evaluating
               predictive models, and delivering dashboards and reports that
-              leaders can trust. I work in Python, SQL, Excel and Tableau,
-              alongside statistical modeling, natural language processing,
+              leaders can trust. I work with tools
+              such as Python, SQL and Tableau, applied within analytical
+              frameworks for statistical modeling, natural language processing,
               computer vision and generative AI. On every project I hold the
               same standard: results that are accurate and clear about their
               limits.
