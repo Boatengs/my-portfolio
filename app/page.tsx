@@ -479,18 +479,18 @@ export default function Home() {
           </div>
           <div className="profile-overview-copy">
             <p>
-              I&apos;m a data analyst and applied machine learning practitioner.
-              I work in finance, development and IT administration at Village
-              Health Works, a global health nonprofit, and I hold an MPS in
-              Applied Machine Intelligence from Northeastern University&apos;s
-              Roux Institute.
+              I&apos;m a data analyst and applied machine learning practitioner
+              with an MPS in Applied Machine Intelligence from Northeastern
+              University and a BS in Computer Science. My background covers
+              software testing, financial and donor data, and machine learning
+              research.
             </p>
             <p>
-              At work I reconcile financial and donor records, find where the
-              numbers disagree and fix the cause. On my own time I build public
-              projects in healthcare AI, public infrastructure and financial
-              integrity, with every data step written down so someone else can
-              follow it.
+              What ties my work together is getting the numbers right before
+              anyone acts on them. I&apos;ve built tools that monitor clinical
+              risk models, flag drinking water systems for PFAS review and help
+              investigators decide which suspicious transactions to look at
+              first. I&apos;ve also co-authored two published research reviews.
             </p>
             <div className="profile-overview-credentials">
               <span>MPS Applied Machine Intelligence</span>
