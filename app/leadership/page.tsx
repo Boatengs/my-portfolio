@@ -13,20 +13,19 @@ export default function Leadership() {
           with <em>purpose.</em>
         </h1>
         <p>
-          Leadership is approached as practical service: fostering belonging,
-          creating meaningful opportunities to participate, and building
-          structures that allow communities to grow.
+          For me, leadership is practical service. I make room for people,
+          give them a reason to take part, and set things up so the community
+          keeps going without me.
         </p>
       </header>
       <section className="leadership-detail shell">
         <div className="leadership-origin">
           <h2>Connection is something you build.</h2>
           <p>
-            Across universities, student organizations, professional programs,
-            and community initiatives, he has taken on roles requiring active
-            listening, thoughtful coordination, clear communication, and
-            dependable follow-through. Across each position, his purpose remains
-            consistent: make it easier for people to belong and contribute.
+            I&apos;ve held roles at universities, in student organizations and
+            in community groups. Each one came down to listening, coordinating,
+            communicating clearly and following through. The goal never
+            changed: make it easier for people to belong and contribute.
           </p>
         </div>
         <div className="leadership-grid">

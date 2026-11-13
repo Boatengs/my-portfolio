@@ -13,22 +13,19 @@ export default function Impact() {
           <em>stronger systems.</em>
         </h1>
         <p>
-          Across school, leadership, and professional work, the thread has
-          remained the same: notice what makes it harder for people to
-          participate, communicate, or belong—and help build a better way
-          forward.
+          In school, in community roles and at work, I keep ending up in the
+          same place: noticing what makes it harder for people to take part or
+          stay informed, and helping fix it.
         </p>
       </header>
       <section className="impact-detail shell">
         <div className="impact-origin">
           <h2>Impact starts with paying attention.</h2>
           <p>
-            Meaningful improvement often begins with
-            practical questions: Who is being left out? Where is information
-            getting lost? What makes participation harder than necessary? His
-            approach centers on listening, understanding the people and processes
-            involved, and developing solutions that are clearer, more inclusive,
-            and easier to sustain.
+            Most of the improvements I&apos;ve been part of started with
+            listening. Before I suggest a change, I try to understand who is
+            involved and what is getting in their way. I aim for fixes people
+            can keep using after I&apos;ve moved on.
           </p>
         </div>
         <div className="impact-story-grid">
@@ -37,10 +34,10 @@ export default function Impact() {
             <p className="eyebrow">COMMUNITY</p>
             <h3>Creating room for people to belong.</h3>
             <p>
-              Through student leadership, ambassador work, community events, and
-              recreational sports, he has helped create inclusive spaces where
-              people across programs, backgrounds, and experience levels can
-              meet, participate, and feel connected.
+              Through student leadership, ambassador work, community events and
+              pickup sports, I&apos;ve helped build spaces where people from
+              different programs and backgrounds actually meet and get
+              involved.
             </p>
           </article>
           <article>
@@ -48,10 +45,9 @@ export default function Impact() {
             <p className="eyebrow">ENGAGEMENT</p>
             <h3>Turning an invitation into participation.</h3>
             <p>
-              Community requires more than simply announcing an event. His approach
-              focuses on welcoming participants, listening to their needs,
-              communicating clearly, and creating experiences that encourage
-              sustained involvement.
+              Announcing an event is the easy part. I focus on welcoming people,
+              listening to what they need and communicating clearly, so they
+              come back the next time.
             </p>
           </article>
           <article className="impact-feature">
@@ -59,11 +55,10 @@ export default function Impact() {
             <p className="eyebrow">BETTER INFORMATION FLOW</p>
             <h3>Making internal communication easier to follow.</h3>
             <p>
-              At his current organization, he addressed a long-standing
-              challenge in how internal information moved across the workplace.
-              By helping centralize communication, he made updates easier to
-              share, locate, and follow—reducing fragmentation and giving teams
-              a clearer way to stay informed.
+              At my current organization, internal updates were spread across
+              too many places and were easy to miss. I helped centralize that
+              communication, so updates are now easier to share, find and
+              follow.
             </p>
           </article>
         </div>
