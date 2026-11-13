@@ -475,13 +475,13 @@ export default function Home() {
               <br />
               BOATENG
             </h2>
-            <p>DATA ANALYTICS · APPLIED MACHINE LEARNING</p>
+            <p>DATA ANALYSIS · DATA ENGINEERING · MACHINE LEARNING</p>
           </div>
           <div className="profile-overview-copy">
             <p>
-              I am a data analytics and applied machine learning professional
-              with an MPS in Applied Machine Intelligence and hands on
-              experience in financial operations, donor data analysis,
+              I am a data analyst, data engineer and machine learning
+              practitioner with an MPS in Applied Machine Intelligence and hands
+              on experience in financial analysis, donor data analysis,
               reporting, data governance and healthcare analytics.
             </p>
             <p>
