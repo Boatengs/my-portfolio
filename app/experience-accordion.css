@@ -192,3 +192,46 @@
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
+
+/* Layout: compact date column, title row spans to the arrow at the far right */
+.timeline-accordion article {
+  display: grid !important;
+  grid-template-columns: 170px minmax(0, 1fr) !important;
+  gap: 36px !important;
+  align-items: start;
+}
+
+.timeline-accordion .timeline-meta {
+  padding-top: 6px;
+}
+
+.timeline-accordion article h3 {
+  max-width: none !important;
+  font-size: clamp(24px, 2.4vw, 32px) !important;
+  line-height: 1.12;
+}
+
+.timeline-accordion .role-toggle {
+  align-items: flex-start;
+}
+
+.timeline-accordion .role-title {
+  max-width: 820px;
+}
+
+@media (max-width: 760px) {
+  .timeline-accordion article {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .timeline-accordion .timeline-meta {
+    flex-direction: row;
+    gap: 12px;
+    padding-top: 0;
+  }
+
+  .timeline-accordion article h3 {
+    font-size: clamp(21px, 6vw, 26px) !important;
+  }
+}
