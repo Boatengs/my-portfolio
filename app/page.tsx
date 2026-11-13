@@ -479,18 +479,25 @@ export default function Home() {
           </div>
           <div className="profile-overview-copy">
             <p>
-              I&apos;m a data analyst and applied machine learning practitioner
-              with an MPS in Applied Machine Intelligence from Northeastern
-              University and a BS in Computer Science. My background covers
-              software testing, financial and donor data, and machine learning
-              research.
+              I&apos;m a data analyst and machine learning practitioner focused
+              on healthcare AI and public interest data. I studied computer
+              science at Saratov State University, earned a diploma in Data
+              Analysis and Machine Learning from Innopolis University, and
+              interned as a software engineer at Bosch, where my testing and
+              debugging work helped improve system stability by 20%. I then
+              completed an MPS in Applied Machine Intelligence at Northeastern
+              University&apos;s Roux Institute.
             </p>
             <p>
-              What ties my work together is getting the numbers right before
-              anyone acts on them. I&apos;ve built tools that monitor clinical
-              risk models, flag drinking water systems for PFAS review and help
-              investigators decide which suspicious transactions to look at
-              first. I&apos;ve also co-authored two published research reviews.
+              My work centers on whether a result can be trusted before someone
+              acts on it. In healthcare, that led me to build CounterSignal, a
+              tool that monitors clinical risk models after deployment, along
+              with projects in medical imaging and medical language models. With
+              public data, I&apos;ve screened 10,313 water systems for PFAS
+              review, traced FEMA recovery funding to counties, and beaten the
+              EIA day ahead electricity demand forecast for PJM by 44% on
+              average error. My main tools are Python, SQL and Tableau, and
+              II&apos;ve co-authored two published reviews on machine learning.apos;m a coauthor on two published reviews on machine learning.
             </p>
             <div className="profile-overview-credentials">
               <span>MPS Applied Machine Intelligence</span>
