@@ -494,7 +494,7 @@ export default function Home() {
               alongside statistical modeling, natural language processing,
               computer vision and generative AI. On every project I hold the
               same standard: results that are accurate and clear about their
-              limits.apos;m a coauthor on two published reviews on machine learning.
+              limits.
             </p>
             <div className="profile-overview-credentials">
               <span>MPS Applied Machine Intelligence</span>
