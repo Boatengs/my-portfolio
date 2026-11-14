@@ -31,7 +31,7 @@ function ProjectCard({
     <Link
       href={`/projects/${project.slug}`}
       aria-label={`View case study: ${project.title}`}
-      className={`project-card project-card--editorial${lead ? " project-card--lead" : ""}`}
+      className={`project-card project-card--editorial${lead ? " project-card--lead" : ""} accent-${project.accent}`}
     >
       <ProjectCover project={project} />
       <div className="project-editorial-copy">
@@ -57,9 +57,9 @@ function ProjectCard({
 }
 
 export function ProjectGrid({ featured = false }: { featured?: boolean }) {
-  // The home page always features the two newest projects, so adding a project at the
+  // The home page always features the three newest projects, so adding a project at the
   // front of recentProjects in project-registry.ts puts it on the home page too.
-  const source = featured ? allProjects.slice(0, 2) : allProjects;
+  const source = featured ? allProjects.slice(0, 3) : allProjects;
 
   const [active, setActive] = useState("All");
   const visible =

@@ -1,4 +1,5 @@
 import type { Project } from "./projects";
+import { ProjectVisual } from "./project-visuals";
 
 const coverCodes: Record<string, [string, string]> = {
   "countersignal": ["COUNTER", "SIGNAL"],
@@ -48,6 +49,18 @@ export function ProjectCover({
   const code = coverCodes[project.slug] ?? ["CASE", "STUDY"];
   const proof = project.evidence?.[0];
   const surfaceLabel = label || defaultSurfaceLabel(project);
+
+  if (variant === "card") {
+    return (
+      <div className={`project-cover cover-${project.accent} project-cover--visual`} aria-hidden="true">
+        <div className="project-cover-topline">
+          <span>{project.index}</span>
+          <span className="project-cover-action">{surfaceLabel}</span>
+        </div>
+        <ProjectVisual slug={project.slug} />
+      </div>
+    );
+  }
 
   return (
     <div
