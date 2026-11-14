@@ -4,6 +4,7 @@ import { allProjects } from "./project-registry";
 import { publications } from "./publications";
 import { SiteNav } from "./site-nav";
 import { ExperienceTimeline } from "./experience-timeline";
+import { SkillsConstellation } from "./skills-constellation";
 import { sitePath } from "./site-path";
 export const skillGroups = [
   {
@@ -638,25 +639,7 @@ export default function Home() {
             platforms connected to documented project outcomes.
           </p>
         </div>
-        <div className="capability-console">
-          <div className="capability-console-head">
-            <p>TECHNICAL SKILLS AND TOOLS</p>
-            <span>Nine disciplines · one connected workflow</span>
-          </div>
-          <div className="capability-preview-grid">
-            {skillGroups.map((s, i) => (
-              <article key={s.label}>
-                <span>0{i + 1}</span>
-                <h3>{s.label}</h3>
-                <p>{s.skills.slice(0, 4).map((item) => item.name).join(" · ")}</p>
-              </article>
-            ))}
-          </div>
-          <div className="capability-preview-foot">
-            <p>Explore the complete matrix, project evidence, and tools applied across professional and project work.</p>
-            <Link href="/skills">View technical skills &amp; tools <span>↗</span></Link>
-          </div>
-        </div>
+        <SkillsConstellation />
       </section>
       <section className="leadership-preview shell" id="leadership">
         <div className="leadership-preview-head">
