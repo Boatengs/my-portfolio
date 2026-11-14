@@ -1,0 +1,42 @@
+/* Round About portrait with an accent ring */
+.about-system .portrait-stage .profile-photo {
+  aspect-ratio: 1 / 1 !important;
+  height: auto !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 0 6px #fff, 0 0 0 8px var(--accent, #e44c39), 0 24px 48px rgba(18, 20, 23, 0.16) !important;
+}
+
+.about-system .portrait-stage .profile-photo::before {
+  display: none !important;
+}
+
+.about-system .portrait-stage .profile-photo img {
+  border-radius: 50% !important;
+}
+
+.about-system .portrait-stage .photo-sheen {
+  display: none !important;
+}
+
+.about-system .portrait-stage {
+  display: grid !important;
+  place-items: center !important;
+  align-items: center !important;
+  min-height: 0 !important;
+  padding: 32px !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.about-system .portrait-stage::before {
+  display: none !important;
+}
+
+.about-system .portrait-stage::after {
+  display: none !important;
+}
+
+.about-system .portrait-stage .profile-photo {
+  margin: 0 auto !important;
+}
