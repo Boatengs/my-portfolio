@@ -1,13 +1,4 @@
-/* Background: experience and education side by side */
-.background-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 340px);
-  gap: clamp(32px, 4vw, 64px);
-  align-items: start;
-}
-
-.background-experience { min-width: 0; }
-
+/* Background: experience, then education cards underneath */
 .background-label {
   margin: 0 0 18px;
   font: 600 11px/1.4 ui-monospace, "SFMono-Regular", Menlo, monospace;
@@ -18,50 +9,98 @@
 .background-experience .timeline-controls { margin-top: 0; }
 
 .background-education {
-  padding: 28px;
-  border-radius: 20px;
-  background: #f6f7f9;
-  border: 1px solid rgba(18, 20, 23, 0.08);
+  margin-top: 72px;
 }
 
-.background-education ol {
+.edu-cards {
   display: grid;
-  gap: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.background-education li {
-  padding: 20px 0;
-  border-top: 1px solid rgba(18, 20, 23, 0.1);
+.edu-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 28px 28px 26px;
+  border-radius: 20px;
+  background: #fff;
+  border: 1px solid rgba(18, 20, 23, 0.1);
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-.background-education li:first-child { border-top: 0; padding-top: 4px; }
-
-.background-education li > span {
-  font: 600 12px ui-monospace, Menlo, monospace;
-  color: #6b7079;
+.edu-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--atelier-red, #e44c39);
+  transform: scaleX(0.18);
+  transform-origin: left;
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.background-education h3 {
-  margin: 8px 0 4px;
-  font-size: 19px;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+.edu-card:hover {
+  border-color: rgba(18, 20, 23, 0.2);
+  box-shadow: 0 16px 36px rgba(16, 24, 40, 0.07);
 }
 
-.background-education p {
-  margin: 0;
-  color: #4a5059;
-  font-size: 15px;
+.edu-card:hover::before { transform: scaleX(1); }
+
+.edu-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
 }
 
-.background-education b {
-  display: block;
-  margin-top: 8px;
+.edu-level {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #f2f3f5;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.edu-year {
+  font: 600 13px ui-monospace, Menlo, monospace;
   color: var(--atelier-red, #e44c39);
+}
+
+.edu-card h3 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.edu-degree {
+  margin: 0;
+  color: #5b616b;
+  font-size: 14px;
+}
+
+.edu-school {
+  margin: auto 0 0;
+  padding-top: 14px;
+  border-top: 1px solid rgba(18, 20, 23, 0.08);
+  color: #121417;
   font-size: 13px;
+  font-weight: 600;
+}
+
+@media (max-width: 860px) {
+  .edu-cards { grid-template-columns: 1fr; }
+  .background-education { margin-top: 48px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .edu-card, .edu-card::before { transition: none; }
 }
 
 .background .timeline-accordion article {
@@ -75,7 +114,23 @@
   font-size: 15px !important;
 }
 
+/* About text: calmer sizes */
+.about-system .about-narrative p:first-of-type {
+  font-size: clamp(18px, 1.5vw, 21px) !important;
+  line-height: 1.6 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.about-system .about-narrative p + p {
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+}
+
 /* More about me */
+.more-about {
+  padding-bottom: clamp(96px, 10vw, 160px) !important;
+}
+
 .more-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -142,7 +197,6 @@
 .more-card--dark p { color: #c4c8cf; }
 
 @media (max-width: 980px) {
-  .background-grid { grid-template-columns: 1fr; }
   .more-grid { grid-template-columns: 1fr; }
   .more-card { min-height: 0; }
 }
