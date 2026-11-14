@@ -448,15 +448,14 @@ export default function Home() {
               DATA GOVERNANCE · INTELLIGENT SYSTEMS
             </p>
             <h1>
-              Transforming data into <em>insight, strategy, and impact.</em>
+              Careful data work for <em>decisions that matter.</em>
             </h1>
           </div>
           <div className="hero-aside">
             <p>
-              His work transforms complex information into actionable intelligence,
-              decision ready reporting, and practical machine learning
-              solutions that support finance, development, and mission driven
-              organizations with rigorous analytical and technical expertise.
+              I build analysis and machine learning tools that people can check
+              and use. Most of my work sits in healthcare and nonprofit finance,
+              where a wrong number has real consequences.
             </p>
             <div className="hero-actions">
               <a className="text-link" href="#work">
@@ -476,22 +475,28 @@ export default function Home() {
               <br />
               BOATENG
             </h2>
-            <p>DATA ANALYTICS · APPLIED MACHINE LEARNING</p>
+            <p>DATA ANALYSIS · DATA ENGINEERING · MACHINE LEARNING</p>
           </div>
           <div className="profile-overview-copy">
             <p>
-              Sam is a data analytics and applied machine learning professional
-              with graduate training in Applied Machine Intelligence and
-              practical experience across financial operations, donor data
-              analysis, reporting, data governance, systems improvement, and
-              mission driven healthcare initiatives.
+              I am a data analyst, data engineer and machine learning
+              practitioner who builds dependable analytical systems for
+              healthcare, finance and public sector data. I hold an MPS in
+              Applied Machine Intelligence from Northeastern University and
+              bring hands on experience in healthcare analysis, financial
+              analysis, donor data analysis, reconciliation, reporting and data
+              governance.
             </p>
             <p>
-              He combines Python, SQL, Excel, Power BI, Tableau, statistical
-              modeling, natural language processing, computer vision, and
-              generative AI with clear stakeholder communication, transforming
-              complex information into reliable insights, informed decisions,
-              and measurable organizational impact.
+              My work covers every stage of an analytical project: designing
+              data pipelines and validation checks, building and evaluating
+              predictive models, and delivering dashboards and reports that
+              leaders can trust. I work with tools
+              such as Python, SQL and Tableau, applied within analytical
+              frameworks for statistical modeling, natural language processing,
+              computer vision and generative AI. On every project I hold the
+              same standard: results that are accurate and clear about their
+              limits.
             </p>
             <div className="profile-overview-credentials">
               <span>MPS Applied Machine Intelligence</span>
@@ -505,13 +510,13 @@ export default function Home() {
           <div>
             <p className="eyebrow">02 / ABOUT</p>
             <h2>
-              Where analytical rigor meets <em>practical execution.</em>
+              Accuracy first, <em>then everything else.</em>
             </h2>
           </div>
           <p>
-            His approach connects complex organizational challenges with informed,
-            defensible decisions through analytical rigor, statistical
-            modeling, effective visualization, and reliable systems.
+            I would rather report a result that holds up than one that looks
+            impressive. I say plainly what a model can&apos;t do, and I keep my
+            steps visible so they can be checked.
           </p>
         </div>
         <div className="about-system-grid">
@@ -533,18 +538,17 @@ export default function Home() {
             </div>
             <div className="about-narrative">
               <p>
-                Sam’s current work spans finance and development, applying
-                analytical and technical expertise to financial and donor data,
-                reconciliation, management reporting, data quality,
-                organizational systems, and AI enabled healthcare grant
-                initiatives.
+                At Village Health Works I reconcile financial and donor data
+                across systems, prepare variance analyses and forecasts for
+                leadership, and support reporting for AI enabled healthcare
+                grant work. I also manage user access and write the
+                documentation our team relies on.
               </p>
               <p>
-                He recently completed his master&apos;s in Analytics and Applied
-                Machine Intelligence at Northeastern University. His approach
-                emphasizes accuracy and accountability across the full
-                analytical lifecycle, from data validation and modeling to
-                visualization and executive ready communication.
+                One example: an insurance billing extract showed the same large
+                gap on almost every record. I traced it to annual rates being
+                read as monthly ones, corrected it, and built a small tool so
+                that check now runs on its own.
               </p>
             </div>
           </div>
@@ -666,9 +670,9 @@ export default function Home() {
             </h2>
           </div>
           <p>
-            His leadership reflects a sustained commitment to inclusive
-            communities, meaningful engagement, and initiatives that create
-            lasting institutional and social impact.
+            Most of my leadership has been hands on: welcoming new students,
+            organizing events and pickup games, and making it easier for people
+            to take part.
           </p>
         </div>
         <div className="leadership-highlights">
@@ -720,9 +724,9 @@ export default function Home() {
             </h2>
           </div>
           <p>
-            Volunteering, cooking, travel, fitness, music, reading, and sports
-            reflect the curiosity, discipline, and community spirit he brings
-            to every part of life.
+            Outside work I volunteer, cook, travel, train, read and play soccer
+            and basketball. That side of my life keeps me curious and keeps me
+            around people.
           </p>
         </div>
         <div className="beyond-preview-inner">
@@ -752,9 +756,9 @@ export default function Home() {
           </div>
           <div className="impact-preview-copy">
             <p>
-              This work integrates service, community engagement, and
-              operational improvement, strengthening inclusion, communication,
-              and the systems organizations rely on to deliver their missions.
+              The same habit runs through my community roles and my job. I
+              look for where people get left out or information gets lost, then
+              help fix the process behind it.
             </p>
             <div className="impact-preview-points">
               <span>Community</span>
@@ -778,8 +782,8 @@ export default function Home() {
             </h2>
           </div>
           <p>
-            Applied research priorities focused on trustworthy intelligent
-            systems, responsible detection, and equitable access.
+            Problems I&apos;m working on now, in my own projects and in
+            research.
           </p>
         </div>
         <div className="exploration-grid">
@@ -848,9 +852,10 @@ export default function Home() {
           </div>
           <div>
             <p>
-              Sam welcomes opportunities that integrate rigorous analytics,
-              applied machine learning, strategic communication, and
-              measurable organizational impact.
+              I&apos;m looking for analyst and applied machine learning roles
+              where the data matters, especially in healthcare, finance and
+              public services. If that sounds like your team, I&apos;d like to
+              hear from you.
             </p>
             <div className="role-pills">
               <span>Data Analysis</span>
