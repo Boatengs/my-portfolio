@@ -747,7 +747,7 @@ export default function Home() {
               <span>Engagement</span>
               <span>Clearer systems</span>
             </div>
-            <Link className="impact-link" href="/impact">
+            <Link className="impact-link" href="/leadership#serve">
               Read the full story <span>↗</span>
             </Link>
           </div>
