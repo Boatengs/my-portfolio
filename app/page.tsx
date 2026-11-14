@@ -455,8 +455,8 @@ export default function Home() {
           <div className="hero-aside">
             <p>
               I build analysis and machine learning tools that people can check
-              and use. Most of my work sits in healthcare and nonprofit finance,
-              where a wrong number has real consequences.
+              and use. Most of my projects sit across
+              and within data frameworks.
             </p>
             <div className="hero-actions">
               <a className="text-link" href="#work">
