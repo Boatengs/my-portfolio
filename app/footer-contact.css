@@ -1,0 +1,60 @@
+/* Homepage footer: availability and contact in one place */
+.footer--contact .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-status {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #58c26b;
+  box-shadow: 0 0 0 5px rgba(88, 194, 107, 0.18);
+}
+
+.footer-contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+  gap: clamp(32px, 6vw, 96px);
+  align-items: end;
+  margin-bottom: 72px;
+}
+
+.footer--contact .footer-contact-grid h2 {
+  margin: 0;
+}
+
+.footer-contact-copy p {
+  margin: 0 0 22px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.footer-roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.footer-roles span {
+  padding: 9px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.footer--contact .footer-contact-copy .email {
+  margin: 0 !important;
+}
+
+@media (max-width: 860px) {
+  .footer-contact-grid {
+    grid-template-columns: 1fr;
+    margin-bottom: 48px;
+  }
+}
