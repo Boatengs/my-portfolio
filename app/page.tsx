@@ -810,8 +810,8 @@ export default function Home() {
             <div className="footer-contact-copy">
               <p>
                 I&apos;m looking for analyst and applied machine learning roles
-                where the data matters, especially in healthcare, finance and
-                public services. If that sounds like your team, I&apos;d like to
+                where the data matters, especially in healthcare and data
+                engineering. If that sounds like your team, I&apos;d like to
                 hear from you.
               </p>
               <div className="footer-roles">
