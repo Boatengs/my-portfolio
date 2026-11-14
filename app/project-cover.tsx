@@ -62,9 +62,37 @@ export function ProjectCover({
     );
   }
 
+  if (variant === "detail") {
+    return (
+      <div className={`project-cover cover-${project.accent} project-cover--art project-cover--detail`} aria-hidden="true">
+        <div className="project-cover-art-copy">
+          <div className="project-cover-topline">
+            <span>{project.index}</span>
+            <span>{primaryCategory(project.category)}</span>
+          </div>
+          <span className="project-cover-proof">
+            {proof ? (
+              <>
+                <strong>{proof.value}</strong>
+                <small>{proof.label}</small>
+              </>
+            ) : (
+              <>
+                <strong>{code[0]} {code[1]}</strong>
+                <small>Project evidence</small>
+              </>
+            )}
+          </span>
+          <span className="project-cover-action">{surfaceLabel}</span>
+        </div>
+        <ProjectVisual slug={project.slug} />
+      </div>
+    );
+  }
+
   return (
     <div
-      className={`project-cover cover-${project.accent}${variant === "detail" ? " project-cover--detail" : ""}`}
+      className={`project-cover cover-${project.accent}`}
       aria-hidden="true"
     >
       <div className="project-cover-grid" />

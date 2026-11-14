@@ -11,7 +11,7 @@ export function SiteNav({ home = false, label = "Primary navigation" }: SiteNavP
     { label: "Experience", href: home ? "#experience" : "/#experience" },
     { label: "Projects", href: home ? "#work" : "/work" },
     { label: "Skills", href: home ? "#skills" : "/skills" },
-    { label: "Leadership", href: home ? "#leadership" : "/leadership" },
+    { label: "Leadership & Impact", href: "/leadership" },
     { label: "Publications", href: "/publications" },
     { label: "Beyond Work", href: "/person" },
   ];
