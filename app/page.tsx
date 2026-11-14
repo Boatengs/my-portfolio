@@ -726,33 +726,6 @@ export default function Home() {
           </Link>
         </div>
       </section>
-      <section className="impact-preview" id="impact">
-        <div className="shell impact-preview-grid">
-          <div>
-            <p className="eyebrow">IMPACT / PROFESSIONAL APPROACH</p>
-            <h2>
-              Service that drives
-              <br />
-              <em>stronger systems.</em>
-            </h2>
-          </div>
-          <div className="impact-preview-copy">
-            <p>
-              The same habit runs through my community roles and my job. I
-              look for where people get left out or information gets lost, then
-              help fix the process behind it.
-            </p>
-            <div className="impact-preview-points">
-              <span>Community</span>
-              <span>Engagement</span>
-              <span>Clearer systems</span>
-            </div>
-            <Link className="impact-link" href="/leadership#serve">
-              Read the full story <span>↗</span>
-            </Link>
-          </div>
-        </div>
-      </section>
       <section className="section shell exploration" id="exploring">
         <div className="section-head">
           <div>
