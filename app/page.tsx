@@ -795,45 +795,37 @@ export default function Home() {
           </Link>
         </div>
       </section>
-      <section className="availability">
-        <div className="shell availability-grid">
-          <div>
-            <p className="eyebrow">OPEN TO OPPORTUNITIES</p>
-            <h2>
-              Advancing organizations
-              <br />
-              through <em>data and intelligence.</em>
-            </h2>
-          </div>
-          <div>
-            <p>
-              I&apos;m looking for analyst and applied machine learning roles
-              where the data matters, especially in healthcare, finance and
-              public services. If that sounds like your team, I&apos;d like to
-              hear from you.
-            </p>
-            <div className="role-pills">
-              <span>Data Analysis</span>
-              <span>Machine Learning</span>
-              <span>Healthcare Analysis</span>
-              <span>Fraud Detection Analysis</span>
-              <span>Environment and Water Analysis</span>
-            </div>
-            <a href="mailto:samboateng190@gmail.com">Start a conversation ↗</a>
-          </div>
-        </div>
-      </section>
-      <footer className="footer">
+      <footer className="footer footer--contact" id="contact">
         <div className="shell">
-          <p className="eyebrow">LET&apos;S WORK TOGETHER</p>
-          <h2>
-            Have a strategic challenge
-            <br />
-            worth <em>solving together?</em>
-          </h2>
-          <a className="email" href="mailto:samboateng190@gmail.com">
-            samboateng190@gmail.com ↗
-          </a>
+          <p className="eyebrow">
+            <span className="footer-status" aria-hidden="true" /> OPEN TO
+            OPPORTUNITIES · LET&apos;S WORK TOGETHER
+          </p>
+          <div className="footer-contact-grid">
+            <h2>
+              Have a strategic challenge
+              <br />
+              worth <em>solving together?</em>
+            </h2>
+            <div className="footer-contact-copy">
+              <p>
+                I&apos;m looking for analyst and applied machine learning roles
+                where the data matters, especially in healthcare, finance and
+                public services. If that sounds like your team, I&apos;d like to
+                hear from you.
+              </p>
+              <div className="footer-roles">
+                <span>Data Analysis</span>
+                <span>Machine Learning</span>
+                <span>Healthcare Analysis</span>
+                <span>Fraud Detection Analysis</span>
+                <span>Environment and Water Analysis</span>
+              </div>
+              <a className="email" href="mailto:samboateng190@gmail.com">
+                samboateng190@gmail.com ↗
+              </a>
+            </div>
+          </div>
           <div className="footer-row">
             <p>© 2026 Sampson Boateng</p>
             <div>

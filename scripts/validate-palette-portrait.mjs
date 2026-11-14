@@ -50,7 +50,8 @@ if (!home.includes("/my-portfolio/sam-profile.webp")) {
   throw new Error("Homepage portrait does not resolve through the GitHub Pages base path.");
 }
 for (const marker of [
-  "Advancing organizations",
+  "solving together",
+  "Fraud Detection Analysis",
   // The home page features the two newest projects; check their headline evidence renders.
   "99.5%",
   "Minimum drift detection rate",
