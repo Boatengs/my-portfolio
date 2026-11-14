@@ -468,48 +468,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <section className="profile-overview" aria-label="Professional profile">
-          <div className="profile-overview-heading">
-            <span>01 / PROFILE</span>
-            <h2>
-              SAMPSON
-              <br />
-              BOATENG
-            </h2>
-            <p>DATA ANALYSIS · DATA ENGINEERING · MACHINE LEARNING</p>
-          </div>
-          <div className="profile-overview-copy">
-            <p>
-              I am a data analyst, data engineer and machine learning
-              practitioner who builds dependable analytical systems for
-              healthcare, finance and public sector data. I hold an MPS in
-              Applied Machine Intelligence from Northeastern University and
-              bring hands on experience in healthcare analysis, financial
-              analysis, donor data analysis, reconciliation, reporting and data
-              governance.
-            </p>
-            <p>
-              My work covers every stage of an analytical project: designing
-              data pipelines and validation checks, building and evaluating
-              predictive models, and delivering dashboards and reports that
-              leaders can trust. I work with tools
-              such as Python, SQL and Tableau, applied within analytical
-              frameworks for statistical modeling, natural language processing,
-              computer vision and generative AI. On every project I hold the
-              same standard: results that are accurate and clear about their
-              limits.
-            </p>
-            <div className="profile-overview-credentials">
-              <span>MPS Applied Machine Intelligence</span>
-              <span>B.S. Computer Science</span>
-            </div>
-          </div>
-        </section>
       </section>
       <section className="section about-system shell" id="about">
         <div className="about-system-head">
           <div>
-            <p className="eyebrow">02 / ABOUT</p>
+            <p className="eyebrow">01 / ABOUT</p>
             <h2>
               Accuracy first, <em>then everything else.</em>
             </h2>
@@ -539,13 +502,24 @@ export default function Home() {
             </div>
             <div className="about-narrative">
               <p>
-                At Village Health Works I reconcile financial and donor data
-                across systems, prepare variance analyses and forecasts for
-                leadership, and support reporting for AI enabled healthcare
-                grant work. I also manage user access and write the
-                documentation our team relies on.
+                I am a data analyst, data engineer and machine learning
+                practitioner who builds dependable analytical systems for
+                healthcare, finance and public sector data. I hold an MPS in
+                Applied Machine Intelligence from Northeastern University and
+                bring hands on experience in healthcare analysis, financial
+                analysis, donor data analysis, reconciliation, reporting and
+                data governance.
               </p>
               <p>
+                My work covers every stage of an analytical project: designing
+                data pipelines and validation checks, building and evaluating
+                predictive models, and delivering dashboards and reports that
+                leaders can trust. I work with tools such as Python, SQL and
+                Tableau, applied within analytical frameworks for statistical
+                modeling, natural language processing, computer vision and
+                generative AI.
+              </p>
+              <p className="about-core-areas">
                 Core areas: data reconciliation, variance analysis, forecasting,
                 data quality assurance, access management, workflow automation
                 and process documentation.
@@ -554,41 +528,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="education shell" id="education">
-        <p className="eyebrow">03 / EDUCATION</p>
-        <div className="education-grid">
-          <article>
-            <span>2025</span>
-            <h3>Master of Professional Studies (MPS)</h3>
-            <p>Applied Machine Intelligence</p>
-            <b>
-              Northeastern University
-              <br />
-              The Roux Institute
-            </b>
-          </article>
-          <article>
-            <span>2023</span>
-            <h3>Bachelor of Science</h3>
-            <p>Computer Science</p>
-            <b>Saratov State University</b>
-          </article>
-          <article>
-            <span>2023</span>
-            <h3>Diploma</h3>
-            <p>Data Analysis and Machine Learning</p>
-            <b>
-              Innopolis University
-              <br />
-              Russia
-            </b>
-          </article>
-        </div>
-      </section>
-      <section className="section shell experience" id="experience">
+      <section className="section shell experience background" id="experience">
         <div className="section-head compact">
           <div>
-            <p className="eyebrow">04 / EXPERIENCE</p>
+            <p className="eyebrow">02 / BACKGROUND</p>
             <h2>
               Expertise shaped by
               <br />
@@ -596,12 +539,40 @@ export default function Home() {
             </h2>
           </div>
         </div>
-        <ExperienceTimeline />
+        <div className="background-grid">
+          <div className="background-experience">
+            <p className="background-label">EXPERIENCE</p>
+            <ExperienceTimeline />
+          </div>
+          <aside className="background-education" id="education" aria-labelledby="education-title">
+            <p className="background-label" id="education-title">EDUCATION</p>
+            <ol>
+              <li>
+                <span>2025</span>
+                <h3>Master of Professional Studies (MPS)</h3>
+                <p>Applied Machine Intelligence</p>
+                <b>Northeastern University · The Roux Institute</b>
+              </li>
+              <li>
+                <span>2023</span>
+                <h3>Bachelor of Science</h3>
+                <p>Computer Science</p>
+                <b>Saratov State University</b>
+              </li>
+              <li>
+                <span>2023</span>
+                <h3>Diploma</h3>
+                <p>Data Analysis and Machine Learning</p>
+                <b>Innopolis University, Russia</b>
+              </li>
+            </ol>
+          </aside>
+        </div>
       </section>
       <section className="section shell" id="work">
         <div className="section-head">
           <div>
-            <p className="eyebrow">05 / PROJECTS</p>
+            <p className="eyebrow">03 / PROJECTS</p>
             <h2>
               Applied solutions to
               <br />
@@ -627,7 +598,7 @@ export default function Home() {
       <section className="section shell skills-preview" id="skills">
         <div className="section-head">
           <div>
-            <p className="eyebrow">06 / SKILLS</p>
+            <p className="eyebrow">04 / SKILLS</p>
             <h2>
               Technical capabilities
               <br />
@@ -641,157 +612,51 @@ export default function Home() {
         </div>
         <SkillsConstellation />
       </section>
-      <section className="leadership-preview shell" id="leadership">
-        <div className="leadership-preview-head">
+      <section className="section shell more-about" id="more">
+        <div className="section-head compact">
           <div>
-            <p className="eyebrow">07 / LEADERSHIP & RECOGNITION</p>
+            <p className="eyebrow">05 / MORE ABOUT ME</p>
             <h2>
-              Leadership grounded
+              Beyond the
               <br />
-              in <em>service and inclusion.</em>
+              <em>résumé.</em>
             </h2>
           </div>
-          <p>
-            Most of my leadership has been hands on: welcoming new students,
-            organizing events and pickup games, and making it easier for people
-            to take part.
-          </p>
         </div>
-        <div className="leadership-highlights">
-          <article>
-            <span>100</span>
-            <div>
-              <p>LAUREL & SCROLL</p>
-              <h3>
-                Recognized for achievement, leadership, and student engagement.
-              </h3>
-            </div>
-          </article>
-          <article>
-            <span>YALI</span>
-            <div>
-              <p>LEADERSHIP FELLOW</p>
-              <h3>
-                Part of a network of emerging African leaders creating community
-                impact.
-              </h3>
-            </div>
-          </article>
-          <article>
-            <span>1ST</span>
-            <div>
-              <p>CLIMATE HACKATHON</p>
-              <h3>First-place team behind the SeeLevelRise app concept.</h3>
-            </div>
-          </article>
-        </div>
-        <div className="leadership-preview-foot">
-          <Link className="impact-link dark" href="/leadership">
-            Explore leadership and recognition <span>↗</span>
+        <div className="more-grid">
+          <Link className="more-card more-card--dark" href="/leadership" id="leadership">
+            <span className="more-kicker">LEADERSHIP &amp; IMPACT</span>
+            <h3>Service that builds stronger systems.</h3>
+            <p>
+              Four leadership roles, the Laurel and Scroll 100 Society of
+              Distinction, a first place hackathon win and a YALI fellowship.
+            </p>
+            <span className="more-link">
+              Explore leadership <span aria-hidden="true">↗</span>
+            </span>
           </Link>
-          <p>
-            Community roles, awards, fellowships, professional badges, and the
-            stories behind them.
-          </p>
-        </div>
-      </section>
-      <section className="section shell beyond-preview" id="beyond-work">
-        <div className="section-head">
-          <div>
-            <p className="eyebrow">08 / BEYOND WORK</p>
-            <h2>
-              The person behind
-              <br />
-              <em>the work.</em>
-            </h2>
-          </div>
-          <p>
-            Outside work I volunteer, cook, travel, train, read and play soccer
-            and basketball. That side of my life keeps me curious and keeps me
-            around people.
-          </p>
-        </div>
-        <div className="beyond-preview-inner">
-          <div className="beyond-preview-interests">
-            <span>Volunteering</span>
-            <span>Cooking</span>
-            <span>Travel</span>
-            <span>Fitness</span>
-            <span>Music</span>
-            <span>Reading</span>
-            <span>Sports</span>
-          </div>
-          <Link className="impact-link dark" href="/person">
-            Meet the person behind the work <span>↗</span>
+          <Link className="more-card" href="/publications" id="research">
+            <span className="more-kicker">RESEARCH &amp; PUBLICATIONS</span>
+            <h3>{publications.length} published research reviews.</h3>
+            <p>
+              Coauthored reviews on machine learning in oncology and on
+              sentiment analysis for customer retention, plus the questions I
+              am exploring now.
+            </p>
+            <span className="more-link">
+              View research <span aria-hidden="true">↗</span>
+            </span>
           </Link>
-        </div>
-      </section>
-      <section className="section shell exploration" id="exploring">
-        <div className="section-head">
-          <div>
-            <p className="eyebrow">09 / CURRENTLY EXPLORING</p>
-            <h2>
-              Research advancing
-              <br />
-              <em>responsible innovation.</em>
-            </h2>
-          </div>
-          <p>
-            Problems I&apos;m working on now, in my own projects and in
-            research.
-          </p>
-        </div>
-        <div className="exploration-grid">
-          <article>
-            <span>01</span>
-            <h3>LLM Evaluation &amp; NLP</h3>
+          <Link className="more-card" href="/person" id="beyond-work">
+            <span className="more-kicker">BEYOND WORK</span>
+            <h3>The person behind the work.</h3>
             <p>
-              Designing stronger evaluation systems for factuality, safety,
-              reasoning quality, and real-world usefulness beyond a single
-              benchmark score.
+              Volunteering, cooking, travel, fitness, reading, and soccer and
+              basketball on whichever court will have me.
             </p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Fraud Detection</h3>
-            <p>
-              Exploring anomaly detection, behavioral signals, and interpretable
-              machine learning for identifying suspicious financial activity
-              responsibly.
-            </p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>AI-Enabled Patient Navigation</h3>
-            <p>
-              Investigating secure, human-centered platforms that help
-              authorized healthcare teams find and navigate relevant
-              patient-record information more efficiently.
-            </p>
-          </article>
-        </div>
-        <div className="research-areas">
-          <p className="eyebrow">RESEARCH AREAS</p>
-          <div>
-            <span>Healthcare</span>
-            <span>Artificial Intelligence</span>
-            <span>Applied Machine Learning</span>
-            <span>Environment</span>
-            <span>Water</span>
-            <span>Climate Resiliency</span>
-            <span>Agriculture</span>
-          </div>
-        </div>
-        <div className="research-publications">
-          <div>
-            <p className="eyebrow">PUBLISHED RESEARCH</p>
-            <p>
-              {publications.length} co-authored reviews, on machine learning in
-              oncology and on sentiment analysis for customer retention.
-            </p>
-          </div>
-          <Link className="impact-link dark" href="/publications">
-            View publications and ORCID record <span>↗</span>
+            <span className="more-link">
+              Meet the person <span aria-hidden="true">↗</span>
+            </span>
           </Link>
         </div>
       </section>

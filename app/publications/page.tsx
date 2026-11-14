@@ -72,8 +72,55 @@ export default function Publications() {
             Open the ORCID record <span>↗</span>
           </a>
         </div>
-        <Link className="back-link" href="/#exploring">
-          ← Back to research on the home page
+        <div className="exploring-block" id="exploring">
+          <p className="eyebrow">CURRENTLY EXPLORING</p>
+          <h2>
+            Research advancing <em>responsible innovation.</em>
+          </h2>
+          <div className="exploring-grid">
+            <article>
+              <span>01</span>
+              <h3>LLM Evaluation &amp; NLP</h3>
+              <p>
+                Designing stronger evaluation systems for factuality, safety,
+                reasoning quality, and real world usefulness beyond a single
+                benchmark score.
+              </p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Fraud Detection</h3>
+              <p>
+                Exploring anomaly detection, behavioral signals, and
+                interpretable machine learning for identifying suspicious
+                financial activity responsibly.
+              </p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>AI Enabled Patient Navigation</h3>
+              <p>
+                Investigating secure, human centered platforms that help
+                authorized healthcare teams find and navigate relevant patient
+                record information more efficiently.
+              </p>
+            </article>
+          </div>
+          <div className="exploring-areas">
+            <p className="eyebrow">RESEARCH AREAS</p>
+            <div>
+              <span>Healthcare</span>
+              <span>Artificial Intelligence</span>
+              <span>Applied Machine Learning</span>
+              <span>Environment</span>
+              <span>Water</span>
+              <span>Climate Resiliency</span>
+              <span>Agriculture</span>
+            </div>
+          </div>
+        </div>
+        <Link className="back-link" href="/">
+          ← Back to home
         </Link>
       </section>
     </main>
