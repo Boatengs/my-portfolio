@@ -9,139 +9,180 @@
   <link rel="preload" as="image" href="/my-portfolio/sam-beyond-work.webp?v=2"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="/my-portfolio/assets/portfolio-20260809.css"/>
   <link rel="stylesheet" href="/my-portfolio/assets/modern-white-20260822.css?v=10"/>
-  <style id="beyond-work-initial-look-20260826">
-    :root{
-      --bw-ink:#241a20;
-      --bw-plum:#271522;
-      --bw-cream:#fff6e9;
-      --bw-paper:#f7e9d8;
-      --bw-coral:#ff6d5b;
-      --bw-yellow:#f7c94b;
-      --bw-mint:#8fd8c5;
-      --bw-blue:#78b7e8;
-      --bw-pink:#f4a6c2;
-      --bw-line:rgba(36,26,32,.18);
-    }
-    html{scroll-behavior:smooth;background:var(--bw-cream)}
-    body{margin:0;background:var(--bw-cream);color:var(--bw-ink);font-family:"Manrope",Arial,sans-serif}
-    body *{box-sizing:border-box}
-    .skip-link{position:fixed;z-index:10000;top:12px;left:12px;padding:12px 16px;background:#111;color:#fff;border:2px solid #fff;border-radius:0;font:800 14px/1 Arial,sans-serif;transform:translateY(calc(-100% - 28px));transition:transform .18s ease}.skip-link:focus,.skip-link:focus-visible{transform:translateY(0);outline:3px solid var(--bw-coral);outline-offset:3px}
-    .person-page{position:relative;overflow:hidden;background:var(--bw-cream);color:var(--bw-ink)}
-    .person-page .shell{width:min(1280px,calc(100% - 64px));margin-inline:auto}
-    .person-page .nav.shell{display:flex;align-items:center;justify-content:space-between;min-height:84px;border-bottom:1px solid rgba(36,26,32,.13);background:transparent!important;box-shadow:none!important}
-    .person-page .wordmark{color:var(--bw-plum)!important;font-family:"Manrope",sans-serif;font-size:31px;font-weight:800}.person-page .wordmark span{color:var(--bw-coral)}
-    .person-page .nav-links{display:flex;align-items:center;gap:24px;padding:0;border:0;background:transparent}.person-page .nav-links>a{padding:10px 0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:#6e5863!important;font-size:12px;font-weight:700}.person-page .nav-links>a:hover{color:var(--bw-plum)!important}.person-page .nav-links .nav-cta{padding:11px 16px!important;border:1px solid var(--bw-plum)!important;color:var(--bw-plum)!important}
+  <style id="beyond-scrapbook-20261114">
+    :root{--sb-paper:#f5efe4;--sb-ink:#1e1b16;--sb-soft:#4a443b;--sb-muted:#6b6358;--sb-accent:#e4572e;--sb-yellow:#facc15;--sb-coral:#fb8a6e;--sb-green:#86efac;--sb-pink:#f9a8d4}
+    body{background:var(--sb-paper)!important}
+    .person-page{background:var(--sb-paper)!important;color:var(--sb-ink);overflow-x:hidden;font-family:Inter,system-ui,sans-serif}
+    .person-page .nav{background:transparent}
+    .sb-hand{font-family:Caveat,cursive!important;font-weight:600}
+    .person-page .eyebrow{font:700 11px/1.4 ui-monospace,"SFMono-Regular",Menlo,monospace!important;letter-spacing:.16em!important;color:var(--sb-muted)!important;margin:0 0 14px}
+    .person-page h1,.person-page h2{font-family:Inter,system-ui,sans-serif;font-weight:800;color:var(--sb-ink);margin:0}
+    .person-page h1 em,.person-page h2 em{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-style:italic;letter-spacing:-.01em}
 
-    .person-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(380px,.82fr);align-items:center;gap:76px;padding-top:86px;padding-bottom:112px}
-    .person-intro .eyebrow,.person-values .eyebrow,.play-section .eyebrow,.visual-journal .eyebrow,.person-closing .eyebrow{margin:0 0 18px;color:var(--bw-coral);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
-    .person-intro h1{max-width:760px;margin:0;font-family:"DM Serif Display",Georgia,serif;font-size:clamp(62px,6.4vw,102px);font-weight:400;line-height:.9;letter-spacing:-.05em}.person-intro h1 em{color:var(--bw-coral);font-weight:400}
-    .person-intro>p{max-width:650px;margin:28px 0 0;color:#6f5962;font-size:16px;line-height:1.75}.person-scroll{margin-top:38px;color:#8d6d79;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.person-scroll span{color:var(--bw-coral)}
-    .person-portrait{position:relative;min-height:520px}.person-portrait img{position:absolute;inset:34px 35px 22px 36px;width:calc(100% - 70px);height:calc(100% - 56px);object-fit:cover;object-position:center 28%;border:1px solid rgba(36,26,32,.12);box-shadow:0 30px 70px rgba(50,28,38,.16)}
-    .portrait-ring{position:absolute;border:1px solid rgba(255,109,91,.38);border-radius:50%}.ring-one{width:420px;height:420px;top:8px;left:0}.ring-two{width:310px;height:310px;right:-10px;bottom:0;border-color:rgba(120,183,232,.45)}
-    .portrait-note{position:absolute;right:0;bottom:12px;width:235px;padding:18px;background:var(--bw-yellow);color:var(--bw-plum);box-shadow:0 18px 40px rgba(50,28,38,.16)}.portrait-note span{display:block;margin-bottom:7px;font-size:9px;font-weight:800;letter-spacing:.15em}.portrait-note b{font-family:"DM Serif Display",Georgia,serif;font-size:22px;font-weight:400;line-height:1.05}
+    /* highlighter that sweeps in */
+    .sb-mark{background-image:linear-gradient(transparent 58%,rgba(250,204,21,.7) 58%,rgba(250,204,21,.7) 92%,transparent 92%);background-repeat:no-repeat;background-size:0% 100%;transition:background-size 1.1s cubic-bezier(.2,.8,.2,1) .35s}
+    .sb-ready .sb-hero .sb-mark,.is-visible .sb-mark,.no-js .sb-mark{background-size:100% 100%}
 
-    .person-marquee{overflow:hidden;border-top:1px solid var(--bw-line);border-bottom:1px solid var(--bw-line);background:var(--bw-yellow);color:var(--bw-plum)}.person-marquee div{width:max-content;padding:16px 0;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;animation:marquee 26s linear infinite}@keyframes marquee{to{transform:translateX(-50%)}}
+    /* hero */
+    .sb-hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(32px,5vw,72px);align-items:center;padding:clamp(56px,7vw,96px) 0 64px}
+    .sb-hero h1{font-size:clamp(46px,6vw,88px);line-height:.94;letter-spacing:-.055em}
+    .sb-hello{margin:0 0 10px;font-size:32px;color:var(--sb-accent);transform:rotate(-3deg);transform-origin:left;display:inline-block;animation:sb-wave 2.6s ease-in-out 1.2s 2}
+    .sb-lede{max-width:540px;margin:26px 0 0;color:var(--sb-soft);font-size:18px;line-height:1.65}
+    .sb-scroll{display:inline-flex;gap:10px;align-items:center;margin-top:30px;font-family:Caveat,cursive;font-size:26px;color:var(--sb-ink)!important;text-decoration:none}
+    .sb-scroll span{display:inline-block;animation:sb-nudge 1.6s ease-in-out infinite}
 
-    .person-values{display:grid;grid-template-columns:.86fr 1.14fr;gap:90px;padding-top:110px;padding-bottom:105px}.person-values h2{margin:0;font-family:"DM Serif Display",Georgia,serif;font-size:clamp(48px,5vw,76px);font-weight:400;line-height:.98;letter-spacing:-.035em}.person-values h2 em{color:var(--bw-coral);font-weight:400}.person-values blockquote{align-self:end;margin:0;padding-top:28px;border-top:1px solid var(--bw-line);color:#5d4550;font-family:"DM Serif Display",Georgia,serif;font-size:clamp(27px,2.8vw,42px);font-style:italic;line-height:1.22}
+    .sb-stage{position:relative;height:clamp(480px,46vw,600px)}
+    .sb-scribble{position:absolute;inset:-4% -2% -2% -4%;width:106%;height:106%;overflow:visible;pointer-events:none}
+    .sb-scribble path{fill:none;stroke:var(--sb-accent);stroke-width:3;stroke-linecap:round;stroke-dasharray:1800;stroke-dashoffset:1800;opacity:.85}
+    .sb-ready .sb-scribble path{animation:sb-draw 2.4s cubic-bezier(.6,.05,.2,1) .4s forwards}
 
-    .interest-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:22px;padding-bottom:126px}
-    .interest-card{position:relative;grid-column:span 4;min-height:340px;padding:34px;border:1px solid var(--bw-line);background:var(--bw-paper);transition:transform .35s ease,box-shadow .35s ease,background .35s ease}.interest-card:hover{transform:translateY(-6px);box-shadow:0 24px 55px rgba(50,28,38,.13)}
-    .interest-card.feature{grid-column:span 6;background:var(--bw-coral);color:#fff}.interest-card.dark{grid-column:span 6;background:var(--bw-plum);color:#fff}
-    .interest-index{font-size:10px;font-weight:800;letter-spacing:.15em;opacity:.62}.interest-symbol{position:absolute;right:30px;top:27px;color:var(--bw-coral);font-family:"DM Serif Display",Georgia,serif;font-size:46px;line-height:1}.interest-card.feature .interest-symbol,.interest-card.dark .interest-symbol{color:var(--bw-yellow)}
-    .interest-card>p{margin:86px 0 9px;color:#8c6675;font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase}.interest-card.feature>p,.interest-card.dark>p{color:rgba(255,255,255,.68)}
-    .interest-card h2{margin:0 0 19px;font-family:"DM Serif Display",Georgia,serif;font-size:clamp(37px,3.2vw,52px);font-weight:400;line-height:1}.interest-copy{max-width:540px;color:#6b5660;font-size:13px;line-height:1.75}.interest-card.feature .interest-copy,.interest-card.dark .interest-copy{color:rgba(255,255,255,.88)}
-    .person-page .interest-card.feature:hover,.person-page .interest-card.feature:focus-within{background:var(--bw-coral)!important;color:#fff!important;filter:none!important;opacity:1!important;box-shadow:0 24px 55px rgba(50,28,38,.16)!important}.person-page .interest-card.feature:hover h2,.person-page .interest-card.feature:hover .interest-copy,.person-page .interest-card.feature:hover>p,.person-page .interest-card.feature:hover .interest-index,.person-page .interest-card.feature:focus-within h2,.person-page .interest-card.feature:focus-within .interest-copy,.person-page .interest-card.feature:focus-within>p,.person-page .interest-card.feature:focus-within .interest-index{color:#fff!important;opacity:1!important;text-shadow:none!important}.person-page .interest-card.feature:hover .interest-symbol,.person-page .interest-card.feature:focus-within .interest-symbol{color:var(--bw-yellow)!important;filter:none!important}
+    .sb-orbit{position:absolute;left:50%;top:50%;width:min(110%,560px);aspect-ratio:1/1;transform:translate(-50%,-50%);border:1.5px dashed rgba(30,27,22,.18);border-radius:50%;animation:sb-spin 46s linear infinite;pointer-events:none}
+    .sb-sat{position:absolute;width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:50%;background:#fff;box-shadow:0 8px 18px rgba(30,27,22,.14);display:grid;place-items:center;animation:sb-spin 46s linear infinite reverse}
+    .sb-sat svg{width:28px;height:28px;fill:none;stroke:var(--sb-ink);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .sb-sat--ball{left:50%;top:0}.sb-sat--plane{left:100%;top:50%}.sb-sat--book{left:50%;top:100%}.sb-sat--note{left:0;top:50%}
+    .sb-sat--ball{background:var(--sb-yellow)}.sb-sat--book{background:var(--sb-green)}.sb-sat--note{background:var(--sb-pink)}
 
-    .play-section{position:relative;overflow:hidden;background:var(--bw-plum);color:#fff}.play-grid{display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;gap:90px;padding-top:112px;padding-bottom:112px}.play-grid h2{margin:0;color:#fff;font-family:"DM Serif Display",Georgia,serif;font-size:clamp(54px,5.6vw,86px);font-weight:400;line-height:.94}.play-grid h2 em{color:var(--bw-yellow);font-weight:400}.play-grid>div:first-child>p:last-child{max-width:560px;margin:28px 0 0;color:rgba(255,255,255,.78);font-size:14px;line-height:1.78}
-    .sport-stage{position:relative;display:grid;place-items:center;min-height:470px;border:1px solid rgba(255,255,255,.18);background:radial-gradient(circle at center,rgba(255,109,91,.18),transparent 55%)}.sport-stage b{position:relative;z-index:3;color:#fff;font-family:"DM Serif Display",Georgia,serif;font-size:72px;font-weight:400;line-height:.82;text-align:center}.sport-orbit{position:absolute;width:330px;height:330px;border:1px solid rgba(247,201,75,.58);border-radius:50%;animation:orbit 16s linear infinite}.sport-orbit:after{position:absolute;width:24px;height:24px;top:28px;left:30px;border-radius:50%;background:var(--bw-yellow);content:""}@keyframes orbit{to{transform:rotate(360deg)}}
-    .court-lines{position:absolute;inset:46px;border:1px solid rgba(255,255,255,.17)}.court-lines:before,.court-lines:after{position:absolute;content:""}.court-lines:before{top:50%;left:0;right:0;border-top:1px solid rgba(255,255,255,.16)}.court-lines:after{width:120px;height:120px;left:50%;top:50%;border:1px solid rgba(255,255,255,.16);border-radius:50%;transform:translate(-50%,-50%)}
-    .multi-court-lines{position:absolute;inset:92px 120px;border:1px dashed rgba(143,216,197,.18)}.multi-court-lines:before,.multi-court-lines:after{position:absolute;content:""}.multi-court-lines:before{top:0;bottom:0;left:50%;border-left:1px solid rgba(143,216,197,.16)}.multi-court-lines:after{left:16%;right:16%;top:50%;border-top:1px solid rgba(247,201,75,.18)}
-    .basketball,.soccer{position:absolute;z-index:4;padding:10px 13px;font-size:9px;font-weight:800;letter-spacing:.15em;white-space:nowrap}.basketball{left:26px;bottom:28px;background:var(--bw-coral)}.soccer{right:26px;top:28px;background:var(--bw-blue);color:var(--bw-plum)}
+    .sb-polaroid{position:absolute;margin:0;padding:12px 12px 52px;background:#fff;box-shadow:0 22px 44px rgba(30,27,22,.2);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s}
+    .sb-polaroid img{display:block;width:100%;height:100%;object-fit:cover}
+    .sb-polaroid figcaption{position:absolute;left:0;right:0;bottom:10px;text-align:center;font-size:26px;color:var(--sb-ink)}
+    .sb-polaroid:hover{transform:rotate(0) scale(1.03)!important;box-shadow:0 30px 60px rgba(30,27,22,.26);z-index:5}
+    .sb-polaroid--main{left:12%;top:6%;width:min(58%,310px);aspect-ratio:4/5.2;--r:-6deg;transform:rotate(var(--r));z-index:2}
+    .sb-polaroid--side{right:2%;bottom:6%;width:min(44%,240px);aspect-ratio:1/1.12;--r:7deg;transform:rotate(var(--r));z-index:3}
+    .sb-ready .sb-polaroid--main{animation:sb-drop 1s cubic-bezier(.2,.8,.2,1) .1s both}
+    .sb-ready .sb-polaroid--side{animation:sb-drop 1s cubic-bezier(.2,.8,.2,1) .45s both}
 
-    .visual-journal{padding-top:118px;padding-bottom:120px}.journal-head{display:grid;grid-template-columns:1fr .72fr;gap:70px;align-items:end;margin-bottom:38px}.journal-head h2{margin:0;font-family:"DM Serif Display",Georgia,serif;font-size:clamp(50px,5vw,78px);font-weight:400;line-height:.96}.journal-head h2 em{color:var(--bw-coral);font-weight:400}.journal-head>p{margin:0;color:#6e5962;font-size:14px;line-height:1.75}
-    .journal-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:20px}.journal-tile{position:relative;min-height:360px;padding:30px;border:1px solid var(--bw-line);overflow:hidden}.journal-tile:before{position:absolute;right:-55px;bottom:-60px;width:220px;height:220px;border-radius:50%;content:""}.journal-tile span{position:relative;z-index:2;font-size:9px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.journal-tile b{position:absolute;z-index:2;left:30px;right:30px;bottom:28px;font-family:"DM Serif Display",Georgia,serif;font-size:34px;font-weight:400;line-height:1.02}.tile-one{background:var(--bw-blue)}.tile-one:before{background:rgba(255,246,233,.45)}.tile-two{background:var(--bw-mint)}.tile-two:before{background:rgba(39,21,34,.08)}.tile-three{background:var(--bw-pink)}.tile-three:before{background:rgba(247,201,75,.65)}
+    .sb-tape{position:absolute;top:-14px;left:50%;width:96px;height:28px;margin-left:-48px;transform:rotate(-6deg);opacity:.82;z-index:2}
+    .sb-tape--yellow{background:rgba(250,204,21,.75)}.sb-tape--coral{background:rgba(251,138,110,.78);transform:rotate(8deg)}
 
-    .person-closing{padding-top:92px;padding-bottom:108px;border-top:1px solid var(--bw-line)}.person-closing h2{margin:0;max-width:920px;font-family:"DM Serif Display",Georgia,serif;font-size:clamp(54px,5.5vw,86px);font-weight:400;line-height:.95}.person-closing h2 em{color:var(--bw-coral);font-weight:400}.person-closing>p:not(.eyebrow){max-width:690px;margin:27px 0 30px;color:#6d5962;font-size:14px;line-height:1.8}.person-closing>a{display:inline-flex;align-items:center;gap:12px;padding:13px 17px;border:1px solid var(--bw-plum)!important;background:var(--bw-plum)!important;color:#fff!important;box-shadow:none!important;filter:none!important;font-size:11px;font-weight:800;letter-spacing:.12em;text-decoration:none;text-transform:uppercase;transition:background .25s ease,border-color .25s ease,transform .25s ease}.person-closing>a:hover,.person-closing>a:focus-visible{background:var(--bw-coral)!important;border-color:var(--bw-coral)!important;color:#fff!important;box-shadow:none!important;filter:none!important;opacity:1!important;text-shadow:none!important;transform:translateY(-2px)}
+    .sb-sticker{position:absolute;right:6%;top:2%;width:132px;height:132px;z-index:4;animation:sb-spin 22s linear infinite;filter:drop-shadow(0 10px 18px rgba(30,27,22,.18))}
+    .sb-sticker circle{fill:var(--sb-ink)}
+    .sb-sticker text{fill:#fff;font:700 13px/1 ui-monospace,Menlo,monospace;letter-spacing:2.6px}
+    .sb-sticker-heart{fill:var(--sb-accent);transform-origin:80px 82px;animation:sb-beat 1.4s ease-in-out infinite}
 
-    .person-page .footer{background:#170f14!important;color:#fff!important}.person-page .footer .shell{padding-top:34px;padding-bottom:34px}.person-page .footer-row{display:flex;align-items:center;justify-content:space-between}.person-page .footer-row p,.person-page .footer-row a{color:rgba(255,255,255,.7)!important}
+    /* ticker */
+    .sb-ticker{margin:30px 0 0;padding:16px 0;background:var(--sb-ink);color:var(--sb-paper);transform:rotate(-1.6deg);overflow:hidden;white-space:nowrap}
+    .sb-ticker-track{display:inline-flex;animation:sb-ticker 38s linear infinite}
+    .sb-ticker-track span{font-family:Caveat,cursive;font-size:34px;font-weight:600;padding-right:12px}
+    .sb-ticker-track span::first-letter{color:var(--sb-yellow)}
 
-    @media(max-width:1050px){.person-hero,.person-values,.play-grid,.journal-head{grid-template-columns:1fr}.person-portrait{max-width:700px}.interest-card,.interest-card.feature,.interest-card.dark{grid-column:span 6}.journal-grid{grid-template-columns:1fr 1fr}.tile-one{grid-column:1/-1}}
-    @media(max-width:760px){.person-page .shell{width:min(100% - 32px,1280px)}.person-page .nav.shell{min-height:70px}.person-page .nav-links>a:not(.nav-cta){display:none}.person-hero{padding-top:62px;padding-bottom:76px}.person-intro h1{font-size:clamp(56px,18vw,80px)}.person-portrait{min-height:410px}.person-portrait img{inset:28px 20px 18px 26px;width:calc(100% - 46px);height:calc(100% - 46px)}.ring-one{width:310px;height:310px}.ring-two{width:230px;height:230px}.portrait-note{width:200px}.person-values{padding-top:78px;padding-bottom:72px}.interest-grid{display:block;padding-bottom:82px}.interest-card{min-height:320px;margin-bottom:18px}.play-grid{padding-top:80px;padding-bottom:80px}.sport-stage{min-height:370px}.sport-stage b{font-size:54px}.multi-court-lines{inset:72px 68px}.visual-journal{padding-top:82px;padding-bottom:84px}.journal-grid{display:block}.journal-tile{min-height:300px;margin-bottom:18px}.person-closing{padding-top:72px;padding-bottom:82px}.person-page .footer-row{align-items:flex-start;flex-direction:column;gap:16px}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.person-marquee div,.sport-orbit{animation:none}.interest-card,.person-closing>a{transition:none}}
-  </style>
+    .sb-motto{display:flex;justify-content:center;padding:72px 0 8px}
+    .sb-label-strip{margin:0;padding:16px 28px;background:#fff;box-shadow:0 10px 24px rgba(30,27,22,.1);font-family:Caveat,cursive;font-size:clamp(26px,3vw,36px);transform:rotate(1deg);border-left:6px solid var(--sb-accent)}
 
-  <style id="beyond-work-refresh-20261031">
-    .person-intro>p{font-size:17px;line-height:1.7;color:#5f4a54}
-    .person-values{grid-template-columns:1fr 1fr;align-items:end;padding-bottom:72px}
-    .values-line{margin:0;padding-top:28px;border-top:1px solid var(--bw-line);color:#5d4550;font-family:"DM Serif Display",Georgia,serif;font-size:clamp(27px,2.7vw,40px);font-style:italic;line-height:1.22}
-    .values-line span{color:var(--bw-coral)}
-    .interest-grid{align-items:stretch;gap:20px}
-    .interest-card{grid-column:span 4;display:flex;flex-direction:column;min-height:320px;padding:34px 34px 30px;border-radius:22px;background:#fffaf2}
-    .interest-card.span-7{grid-column:span 7}.interest-card.span-5{grid-column:span 5}.interest-card.span-4{grid-column:span 4}
-    .interest-card.wide{grid-column:1/-1;flex-direction:row;align-items:center;gap:60px;min-height:240px;background:var(--bw-yellow);color:var(--bw-plum);border-color:transparent}
-    .interest-card.wide .interest-symbol{color:var(--bw-coral)}
-    .interest-card.wide .wide-title{flex:0 0 38%}
-    .interest-card.wide .interest-copy{font-size:16px;color:#4a3640;max-width:620px}
-    .interest-card.mint{background:var(--bw-mint)}.interest-card.mint .interest-copy{color:#2f3b37}
-    .interest-card>p,.interest-card .wide-title>p{margin:auto 0 10px;padding-top:70px}
-    .interest-card.wide .wide-title>p{margin:26px 0 10px;padding-top:0;color:#7a5a2a;font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
-    .interest-card h2{font-size:clamp(36px,3.1vw,50px)}
-    .interest-copy{font-size:15px;line-height:1.65}
-    .interest-tag{display:inline-block;margin-top:18px;padding:7px 11px;border:1px solid currentColor;border-radius:999px;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;opacity:.7;align-self:flex-start}
+    /* notes */
+    .sb-things{padding:96px 0 0}
+    .sb-head h2{font-size:clamp(36px,4.6vw,64px);line-height:.98;letter-spacing:-.05em}
+    .sb-notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin-top:40px}
+    .sb-note{position:relative;padding:34px 26px 26px;border-radius:4px;box-shadow:0 12px 26px rgba(30,27,22,.1);display:flex;flex-direction:column;gap:10px;transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
+    .sb-note:nth-child(odd){--r:-1.6deg}.sb-note:nth-child(even){--r:1.4deg}
+    .sb-note{transform:rotate(var(--r))}
+    .sb-note:hover{transform:rotate(0) translateY(-8px);box-shadow:0 22px 40px rgba(30,27,22,.16)}
+    .sb-note--white{background:#fff}.sb-note--yellow{background:#fef3c7}.sb-note--green{background:#dcfce7}.sb-note--pink{background:#fce7f3}
+    .sb-note h3{margin:0;font-size:24px;letter-spacing:-.03em}
+    .sb-note p{margin:0;color:var(--sb-soft);font-size:15px;line-height:1.6}
+    .sb-note p.sb-hand{font-size:26px;color:var(--sb-accent);line-height:1}
+    .sb-note small{margin-top:auto;font-size:21px;color:var(--sb-muted)}
+    .sb-pin{position:absolute;top:-9px;left:50%;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:var(--sb-accent);box-shadow:inset -3px -3px 0 rgba(0,0,0,.18),0 4px 6px rgba(30,27,22,.25)}
+    .sb-note:nth-child(2) .sb-pin{background:#2563eb}.sb-note:nth-child(3) .sb-pin{background:#16a34a}.sb-note:nth-child(4) .sb-pin{background:#9333ea}
+    .js .sb-note.reveal{transform:rotate(var(--r)) translateY(26px)}
+    .js .sb-note.reveal.is-visible{transform:rotate(var(--r))}
+    .sb-note:nth-child(2){transition-delay:.08s}.sb-note:nth-child(3){transition-delay:.16s}.sb-note:nth-child(4){transition-delay:.24s}.sb-note:nth-child(5){transition-delay:.32s}
 
-    .court{position:relative;padding:34px;border:1px solid rgba(255,255,255,.16);border-radius:26px;background:radial-gradient(circle at 70% 20%,rgba(255,109,91,.22),transparent 55%),radial-gradient(circle at 20% 90%,rgba(143,216,197,.14),transparent 50%)}
-    .court-ring{position:absolute;right:-60px;top:-60px;width:260px;height:260px;border:1px solid rgba(247,201,75,.4);border-radius:50%;animation:orbit 22s linear infinite}
-    .court-ring:after{position:absolute;width:18px;height:18px;top:34px;left:30px;border-radius:50%;background:var(--bw-yellow);content:""}
-    .court-group{position:relative;z-index:2}.court-group+.court-group{margin-top:26px}
-    .court-group>span{display:block;margin-bottom:12px;color:rgba(255,255,255,.6);font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
-    .sport-tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-    .sport-tiles.two{grid-template-columns:repeat(2,1fr)}
-    .sport-tile{display:flex;flex-direction:column;justify-content:space-between;min-height:132px;padding:18px;border-radius:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);transition:transform .3s ease,background .3s ease}
-    .sport-tile:hover{transform:translateY(-4px);background:rgba(255,255,255,.1)}
-    .sport-tile svg{width:34px;height:34px}
-    .sport-tile b{font-family:"DM Serif Display",Georgia,serif;font-size:26px;font-weight:400;line-height:1}
-    .sport-tile.hot{background:var(--bw-coral);border-color:var(--bw-coral)}.sport-tile.cool{background:var(--bw-blue);border-color:var(--bw-blue);color:var(--bw-plum)}
+    /* travel */
+    .sb-travel{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(32px,5vw,72px);align-items:center;padding:128px 0 0}
+    .sb-trip{position:relative;height:clamp(460px,44vw,560px)}
+    .sb-flightpath{position:absolute;left:0;top:-40px;width:600px;height:220px;overflow:visible;pointer-events:none}
+    .sb-flightpath path{fill:none;stroke:rgba(30,27,22,.35);stroke-width:2;stroke-dasharray:3 9;stroke-linecap:round}
+    .sb-flyer{position:absolute;left:0;top:-40px;width:34px;height:34px;offset-path:path("M20 180 C 140 20, 300 40, 360 120 S 520 210, 580 40");offset-rotate:auto;animation:sb-fly 7s ease-in-out infinite;z-index:6}
+    .sb-flyer svg{width:100%;height:100%;fill:#fff;stroke:var(--sb-ink);stroke-width:2;stroke-linejoin:round}
+    .sb-polaroid--trip-a{left:0;top:16%;width:min(48%,270px);aspect-ratio:3/4.4;--r:-5deg;transform:rotate(var(--r))}
+    .sb-polaroid--trip-b{left:40%;top:6%;width:min(48%,270px);aspect-ratio:3/4.4;--r:5deg;transform:rotate(var(--r));z-index:2}
+    .sb-stamp{position:absolute;right:-20px;top:22px;display:grid;place-items:center;width:96px;height:96px;font:800 11px/1.35 ui-monospace,Menlo,monospace;letter-spacing:.08em;text-align:center;color:var(--sb-accent);border:3px solid currentColor;background:rgba(255,255,255,.82);opacity:0;transform:rotate(-14deg) scale(1.6)}
+    .sb-stamp--round{border-radius:50%}.sb-stamp--square{border-radius:10px;color:#0f766e;transform:rotate(10deg) scale(1.6)}
+    .is-visible .sb-stamp--round{animation:sb-stamp .5s cubic-bezier(.2,.8,.2,1) .7s forwards;--sr:-14deg}
+    .is-visible .sb-stamp--square{animation:sb-stamp .5s cubic-bezier(.2,.8,.2,1) 1.1s forwards;--sr:10deg}
+    .sb-trip-copy h2{font-size:clamp(36px,4.4vw,60px);line-height:.98;letter-spacing:-.05em}
+    .sb-trip-copy>p{margin:18px 0 0;color:var(--sb-soft);font-size:17px;line-height:1.65;max-width:440px}
+    .sb-book{display:flex;gap:18px;align-items:center;margin-top:30px;padding:20px 22px;background:#fff;box-shadow:0 12px 26px rgba(30,27,22,.1);border-radius:6px;transform:rotate(-1deg);max-width:420px;transition:transform .4s}
+    .sb-book:hover{transform:rotate(0) translateY(-4px)}
+    .sb-book-spine{flex:none;display:grid;place-items:center;width:54px;height:76px;border-radius:3px;background:var(--sb-accent);color:#fff;font:italic 30px "Instrument Serif",Georgia,serif;box-shadow:inset -6px 0 0 rgba(0,0,0,.15)}
+    .sb-book p{margin:0;font-size:22px;color:var(--sb-muted)}.sb-book b{display:block;font-size:18px}.sb-book span{font-size:14px;color:var(--sb-muted)}
 
-    .photo-credit{margin:6px 0 0;color:inherit;opacity:.62;font-size:10px;line-height:1.4}.photo-credit a{color:inherit;text-decoration:underline;text-underline-offset:2px}
-    .interest-photo{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;margin:18px 0 0;border-radius:16px}
-    .interest-card.travel{grid-column:1/-1;display:grid;grid-template-columns:.78fr 1.22fr;gap:44px;align-items:center;background:var(--bw-plum);color:#fff}
-    .interest-card.travel .interest-copy{color:rgba(255,255,255,.86)}
-    .interest-card.travel .travel-text>p{margin:0 0 9px;padding-top:58px;color:rgba(255,255,255,.68);font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
-    .travel-photos{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .travel-photos figure{margin:0}
-    .travel-photos .frame{position:relative;overflow:hidden;border-radius:16px}
-    .travel-photos img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .6s ease}
-    .travel-photos figure:hover img{transform:scale(1.04)}
-    .travel-photos figcaption{position:absolute;left:12px;bottom:12px;padding:8px 12px;border-radius:999px;background:rgba(23,15,20,.72);color:#fff;font-size:12px;font-weight:800}
-    .interest-card.pink{background:var(--bw-pink)}.interest-card.pink .interest-copy{color:#3d2a33}
-    .interest-art{display:block;width:100%;height:auto;margin:18px 0 6px;border-radius:16px;border:1px solid var(--bw-line)}
-    .art-note{margin:0 0 4px;color:#9a7f8a;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-    .interest-card.with-art>p{padding-top:18px}
-    .place-pins{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-    .place-pins span{display:inline-flex;align-items:center;gap:6px;padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);font-size:11px;font-weight:700}
-    .place-pins span:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--bw-yellow)}
-    .book-line{margin-top:16px;padding:12px 16px;border-radius:14px;background:rgba(255,255,255,.55);color:var(--bw-plum);font-size:14px;line-height:1.5}
-    .book-line b{font-family:"DM Serif Display",Georgia,serif;font-size:19px;font-weight:400}
-    .sport-tiles.three{grid-template-columns:repeat(3,1fr)}
-    .sport-tiles.main .sport-tile{min-height:150px}.sport-tiles.main .sport-tile b{font-size:32px}
-    .person-marquee .marquee-track{display:flex;width:max-content;animation:marquee 95s linear infinite}
-    .person-marquee .marquee-track span{flex:none;padding-right:0;white-space:nowrap}
-    .person-page .interest-card.travel{transition:background .35s ease,color .35s ease,transform .35s ease,box-shadow .35s ease}
-    .person-page .interest-card.travel:hover,.person-page .interest-card.travel:focus-within{background:var(--bw-yellow)!important;color:var(--bw-plum)!important;filter:none!important;opacity:1!important}
-    .person-page .interest-card.travel:hover h2,.person-page .interest-card.travel:hover .interest-copy,.person-page .interest-card.travel:hover .travel-text>p,.person-page .interest-card.travel:hover .interest-index,.person-page .interest-card.travel:hover .interest-tag,.person-page .interest-card.travel:hover .photo-credit,.person-page .interest-card.travel:focus-within h2,.person-page .interest-card.travel:focus-within .interest-copy{color:var(--bw-plum)!important;opacity:1!important;text-shadow:none!important}
-    .person-page .interest-card.travel:hover .place-pins span{background:rgba(39,21,34,.08);border-color:rgba(39,21,34,.3);color:var(--bw-plum)}
-    .person-page .interest-card.travel:hover .place-pins span:before{background:var(--bw-coral)}
-    .person-closing{text-align:left}
-    .reveal{opacity:1;transform:none}
-    .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+    /* court */
+    .sb-court{padding:128px 0 0}
+    .sb-court-copy{max-width:640px;margin:18px 0 0;color:var(--sb-soft);font-size:17px;line-height:1.65}
+    .sb-court-board{position:relative;margin-top:40px;padding:48px clamp(24px,4vw,56px) 36px;border-radius:24px;background:#2f6b45;background-image:linear-gradient(rgba(255,255,255,.14) 2px,transparent 2px),linear-gradient(90deg,rgba(255,255,255,.14) 2px,transparent 2px);background-size:100% 50%,50% 100%;background-position:0 0,0 0;overflow:hidden}
+    .sb-court-board::before{content:"";position:absolute;left:50%;top:50%;width:150px;height:150px;margin:-75px 0 0 -75px;border:2px solid rgba(255,255,255,.18);border-radius:50%}
+    .sb-tags{position:relative;display:flex;flex-wrap:wrap;gap:14px}
+    .sb-tag{padding:14px 22px;border-radius:6px;background:#fff;color:var(--sb-ink);font-weight:700;font-size:16px;box-shadow:0 8px 18px rgba(0,0,0,.18);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+    .sb-tag:nth-child(odd){transform:rotate(-2deg)}.sb-tag:nth-child(even){transform:rotate(1.5deg)}
+    .sb-tag:hover{transform:rotate(0) translateY(-6px) scale(1.04)}
+    .sb-tag--main{padding:18px 30px;font-size:22px;font-weight:800;background:var(--sb-accent);color:#fff}
+    .sb-tag--dark{background:var(--sb-ink)}
+    .sb-tag--solo{background:#fef3c7}
+    .sb-legend{position:relative;margin:26px 0 0;color:#ecfdf5;font-size:22px}
+    .sb-dot{display:inline-block;width:12px;height:12px;border-radius:50%;background:#fff;margin:0 4px 0 10px}.sb-dot--main{background:var(--sb-accent)}.sb-dot--solo{background:#fef3c7}
+    .sb-bounce{position:absolute;right:clamp(24px,5vw,72px);top:18px;width:54px;height:54px;animation:sb-bounce 1.3s cubic-bezier(.5,0,.5,1) infinite}
+    .sb-bounce svg{width:100%;height:100%;fill:#f97316;stroke:#7c2d12;stroke-width:1.8}
+
+    /* closing */
+    .sb-closing{padding:140px 0 140px}
+    .sb-closing h2{font-size:clamp(40px,5.4vw,80px);line-height:.96;letter-spacing:-.055em}
+    .sb-sign{margin:22px 0 0;font-size:30px;color:var(--sb-muted);max-width:720px}
+    .sb-closing a{display:inline-block;margin-top:30px;padding:16px 26px;border-radius:999px;background:var(--sb-ink);color:#fff!important;font-weight:800;text-decoration:none;transition:background .25s,transform .25s}
+    .sb-closing a:hover{background:var(--sb-accent);transform:translateY(-2px)}
+
+    .reveal{opacity:1}
+    .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
     .js .reveal.is-visible{opacity:1;transform:none}
 
-    @media(max-width:1050px){.interest-card.travel{grid-template-columns:1fr;gap:20px}.interest-card.travel .travel-text>p{padding-top:30px}.person-values{grid-template-columns:1fr;gap:34px}.interest-card.span-7,.interest-card.span-5,.interest-card.span-4{grid-column:span 6}.interest-card.pink{grid-column:1/-1}.interest-card.wide{flex-direction:column;align-items:flex-start;gap:14px}}
-    @media(max-width:760px){.sport-tiles.three{grid-template-columns:repeat(2,1fr)}.sport-tiles.three .sport-tile:last-child{grid-column:1/-1}.interest-card,.interest-card.wide{min-height:0}.interest-card>p{padding-top:44px}.sport-tiles{grid-template-columns:repeat(2,1fr)}.court{padding:22px}.court-ring{display:none}}
-    @media(prefers-reduced-motion:reduce){.travel-photos img{transition:none}.js .reveal{opacity:1;transform:none;transition:none}.court-ring{animation:none}.sport-tile{transition:none}}
+    @keyframes sb-draw{to{stroke-dashoffset:0}}
+    @keyframes sb-spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+    .sb-sat,.sb-sticker{animation-name:sb-turn}
+    @keyframes sb-turn{to{transform:rotate(360deg)}}
+    @keyframes sb-drop{0%{opacity:0;transform:translateY(-60px) rotate(calc(var(--r) * -2))}60%{opacity:1;transform:translateY(8px) rotate(calc(var(--r) * 1.4))}100%{opacity:1;transform:rotate(var(--r))}}
+    @keyframes sb-wave{0%,100%{transform:rotate(-3deg)}25%{transform:rotate(2deg)}50%{transform:rotate(-5deg)}75%{transform:rotate(1deg)}}
+    @keyframes sb-nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+    @keyframes sb-beat{0%,100%{transform:scale(1)}15%{transform:scale(1.2)}30%{transform:scale(1)}45%{transform:scale(1.14)}}
+    @keyframes sb-ticker{to{transform:translateX(-50%)}}
+    @keyframes sb-fly{0%{offset-distance:0%;opacity:0}8%{opacity:1}92%{opacity:1}100%{offset-distance:100%;opacity:0}}
+    @keyframes sb-stamp{to{opacity:1;transform:rotate(var(--sr)) scale(1)}}
+    @keyframes sb-bounce{0%,100%{transform:translateY(0) scale(1.08,.9)}12%{transform:translateY(-4px) scale(1,1)}50%{transform:translateY(-56px) scale(.96,1.04)}88%{transform:translateY(-4px) scale(1,1)}}
+
+    @media(max-width:1000px){
+      .sb-hero,.sb-travel{grid-template-columns:1fr}
+      .sb-stage{height:520px;max-width:560px;width:100%;margin:0 auto}
+      .sb-flightpath,.sb-flyer{display:none}
+      .sb-trip{max-width:560px;width:100%;margin:0 auto}
+    }
+    @media(max-width:600px){
+      .sb-stage{height:440px}
+      .sb-polaroid--main{left:4%;width:62%}
+      .sb-polaroid--side{width:48%}
+      .sb-sticker{width:100px;height:100px;right:0}
+      .sb-sat{width:42px;height:42px;margin:-21px 0 0 -21px}
+      .sb-trip{height:400px}
+      .sb-polaroid--trip-a,.sb-polaroid--trip-b{width:56%}
+      .sb-polaroid--trip-b{left:40%}
+      .sb-bounce{width:40px;height:40px;top:12px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .sb-orbit,.sb-sat,.sb-sticker,.sb-sticker-heart,.sb-ticker-track,.sb-flyer,.sb-bounce,.sb-scroll span,.sb-hello{animation:none!important}
+      .sb-ready .sb-scribble path{animation:none;stroke-dashoffset:0}
+      .sb-scribble path{stroke-dashoffset:0}
+      .sb-ready .sb-polaroid--main,.sb-ready .sb-polaroid--side{animation:none}
+      .sb-stamp{opacity:1!important;transform:rotate(-14deg)!important;animation:none!important}
+      .sb-mark{transition:none}
+      .js .reveal{opacity:1;transform:none;transition:none}
+      .sb-note,.sb-polaroid,.sb-tag,.sb-book{transition:none}
+    }
+
+    .skip-link{position:fixed;z-index:10000;top:12px;left:12px;padding:12px 16px;background:#111;color:#fff;border:2px solid #fff;border-radius:4px;font:800 14px/1 Arial,sans-serif;transform:translateY(calc(-100% - 28px));transition:transform .18s ease}
+    .skip-link:focus,.skip-link:focus-visible{transform:translateY(0)}
+    .sb-note h3{font-weight:800!important;color:var(--sb-ink)!important}
+    @media(max-width:600px){.sb-orbit{width:94%}}
   </style>
 </head>
 <body>
@@ -149,49 +190,122 @@
 <main id="main-content" tabindex="-1" class="person-page">
   <nav class="nav shell" aria-label="Primary navigation"><a class="wordmark" href="/my-portfolio/">SB<span>.</span></a><div class="nav-links"><a href="/my-portfolio/#about">About</a><a href="/my-portfolio/#experience">Experience</a><a href="/my-portfolio/work">Projects</a><a href="/my-portfolio/skills">Skills</a><a href="/my-portfolio/leadership">Leadership &amp; Impact</a><a href="/my-portfolio/publications">Publications</a><a href="/my-portfolio/person" aria-current="page">Beyond Work</a><a class="nav-cta" href="/my-portfolio/resume">Résumé <span>↗</span></a></div></nav>
 
-  <section class="person-hero shell"><div class="person-intro"><p class="eyebrow">THE PERSON BEHIND THE WORK</p><h1>There’s more to Sam than <em>models and metrics.</em></h1><p>Away from the data, he cooks, travels, reads, trains and plays on whichever court will have him. The same habits show up in both places: patience, curiosity, and a pull towards people.</p><div class="person-scroll">SCROLL TO MEET THE PERSON <span>↓</span></div></div><div class="person-portrait"><span class="portrait-ring ring-one" aria-hidden="true"></span><span class="portrait-ring ring-two" aria-hidden="true"></span><img src="/my-portfolio/sam-beyond-work.webp?v=2" decoding="async" width="840" height="1050" alt="Casual portrait of Sampson Boateng"/><div class="portrait-note"><span>BEYOND THE SCREEN</span><b>Present. Curious. Always moving.</b></div></div></section>
+  <section class="sb-hero shell">
+    <div class="sb-intro">
+      <p class="eyebrow">THE PERSON BEHIND THE WORK</p>
+      <p class="sb-hand sb-hello">hi, off the clock now</p>
+      <h1>There’s more to Sam than <em><span class="sb-mark">models and metrics.</span></em></h1>
+      <p class="sb-lede">Away from the data, he cooks, travels, reads, trains and plays on whichever court will have him. The same habits show up in both places: patience, curiosity and a pull towards people.</p>
+      <a class="sb-scroll" href="#sb-things">scroll to meet him <span aria-hidden="true">↓</span></a>
+    </div>
 
-  <div class="person-marquee" aria-hidden="true"><div class="marquee-track"><span>VOLUNTEER · COOK · TRAVEL · TRAIN · LISTEN · READ · PLAY · CONNECT · VOLUNTEER · COOK · TRAVEL · TRAIN · LISTEN · READ · PLAY · CONNECT · VOLUNTEER · COOK · TRAVEL · TRAIN · LISTEN · READ · PLAY · CONNECT · VOLUNTEER · COOK · TRAVEL · TRAIN · LISTEN · READ · PLAY · CONNECT · VOLUNTEER · COOK · TRAVEL · TRAIN · LISTEN · READ · PLAY · CONNECT · </span><span>VOLUNTEER · COOK · TRAVEL · TRAIN · LISTEN · READ · PLAY · CONNECT · VOLUNTEER · COOK · TRAVEL · TRAIN · LISTEN · READ · PLAY · CONNECT · VOLUNTEER · COOK · TRAVEL · TRAIN · LISTEN · READ · PLAY · CONNECT · VOLUNTEER · COOK · TRAVEL · TRAIN · LISTEN · READ · PLAY · CONNECT · VOLUNTEER · COOK · TRAVEL · TRAIN · LISTEN · READ · PLAY · CONNECT · </span></div></div>
-
-  <section class="person-values shell reveal"><div><p class="eyebrow">01 / WHAT KEEPS HIM GROUNDED</p><h2>The things he <em>makes time for.</em></h2></div><p class="values-line">Show up. Stay curious. Learn from people. <span>Leave room for joy.</span></p></section>
-
-  <section class="interest-grid shell" aria-label="Interests and hobbies">
-    <article class="interest-card feature span-7 reveal"><span class="interest-index">01</span><div class="interest-symbol" aria-hidden="true">✦</div><p>SERVICE</p><h2>Volunteering</h2><div class="interest-copy">Giving time to people and causes he cares about. It’s where empathy stops being a feeling and turns into something useful.</div><span class="interest-tag">Teaches: empathy in action</span></article>
-    <article class="interest-card span-5 with-art reveal"><span class="interest-index">02</span><div class="interest-symbol" aria-hidden="true">○</div><img class="interest-photo" src="/my-portfolio/beyond/sam-cooking.webp" width="1280" height="800" loading="lazy" alt="A plate of stir fried noodles with scrambled egg, sausage and vegetables, cooked by Sam"/><p class="photo-credit">Cooked by Sam</p><p>CREATIVITY</p><h2>Cooking</h2><div class="interest-copy">Cooking is how he slows down, experiments and gets people around the same table.</div><span class="interest-tag">Teaches: patience</span></article>
-    <article class="interest-card travel reveal"><div class="travel-text"><span class="interest-index">03</span><p>PERSPECTIVE</p><h2>Travel</h2><div class="interest-copy">New places, cultures and ways of seeing. Familiar problems look different when you come home.</div><div class="place-pins"><span>Bordeaux, France</span><span>Porto de Mós, Portugal</span></div><span class="interest-tag">Teaches: a wider lens</span></div>
-      <div class="travel-photos">
-        <figure><div class="frame"><img src="/my-portfolio/beyond/bordeaux-cathedral.webp" width="960" height="1280" loading="lazy" alt="Cathédrale Saint-André and its twin spires in Bordeaux, France"/><figcaption>Bordeaux, France</figcaption></div><p class="photo-credit">Cathédrale Saint-André</p></figure>
-        <figure><div class="frame"><img src="/my-portfolio/beyond/porto-de-mos-castle.webp" width="960" height="1280" loading="lazy" alt="Sam standing in front of the castle walls at Porto de Mós, Portugal"/><figcaption>Porto de Mós, Portugal</figcaption></div><p class="photo-credit">The castle at Porto de Mós</p></figure>
-      </div></article>
-    <article class="interest-card mint span-4 reveal"><span class="interest-index">04</span><div class="interest-symbol" aria-hidden="true">+</div><p>DISCIPLINE</p><h2>Fitness</h2><div class="interest-copy">Training gives the week its shape. Small, steady gains, the same way good work gets done.</div><span class="interest-tag">Teaches: consistency</span></article>
-    <article class="interest-card span-4 reveal"><span class="interest-index">05</span><div class="interest-symbol" aria-hidden="true">≈</div><p>RHYTHM</p><h2>Music &amp; Audio</h2><div class="interest-copy">Music to reset and focus. Audiobooks, stories and good conversations to keep learning on the move.</div><span class="interest-tag">Teaches: focus</span></article>
-    <article class="interest-card pink span-4 reveal"><span class="interest-index">06</span><div class="interest-symbol" aria-hidden="true">◎</div><p>PLAY</p><h2>Gaming</h2><div class="interest-copy">When it’s time to switch off, it’s Call of Duty or a game of pool. Quick thinking, focus and a steady hand, just in a different arena.</div><span class="interest-tag">Teaches: quick decisions</span></article>
-    <article class="interest-card wide reveal"><div class="wide-title"><span class="interest-index">07</span><p>CURIOSITY</p><h2>Reading</h2></div><div class="interest-copy">Part exploration, part reflection. Reading takes him into subjects he’d never meet at work, and keeps his thinking open long after the book is closed.<div class="book-line">On his shelf: <b>Attitude Is Everything</b> by Keith Harrell</div></div><div class="interest-symbol" aria-hidden="true">Aa</div></article>
+    <div class="sb-stage" aria-hidden="false">
+      <svg class="sb-scribble" viewBox="0 0 520 560" aria-hidden="true" focusable="false">
+        <path d="M262 22 C 392 18, 500 110, 498 270 C 496 430, 380 540, 250 536 C 110 532, 22 420, 26 268 C 30 120, 140 30, 280 34 C 330 36, 360 48, 380 60" />
+      </svg>
+      <div class="sb-orbit" aria-hidden="true">
+        <span class="sb-sat sb-sat--ball"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="16"/><path d="M4 20h32M20 4v32M8 9c8 6 8 16 0 22M32 9c-8 6-8 16 0 22"/></svg></span>
+        <span class="sb-sat sb-sat--plane"><svg viewBox="0 0 40 40"><path d="M4 20l32-14-10 30-6-12-16-4z"/><path d="M20 24l16-18"/></svg></span>
+        <span class="sb-sat sb-sat--book"><svg viewBox="0 0 40 40"><path d="M6 9c6-2 10-1 14 2v22c-4-3-8-4-14-2zM34 9c-6-2-10-1-14 2v22c4-3 8-4 14-2z"/></svg></span>
+        <span class="sb-sat sb-sat--note"><svg viewBox="0 0 40 40"><path d="M15 30V8l18-4v22"/><circle cx="11" cy="30" r="4"/><circle cx="29" cy="26" r="4"/></svg></span>
+      </div>
+      <figure class="sb-polaroid sb-polaroid--main">
+        <span class="sb-tape sb-tape--yellow" aria-hidden="true"></span>
+        <img src="/my-portfolio/sam-beyond-work.webp?v=2" decoding="async" width="840" height="1050" alt="Casual portrait of Sampson Boateng"/>
+        <figcaption class="sb-hand">that’s him</figcaption>
+      </figure>
+      <figure class="sb-polaroid sb-polaroid--side">
+        <span class="sb-tape sb-tape--coral" aria-hidden="true"></span>
+        <img src="/my-portfolio/beyond/sam-cooking.webp" width="1280" height="800" loading="lazy" alt="A plate of stir fried noodles with scrambled egg, sausage and vegetables, cooked by Sam"/>
+        <figcaption class="sb-hand">cooked this one</figcaption>
+      </figure>
+      <svg class="sb-sticker" viewBox="0 0 160 160" aria-hidden="true" focusable="false">
+        <defs><path id="sb-circle-text" d="M80 80 m -58 0 a 58 58 0 1 1 116 0 a 58 58 0 1 1 -116 0"/></defs>
+        <circle cx="80" cy="80" r="76"/>
+        <text><textPath href="#sb-circle-text">PRESENT · CURIOUS · ALWAYS MOVING · </textPath></text>
+        <path class="sb-sticker-heart" d="M80 98c-12-9-20-15-20-24a10 10 0 0 1 20-3 10 10 0 0 1 20 3c0 9-8 15-20 24z"/>
+      </svg>
+    </div>
   </section>
 
-  <section class="play-section"><div class="shell play-grid"><div class="reveal"><p class="eyebrow">02 / SPORTS AND CONNECTION</p><h2>Competition,<br/><em>connection,</em><br/>and joy.</h2><p>Soccer and basketball are his main sports. He also plays volleyball, badminton and tennis, and cycling and running give him space to reset and build endurance on his own. For Sam it’s about the movement, the challenge and the people that come with it.</p></div>
-    <div class="court reveal" aria-label="Sports Sam plays"><span class="court-ring" aria-hidden="true"></span>
-      <div class="court-group"><span>Main sports</span><div class="sport-tiles main">
-        <div class="sport-tile hot"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="17" cy="17" r="14"/><path d="M3 17h28M17 3v28M7 7c5 4 5 16 0 20M27 7c-5 4-5 16 0 20"/></svg><b>Basketball</b></div>
-        <div class="sport-tile cool"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="17" cy="17" r="14"/><path d="M17 10l6 4-2 7h-8l-2-7z"/><path d="M17 10V4M23 14l6-2M21 21l4 6M13 21l-4 6M11 14l-6-2"/></svg><b>Soccer</b></div>
-      </div></div>
-      <div class="court-group"><span>Also plays</span><div class="sport-tiles three">
-        <div class="sport-tile"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="17" cy="17" r="14"/><path d="M17 3c-2 6 0 11 6 14M31 19c-6-1-11 2-12 9M6 26c4-5 4-11-1-15"/></svg><b>Volleyball</b></div>
-        <div class="sport-tile"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="17" cy="27" r="4"/><path d="M14 24L8 6M20 24l6-18M17 23V5M8 6h18M10 12h14M12 18h10"/></svg><b>Badminton</b></div>
-        <div class="sport-tile"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="17" cy="17" r="14"/><path d="M6 8c6 4 6 14 0 18M28 8c-6 4-6 14 0 18"/></svg><b>Tennis</b></div>
-      </div></div>
-      <div class="court-group"><span>On his own</span><div class="sport-tiles two">
-        <div class="sport-tile"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="8" cy="23" r="6"/><circle cx="26" cy="23" r="6"/><path d="M8 23l6-10h8l4 10M14 13l3 10h-9M20 9h4"/></svg><b>Cycling</b></div>
-        <div class="sport-tile"><svg viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="21" cy="6" r="3"/><path d="M12 14l6-4 4 5 5 2M18 10l-3 9 6 4-2 8M15 19l-5 4-5-1"/></svg><b>Running</b></div>
-      </div></div>
-    </div></div></section>
+  <div class="sb-ticker" aria-hidden="true"><div class="sb-ticker-track"><span>volunteer ✶ cook ✶ travel ✶ train ✶ listen ✶ read ✶ play ✶ connect ✶ volunteer ✶ cook ✶ travel ✶ train ✶ listen ✶ read ✶ play ✶ connect ✶&nbsp;</span><span>volunteer ✶ cook ✶ travel ✶ train ✶ listen ✶ read ✶ play ✶ connect ✶ volunteer ✶ cook ✶ travel ✶ train ✶ listen ✶ read ✶ play ✶ connect ✶&nbsp;</span></div></div>
 
-  <section class="person-closing shell reveal"><p class="eyebrow">THE WHOLE PICTURE</p><h2>Good work is technical.<br/>Meaningful work is <em>human.</em></h2><p>He brings both to every project: the analyst who checks the evidence, and the person who cares who it’s for.</p><a href="/my-portfolio/#work">Return to selected work ↗</a></section>
+  <div class="sb-motto shell reveal"><p class="sb-label-strip">Show up. Stay curious. Learn from people. Leave room for joy.</p></div>
+
+  <section class="sb-things shell" id="sb-things">
+    <div class="sb-head reveal">
+      <p class="eyebrow">01 / WHAT KEEPS HIM GROUNDED</p>
+      <h2>The things he <em><span class="sb-mark">makes time for.</span></em></h2>
+    </div>
+    <div class="sb-notes">
+      <article class="sb-note sb-note--white reveal"><span class="sb-pin" aria-hidden="true"></span><p class="sb-hand">service</p><h3>Volunteering</h3><p>Giving time to people and causes he cares about. It’s where empathy turns into something useful.</p><small class="sb-hand">teaches: empathy in action</small></article>
+      <article class="sb-note sb-note--yellow reveal"><span class="sb-pin" aria-hidden="true"></span><p class="sb-hand">discipline</p><h3>Fitness</h3><p>Training gives the week its shape. Small, steady gains, the same way good work gets done.</p><small class="sb-hand">teaches: consistency</small></article>
+      <article class="sb-note sb-note--white reveal"><span class="sb-pin" aria-hidden="true"></span><p class="sb-hand">rhythm</p><h3>Music &amp; audio</h3><p>Music to reset and focus. Audiobooks, stories and good conversations to keep learning on the move.</p><small class="sb-hand">teaches: focus</small></article>
+      <article class="sb-note sb-note--green reveal"><span class="sb-pin" aria-hidden="true"></span><p class="sb-hand">play</p><h3>Gaming</h3><p>When it’s time to switch off, it’s Call of Duty or a game of pool. Quick thinking and a steady hand, just in a different arena.</p><small class="sb-hand">teaches: quick decisions</small></article>
+      <article class="sb-note sb-note--pink reveal"><span class="sb-pin" aria-hidden="true"></span><p class="sb-hand">creativity</p><h3>Cooking</h3><p>Cooking is how he slows down, experiments and gets people around the same table.</p><small class="sb-hand">teaches: patience</small></article>
+    </div>
+  </section>
+
+  <section class="sb-travel shell">
+    <div class="sb-trip reveal">
+      <svg class="sb-flightpath" viewBox="0 0 600 220" aria-hidden="true" focusable="false"><path id="sb-route" d="M20 180 C 140 20, 300 40, 360 120 S 520 210, 580 40"/></svg>
+      <span class="sb-flyer" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M4 20l32-14-10 30-6-12-16-4z"/><path d="M20 24l16-18"/></svg></span>
+      <figure class="sb-polaroid sb-polaroid--trip-a">
+        <span class="sb-tape sb-tape--yellow" aria-hidden="true"></span>
+        <img src="/my-portfolio/beyond/bordeaux-cathedral.webp" width="960" height="1280" loading="lazy" alt="Cathédrale Saint-André and its twin spires in Bordeaux, France"/>
+        <figcaption class="sb-hand">Bordeaux, France</figcaption>
+        <span class="sb-stamp sb-stamp--round" aria-hidden="true">BORDEAUX<br/>FRANCE</span>
+      </figure>
+      <figure class="sb-polaroid sb-polaroid--trip-b">
+        <span class="sb-tape sb-tape--coral" aria-hidden="true"></span>
+        <img src="/my-portfolio/beyond/porto-de-mos-castle.webp" width="960" height="1280" loading="lazy" alt="Sam standing in front of the castle walls at Porto de Mós, Portugal"/>
+        <figcaption class="sb-hand">Porto de Mós, Portugal</figcaption>
+        <span class="sb-stamp sb-stamp--square" aria-hidden="true">PORTO<br/>DE MÓS</span>
+      </figure>
+    </div>
+    <div class="sb-trip-copy reveal">
+      <p class="eyebrow">02 / PERSPECTIVE</p>
+      <h2>Travel, and a <em><span class="sb-mark">wider lens.</span></em></h2>
+      <p>New places, cultures and ways of seeing. Familiar problems look different when you come home.</p>
+      <div class="sb-book">
+        <span class="sb-book-spine" aria-hidden="true">A</span>
+        <div><p class="sb-hand">on his shelf</p><b>Attitude Is Everything</b><span>by Keith Harrell</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sb-court shell">
+    <div class="sb-head reveal">
+      <p class="eyebrow">03 / SPORTS AND CONNECTION</p>
+      <h2>On whichever court <em><span class="sb-mark">will have him.</span></em></h2>
+      <p class="sb-court-copy">Soccer and basketball are his main sports. He also plays volleyball, badminton and tennis, and cycling and running give him space to reset on his own. For Sam it’s about the movement, the challenge and the people that come with it.</p>
+    </div>
+    <div class="sb-court-board reveal">
+      <span class="sb-bounce" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="17"/><path d="M3 20h34M20 3v34M8 8c8 7 8 17 0 24M32 8c-8 7-8 17 0 24"/></svg></span>
+      <div class="sb-tags">
+        <span class="sb-tag sb-tag--main">Soccer</span>
+        <span class="sb-tag sb-tag--main sb-tag--dark">Basketball</span>
+        <span class="sb-tag">Volleyball</span>
+        <span class="sb-tag">Badminton</span>
+        <span class="sb-tag">Tennis</span>
+        <span class="sb-tag sb-tag--solo">Cycling</span>
+        <span class="sb-tag sb-tag--solo">Running</span>
+      </div>
+      <p class="sb-hand sb-legend"><span class="sb-dot sb-dot--main"></span> main sports &nbsp; <span class="sb-dot"></span> also plays &nbsp; <span class="sb-dot sb-dot--solo"></span> on his own</p>
+    </div>
+  </section>
+
+  <section class="sb-closing shell reveal">
+    <p class="eyebrow">THE WHOLE PICTURE</p>
+    <h2>Good work is technical.<br/>Meaningful work is <em><span class="sb-mark">human.</span></em></h2>
+    <p class="sb-hand sb-sign">the analyst who checks the evidence, and the person who cares who it’s for.</p>
+    <a href="/my-portfolio/#work">Return to selected work ↗</a>
+  </section>
 
   <footer class="footer"><div class="shell"><div class="footer-row"><p>© 2026 Sampson Boateng</p><div><a href="/my-portfolio/">Portfolio</a><a href="mailto:samboateng190@gmail.com">Email</a><a href="https://linkedin.com/in/sam-boateng" target="_blank" rel="noreferrer">LinkedIn</a></div></div></div></footer>
 </main>
 <script>
-(function(){var d=document.documentElement;if(!("IntersectionObserver" in window))return;d.classList.add("js");var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("is-visible");io.unobserve(e.target);}});},{threshold:.12});document.querySelectorAll(".reveal").forEach(function(el){io.observe(el);});})();
+(function(){var d=document.documentElement;requestAnimationFrame(function(){d.classList.add("sb-ready");});if(!("IntersectionObserver" in window)){d.classList.add("no-js");return;}d.classList.add("js");var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("is-visible");io.unobserve(e.target);}});},{threshold:.15});document.querySelectorAll(".reveal").forEach(function(el){io.observe(el);});})();
 </script>
 </body>
 </html>
