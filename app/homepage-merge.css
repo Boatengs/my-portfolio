@@ -318,3 +318,84 @@
     font-size: 36px !important;
   }
 }
+
+/* Hero top line: motto on the left, availability on the right */
+#top.hero::before { display: none !important; content: none !important; }
+
+.hero-topline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: clamp(56px, 7vw, 96px);
+}
+
+.hero-topline .hero-kicker { margin: 0 !important; }
+
+.hero-motto {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  font: 700 12px/1.4 ui-monospace, "SFMono-Regular", Menlo, monospace;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #121417;
+}
+
+.hero-motto span {
+  width: 28px;
+  height: 2px;
+  background: var(--atelier-red, #e44c39);
+}
+
+/* Focus areas as chips under the headline */
+.hero-focus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-focus li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(18, 20, 23, 0.14);
+  background: #fff;
+  color: #121417;
+  font-size: 14px;
+  font-weight: 600;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.hero-focus li::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--atelier-red, #e44c39);
+}
+
+.hero-focus li:first-child {
+  background: #121417;
+  border-color: #121417;
+  color: #fff;
+}
+
+.hero-focus li:hover { border-color: rgba(18, 20, 23, 0.4); transform: translateY(-2px); }
+
+@media (max-width: 760px) {
+  .hero-topline { margin-bottom: 40px; }
+  .hero-focus { margin-top: 24px; gap: 8px; }
+  .hero-focus li { padding: 8px 13px; font-size: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-focus li { transition: none; }
+}

@@ -439,18 +439,27 @@ export default function Home() {
     <main>
       <SiteNav home />
       <section className="hero shell" id="top">
-        <div className="hero-kicker">
-          <i /> Open to opportunities
+        <div className="hero-topline">
+          <p className="hero-motto">
+            <span aria-hidden="true" />
+            Independent thinking · Real world systems
+          </p>
+          <div className="hero-kicker">
+            <i /> Open to opportunities
+          </div>
         </div>
         <div className="hero-grid">
           <div>
-            <p className="eyebrow">
-              HEALTHCARE AI · DATA ANALYTICS · APPLIED MACHINE LEARNING ·
-              DATA GOVERNANCE · DATA ENGINEERING
-            </p>
             <h1>
               Careful data work for <em>decisions that matter.</em>
             </h1>
+            <ul className="hero-focus" aria-label="Focus areas">
+              <li>Healthcare AI</li>
+              <li>Data Analytics</li>
+              <li>Applied Machine Learning</li>
+              <li>Data Engineering</li>
+              <li>Data Governance</li>
+            </ul>
           </div>
           <div className="hero-aside">
             <p>
