@@ -446,7 +446,7 @@ export default function Home() {
           <div>
             <p className="eyebrow">
               HEALTHCARE AI · DATA ANALYTICS · APPLIED MACHINE LEARNING ·
-              DATA GOVERNANCE · INTELLIGENT SYSTEMS
+              DATA GOVERNANCE · DATA ENGINEERING
             </p>
             <h1>
               Careful data work for <em>decisions that matter.</em>
@@ -539,34 +539,43 @@ export default function Home() {
             </h2>
           </div>
         </div>
-        <div className="background-grid">
-          <div className="background-experience">
-            <p className="background-label">EXPERIENCE</p>
-            <ExperienceTimeline />
-          </div>
-          <aside className="background-education" id="education" aria-labelledby="education-title">
-            <p className="background-label" id="education-title">EDUCATION</p>
-            <ol>
-              <li>
-                <span>2025</span>
-                <h3>Master of Professional Studies (MPS)</h3>
-                <p>Applied Machine Intelligence</p>
-                <b>Northeastern University · The Roux Institute</b>
-              </li>
-              <li>
-                <span>2023</span>
-                <h3>Bachelor of Science</h3>
-                <p>Computer Science</p>
-                <b>Saratov State University</b>
-              </li>
-              <li>
-                <span>2023</span>
-                <h3>Diploma</h3>
-                <p>Data Analysis and Machine Learning</p>
-                <b>Innopolis University, Russia</b>
-              </li>
-            </ol>
-          </aside>
+        <div className="background-experience">
+          <p className="background-label">EXPERIENCE</p>
+          <ExperienceTimeline />
+        </div>
+        <div className="background-education" id="education">
+          <p className="background-label" id="education-title">EDUCATION</p>
+          <ol className="edu-cards" aria-labelledby="education-title">
+            <li className="edu-card">
+              <div className="edu-top">
+                <span className="edu-level">Master&apos;s</span>
+                <span className="edu-year">2025</span>
+              </div>
+              <h3>Applied Machine Intelligence</h3>
+              <p className="edu-degree">Master of Professional Studies (MPS)</p>
+              <p className="edu-school">
+                Northeastern University · The Roux Institute
+              </p>
+            </li>
+            <li className="edu-card">
+              <div className="edu-top">
+                <span className="edu-level">Bachelor&apos;s</span>
+                <span className="edu-year">2023</span>
+              </div>
+              <h3>Computer Science</h3>
+              <p className="edu-degree">Bachelor of Science</p>
+              <p className="edu-school">Saratov State University</p>
+            </li>
+            <li className="edu-card">
+              <div className="edu-top">
+                <span className="edu-level">Diploma</span>
+                <span className="edu-year">2023</span>
+              </div>
+              <h3>Data Analysis and Machine Learning</h3>
+              <p className="edu-degree">Diploma</p>
+              <p className="edu-school">Innopolis University, Russia</p>
+            </li>
+          </ol>
         </div>
       </section>
       <section className="section shell" id="work">
