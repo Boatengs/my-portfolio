@@ -294,3 +294,27 @@
     font-size: 40px !important;
   }
 }
+
+/* Homepage section headings: sized below the hero headline */
+#main-content > main:not([class]) .section-head h2,
+#main-content > main:not([class]) .about-system-head h2 {
+  font-size: clamp(34px, 4.2vw, 58px) !important;
+  line-height: 1 !important;
+  letter-spacing: -0.05em !important;
+}
+
+#main-content > main:not([class]) .footer--contact h2 {
+  font-size: clamp(36px, 4.6vw, 64px) !important;
+  line-height: 0.98 !important;
+}
+
+@media (max-width: 760px) {
+  #main-content > main:not([class]) .section-head h2,
+  #main-content > main:not([class]) .about-system-head h2 {
+    font-size: 34px !important;
+  }
+
+  #main-content > main:not([class]) .footer--contact h2 {
+    font-size: 36px !important;
+  }
+}
