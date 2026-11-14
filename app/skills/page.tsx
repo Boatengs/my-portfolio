@@ -525,7 +525,7 @@ export default function SkillsPage() {
           <Link className="email" href="/work">Explore project case studies ↗</Link>
           <div className="footer-row">
             <p>© 2026 Sampson Boateng</p>
-            <div><Link href="/">Home</Link><Link href="/impact">Professional Approach</Link></div>
+            <div><Link href="/">Home</Link><Link href="/leadership">Leadership &amp; Impact</Link></div>
           </div>
         </div>
       </footer>

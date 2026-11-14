@@ -59,7 +59,7 @@ export default function Work() {
             <p>© 2026 Sampson Boateng</p>
             <div>
               <Link href="/">Home</Link>
-              <Link href="/impact">Professional Approach</Link>
+              <Link href="/leadership">Leadership &amp; Impact</Link>
             </div>
           </div>
         </div>
