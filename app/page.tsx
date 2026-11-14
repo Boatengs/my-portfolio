@@ -545,10 +545,9 @@ export default function Home() {
                 documentation our team relies on.
               </p>
               <p>
-                One example: an insurance billing extract showed the same large
-                gap on almost every record. I traced it to annual rates being
-                read as monthly ones, corrected it, and built a small tool so
-                that check now runs on its own.
+                Core areas: data reconciliation, variance analysis, forecasting,
+                data quality assurance, access management, workflow automation
+                and process documentation.
               </p>
             </div>
           </div>
