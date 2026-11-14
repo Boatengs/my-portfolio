@@ -10,6 +10,7 @@ import "./project-detail-redesign.css";
 import "./skills-premium.css";
 import "./palette-alignment.css";
 import "./experience-accordion.css";
+import "./project-cards.css";
 import { sitePath } from "./site-path";
 export const metadata: Metadata = {
   title: "Sampson Boateng — Data Analytics & Applied Machine Learning",
