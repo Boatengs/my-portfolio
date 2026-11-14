@@ -350,52 +350,33 @@
   background: var(--atelier-red, #e44c39);
 }
 
-/* Focus areas as chips under the headline */
+/* Focus areas as a plain text line under the headline */
 .hero-focus {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin: 32px 0 0;
+  gap: 6px 0;
+  margin: 28px 0 0;
   padding: 0;
   list-style: none;
 }
 
 .hero-focus li {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  border-radius: 999px;
-  border: 1px solid rgba(18, 20, 23, 0.14);
-  background: #fff;
-  color: #121417;
-  font-size: 14px;
-  font-weight: 600;
-  transition: border-color 0.2s, transform 0.2s;
+  white-space: nowrap;
+  font: 700 12px/1.6 Inter, system-ui, sans-serif;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #656a73;
 }
 
-.hero-focus li::before {
-  content: "";
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--atelier-red, #e44c39);
+.hero-focus li:not(:last-child)::after {
+  content: "·";
+  margin: 0 12px;
+  color: var(--atelier-red, #e44c39);
 }
-
-.hero-focus li:first-child {
-  background: #121417;
-  border-color: #121417;
-  color: #fff;
-}
-
-.hero-focus li:hover { border-color: rgba(18, 20, 23, 0.4); transform: translateY(-2px); }
 
 @media (max-width: 760px) {
   .hero-topline { margin-bottom: 40px; }
-  .hero-focus { margin-top: 24px; gap: 8px; }
-  .hero-focus li { padding: 8px 13px; font-size: 13px; }
+  .hero-focus { margin-top: 22px; }
+  .hero-focus li { font-size: 11px; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero-focus li { transition: none; }
-}
