@@ -525,9 +525,10 @@ export default function Home() {
                 generative AI.
               </p>
               <p className="about-core-areas">
-                Core areas: data reconciliation, variance analysis, forecasting,
-                data quality assurance, access management, workflow automation
-                and process documentation.
+                Core areas: data engineering (ETL pipelines, data modeling and
+                data quality), data analysis (forecasting, statistical and
+                variance analysis, dashboards) and machine learning (NLP,
+                retrieval augmented generation and predictive modeling).
               </p>
             </div>
           </div>
