@@ -458,7 +458,7 @@ export default function Home() {
             </ul>
           </div>
           <div className="hero-aside">
-            <p>
+            <p className="lede-italic">
               I build analysis and machine learning tools that people can check
               and use. Most of my projects bring several
               data frameworks together into one working system.
@@ -482,7 +482,7 @@ export default function Home() {
               Accuracy first, <em>then everything else.</em>
             </h2>
           </div>
-          <p>
+          <p className="lede-italic">
             I would rather report a result that holds up than one that looks
             impressive. I say plainly what a model can&apos;t do, and I keep my
             steps visible so they can be checked.
@@ -594,7 +594,7 @@ export default function Home() {
               <em>real world challenges.</em>
             </h2>
           </div>
-          <p>
+          <p className="lede-italic">
             Each case study outlines why the challenge matters, the analytical
             approach, measurable outcomes, and broader real world applications.
           </p>
@@ -620,7 +620,7 @@ export default function Home() {
               with <em>practical impact.</em>
             </h2>
           </div>
-          <p>
+          <p className="lede-italic">
             Analytical methods, intelligent systems, visualization tools, and
             platforms connected to documented project outcomes.
           </p>
