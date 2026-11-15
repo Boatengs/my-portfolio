@@ -447,7 +447,7 @@ export default function Home() {
         <div className="hero-grid">
           <div>
             <h1>
-              Careful data work for <em>decisions that matter.</em>
+              Data you can trust for <em>decisions that matter.</em>
             </h1>
             <ul className="hero-focus" aria-label="Focus areas">
               <li>Healthcare AI</li>
