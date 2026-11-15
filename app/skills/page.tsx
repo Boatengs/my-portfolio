@@ -1,7 +1,6 @@
 import { StaticLink as Link } from "../static-link";
 import { SiteNav } from "../site-nav";
 import { sitePath } from "../site-path";
-import { SkillsConstellation } from "../skills-constellation";
 import { SkillsLibrary } from "./skills-library";
 import type { SkillGroup } from "./skill-parts";
 
@@ -288,17 +287,6 @@ export default function SkillsPage() {
           </div>
         </div>
       </header>
-
-      <section className="toolkit-orbit shell" aria-labelledby="toolkit-orbit-title">
-        <div className="toolkit-section-intro">
-          <span>EXPLORE BY DISCIPLINE</span>
-          <div>
-            <h2 id="toolkit-orbit-title">Nine disciplines in <em>one orbit.</em></h2>
-            <p>Pick a discipline to see its core tools and a project that proves them.</p>
-          </div>
-        </div>
-        <SkillsConstellation />
-      </section>
 
       <section className="toolkit-flow shell" aria-labelledby="toolkit-flow-title">
         <div className="toolkit-section-intro">
