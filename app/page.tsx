@@ -440,10 +440,6 @@ export default function Home() {
       <SiteNav home />
       <section className="hero shell" id="top">
         <div className="hero-topline">
-          <p className="hero-motto">
-            <span aria-hidden="true" />
-            Independent thinking · Real world systems
-          </p>
           <div className="hero-kicker">
             <i /> Open to opportunities
           </div>
