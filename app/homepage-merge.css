@@ -333,22 +333,7 @@
 
 .hero-topline .hero-kicker { margin: 0 !important; }
 
-.hero-motto {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  margin: 0;
-  font: 700 12px/1.4 ui-monospace, "SFMono-Regular", Menlo, monospace;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #121417;
-}
 
-.hero-motto span {
-  width: 28px;
-  height: 2px;
-  background: var(--atelier-red, #e44c39);
-}
 
 /* Focus areas as a plain text line under the headline */
 .hero-focus {
