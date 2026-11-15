@@ -464,8 +464,8 @@ export default function Home() {
           <div className="hero-aside">
             <p>
               I build analysis and machine learning tools that people can check
-              and use. Most of my projects sit across
-              and within data frameworks.
+              and use. Most of my projects bring several
+              data frameworks together into one working system.
             </p>
             <div className="hero-actions">
               <a className="text-link" href="#work">
@@ -477,6 +477,24 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <ul className="hero-proof" aria-label="At a glance">
+          <li>
+            <strong>{allProjects.length}</strong>
+            <span>public projects</span>
+          </li>
+          <li>
+            <strong>{publications.length}</strong>
+            <span>published reviews</span>
+          </li>
+          <li>
+            <strong>Laurel &amp; Scroll 100</strong>
+            <span>Society of Distinction</span>
+          </li>
+          <li>
+            <strong>1st place</strong>
+            <span>Climate Resiliency Hackathon</span>
+          </li>
+        </ul>
       </section>
       <section className="section about-system shell" id="about">
         <div className="about-system-head">
