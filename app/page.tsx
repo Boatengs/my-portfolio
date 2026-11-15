@@ -477,24 +477,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <ul className="hero-proof" aria-label="At a glance">
-          <li>
-            <strong>{allProjects.length}</strong>
-            <span>public projects</span>
-          </li>
-          <li>
-            <strong>{publications.length}</strong>
-            <span>published reviews</span>
-          </li>
-          <li>
-            <strong>Laurel &amp; Scroll 100</strong>
-            <span>Society of Distinction</span>
-          </li>
-          <li>
-            <strong>1st place</strong>
-            <span>Climate Resiliency Hackathon</span>
-          </li>
-        </ul>
       </section>
       <section className="section about-system shell" id="about">
         <div className="about-system-head">
