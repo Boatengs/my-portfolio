@@ -1,6 +1,4 @@
-/* Skills page: constellation section, search and scroll-in panels */
-.skills-premium .toolkit-orbit { padding-top: clamp(72px, 8vw, 120px); }
-.skills-premium .toolkit-orbit .constellation { margin-top: 40px; }
+/* Skills page: search and scroll-in panels */
 
 .library-search {
   display: grid;
@@ -111,8 +109,5 @@
 @media (prefers-reduced-motion: reduce) {
   .library-animate .toolkit-discipline { opacity: 1; transform: none; transition: none; }
 }
-
-/* On the Skills page itself the "view all skills" button is redundant */
-.toolkit-orbit .constellation-all { display: none; }
 
 .library-search-field input::-webkit-search-cancel-button { display: none; }
