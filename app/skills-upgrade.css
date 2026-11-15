@@ -1,93 +1,4 @@
-/* Skills page: search and scroll-in panels */
-
-.library-search {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 12px 24px;
-  align-items: center;
-  margin: 8px 0 28px;
-  padding: 16px;
-  border-radius: 20px;
-  background: #fff;
-  border: 1px solid rgba(18, 20, 23, 0.1);
-  position: sticky;
-  top: 12px;
-  z-index: 20;
-  box-shadow: 0 12px 28px rgba(16, 24, 40, 0.06);
-}
-
-.library-search-label {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-}
-
-.library-search-field {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.library-search-field svg {
-  position: absolute;
-  left: 18px;
-  width: 20px;
-  height: 20px;
-  fill: none;
-  stroke: #6b7079;
-  stroke-width: 2;
-  stroke-linecap: round;
-}
-
-.library-search-field input {
-  width: 100%;
-  min-height: 52px;
-  padding: 0 52px 0 50px;
-  border-radius: 14px;
-  border: 1px solid #d6d9de;
-  background: #f6f7f9;
-  font: inherit;
-  font-size: 16px;
-  color: #121417;
-}
-
-.library-search-field input:focus {
-  outline: 3px solid rgba(228, 76, 57, 0.28);
-  outline-offset: 2px;
-  background: #fff;
-}
-
-.library-search-field button {
-  position: absolute;
-  right: 10px;
-  width: 36px;
-  height: 36px;
-  border: 0;
-  border-radius: 50%;
-  background: #e9ebee;
-  color: #121417;
-  font-size: 20px;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.library-search-status {
-  margin: 0;
-  font: 600 13px/1.4 ui-monospace, "SFMono-Regular", Menlo, monospace;
-  color: #6b7079;
-  white-space: nowrap;
-}
-
-.library-empty {
-  margin: 0;
-  padding: 40px;
-  text-align: center;
-  border-radius: 20px;
-  border: 1px dashed #d6d9de;
-  color: #4a5059;
-}
+/* Skills page: scroll-in panels */
 
 /* panels slide in on scroll once JavaScript is ready */
 .library-animate .toolkit-discipline {
@@ -101,13 +12,6 @@
   transform: none;
 }
 
-@media (max-width: 760px) {
-  .library-search { grid-template-columns: 1fr; position: static; }
-  .library-search-status { white-space: normal; }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .library-animate .toolkit-discipline { opacity: 1; transform: none; transition: none; }
 }
-
-.library-search-field input::-webkit-search-cancel-button { display: none; }
