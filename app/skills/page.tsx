@@ -249,6 +249,7 @@ const stages = [
 ];
 
 const capabilityCount = groups.reduce((total, group) => total + group.skills.length, 0);
+const provenCount = groups.reduce((total, group) => total + group.skills.filter((skill) => skill.proof).length, 0);
 
 export default function SkillsPage() {
   return (
@@ -266,7 +267,7 @@ export default function SkillsPage() {
             <div className="toolkit-hero-stats" aria-label="Toolkit summary">
               <div><strong>{capabilityCount}</strong><span>capabilities</span></div>
               <div><strong>{groups.length}</strong><span>disciplines</span></div>
-              <div><strong>100%</strong><span>local visuals</span></div>
+              <div><strong>{provenCount}</strong><span>linked to projects</span></div>
             </div>
           </div>
 
@@ -312,7 +313,7 @@ export default function SkillsPage() {
           <span>CAPABILITY LIBRARY</span>
           <div>
             <h2 id="capability-library-title">Nine disciplines. One <em>coherent toolkit.</em></h2>
-            <p>Real product marks are stored locally where a branded technology has an official identity. Statistical methods and technical concepts use purpose built visual symbols rather than invented logos.</p>
+            <p>Use the bar below to jump straight to a discipline. Any card marked with an arrow opens a project where I used that tool.</p>
           </div>
         </div>
 
