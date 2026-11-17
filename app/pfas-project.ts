@@ -7,13 +7,13 @@ export const pfasProject: Project = {
   category: "Environmental Analytics · Decision Intelligence",
   accent: "aqua",
   summary:
-    "An end-to-end drinking-water decision-support project that turns nearly two million EPA monitoring records into an auditable engineering-review queue, utility case studies, lifecycle economics, and constrained infrastructure funding portfolios.",
+    "An analysis of 1.99 million EPA test results for PFAS, the long-lasting 'forever chemicals', across 10,313 U.S. drinking water systems. It flags the 1,127 systems that tripped the PFOA or PFOS screening rule, ranks them for engineering review with 388 in the top tier, and tests how $100M to $1B in funding could be spread across them.",
   challenge:
     "PFAS in drinking water is a national infrastructure concern, but occurrence data alone do not tell engineers, utilities, funders, or policy teams where deeper review should begin. The challenge is to move from millions of monitoring records to a transparent view of potential treatment need, utility context, lifecycle economics, and funding priorities.",
   approach:
     "The project builds a reproducible EPA data pipeline, applies documented PFOA/PFOS screening logic, ranks 1,127 systems with a transparent engineering-review framework, verifies three real-world utility case studies, models 20-year lifecycle cost sensitivity, and tests constrained capital-assistance portfolios with mixed-integer optimization.",
   outcome:
-    "The analysis creates an auditable planning framework rather than a black-box ranking. It separates measured EPA evidence from engineering assumptions, verified utility facts, cost assumptions, and policy choices, helping reviewers see what is known, what is assumed, and what should be investigated next.",
+    "The result is a ranked review list. 1,127 systems tripped the screening rule and 388 landed in the top priority tier, and every score breaks down into its parts on a 100 point scale. Three utilities were checked against their own published records, the cost model covers 20 years of treatment costs, and the funding scenarios test how far budgets of $100M to $1B would go. Each step labels what is measured by EPA and what is an assumption.",
   applications:
     "This work can support drinking-water utilities, environmental and civil engineering teams, state revolving-fund programs, emerging-contaminant assistance programs, public-sector capital planning, treatment-alternative screening, affordability analysis, and infrastructure portfolio prioritization.",
   tools: [
