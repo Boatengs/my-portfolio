@@ -8,8 +8,6 @@ const coverCodes: Record<string, [string, string]> = {
   "online-retail-sales-returns": ["RETAIL", "RETURNS"],
   "delta-fpna": ["DELTA", "FP&A"],
   "gridpulse-energy-grid-analytics": ["GRID", "PULSE"],
-  "water-quality": ["WATER", "SIGNALS"],
-  "healthcare-modeling": ["RESOURCE", "MODEL"],
   "sentiment-analyzer": ["TEXT", "SIGNAL"],
   "sports-chatbot": ["RAG", "SPORTS"],
   "medical-qa": ["MEDICAL", "Q+A"],

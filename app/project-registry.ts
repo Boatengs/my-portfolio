@@ -18,9 +18,6 @@ const publicProjects = projects.filter(
 
 const numberedProjects = publicProjects.map((project) => {
   if (project.slug === "pfas-water-decision-intelligence") return pfasProject;
-  if (project.slug === "water-quality") {
-    return { ...project, image: "/project-captures/water-quality-analysis.svg" };
-  }
   return project;
 });
 

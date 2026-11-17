@@ -87,24 +87,6 @@ function Visual({ slug }: { slug: string }) {
         </>
       );
     }
-    case "water-quality":
-      return (
-        <>
-          {[0, 1, 2].map((r) => (
-            <path key={r} d={`M30 ${80 + r * 28} q 30 -14 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0`} stroke={r === 1 ? A : M} strokeWidth="2" fill="none" />
-          ))}
-          <circle cx="272" cy="108" r="9" fill={A} />
-          <circle cx="272" cy="108" r="20" fill="none" stroke={A} strokeOpacity="0.4" />
-        </>
-      );
-    case "healthcare-modeling":
-      return (
-        <>
-          <rect x="60" y="40" width="70" height="70" rx="12" fill="none" stroke={A} strokeWidth="2.5" />
-          <path d="M95 55 v40 M75 75 h40" stroke={A} strokeWidth="6" strokeLinecap="round" />
-          {bars([40, 70, 55], 180, 40, 18, 150, 1.2, (i) => i === 1)}
-        </>
-      );
     case "sentiment-analyzer":
       return (
         <>

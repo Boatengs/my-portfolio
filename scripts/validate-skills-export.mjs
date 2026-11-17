@@ -26,8 +26,6 @@ for (const marker of [
   "Isolation Forest",
   "GitHub",
   "Hugging Face",
-  "/my-portfolio/projects/healthcare-modeling",
-  "/my-portfolio/projects/water-quality",
   "/my-portfolio/skill-logos/sqlite.svg",
   "/my-portfolio/skill-logos/github.svg",
   "/my-portfolio/skill-logos/huggingface.svg",
