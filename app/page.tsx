@@ -30,7 +30,7 @@ export const skillGroups = [
       {
         name: "Pandas",
         icon: "https://api.iconify.design/logos/pandas-icon.svg",
-        href: "/projects/water-quality",
+        href: "",
       },
       {
         name: "NumPy",
@@ -40,7 +40,7 @@ export const skillGroups = [
       {
         name: "SciPy",
         icon: "https://api.iconify.design/logos/scipy.svg",
-        href: "/projects/water-quality",
+        href: "",
       },
       {
         name: "Spark",
@@ -77,7 +77,7 @@ export const skillGroups = [
       {
         name: "Logistic Regression",
         icon: "https://api.iconify.design/tabler/binary-tree.svg",
-        href: "/projects/healthcare-modeling",
+        href: "",
       },
       {
         name: "Random Forest",
@@ -92,22 +92,22 @@ export const skillGroups = [
       {
         name: "SVM",
         icon: "https://api.iconify.design/tabler/separator.svg",
-        href: "/projects/healthcare-modeling",
+        href: "",
       },
       {
         name: "PCA",
         icon: "https://api.iconify.design/tabler/dimensions.svg",
-        href: "/projects/healthcare-modeling",
+        href: "",
       },
       {
         name: "K-Means",
         icon: "https://api.iconify.design/tabler/affiliate.svg",
-        href: "/projects/water-quality",
+        href: "",
       },
       {
         name: "Isolation Forest",
         icon: "https://api.iconify.design/tabler/alert-triangle.svg",
-        href: "/projects/water-quality",
+        href: "",
       },
       {
         name: "Forecasting",
@@ -203,7 +203,7 @@ export const skillGroups = [
       {
         name: "Scikit-learn",
         icon: "https://api.iconify.design/logos/scikit-learn.svg",
-        href: "/projects/healthcare-modeling",
+        href: "",
       },
       {
         name: "Transformers",

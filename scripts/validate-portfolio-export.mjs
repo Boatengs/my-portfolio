@@ -5,8 +5,6 @@ const outRoot = "out";
 const basePath = "/my-portfolio";
 const expectedRoutes = JSON.parse(fs.readFileSync("tests/portfolio-routes.json", "utf8"));
 const expectedProjectSlugs = [
-  "water-quality",
-  "healthcare-modeling",
   "sentiment-analyzer",
   "sports-chatbot",
   "medical-qa",
@@ -32,8 +30,6 @@ const generatedProjectSlugs = [
   "online-retail-sales-returns",
   "delta-fpna",
   "gridpulse-energy-grid-analytics",
-  "water-quality",
-  "healthcare-modeling",
   "sentiment-analyzer",
   "sports-chatbot",
   "medical-qa",
@@ -43,7 +39,7 @@ const generatedProjectSlugs = [
   "llm-evaluation",
   "wastewater-infrastructure-analytics",
 ];
-const forbiddenProjectSlugs = ["price-elasticity"];
+const forbiddenProjectSlugs = ["price-elasticity", "water-quality", "healthcare-modeling"];
 
 function allFiles(directory, predicate = () => true) {
   const files = [];
@@ -98,7 +94,7 @@ for (const marker of ["ProjectCover", "project-card--lead", "Browse by expertise
 }
 
 const sharedCoverSource = fs.readFileSync("app/project-cover.tsx", "utf8");
-for (const marker of ["GRID", "PULSE", "WATER", "SIGNALS", 'variant?: "card" | "detail"', "project-cover--detail"]) {
+for (const marker of ["GRID", "PULSE", 'variant?: "card" | "detail"', "project-cover--detail"]) {
   if (!sharedCoverSource.includes(marker)) throw new Error(`Shared project cover source is missing: ${marker}`);
 }
 
