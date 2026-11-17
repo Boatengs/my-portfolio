@@ -7,13 +7,13 @@ export const worldHappinessProject: Project = {
   category: "Global Analytics · Interactive Dashboard",
   accent: "blue",
   summary:
-    "An animated 2015–2019 global dashboard for country rankings, regional patterns, factor relationships, and an out-of-time 2019 regression evaluation—running natively inside the portfolio.",
+    "An animated dashboard of the World Happiness Report from 2015 to 2019, covering 782 country-year scores. It shows how each country's rank and score changed, how regions compare, how closely factors such as income and social support track happiness, and whether a model trained on 2015 to 2018 predicts 2019.",
   challenge:
     "World Happiness rankings are widely quoted as annual league tables, but a single rank hides movement over time, regional context, the closeness of neighboring scores, and the relationships among the socioeconomic factors reported alongside happiness.",
   approach:
     "A reproducible analytical pipeline normalizes changing World Happiness schemas, restores region context, computes within-year ranks, and powers animated country, regional, factor, correlation, and trend views. An interpretable linear regression then learns from 2015–2018 and is tested on 2019.",
   outcome:
-    "The dashboard makes it possible to see which country and regional patterns persist, which rankings shift, and which factors move most closely with reported happiness scores. The holdout model adds a stricter question: whether relationships learned from earlier years transfer to the next year.",
+    "In 2019 Finland ranks first with a score of 7.769, followed by Denmark and Norway, and the top ten sit close together, so small score changes can move ranks. The dashboard shows each country's path across the five years and how each factor relates to happiness. A linear model trained on 2015 to 2018 is then scored on 2019, which it never saw, to test whether those relationships hold a year later.",
   applications:
     "The workflow demonstrates how multi-year public indicators can become an accessible analytical product for international-development research, policy briefing, social-indicator monitoring, education, nonprofit reporting, comparative country analysis, and executive dashboards.",
   tools: [

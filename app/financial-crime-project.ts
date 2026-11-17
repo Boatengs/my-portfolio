@@ -7,13 +7,13 @@ export const financialCrimeProject: Project = {
   category: "Financial Crime Analytics · Graph ML",
   accent: "violet",
   summary:
-    "A large-scale Elliptic2 AML decision-support project combining out-of-core graph feature engineering, validated model selection, constrained-review prioritization, calibration, and case-specific statistical evidence.",
+    "A model that ranks connected groups of cryptocurrency wallets and payments in the Elliptic2 dataset by how likely they are to involve money laundering, so investigators with limited time review the riskiest first. Of the cases it placed in its top 0.5%, 94.3% were labelled suspicious, 41.53 times the rate in the data overall.",
   challenge:
     "Financial-crime monitoring is not only a classification problem. Review teams operate under severe workload constraints, suspicious cases are rare, and network behavior can be distributed across connected transactions.",
   approach:
-    "The project builds an out-of-core DuckDB and Parquet feature pipeline across tens of millions of nodes and hundreds of millions of edges, compares statistical and graph models, and evaluates investigator-value under explicit review-capacity limits.",
+    "I computed network features for tens of millions of wallet clusters and hundreds of millions of payments between them with DuckDB, working from disk because the graph is too large for memory. I compared statistical models with a graph neural network (GraphSAGE) and scored each by how many truly suspicious cases an investigation team would find at fixed review budgets.",
   outcome:
-    "The node-enriched random forest produced the strongest operational ranking result, while larger edge enrichment and a matched GraphSAGE benchmark provided useful evidence that greater model complexity did not automatically improve investigator value.",
+    "A random forest using features of each wallet cluster and its neighbours ranked cases best, and held a precision recall score of 0.528 across five different data splits. Adding more link features, or switching to the graph neural network, did not find more suspicious cases for the same review effort.",
   applications:
     "The workflow demonstrates review prioritization, workload-aware model evaluation, calibration, and evidence presentation for financial-crime analytics and other rare-event investigation settings.",
   tools: [
@@ -39,18 +39,18 @@ export const financialCrimeProject: Project = {
   evidence: [
     {
       value: "0.528",
-      label: "Repeated PR-AUC",
-      detail: "The preferred node-enriched random forest remained stable across five stratified 80/20 splits.",
+      label: "Ranking score (PR-AUC)",
+      detail: "How well the model ranks suspicious cases above normal ones, averaged over five different 80/20 data splits; 1.0 would be perfect.",
     },
     {
       value: "94.3%",
-      label: "Precision @ 0.5%",
-      detail: "Precision at the tightest tested investigator review budget.",
+      label: "Suspicious in top 0.5%",
+      detail: "Of the cases the model ranked in its top 0.5%, the share labelled suspicious.",
     },
     {
       value: "41.53×",
-      label: "Top-0.5% review lift",
-      detail: "Lift over prevalence at the tightest tested review budget.",
+      label: "Better than chance, top 0.5%",
+      detail: "Reviewing the top 0.5% finds suspicious cases 41.53 times as often as reviewing cases at random.",
     },
   ],
   validation:

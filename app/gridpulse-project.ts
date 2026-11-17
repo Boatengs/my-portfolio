@@ -12,13 +12,13 @@ export const gridPulseProject: GridPulseProject = {
   category: "Energy Analytics · Forecasting · Live Operations",
   accent: "aqua",
   summary:
-    "An operational energy analytics system built on EIA-930 PJM hourly grid data, combining forecast benchmarking, source-data QA, stress screening, error intelligence, and a live/replay Streamlit control room.",
+    "A model that corrects the U.S. Energy Information Administration's day-ahead electricity demand forecast for PJM, the grid operator for much of the eastern U.S. On 8,690 hours of 2025 it cut the average forecast error by 44.2%, and it beat the official forecast in all 13 month-long test periods. A live dashboard shows the grid's current demand, forecasts and stress.",
   challenge:
-    "Electricity demand can become difficult to forecast and serve when high load, rapid ramps, forecast misses, generation conditions, and interchange pressure coincide. Grid operators and analysts need a way to separate routine variation from periods that deserve closer operational attention without overstating what the data can prove.",
+    "Grid operators plan around a demand forecast published a day ahead, and that forecast misses most when it matters: during peaks and fast swings in demand. The question was whether a model trained on past forecast errors could make the official forecast more accurate, especially at peak, and show clearly which hours need closer attention.",
   approach:
-    "GridPulse ingests a frozen 2022–2025 PJM snapshot from eight official EIA-930 balance files, verifies source hashes, normalizes the hourly operating data, preserves QA anomalies, engineers lagged forecasting features, benchmarks EIA against a weekly baseline and a gradient-boosted residual correction model, runs rolling-origin validation, decomposes errors by operating slice, and exposes the results through a multipage Streamlit dashboard with frozen replay and live EIA API modes.",
+    "I froze four years of hourly PJM data (2022 to 2025) from eight official EIA files and checked each file against its fingerprint so results can be reproduced exactly. A gradient boosted model learns the pattern in EIA's past forecast errors and corrects the next forecast. I tested it on all of 2025, which the model never saw, and on 13 rolling month-long periods, and broke the remaining errors down by hour of day and demand level. A Streamlit dashboard shows the results with live EIA data or a frozen replay.",
   outcome:
-    "On 8,690 common 2025 holdout hours, the GridPulse ML-corrected EIA forecast reduced overall MAE by 44.2% and peak-demand MAE by 36.0% versus EIA's reported day-ahead forecast. The candidate also beat EIA on both overall and peak MAE in all 13 valid rolling-origin folds, while the project still documents where the model regresses or remains biased.",
+    "On 8,690 hours of 2025, the corrected forecast's average error was 1,842.7 MW against 3,302.6 MW for EIA's own forecast, 44.2% lower. At peak demand the error fell 36.0%, from 4,330.5 MW to 2,770.4 MW. It beat EIA in every one of the 13 test periods. It is slightly worse at 8 a.m. local time, and at the very highest demand its remaining misses lean toward forecasting too low.",
   applications:
     "The workflow can support load-forecast review, utility planning, balancing-authority analytics, peak-demand preparation, forecast-error diagnostics, source-data QA, grid operations research, and control-room decision support. The same pattern can be extended to additional balancing authorities once timing, data quality, and operating-context differences are validated.",
   tools: [
@@ -46,27 +46,27 @@ export const gridPulseProject: GridPulseProject = {
   evidence: [
     {
       value: "44.2%",
-      label: "Lower overall MAE",
+      label: "Lower average forecast error",
       detail:
-        "GridPulse reduced 2025 holdout MAE from 3,302.6 MW for EIA to 1,842.7 MW on the same 8,690 valid hours.",
+        "Average error fell from 3,302.6 MW for EIA's forecast to 1,842.7 MW on the same 8,690 hours of 2025.",
     },
     {
       value: "36.0%",
-      label: "Lower peak-demand MAE",
+      label: "Lower error at peak demand",
       detail:
-        "Peak MAE fell from 4,330.5 MW for EIA to 2,770.4 MW using one shared top-decile demand threshold.",
+        "In the top 10% of demand hours, average error fell from 4,330.5 MW to 2,770.4 MW.",
     },
     {
       value: "13 / 13",
-      label: "Rolling-origin folds won",
+      label: "Month-long test periods won",
       detail:
-        "The GridPulse candidate beat EIA on both overall and peak-demand MAE in every valid 30-day future fold.",
+        "The corrected forecast beat EIA's, both overall and at peak, in all 13 rolling 30 day test periods.",
     },
     {
       value: "8,690",
-      label: "Common holdout hours",
+      label: "Hours of 2025 tested",
       detail:
-        "All headline 2025 forecasts were scored on identical valid rows rather than different convenience subsets.",
+        "Both forecasts were scored on exactly the same hours, none of which the model trained on.",
     },
   ],
   validation:
