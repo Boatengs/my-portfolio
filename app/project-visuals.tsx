@@ -145,7 +145,7 @@ function Visual({ slug }: { slug: string }) {
         <>
           <path d="M150 60 C 200 30, 270 60, 262 105 C 255 150, 180 158, 150 130 C 120 105, 115 80, 150 60 Z" fill={M} />
           <path d="M150 60 C 200 30, 270 60, 262 105 C 255 150, 180 158, 150 130 C 120 105, 115 80, 150 60 Z" fill="none" stroke={A} strokeWidth="3" strokeDasharray="7 5" />
-          <text x="290" y="160" fill={A} fontSize="11" fontFamily="monospace">DICE 0.91</text>
+          <text x="290" y="160" fill={A} fontSize="11" fontFamily="monospace">DICE 0.94</text>
         </>
       );
     case "llm-evaluation": {
